@@ -48,7 +48,7 @@ class utils {
      * http://docs.php.net/manual/en/function.date.php
      */
     public function utils_dt($date) {
-        return date("y-m-d", strtotime($date));
+        return date("Y-m-d", strtotime($date));
     }
 
     /**
