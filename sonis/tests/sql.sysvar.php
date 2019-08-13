@@ -31,7 +31,7 @@
  *
  */
 
-require '../config.php';
+require __DIR__ . '/../config.php';
 
 /**
  * SOAP SQL is the easiest to work with.

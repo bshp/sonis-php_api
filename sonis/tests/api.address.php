@@ -3,7 +3,7 @@
  *
  * MIT License
  *
- * Copyright (c) 2019 Jason A. Everling
+ * Copyright (c) 2016 Jason A. Everling
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -27,22 +27,60 @@
  *    For Sonis Coldfusion Web Services
  *
  *    By: Jason A. Everling
- *    Email: je...@bshp.edu
+ *    Email: jason...@gmail.com
  *
  */
+
+require __DIR__ . '/../config.php';
 
 /**
- * Sonis API Framework Version
+ * The method within the component
  *
- * This file defines the current version of the core Moodle code being used.
- * This is compared against the values stored in the database to determine
- * whether upgrades should be performed (see lib/db/*.php)
- *
- * @package    core
- * @copyright  2016
- * @license    https://opensource.org/licenses/MIT
+ * @var string $method
  */
+$method = 'addressSearch';
 
-$branch = 'stable'; // internal git branch
-$version = 1.2; // do not change
-$patch = 2; // do not change
+/**
+ * Is data returned? Yes or No
+ *
+ * @var string $returns
+ */
+$returns = 'yes';
+
+/**
+ * Required for an address record,
+ * if set to 'no' then multiple arrays
+ * will be returned
+ *
+ * @var string $preferred
+ */
+$preferred = 'yes';
+
+/**
+ * The persons Sonis ID (soc_sec)
+ *
+ * Most, if not all, will require a soc_sec
+ *
+ * @var string $soc_sec
+ */
+$soc_sec = '000000000';
+
+/**
+ * All the arguments to send.
+ *
+ * Required format:
+ * $args = class::function(all your variables)
+ *
+ * @var mixed $args
+ */
+$args = address::addressSearch($soc_sec, $preferred);
+
+/**
+ * Start the API call process.
+ * Almost every call will look like this.
+ *
+ * @var mixed $request
+ */
+$request = $api->run($method, $returns, $args);
+
+print_r($request);
