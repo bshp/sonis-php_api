@@ -134,11 +134,11 @@ if (in_array($method, $rtr_comp_education)) {
     $comp = 'education';
 }
 
-if (in_array($method, $rtr_comp_employment) && !in_array($args, 'license')) {
+if (in_array($method, $rtr_comp_employment) && !in_array('license', $args)) {
     $comp = 'employment';
 }
 
-if (in_array($method, $rtr_comp_oa_licenses) && !in_array($args, 'emp_rid')) {
+if (in_array($method, $rtr_comp_oa_licenses) && !in_array('emp_rid', $args)) {
     $comp = 'oa_licenses';
 }
 
