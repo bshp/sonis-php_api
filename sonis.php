@@ -1,9 +1,9 @@
-<?php /** @noinspection PhpIncludeInspection */
+<?php
 /**
  *
  * MIT License
  *
- * Copyright (c) 2016 Jason A. Everling
+ * Copyright (c) 2017 Jason A. Everling
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -31,12 +31,4 @@
  *
  */
 
-include 'version.php'; //Set version vars for later use
-
-/**
- * will be called when needed,
- * config.php takes care of this rest.
- */
-spl_autoload_register(function($lib) {
-    include __DIR__ . './lib/' . $lib . '.php';
-});
+require __DIR__ . '/sonis/config.php';

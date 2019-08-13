@@ -31,37 +31,26 @@
  *
  */
 
-require '../config.php';
+require __DIR__ . '/../config.php';
 
 /**
  * The method within the component
  *
- * @var string $method
+ * @var $method
  */
-$method = 'addressSearch';
+$method = 'namesearch';
 
 /**
- * Is data returned? Yes or No
+ * Is data is returned?
  *
- * @var string $returns
+ * @var $returns
  */
 $returns = 'yes';
 
 /**
- * Required for an address record,
- * if set to 'no' then multiple arrays
- * will be returned
+ * The object(s) primary key being retrieved
  *
- * @var string $preferred
- */
-$preferred = 'yes';
-
-/**
- * The persons Sonis ID (soc_sec)
- *
- * Most, if not all, will require a soc_sec
- *
- * @var string $soc_sec
+ * @var $soc_sec
  */
 $soc_sec = '000000000';
 
@@ -73,7 +62,7 @@ $soc_sec = '000000000';
  *
  * @var mixed $args
  */
-$args = address::addressSearch($soc_sec, $preferred);
+$args = biographic::namesearch($soc_sec);
 
 /**
  * Start the API call process.

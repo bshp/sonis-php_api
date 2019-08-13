@@ -116,7 +116,7 @@ class soapapi {
     public function run($method, $returns, $args) {
         global $utils;
         //$method = substr($args, strpos($args, ":") + 2);
-        include_once '../router.php';
+        include_once __DIR__ . '/../router.php';
         $call = $this->soapConfig();
         $result = $call->__soapCall('doAPISomething', [
             'user' => $this->user,

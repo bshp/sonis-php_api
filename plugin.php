@@ -31,26 +31,44 @@
  *
  */
 
-require '../config.php';
+/**
+ * Using this framework inside your
+ * package you just need to include
+ * the loader, sonis.php
+ *
+ * @example require __DIR__ . '/sonis.php';
+ */
+require __DIR__ . '/sonis.php';
 
 /**
  * The method within the component
  *
- * @var $method
+ * @var string $method
  */
-$method = 'namesearch';
+$method = 'addressSearch';
 
 /**
- * Is data is returned?
+ * Is data returned? Yes or No
  *
- * @var $returns
+ * @var string $returns
  */
 $returns = 'yes';
 
 /**
- * The object(s) primary key being retrieved
+ * Required for an address record,
+ * if set to 'no' then multiple arrays
+ * will be returned
  *
- * @var $soc_sec
+ * @var string $preferred
+ */
+$preferred = 'yes';
+
+/**
+ * The persons Sonis ID (soc_sec)
+ *
+ * Most, if not all, will require a soc_sec
+ *
+ * @var string $soc_sec
  */
 $soc_sec = '000000000';
 
@@ -62,7 +80,7 @@ $soc_sec = '000000000';
  *
  * @var mixed $args
  */
-$args = biographic::namesearch($soc_sec);
+$args = address::addressSearch($soc_sec, $preferred);
 
 /**
  * Start the API call process.
