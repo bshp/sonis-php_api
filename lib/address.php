@@ -83,7 +83,7 @@ class address {
      * Search for an address
      *
      * @param string $soc_sec
-     * @param bool $preferred
+     * @param string $preferred
      * @return array
      */
     public static function addressSearch($soc_sec, $preferred = '') {
