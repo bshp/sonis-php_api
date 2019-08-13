@@ -27,7 +27,7 @@
  *    For Sonis Coldfusion Web Services
  *
  *    By: Jason A. Everling
- *    Email: jeverling@bshp.edu
+ *    Email: je...@bshp.edu
  *
  */
 
@@ -43,6 +43,6 @@
  * @license    https://opensource.org/licenses/MIT
  */
 
-$branch = 'stable-1.2'; // internal git branch
+$branch = 'stable'; // internal git branch
 $version = 1.2; // do not change
 $patch = 2; // do not change
