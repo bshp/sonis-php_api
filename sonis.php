@@ -23,24 +23,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- *
- *    For Sonis Coldfusion Web Services
- *
- *    By: Jason A. Everling
- *    Email: jason...@gmail.com
- *
  */
 
 /**
- * Sonis API Framework Version
+ * Sonis API Framework
  *
- * Current version of the framework
- *
- * @file     sonis.php
- * @package  Sonis API
- * @author   Jason A. Everling <jason...@gmail.com>
- * @copyright  2016
- * @license    https://opensource.org/licenses/MIT
+ * @file sonis.php
+ * @package Core
+ * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 
 require __DIR__ . '/sonis/config.php';

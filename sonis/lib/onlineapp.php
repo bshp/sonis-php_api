@@ -23,24 +23,25 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- *
- *    For Sonis Coldfusion Web Services
- *
- *    By: Jason A. Everling
- *    Email: jason...@gmail.com
- *
  */
 
-/*
- * Related to the online app process,
- * combined from the following;
- * oa_emc, oa_fields, oa_licenses,
- * oa_opt_fields, and oa_questions.
+/**
+ * Class onlineapp
+ *
+ * Sonis API Framework
+ *
+ * Component: oa_emc.cfc, oa_fields.cfc, oa_licenses.cfc, oa_opt_fields.cfc, oa_questions.cfc
+ *
+ * @file onlineapp.php
+ * @package Sonis API
+ * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 class onlineapp {
 
     /**
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $pin
      * @return array
      */
@@ -105,7 +106,7 @@ class onlineapp {
     }
 
     /**
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $fieldnames
      * @return array
      */
@@ -121,7 +122,7 @@ class onlineapp {
     }
 
     /**
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $column
      * @return array
      */
@@ -136,7 +137,7 @@ class onlineapp {
     }
 
     /**
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $oa_questions_row
      * @param string $oa_questions_col
      * @param int $oa_section_rid

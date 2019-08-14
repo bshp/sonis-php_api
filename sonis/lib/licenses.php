@@ -23,22 +23,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- *
- *    For Sonis Coldfusion Web Services
- *
- *    By: Jason A. Everling
- *    Email: jason...@gmail.com
- *
  */
 
 /**
  * Class licenses
  *
- * A Person's License,
- * this is not a State or Government card,
- * but rather edu related licenses.
+ * Sonis API Framework
  *
+ * Component: licenses.cfc
+ *
+ * @file licenses.php
+ * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 class licenses {
 

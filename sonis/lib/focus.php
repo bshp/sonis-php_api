@@ -23,16 +23,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- *
- *    For Sonis Coldfusion Web Services
- *
- *    By: Jason A. Everling
- *    Email: jason...@gmail.com
- *
  */
 
-// WIP . will dynamically hold and evaluate the currently processed object
-
+/**
+ * Class focus
+ *
+ * Utilities
+ *
+ * Grouped functions related to the object being referenced
+ *
+ * @file focus.php
+ * @package Utilities
+ * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
+ */
 class focus {
 
     public function user() {

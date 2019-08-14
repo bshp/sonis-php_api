@@ -23,18 +23,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- *
- *    For Sonis Coldfusion Web Services
- *
- *    By: Jason A. Everling
- *    Email: jason...@gmail.com
- *
  */
 
 /**
- * A simple router to build the component
- * being called. It just saves a few extra
- * keys on each page.
+ * Sonis API Framework
+ *
+ * Component request router
+ *
+ * @file router.php
+ * @package Core
+ * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 unset($comp);
 

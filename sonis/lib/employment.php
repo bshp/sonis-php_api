@@ -23,20 +23,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- *
- *    For Sonis Coldfusion Web Services
- *
- *    By: Jason A. Everling
- *    Email: jason...@gmail.com
- *
  */
 
 /**
  * Class employment
  *
- * Employment related
+ * Sonis API Framework
  *
+ * Component: employment.cfc
+ *
+ * @file employment.php
+ * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 class employment {
 
@@ -57,7 +57,7 @@ class employment {
     /**
      * Inserts a new employment record
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $emp_emply
      * @param string $emp_super
      * @param string $emp_add1
@@ -112,7 +112,7 @@ class employment {
     /**
      * Searches for an employment record
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $emp_rid
      * @return array
      */
@@ -129,7 +129,7 @@ class employment {
     /**
      * Updates the employment record
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $emp_emply
      * @param string $emp_super
      * @param string $emp_add1

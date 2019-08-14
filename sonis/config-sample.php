@@ -23,12 +23,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
+ */
+
+/**
+ * Sonis API Framework
  *
- *    For Sonis Coldfusion Web Services
+ * API configuration
  *
- *    By: Jason A. Everling
- *    Email: jason...@gmail.com
- *
+ * @file config.php
+ * @package Core
+ * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 
 require __DIR__ . '/lib.php';
@@ -57,7 +63,8 @@ $cfg->opts = [
         'encoding' => 'UTF-8',
         'trace' => 1,
         'cache_wsdl' => WSDL_CACHE_MEMORY,
-        'exceptions' => 1
+        'exceptions' => 1,
+        'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
     ],
     'debug' => false, // Print the executed SOAP call to the PHP error log as defined in your php.ini
 ];

@@ -23,14 +23,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- *
- *    For Sonis Coldfusion Web Services
- *
- *    By: Jason A. Everling
- *    Email: jason...@gmail.com
- *
  */
 
+/**
+ * Class messages
+ *
+ * Utilities
+ *
+ * Messages related to various functions
+ *
+ * @file messages.php
+ * @package Utilities
+ * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
+ */
 class messages {
 
     /**

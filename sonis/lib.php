@@ -1,4 +1,4 @@
-<?php /** @noinspection PhpIncludeInspection */
+<?php
 /**
  *
  * MIT License
@@ -23,12 +23,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
+ */
+
+/**
+ * Sonis API Framework
  *
- *    For Sonis Coldfusion Web Services
+ * Library loader
  *
- *    By: Jason A. Everling
- *    Email: jason...@gmail.com
- *
+ * @file lib.php
+ * @package Core
+ * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 
 include __DIR__ . '/version.php'; //Set version vars for later use

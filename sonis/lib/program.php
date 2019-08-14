@@ -23,27 +23,29 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- *
- *    For Sonis Coldfusion Web Services
- *
- *    By: Jason A. Everling
- *    Email: jason...@gmail.com
- *
  */
 
 /**
  * Class program
  *
- * Mainly online applicant related programs.
+ * Sonis API Framework
  *
+ * Component: program.cfc
+ *
+ * Usage: Program related, mainly for applicants
+ *
+ * @file program.php
+ * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 class program {
 
     /**
      * Search for a program
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @return array
      */
     public static function approgsearch($soc_sec) {
@@ -58,7 +60,7 @@ class program {
     /**
      * Complete an application
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @return array
      */
     public static function complete_app($soc_sec) {
@@ -88,7 +90,7 @@ class program {
     /**
      * Insert a program record
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $d_soc_sec
      * @param string $camp_cod
      * @param string $entry_date
@@ -98,7 +100,7 @@ class program {
      * @param string $ack_date
      * @param string $trans_date
      * @param string $is_applicant
-     * @param string $preferred
+     * @param string $preferred The persons preferred address, yes or no
      * @param string $incomplete
      * @param string $app_rid
      * @param string $ref_source
@@ -116,7 +118,7 @@ class program {
      * @param string $time_maint
      * @param string $date_maint
      * @param string $trans_done
-     * @param string $operator
+     * @param string $operator The persons unqiue ID adding or modifying the record. Please change the value
      * @return array
      */
     public static function insert_approg($soc_sec, $d_soc_sec = '', $camp_cod = '', $entry_date = '', $prg_cod = '', $div_cod = '', $app_date = '', $ack_date = '', $trans_date = '', $is_applicant = '', $preferred = '', $incomplete = '', $app_rid = '', $ref_source = '', $fee_rec = '', $apfee_dt = '', $prior_app = '', $app_yr = '', $acknowledg = '', $sms_trans = '', $matric_fee = '', $degree_ap = '', $degree_ac = '', $major_ap = '', $major_ac = '', $time_maint = '', $date_maint = '', $trans_done = '', $operator = '') {
@@ -159,7 +161,7 @@ class program {
     /**
      * Prevent repeats update
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $prg_cod
      * @return array
      */
@@ -176,7 +178,7 @@ class program {
     /**
      * Search for a program
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @return array
      */
     public static function programSearch($soc_sec) {
