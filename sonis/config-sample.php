@@ -63,7 +63,8 @@ $cfg->opts = [
         'encoding' => 'UTF-8',
         'trace' => 1,
         'cache_wsdl' => WSDL_CACHE_MEMORY,
-        'exceptions' => 1
+        'exceptions' => 1,
+        'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
     ],
     'debug' => false, // Print the executed SOAP call to the PHP error log as defined in your php.ini
 ];
