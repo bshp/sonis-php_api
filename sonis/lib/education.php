@@ -41,6 +41,8 @@
 class education {
 
     /**
+     * Deletes an education record
+     *
      * @param string $soc_sec The objects unique identifier
      * @param string $edu_rid
      * @return array
@@ -71,6 +73,8 @@ class education {
     }
 
     /**
+     * Inserts a new edu record and sets as default
+     *
      * @param string $soc_sec The objects unique identifier
      * @param string $cohort_cod
      * @return array
@@ -86,10 +90,12 @@ class education {
     }
 
     /**
+     * Inserts a new edu record
+     *
      * @param string $soc_sec The objects unique identifier
      * @param string $educmem
      * @param string $inst_cod
-     * @param string $mod_stat
+     * @param string $mod_stat The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI
      * @param string $degree
      * @param string $enter_date
      * @param string $leav_date
@@ -116,6 +122,8 @@ class education {
     }
 
     /**
+     * Inserts a new institution
+     *
      * @param string $soc_sec The objects unique identifier
      * @param string $inst_mem
      * @param string $edu_rid

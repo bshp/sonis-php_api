@@ -89,3 +89,4 @@ $args = address::addressSearch($soc_sec, $preferred);
 $request = $api->run($method, $returns, $args);
 
 print_r($request);
+print_r('Sonis API Framework: ' . $release);

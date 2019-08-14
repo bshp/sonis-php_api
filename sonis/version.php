@@ -46,3 +46,4 @@
 $branch = 'stable'; // internal git branch
 $version = 1.2; // do not change
 $patch = 3; // do not change
+$release = 'v' . $version . '.' . $patch;

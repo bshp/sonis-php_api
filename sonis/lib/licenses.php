@@ -40,6 +40,12 @@
  */
 class licenses {
 
+    /**
+     * Deletes a persons license
+     *
+     * @param $soc_sec
+     * @return array
+     */
     public static function delete_license($soc_sec) {
         $params = [
             ['sonis_ds', '#sonis.ds#'],
@@ -48,6 +54,18 @@ class licenses {
         return $params;
     }
 
+    /**
+     * Inserts a persons license
+     *
+     * @param $soc_sec
+     * @param $license
+     * @param $lic_no
+     * @param $date_rec
+     * @param $date_exp
+     * @param string $lic_mem
+     * @param string $d_soc_sec
+     * @return array
+     */
     public static function insert_license($soc_sec, $license, $lic_no, $date_rec, $date_exp, $lic_mem = '', $d_soc_sec = '') {
         $params = [
             ['sonis_ds', '#sonis.ds#'],
@@ -62,6 +80,13 @@ class licenses {
         return $params;
     }
 
+    /**
+     * Search for a persons license
+     *
+     * @param $soc_sec
+     * @param string $license
+     * @return array
+     */
     public static function search($soc_sec, $license = '') {
         $params = [
             ['sonis_ds', '#sonis.ds#'],
@@ -71,7 +96,20 @@ class licenses {
         return $params;
     }
 
-    public static function update_license($soc_sec, $license, $lic_no = '', $date_rec = '', $date_exp = '', $lic_mem = '', $d_soc_sec = '',  $lic_rid = '') {
+    /**
+     * Update a persons given license
+     *
+     * @param $soc_sec
+     * @param $license
+     * @param string $lic_no
+     * @param string $date_rec
+     * @param string $date_exp
+     * @param string $lic_mem
+     * @param string $d_soc_sec
+     * @param string $lic_rid
+     * @return array
+     */
+    public static function update_license($soc_sec, $license, $lic_no = '', $date_rec = '', $date_exp = '', $lic_mem = '', $d_soc_sec = '', $lic_rid = '') {
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['soc_sec', $soc_sec],

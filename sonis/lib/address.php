@@ -45,18 +45,18 @@ class address {
      *
      * @param string $soc_sec The objects unique identifier
      * @param string $preferred The persons preferred address, yes or no
-     * @param string $st_addr
-     * @param string $add_addr
-     * @param string $add_add2
-     * @param string $city
-     * @param string $state
-     * @param string $zip
-     * @param string $phone
-     * @param string $cell_phone
-     * @param string $work_phone
-     * @param string $county_cod
-     * @param string $country
-     * @param string $e_mail
+     * @param string $st_addr The persons street address
+     * @param string $add_addr The persons street address number, such as APT 101 or #101
+     * @param string $add_add2 Don't think we have ever used this one
+     * @param string $city The persons city
+     * @param string $state The persons state 2 character code such as TX for Texas
+     * @param string $zip The persons zip code
+     * @param string $phone The persons phone number
+     * @param string $cell_phone The persons cell phone number
+     * @param string $work_phone The persons work phone number
+     * @param string $county_cod The 2 character code for county such as BX for Bexar. It is best to use a dropbox for these
+     * @param string $country The 2 character code for country like US
+     * @param string $e_mail The primary email address for the record type
      * @return array
      */
     public static function add_address($soc_sec, $preferred, $st_addr = '', $add_addr = '', $add_add2 = '', $city = '', $state = '', $zip = '', $phone = '', $cell_phone = '', $work_phone = '', $county_cod = '', $country = '', $e_mail = '' ) {
@@ -100,19 +100,19 @@ class address {
      *
      * @param string $soc_sec The objects unique identifier
      * @param string $preferred The persons preferred address, yes or no
-     * @param string $st_addr
-     * @param string $add_addr
-     * @param string $add_add2
-     * @param string $city
-     * @param string $state
-     * @param string $zip
-     * @param string $phone
-     * @param string $cell_phone
-     * @param string $fax
-     * @param string $e_mail
-     * @param string $work_phone
-     * @param string $county_cod
-     * @param string $country
+     * @param string $st_addr The persons street address
+     * @param string $add_addr The persons street address number, such as APT 101 or #101
+     * @param string $add_add2 Don't think we have ever used this one
+     * @param string $city The persons city
+     * @param string $state The persons state 2 character code such as TX for Texas
+     * @param string $zip The persons zip code
+     * @param string $phone The persons phone number
+     * @param string $cell_phone The persons cell phone number
+     * @param string $fax The objects fax number
+     * @param string $e_mail The primary email address for the record type
+     * @param string $work_phone The persons work phone number
+     * @param string $county_cod The 2 character code for county such as BX for Bexar. It is best to use a dropbox for these
+     * @param string $country The 2 character code for country like US
      * @param string $operator The persons unqiue ID adding or modifying the record. Please change the value
      * @return array
      */
@@ -142,19 +142,19 @@ class address {
      * Update an existing address record
      *
      * @param string $soc_sec The objects unique identifier
-     * @param string $add_add2
-     * @param string $add_addr
-     * @param string $cell_phone
-     * @param string $city
-     * @param string $country
-     * @param string $county_cod
-     * @param string $e_mail
-     * @param string $fax
-     * @param string $phone
-     * @param string $st_addr
-     * @param string $state
-     * @param string $work_phone
-     * @param string $zip
+     * @param string $add_add2 Don't think we have ever used this one
+     * @param string $add_addr The persons street address number, such as APT 101 or #101
+     * @param string $cell_phone The persons cell phone number
+     * @param string $city The persons city
+     * @param string $country The 2 character code for country like US
+     * @param string $county_cod The 2 character code for county such as BX for Bexar. It is best to use a dropbox for these
+     * @param string $e_mail The primary email address for the record type
+     * @param string $fax The objects fax number
+     * @param string $phone The persons phone number
+     * @param string $st_addr The persons street address
+     * @param string $state The persons state 2 character code such as TX for Texas
+     * @param string $work_phone The persons work phone number
+     * @param string $zip The persons zip code
      * @param string $cell_provider
      * @param string $text_me
      * @return array
