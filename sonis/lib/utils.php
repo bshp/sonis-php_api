@@ -28,9 +28,15 @@
 /**
  * Class utils
  *
- * Utilities and/or shotcuts to be used in processing data
+ * Utilities
  *
+ * Various php utilities
+ *
+ * @file utils.php
+ * @package Utilities
  * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 class utils {
 

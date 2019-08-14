@@ -26,9 +26,15 @@
  */
 
 /**
- * A simple router to build the component
- * being called. It just saves a few extra
- * keys on each page.
+ * Sonis API Framework
+ *
+ * Component request router
+ *
+ * @file router.php
+ * @package Core
+ * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 unset($comp);
 

@@ -28,15 +28,20 @@
 /**
  * Class education
  *
- * Education related, nmedu
+ * Sonis API Framework
  *
+ * Component: education.cfc
+ *
+ * @file education.php
+ * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
-
 class education {
 
     /**
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $edu_rid
      * @return array
      */
@@ -53,7 +58,7 @@ class education {
     /**
      * Search for an education record
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $edu_rid
      * @return array
      */
@@ -66,7 +71,7 @@ class education {
     }
 
     /**
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $cohort_cod
      * @return array
      */
@@ -81,7 +86,7 @@ class education {
     }
 
     /**
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $educmem
      * @param string $inst_cod
      * @param string $mod_stat
@@ -111,7 +116,7 @@ class education {
     }
 
     /**
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $inst_mem
      * @param string $edu_rid
      * @return array
@@ -151,7 +156,7 @@ class education {
     /**
      * Update a given education record
      *
-     * @param $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $edu_rid
      * @param string $eduinsttyp
      * @param string $degree

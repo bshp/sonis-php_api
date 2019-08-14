@@ -28,16 +28,22 @@
 /**
  * Class biographic
  *
- * Biographic related
+ * Sonis API Framework
  *
+ * Component: biograph.cfc, biographic.cfc
+ *
+ * @file biographic.php
+ * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 class biographic {
 
     /**
      * Get First and Lastname
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @return array
      */
     public static function getName($soc_sec) {
@@ -50,7 +56,7 @@ class biographic {
     /**
      * Get enrollment status
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $sch_yr
      * @param string $semester
      * @return array
@@ -67,7 +73,7 @@ class biographic {
     /**
      * Returns data in name table
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @return array
      */
     public static function namesearch($soc_sec){
@@ -80,7 +86,7 @@ class biographic {
     /**
      * Return name and email record
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @return array
      */
     public static function namesearch2($soc_sec){
@@ -93,7 +99,7 @@ class biographic {
     /**
      * Inserts citizenship status
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $birth_contry
      * @param string $citizen_country
      * @param string $iseas_no
@@ -116,7 +122,7 @@ class biographic {
     /**
      * Search for citizenship status
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $mod_stat
      * @return array
      */
@@ -131,7 +137,7 @@ class biographic {
     /**
      * Saves biographic information, almost like an update/insert
      *
-     * @param $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $mod_stat
      * @param string $first_name
      * @param string $last_name
@@ -176,7 +182,7 @@ class biographic {
      * @param string $fund_stat
      * @param string $photo
      * @param string $iped_stat
-     * @param string $operator
+     * @param string $operator The persons unqiue ID adding or modifying the record. Please change the value
      * @return array
      */
     public static function save_biographic($soc_sec, $mod_stat = '', $first_name = '', $last_name = '', $mi = '', $acadstat_cod = '', $prefix = '', $suffix = '', $maiden = '', $nickname = '', $birthdate = '', $gender = '', $ssn = '', $old_ssn = '', $affiliation_cod = '', $citizen = '', $ethnic_cod = '', $mar_cod = '', $transmem = '', $veteran = '', $releas_inf = '', $releas_dt = '', $div_cod = '', $dept_cod = '', $camp_cod = '', $level_ = '', $tuit_stat = '', $name_mem = '', $pin = '', $newpin = '', $deceased = '', $dec_date = '', $exam_id = '', $online_hld = '', $notpubname = '', $show_email = '', $show_phone = '', $show_addr = '', $show_wkphn = '', $excl_billing = '', $excl_mailing = '', $other_name = '', $fund_stat = '', $photo = '', $iped_stat = '', $operator = '' ) {
@@ -236,7 +242,7 @@ class biographic {
     /**
      * Updates a name record
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $photo
      * @param string $ssn
      * @param string $gender
@@ -282,7 +288,7 @@ class biographic {
      * @param $first_name
      * @param $last_name
      * @param $birthdate
-     * @param string $preferred
+     * @param string $preferred The persons preferred address, yes or no
      * @param string $st_addr
      * @param string $add_addr
      * @param string $add_add2
@@ -334,7 +340,7 @@ class biographic {
      * @param string $fund_stat
      * @param string $photo
      * @param string $iped_stat
-     * @param string $operator
+     * @param string $operator The persons unqiue ID adding or modifying the record. Please change the value
      * @param string $address_ce1
      * @param string $address_ce2
      * @param string $address_ce3
@@ -416,7 +422,7 @@ class biographic {
     /**
      * Updates a name record
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $mod_stat
      * @param string $first_name
      * @param string $last_name

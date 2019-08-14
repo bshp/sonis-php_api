@@ -25,6 +25,17 @@
  *
  */
 
+/**
+ * Sonis API Framework
+ *
+ * Test file for soapsql.cfc
+ *
+ * @file sql.sysvar.php
+ * @package Test
+ * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
+ */
 require __DIR__ . '/../config.php';
 
 /**

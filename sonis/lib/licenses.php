@@ -28,11 +28,15 @@
 /**
  * Class licenses
  *
- * A Person's License,
- * this is not a State or Government card,
- * but rather edu related licenses.
+ * Sonis API Framework
  *
+ * Component: licenses.cfc
+ *
+ * @file licenses.php
+ * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 class licenses {
 

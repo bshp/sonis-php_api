@@ -1,5 +1,4 @@
-<?php /** @noinspection PhpUndefinedClassInspection */
-
+<?php
 /**
  *
  * MIT License
@@ -26,6 +25,19 @@
  *
  */
 
+/**
+ * Class person
+ *
+ * Utilities
+ *
+ * Grouped functions related to a person
+ *
+ * @file person.php
+ * @package Utilities
+ * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
+ */
 class person {
 
     public function ethnic() {
@@ -43,5 +55,4 @@ class person {
     public function marital() {
         return true;
     }
-
 }

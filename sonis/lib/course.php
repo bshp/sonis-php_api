@@ -28,9 +28,15 @@
 /**
  * Class course
  *
- * Course related, for new moodle plugin
+ * Sonis API Framework
  *
+ * Component: crs_sec_list.cfc
+ *
+ * @file course.php
+ * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 class course {
 

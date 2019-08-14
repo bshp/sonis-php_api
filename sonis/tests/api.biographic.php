@@ -25,6 +25,17 @@
  *
  */
 
+/**
+ * Sonis API Framework
+ *
+ * Test file for soapapi.cfc, the biographic.cfc component
+ *
+ * @file api.biographic.php
+ * @package Test
+ * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
+ */
 require __DIR__ . '/../config.php';
 
 /**

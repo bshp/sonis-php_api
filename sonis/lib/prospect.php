@@ -28,12 +28,17 @@
 /**
  * Class prospect
  *
- * Related to a prospect record.
- * Interested person can fill out a form
- * and it be processed in Sonis by a staff
- * member for follow up.
+ * Sonis API Framework
  *
+ * Component: addps.cfc, addps_direct.cfc
+ *
+ * Usage: Add new prospect inquiry, update prospect
+ *
+ * @file prospect.php
+ * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 class prospect {
 

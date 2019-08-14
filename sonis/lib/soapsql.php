@@ -28,9 +28,17 @@
 /**
  * Class soapsql
  *
- * Functions related to the soapsql.cfc endpoint
+ * Sonis API Framework
  *
+ * Component: soapsql.cfc
+ *
+ * Usage: Call the SOAP SQL endpoint for requested data
+ *
+ * @file soapsql.php
+ * @package Core
  * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 class soapsql {
 

@@ -32,15 +32,15 @@
  */
 
 /**
- * Sonis API Framework Version
+ * Sonis API Framework
  *
  * Current version of the framework
  *
- * @file     version.php
- * @package  Sonis API
- * @author   Jason A. Everling <jason...@gmail.com>
- * @copyright  2016
- * @license    https://opensource.org/licenses/MIT
+ * @file version.php
+ * @package Sonis API
+ * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 
 $branch = 'stable'; // internal git branch

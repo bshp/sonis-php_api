@@ -25,6 +25,19 @@
  *
  */
 
+/**
+ * Class messages
+ *
+ * Utilities
+ *
+ * Messages related to various functions
+ *
+ * @file messages.php
+ * @package Utilities
+ * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
+ */
 class messages {
 
     /**

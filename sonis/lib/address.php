@@ -28,17 +28,23 @@
 /**
  * Class address
  *
- * Address related
+ * Sonis API Framework
  *
+ * Component: address.cfc
+ *
+ * @file address.php
+ * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 class address {
 
     /**
      * Add to an existing user record
      *
-     * @param string $soc_sec
-     * @param bool $preferred
+     * @param string $soc_sec The objects unique identifier
+     * @param string $preferred The persons preferred address, yes or no
      * @param string $st_addr
      * @param string $add_addr
      * @param string $add_add2
@@ -76,11 +82,11 @@ class address {
     /**
      * Search for an address
      *
-     * @param string $soc_sec
-     * @param string $preferred
+     * @param string $soc_sec The objects unique identifier
+     * @param string $preferred The persons preferred address, yes or no
      * @return array
      */
-    public static function addressSearch($soc_sec, $preferred = '') {
+    public static function addressSearch($soc_sec, $preferred) {
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['soc_sec', $soc_sec],
@@ -92,8 +98,8 @@ class address {
     /**
      * Insert a new address record
      *
-     * @param string $soc_sec
-     * @param bool $preferred
+     * @param string $soc_sec The objects unique identifier
+     * @param string $preferred The persons preferred address, yes or no
      * @param string $st_addr
      * @param string $add_addr
      * @param string $add_add2
@@ -107,7 +113,7 @@ class address {
      * @param string $work_phone
      * @param string $county_cod
      * @param string $country
-     * @param string $operator
+     * @param string $operator The persons unqiue ID adding or modifying the record. Please change the value
      * @return array
      */
     public static function insert_address($soc_sec, $preferred, $st_addr = '', $add_addr = '', $add_add2 = '', $city = '', $state = '', $zip = '', $phone = '', $cell_phone = '', $fax = '', $e_mail = '', $work_phone = '', $county_cod = '', $country = '', $operator = '' ) {
@@ -135,7 +141,7 @@ class address {
     /**
      * Update an existing address record
      *
-     * @param string $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @param string $add_add2
      * @param string $add_addr
      * @param string $cell_phone

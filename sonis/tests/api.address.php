@@ -25,6 +25,17 @@
  *
  */
 
+/**
+ * Sonis API Framework
+ *
+ * Test file for soapapi.cfc, the address.cfc component
+ *
+ * @file api.address.php
+ * @package Test
+ * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
+ */
 require __DIR__ . '/../config.php';
 
 /**
@@ -46,7 +57,7 @@ $returns = 'yes';
  * if set to 'no' then multiple arrays
  * will be returned
  *
- * @var string $preferred
+ * @var string $preferred The persons preferred address, yes or no
  */
 $preferred = 'yes';
 

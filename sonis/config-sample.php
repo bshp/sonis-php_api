@@ -25,6 +25,18 @@
  *
  */
 
+/**
+ * Sonis API Framework
+ *
+ * API configuration
+ *
+ * @file config.php
+ * @package Core
+ * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
+ */
+
 require __DIR__ . '/lib.php';
 
 global $cfg;  // Needed for PHPUnit

@@ -28,9 +28,15 @@
 /**
  * Class enrollment
  *
- * Enrollment related, for new moodle plugin
+ * Sonis API Framework
  *
+ * Component: enrollment.cfc
+ *
+ * @file enrollment.php
+ * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 class enrollment {
 

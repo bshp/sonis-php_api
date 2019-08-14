@@ -28,9 +28,17 @@
 /**
  * Class pagenotes
  *
- * Related to notes on different pages
+ * Sonis API Framework
  *
+ * Component: pagenote.cfc
+ *
+ * Usage: Notes on various pages throughout
+ *
+ * @file pagenotes.php
+ * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 class pagenotes {
 

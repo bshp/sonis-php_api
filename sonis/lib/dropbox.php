@@ -28,9 +28,15 @@
 /**
  * Class dropbox
  *
- * Fields with drop-downs and/or lookup
+ * Sonis API Framework
  *
+ * Component: drp_box.cfc
+ *
+ * @file dropbox.php
+ * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
+ * @copyright 2016
+ * @license https://opensource.org/licenses/MIT
  */
 class dropbox {
 
