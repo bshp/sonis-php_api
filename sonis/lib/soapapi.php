@@ -99,7 +99,7 @@ class soapapi {
         try {
             $result = new SoapClient($this->wsdl, $this->opts['soap']);
         } catch (Exception $exception) {
-            return ['error' => 'There was a problem with the call, SOAP Error: ' . $exception];
+            return ['error' => messages::msg_soap_client_error() . $exception];
         }
         return $result;
     }
