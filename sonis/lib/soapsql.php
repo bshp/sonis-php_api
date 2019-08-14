@@ -81,7 +81,7 @@ class soapsql {
         try {
             $call = new SoapClient($this->wsdl, $this->opts['soap']);
         } catch (Exception $exception) {
-            return ['error' => 'There was a problem with the call, SOAP Client Error: ' . $exception];
+            return ['error' => messages::msg_soap_client_error() . $exception];
         }
         $result = $call->__soapCall("doSQLSomething", $params);
         return $utils->utils_array_process($result);

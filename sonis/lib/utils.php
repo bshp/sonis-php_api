@@ -52,6 +52,23 @@ class utils {
     }
 
     /**
+     * Returns a dynamic message with
+     * trigger_error and/or can fail.
+     *
+     * @param string $msg
+     * @param bool $fail Is it fatal?
+     * @return mixed
+     * @link http://docs.php.net/manual/en/function.trigger-error.php
+     */
+    public function utils_event_error($msg, $fail) {
+        if (!$fail) {
+            return trigger_error($msg);
+        }
+        trigger_error($msg);
+        die();
+    }
+
+    /**
      * Convert given string $data to lowercase,
      * using strtolower
      *
@@ -126,10 +143,10 @@ class utils {
             if(is_string($array)) {
                 if (strpos($array, 'Error')) {
                     $this->utils_array_exception($array);
-                    trigger_error('An error has occurred, check the log for more details');
+                    $this->utils_event_error(messages::msg_array_error(), true);
                 } else {
                     $this->utils_array_exception($array);
-                    trigger_error('An undefined message was received');
+                    $this->utils_event_error(messages::msg_undefined_error(), false);
                 }
             } else {
                 $result = $array;

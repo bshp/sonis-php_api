@@ -17,6 +17,12 @@ PHP Extensions: php_soap and php_curl
 ## Configure
 Change the settings in section 1. in config-sample.php and then rename to config.php
 
+## Usage
+Using this framework inside your package you just need to include the loader, sonis.php,
+````
+require __DIR__ . '/sonis.php';
+````
+
 ## Notes 
 
 ##### _Values_:
