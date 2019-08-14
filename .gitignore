@@ -17,4 +17,5 @@ phpunit.xml
 composer.lock
 composer.phar
 config.php
-/behat.yml
+behat.yml
+docs/phpdoc*/
