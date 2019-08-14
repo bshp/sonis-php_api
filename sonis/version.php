@@ -36,7 +36,9 @@
  *
  * Current version of the framework
  *
- * @package    core
+ * @file     version.php
+ * @package  Sonis API
+ * @author   Jason A. Everling <jason...@gmail.com>
  * @copyright  2016
  * @license    https://opensource.org/licenses/MIT
  */
