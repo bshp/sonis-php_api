@@ -23,12 +23,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- *
- *    For Sonis Coldfusion Web Services
- *
- *    By: Jason A. Everling
- *    Email: jason...@gmail.com
- *
  */
 
 /**
@@ -162,7 +156,8 @@ class utils {
      * @param $keys
      * @param $values
      * @return array
-     * @link http://docs.php.net/manual/en/function.array-combine.php
+     * @link http://docs.php.net/manual/en/function.array-combine.php#118397
+     * @author welcome@el-mustafa.com
      */
     public function utils_array_combine($keys, $values) {
         $result = array();
