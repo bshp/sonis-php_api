@@ -41,8 +41,10 @@
 class onlineapp {
 
     /**
+     * Logon function for the online app
+     *
      * @param string $soc_sec The objects unique identifier
-     * @param string $pin
+     * @param string $pin Encrypted PIN using private key
      * @return array
      */
     public static function app_login($soc_sec, $pin) {
@@ -56,16 +58,18 @@ class onlineapp {
     }
 
     /**
-     * @param string $first_name
-     * @param string $last_name
-     * @param string $birthdate
-     * @param string $e_mail
-     * @param string $pin
-     * @param string $mi
-     * @param string $phone
+     * Creates a new online app and person if new into the nmoa table
+     *
+     * @param string $first_name The persons first name
+     * @param string $last_name The persons last name
+     * @param string $birthdate The persons birthday, such as 05/12/2001
+     * @param string $e_mail The primary email address for the record type
+     * @param string $pin Encrypted PIN using private key
+     * @param string $mi The persons middle initial, 1 character
+     * @param string $phone The persons phone number
      * @param int $citizen
-     * @param string $zip
-     * @param string $mod_stat
+     * @param string $zip The persons zip code
+     * @param string $mod_stat The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI
      * @return array
      */
     public static function create($first_name, $last_name, $birthdate, $e_mail, $pin, $mi = '', $phone = '', $citizen = 1, $zip = '', $mod_stat = '') {
@@ -87,10 +91,12 @@ class onlineapp {
     }
 
     /**
+     * Search for a given online applicant
+     *
      * @param string $firstname
      * @param string $lastname
-     * @param string $birthdate
-     * @param string $e_mail
+     * @param string $birthdate The persons birthday, such as 05/12/2001
+     * @param string $e_mail The primary email address for the record type
      * @return array
      */
     public static function search($firstname = '', $lastname = '', $birthdate = '', $e_mail = '') {
@@ -106,6 +112,8 @@ class onlineapp {
     }
 
     /**
+     * Insert a new online app question
+     *
      * @param string $soc_sec The objects unique identifier
      * @param string $fieldnames
      * @return array
@@ -122,6 +130,8 @@ class onlineapp {
     }
 
     /**
+     * Search for an online app question
+     *
      * @param string $soc_sec The objects unique identifier
      * @param string $column
      * @return array
@@ -137,6 +147,8 @@ class onlineapp {
     }
 
     /**
+     * The search format
+     *
      * @param string $soc_sec The objects unique identifier
      * @param string $oa_questions_row
      * @param string $oa_questions_col

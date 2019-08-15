@@ -136,7 +136,8 @@ class utils {
              * if it is not an array than we got an error
              * more than likely, but Sonis does not return
              * an error code, rather a whole lot of messy
-             * html strings.
+             * html strings. Search for exception/error if not
+             * return the string.
              *
              * @todo Figure out a way to handle these errors better
              */
@@ -145,8 +146,7 @@ class utils {
                     $this->utils_array_exception($array);
                     $this->utils_event_error(messages::msg_array_error(), true);
                 } else {
-                    $this->utils_array_exception($array);
-                    $this->utils_event_error(messages::msg_undefined_error(), false);
+                    $result = $array;
                 }
             } else {
                 $result = $array;
@@ -166,7 +166,7 @@ class utils {
      * @author welcome@el-mustafa.com
      */
     public function utils_array_combine($keys, $values) {
-        $result = array();
+        $result = [];
         foreach ($keys as $i => $k) {
             $result[$k][] = $values[$i];
         }
@@ -186,6 +186,40 @@ class utils {
      */
     public function utils_array_exception($array) {
         return error_log($array);
+    }
+
+    /**
+     * Creates an associative array from the
+     * given array($array).
+     *
+     * API results are in the form of
+     * array 0 = columns/keys, array 1 = data/values,
+     * this will create an associative array instead,
+     * [column/key] => value
+     *
+     * @param $array
+     * @return array
+     * @link http://docs.php.net/manual/en/function.is-array.php
+     */
+    public function utils_array_create_assoc($array) {
+        $result = [];
+        $convert = ((isset($array['data'])) && (is_array($array['data'])) && ($array['data'] != []));
+        if ($convert) {
+            foreach ($array['data'] as $row) {
+                $assoc = [];
+                $i = 0;
+                foreach ($array['columnList'] as $column) {
+                    $assoc[$column] = $row[$i++];
+                }
+                $result[] = $assoc;
+            }
+        }
+        if ($result == []) {
+            return ($array);
+        }
+        else {
+            return ($result);
+        }
     }
 
     /**
@@ -221,6 +255,42 @@ class utils {
      */
     public function utils_array_trim($array) {
         $result = array_map('trim', $array);
+        return $result;
+    }
+
+
+    /**
+     * Convert a given object($obj) to an array($result)
+     *
+     * Will take a given object($obj) and convert
+     * it to an array($result). If it already exists, it will
+     * just return the given object($obj).
+     *
+     * @param object $obj The object to create an array from
+     * @return array|object The converted object as an array
+     * @link http://docs.php.net/manual/en/function.is-array.php
+     * @link http://docs.php.net/manual/en/function.is-object.php
+     * @link http://docs.php.net/manual/en/function.array-keys.php
+     * @link http://docs.php.net/manual/en/function.get-object-vars.php
+     */
+    public function utils_obj_to_array($obj) {
+        $result = [];
+        if (!is_array($obj)) {
+            if (is_object($obj)) {
+                $keys = array_keys(get_object_vars($obj));
+            } else {
+                return $obj;
+            }
+        } else {
+            $keys = array_keys($obj);
+        }
+        foreach ($keys as $key) {
+            if (!is_array($obj)) {
+                $result[$key] = $this->utils_obj_to_array($obj->$key);
+            } else {
+                $result[$key] = $this->utils_obj_to_array($obj[$key]);
+            }
+        }
         return $result;
     }
 }

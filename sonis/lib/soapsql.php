@@ -42,8 +42,6 @@
  */
 class soapsql {
 
-    public $trace = false;
-
     /**
      * Decepticon Constructor
      */

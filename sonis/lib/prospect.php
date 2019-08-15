@@ -45,26 +45,26 @@ class prospect {
     /**
      * Inserts a new prospect/inquiry
      *
-     * @param string $last_name
-     * @param string $first_name
-     * @param string $mi
-     * @param string $st_addr
-     * @param string $add_addr
-     * @param string $add_add2
-     * @param string $city
-     * @param string $state
-     * @param string $zip
-     * @param string $country
-     * @param string $phone
-     * @param string $cell_phone
-     * @param string $nickname
-     * @param string $work_phone
-     * @param string $e_mail
+     * @param string $last_name The persons last name
+     * @param string $first_name The persons first name
+     * @param string $mi The persons middle initial, 1 character
+     * @param string $st_addr The persons street address
+     * @param string $add_addr The persons street address number, such as APT 101 or #101
+     * @param string $add_add2 Don't think we have ever used this one
+     * @param string $city The persons city
+     * @param string $state The persons state 2 character code such as TX for Texas
+     * @param string $zip The persons zip code
+     * @param string $country The 2 character code for country like US
+     * @param string $phone The persons phone number
+     * @param string $cell_phone The persons cell phone number
+     * @param string $nickname The persons preferred name
+     * @param string $work_phone The persons work phone number
+     * @param string $e_mail The primary email address for the record type
      * @param string $term_int
      * @param string $referby
      * @param string $enstat_cod
      * @param string $prg_cod
-     * @param string $camp_cod
+     * @param string $camp_cod The person's campus, in the form of the code
      * @param string $comments
      * @param string $snd_app
      * @param string $snd_brch
@@ -77,7 +77,7 @@ class prospect {
      * @param string $moved_dt
      * @param string $move2app
      * @param string $contact
-     * @param string $state_of_licensure
+     * @param string $state_of_licensure The persons state 2 character code such as TX for Texas where the license was granted
      * @param string $level_of_education
      * @param string $level_comp
      * @param string $hs_prereq
@@ -101,10 +101,10 @@ class prospect {
      * @param string $webps_ce2
      * @param string $webps_ce3
      * @param string $incomplete
-     * @param string $birthdate
-     * @param string $memo1
-     * @param string $memo2
-     * @param string $memo3
+     * @param string $birthdate The persons birthday, such as 05/12/2001
+     * @param string $memo1 Memo 1
+     * @param string $memo2 Memo 2
+     * @param string $memo3 Memo 3
      * @param string $areas_of_interest_rid
      * @param string $undergrd_attnd
      * @param string $undergrd_maj

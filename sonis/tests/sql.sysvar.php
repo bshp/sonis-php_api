@@ -68,3 +68,4 @@ $sql = "SELECT TOP 1 * FROM sysvar";
 $result = $stmt->run($sql);
 
 print_r($result);
+print_r('Sonis API Framework: ' . $release);

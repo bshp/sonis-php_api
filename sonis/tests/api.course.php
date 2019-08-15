@@ -43,7 +43,7 @@ require __DIR__ . '/../config.php';
  *
  * @var $method
  */
-$method = 'namesearch';
+$method = 'getprereq';
 
 /**
  * Is data is returned?
@@ -55,9 +55,9 @@ $returns = 'yes';
 /**
  * The object(s) primary key being retrieved
  *
- * @var $soc_sec
+ * @var $crs_id
  */
-$soc_sec = '000000000';
+$crs_id = '1406176753021710'; //This ID will more than likely need to be changed for your institution if running test.
 
 /**
  * All the arguments to send.
@@ -67,7 +67,7 @@ $soc_sec = '000000000';
  *
  * @var mixed $args
  */
-$args = biographic::namesearch($soc_sec);
+$args = course::getprereq($crs_id);
 
 /**
  * Start the API call process.

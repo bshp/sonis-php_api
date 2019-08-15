@@ -28,9 +28,9 @@
 /**
  * Sonis API Framework
  *
- * Test file for soapapi.cfc, the biographic.cfc component
+ * Test file for soapapi.cfc, the drp_box.cfc component
  *
- * @file api.biographic.php
+ * @file api.dropbox.php
  * @package Test
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
@@ -43,21 +43,14 @@ require __DIR__ . '/../config.php';
  *
  * @var $method
  */
-$method = 'namesearch';
+$method = 'marital_drop';
 
 /**
- * Is data is returned?
+ * Is data is returned, if dropbox set to 'no'
  *
  * @var $returns
  */
-$returns = 'yes';
-
-/**
- * The object(s) primary key being retrieved
- *
- * @var $soc_sec
- */
-$soc_sec = '000000000';
+$returns = 'no';
 
 /**
  * All the arguments to send.
@@ -67,7 +60,7 @@ $soc_sec = '000000000';
  *
  * @var mixed $args
  */
-$args = biographic::namesearch($soc_sec);
+$args = dropbox::marital_drop(true, false, false, true, true );
 
 /**
  * Start the API call process.
@@ -76,6 +69,12 @@ $args = biographic::namesearch($soc_sec);
  * @var mixed $request
  */
 $request = $api->run($method, $returns, $args);
-
-print_r($request);
-print_r('Sonis API Framework: ' . $release);
+?>
+<html>
+<body>
+<form>
+    <?php echo $request; ?>
+    <p><?php print_r('Sonis API Framework: ' . $release); ?> </p>
+</form>
+</body>
+</html>
