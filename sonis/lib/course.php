@@ -40,24 +40,71 @@
  */
 class course {
 
-    public static function getcoreq() {
-        return true;
+    /**
+     * @param $crs_id
+     * @return array
+     */
+    public static function getcoreq($crs_id) {
+        $params = [
+            ['crs_id', $crs_id],
+        ];
+        return $params;
     }
 
-    public static function getcreqs() {
-        return true;
+    /**
+     * @param $crs_id
+     * @return array
+     */
+    public static function getcreqs($crs_id) {
+        $params = [
+            ['crs_id', $crs_id],
+        ];
+        return $params;
     }
 
-    public static function getprereq() {
-        return true;
+    /**
+     * @param $crs_id
+     * @return array
+     */
+    public static function getprereq($crs_id) {
+        $params = [
+            ['crs_id', $crs_id],
+        ];
+        return $params;
     }
 
-    public static function getprereqco() {
-        return true;
+    /**
+     * @param $schyear
+     * @param $semlist
+     * @param string $camp_cod
+     * @return array
+     */
+    public static function getprereqco($schyear, $semlist, $camp_cod = '') {
+        $params = [
+            ['schyear', $schyear],
+            ['semlist', $semlist],
+            ['camp_cod', $camp_cod]
+        ];
+        return $params;
     }
 
-    public static function getresults() {
-        return true;
+    /**
+     * @param $schyear
+     * @param $semlist
+     * @param $curpage
+     * @param $camp_cod
+     * @param $search
+     * @return array
+     */
+    public static function getresults($schyear, $semlist, $curpage, $camp_cod, $search) {
+        $params = [
+            ['schyear', $schyear],
+            ['semlist', $semlist],
+            ['curpage', $curpage],
+            ['camp_cod', $camp_cod],
+            ['search', $search],
+        ];
+        return $params;
     }
 
 }
