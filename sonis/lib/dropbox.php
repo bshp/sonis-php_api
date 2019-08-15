@@ -41,7 +41,7 @@
 class dropbox {
 
     /**
-     * Provides a list of school years
+     * Provides an html list of school years
      *
      * @param string $value
      * @param boolean $allow_blank
@@ -64,7 +64,7 @@ class dropbox {
     }
 
     /**
-     * Provides a list of application terms
+     * Provides an html list of application terms
      *
      * @param string $value
      * @param boolean $allow_blank
@@ -85,7 +85,7 @@ class dropbox {
     }
 
     /**
-     * Provides a list of campus'
+     * Provides an html list of campus'
      *
      * @param boolean $hide_excludes
      * @param boolean $allow_blank
@@ -108,7 +108,7 @@ class dropbox {
     }
 
     /**
-     * Provides a list of countries
+     * Provides an html list of countries
      *
      * @param boolean $allow_blank
      * @param boolean $multi_select
@@ -128,7 +128,7 @@ class dropbox {
     }
 
     /**
-     * Provides a list of counties
+     * Provides an html list of counties
      *
      * @param boolean $allow_blank
      * @param boolean $multi_select
@@ -151,7 +151,7 @@ class dropbox {
     }
 
     /**
-     * Provides a list of degrees
+     * Provides an html list of degrees
      *
      * @param boolean $allow_blank
      * @param boolean $multi_select
@@ -170,7 +170,57 @@ class dropbox {
     }
 
     /**
-     * Provides a list of interest's
+     * Provides an html list of ethnicity's
+     *
+     * @param boolean $allow_blank
+     * @param boolean $multi_select
+     * @param boolean $hide
+     * @param boolean $desc_only
+     * @param string $value
+     * @param int $size
+     * @param boolean $cod_desc
+     * @return array
+     */
+    public static function ethnic_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
+        $params = [
+            ['allow_blank', $allow_blank],
+            ['multi_select', $multi_select],
+            ['hide', $hide],
+            ['value', $value],
+            ['size', $size],
+            ['cod_desc', $cod_desc],
+            ['desc_only', $desc_only],
+        ];
+        return $params;
+    }
+
+    /**
+     * Provides an html list of genders
+     *
+     * @param boolean $allow_blank
+     * @param boolean $multi_select
+     * @param boolean $hide
+     * @param boolean $desc_only
+     * @param string $value
+     * @param int $size
+     * @param boolean $cod_desc
+     * @return array
+     */
+    public static function gender_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
+        $params = [
+            ['allow_blank', $allow_blank],
+            ['multi_select', $multi_select],
+            ['hide', $hide],
+            ['value', $value],
+            ['size', $size],
+            ['cod_desc', $cod_desc],
+            ['desc_only', $desc_only],
+        ];
+        return $params;
+    }
+
+    /**
+     * Provides an html list of interest's
      *
      * @param boolean $allow_blank
      * @param boolean $multi_select
@@ -190,7 +240,32 @@ class dropbox {
     }
 
     /**
-     * Provides a list of state's
+     * Provides an html list of licenses
+     *
+     * @param boolean $allow_blank
+     * @param boolean $multi_select
+     * @param boolean $hide
+     * @param boolean $desc_only
+     * @param string $value
+     * @param int $size
+     * @param boolean $cod_desc
+     * @return array
+     */
+    public static function licenses_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
+        $params = [
+            ['allow_blank', $allow_blank],
+            ['multi_select', $multi_select],
+            ['hide', $hide],
+            ['value', $value],
+            ['size', $size],
+            ['cod_desc', $cod_desc],
+            ['desc_only', $desc_only],
+        ];
+        return $params;
+    }
+
+    /**
+     * Provides an html list of state's
      *
      * @param boolean $allow_blank
      * @param boolean $multi_select
@@ -209,7 +284,7 @@ class dropbox {
     }
 
     /**
-     * Provides a list of programs
+     * Provides an html list of programs
      *
      * @param boolean $hide_excludes
      * @param boolean $allow_blank
@@ -225,6 +300,31 @@ class dropbox {
             ['hide', $hide],
             ['Additional_Properties', $Additional_Properties],
             ['hide_excludes', $hide_excludes]
+        ];
+        return $params;
+    }
+
+    /**
+     * Provides an html list of martial status'
+     *
+     * @param boolean $allow_blank
+     * @param boolean $multi_select
+     * @param boolean $hide
+     * @param boolean $desc_only
+     * @param string $value
+     * @param int $size
+     * @param boolean $cod_desc
+     * @return array
+     */
+    public static function marital_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
+        $params = [
+            ['allow_blank', $allow_blank],
+            ['multi_select', $multi_select],
+            ['hide', $hide],
+            ['value', $value],
+            ['size', $size],
+            ['cod_desc', $cod_desc],
+            ['desc_only', $desc_only],
         ];
         return $params;
     }

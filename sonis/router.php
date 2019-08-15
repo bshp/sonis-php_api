@@ -77,6 +77,9 @@ $rtr_comp_dropbox = [
     'state',
     'program',
     'marital_drop',
+    'ethnic_drop',
+    'gender_drop',
+    'licenses_drop',
 ];
 
 $rtr_comp_education = [
@@ -140,8 +143,14 @@ if (in_array($method, $rtr_comp_course)) {
 }
 
 if (in_array($method, $rtr_comp_dropbox)) {
-    if ($method = 'marital_drop') {
+    if ($method == 'marital_drop') {
         $comp = 'marital';
+    } else if ($method == 'ethnic_drop') {
+        $comp = 'ethnic';
+    } else if ($method == 'gender_drop') {
+        $comp = 'gender';
+    } else if ($method == 'licenses_drop') {
+        $comp = 'licenses';
     } else {
         $comp = 'drp_box';
     }
