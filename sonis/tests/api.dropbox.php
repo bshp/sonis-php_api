@@ -74,6 +74,7 @@ $request = $api->run($method, $returns, $args);
 <body>
 <form>
     <?php echo $request; ?>
+    <p><?php print_r('Sonis API Framework: ' . $release); ?> </p>
 </form>
 </body>
 </html>

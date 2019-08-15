@@ -78,3 +78,4 @@ $args = biographic::namesearch($soc_sec);
 $request = $api->run($method, $returns, $args);
 
 print_r($request);
+print_r('Sonis API Framework: ' . $release);
