@@ -43,15 +43,15 @@ class dropbox {
     /**
      * Provides a list of school years
      *
-     * @param $value
-     * @param string $allow_blank
-     * @param string $multi_select
-     * @param string $hide
-     * @param string $size
-     * @param string $use_cur_schyr
+     * @param string $value
+     * @param boolean $allow_blank
+     * @param boolean $multi_select
+     * @param boolean $hide
+     * @param integer $size
+     * @param boolean $use_cur_schyr
      * @return array
      */
-    public static function sch_yr($value, $allow_blank = '', $multi_select = '', $hide = '', $size = '', $use_cur_schyr = '') {
+    public static function sch_yr($value, $allow_blank, $multi_select, $hide, $size, $use_cur_schyr) {
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],
@@ -66,14 +66,14 @@ class dropbox {
     /**
      * Provides a list of application terms
      *
-     * @param $value
-     * @param string $allow_blank
-     * @param string $multi_select
-     * @param string $hide
+     * @param string $value
+     * @param boolean $allow_blank
+     * @param boolean $multi_select
+     * @param boolean $hide
      * @param string $Additional_Properties
      * @return array
      */
-    public static function app_term($value, $allow_blank = '', $multi_select = '', $hide = '', $Additional_Properties = '') {
+    public static function app_term($value, $allow_blank, $multi_select, $hide, $Additional_Properties) {
         $params = [
             ['value_', $value],
             ['allow_blank', $allow_blank],
@@ -87,15 +87,15 @@ class dropbox {
     /**
      * Provides a list of campus'
      *
-     * @param $hide_excludes
-     * @param string $allow_blank
-     * @param string $multi_select
-     * @param string $hide
+     * @param boolean $hide_excludes
+     * @param boolean $allow_blank
+     * @param boolean $multi_select
+     * @param boolean $hide
      * @param string $value
      * @param string $Additional_Properties
      * @return array
      */
-    public static function campus($hide_excludes, $allow_blank = '', $multi_select = '', $hide = '', $value = '', $Additional_Properties = '') {
+    public static function campus($hide_excludes, $allow_blank, $multi_select, $hide, $value, $Additional_Properties) {
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],
@@ -110,13 +110,13 @@ class dropbox {
     /**
      * Provides a list of countries
      *
-     * @param string $allow_blank
-     * @param string $multi_select
-     * @param string $hide
+     * @param boolean $allow_blank
+     * @param boolean $multi_select
+     * @param boolean $hide
      * @param string $Additional_Properties
      * @return array
      */
-    public static function country($allow_blank = '', $multi_select = '', $hide = '', $Additional_Properties = '') {
+    public static function country($allow_blank, $multi_select, $hide, $Additional_Properties) {
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],
@@ -130,15 +130,15 @@ class dropbox {
     /**
      * Provides a list of counties
      *
-     * @param string $allow_blank
-     * @param string $multi_select
-     * @param string $hide
+     * @param boolean $allow_blank
+     * @param boolean $multi_select
+     * @param boolean $hide
      * @param string $Additional_Properties
      * @param string $value
-     * @param string $disp_only
+     * @param boolean $disp_only
      * @return array
      */
-    public static function county($allow_blank = '', $multi_select = '', $hide = '', $Additional_Properties = '', $value = '', $disp_only = '') {
+    public static function county($allow_blank, $multi_select, $hide, $Additional_Properties, $value, $disp_only) {
         $params = [
             ['value_', $value],
             ['allow_blank', $allow_blank],
@@ -153,13 +153,13 @@ class dropbox {
     /**
      * Provides a list of degrees
      *
-     * @param string $allow_blank
-     * @param string $multi_select
-     * @param string $hide
+     * @param boolean $allow_blank
+     * @param boolean $multi_select
+     * @param boolean $hide
      * @param string $Additional_Properties
      * @return array
      */
-    public static function degree($allow_blank = '', $multi_select = '', $hide = '', $Additional_Properties = '') {
+    public static function degree($allow_blank, $multi_select, $hide, $Additional_Properties) {
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],
@@ -172,13 +172,13 @@ class dropbox {
     /**
      * Provides a list of interest's
      *
-     * @param string $allow_blank
-     * @param string $multi_select
-     * @param string $hide
+     * @param boolean $allow_blank
+     * @param boolean $multi_select
+     * @param boolean $hide
      * @param string $Additional_Properties
      * @return array
      */
-    public static function interest($allow_blank = '', $multi_select = '', $hide = '', $Additional_Properties = '') {
+    public static function interest($allow_blank, $multi_select, $hide, $Additional_Properties) {
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],
@@ -192,13 +192,13 @@ class dropbox {
     /**
      * Provides a list of state's
      *
-     * @param string $allow_blank
-     * @param string $multi_select
-     * @param string $hide
+     * @param boolean $allow_blank
+     * @param boolean $multi_select
+     * @param boolean $hide
      * @param string $Additional_Properties
      * @return array
      */
-    public static function state($allow_blank = '', $multi_select = '', $hide = '', $Additional_Properties = '') {
+    public static function state($allow_blank, $multi_select, $hide, $Additional_Properties) {
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],
@@ -211,14 +211,14 @@ class dropbox {
     /**
      * Provides a list of programs
      *
-     * @param $hide_excludes
-     * @param string $allow_blank
-     * @param string $multi_select
-     * @param string $hide
+     * @param boolean $hide_excludes
+     * @param boolean $allow_blank
+     * @param boolean $multi_select
+     * @param boolean $hide
      * @param string $Additional_Properties
      * @return array
      */
-    public static function program($hide_excludes, $allow_blank = '', $multi_select = '', $hide = '', $Additional_Properties = '') {
+    public static function program($hide_excludes, $allow_blank, $multi_select, $hide, $Additional_Properties) {
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],

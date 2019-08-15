@@ -60,7 +60,7 @@ $returns = 'no';
  *
  * @var mixed $args
  */
-$args = dropbox::program(true, false, false, false);
+$args = dropbox::program(true, true, false, false, '');
 
 /**
  * Start the API call process.
