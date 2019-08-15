@@ -136,7 +136,8 @@ class utils {
              * if it is not an array than we got an error
              * more than likely, but Sonis does not return
              * an error code, rather a whole lot of messy
-             * html strings.
+             * html strings. Search for exception/error if not
+             * return the string.
              *
              * @todo Figure out a way to handle these errors better
              */
@@ -145,8 +146,7 @@ class utils {
                     $this->utils_array_exception($array);
                     $this->utils_event_error(messages::msg_array_error(), true);
                 } else {
-                    $this->utils_array_exception($array);
-                    $this->utils_event_error(messages::msg_undefined_error(), false);
+                    $result = $array;
                 }
             } else {
                 $result = $array;
