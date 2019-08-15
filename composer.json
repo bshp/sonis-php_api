@@ -16,7 +16,8 @@
     "ext-curl": "*",
     "ext-intl": "*",
     "jms/serializer": "1.7.*",
-    "phpdocumentor/phpdocumentor" : "2.*"
+    "phpdocumentor/phpdocumentor" : "2.*",
+    "evert/phpdoc-md" : "~0.2.0"
   },
   "require-dev": {
     "php": ">=7.0.0",
@@ -25,6 +26,7 @@
     "ext-intl": "*",
     "jms/serializer": "1.7.*",
     "phpdocumentor/phpdocumentor" : "2.*",
+    "evert/phpdoc-md" : "~0.2.0",
     "phpunit/phpunit": ">=6.0 <8.0"
   }
 }
