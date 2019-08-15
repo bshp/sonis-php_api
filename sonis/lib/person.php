@@ -40,19 +40,7 @@
  */
 class person {
 
-    public function ethnic() {
-        return true;
-    }
-
-    public function gender() {
-        return true;
-    }
-
-    public function licenses() {
-        return true;
-    }
-
-    public function marital() {
+    public function bio() {
         return true;
     }
 }
