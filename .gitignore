@@ -19,3 +19,4 @@ composer.phar
 config.php
 behat.yml
 docs/phpdoc*/
+docs/wiki/
