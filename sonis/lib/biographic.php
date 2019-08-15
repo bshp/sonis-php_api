@@ -152,7 +152,7 @@ class biographic {
      * @param string $ssn The persons ssn
      * @param string $old_ssn The persons previously recorded ssn
      * @param string $affiliation_cod The persons affiliation status code
-     * @param bool $citizen If the person is a citizen, true or false
+     * @param string $citizen If the person is a citizen, true or false
      * @param string $ethnic_cod If the persons ethnicity code
      * @param string $mar_cod If the persons marrital code
      * @param string $transmem If the persons transfer memo
@@ -251,7 +251,7 @@ class biographic {
      * @param string $mod_stat The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI
      * @param string $acadstat_cod
      * @param string $affiliation_cod The persons affiliation status code
-     * @param bool $citizen If the person is a citizen, true or false
+     * @param string $citizen If the person is a citizen, true or false
      * @param string $mar_cod If the persons marrital code
      * @param string $veteran true or false if a veteran
      * @param string $deceased true or false if deceased
@@ -311,7 +311,7 @@ class biographic {
      * @param string $gender The persons gender, M or F
      * @param string $ssn The persons ssn
      * @param string $affiliation_cod The persons affiliation status code
-     * @param bool $citizen If the person is a citizen, true or false
+     * @param string $citizen If the person is a citizen, true or false
      * @param string $ethnic_cod If the persons ethnicity code
      * @param string $mar_cod If the persons marrital code
      * @param string $transmem If the persons transfer memo
