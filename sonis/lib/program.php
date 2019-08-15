@@ -92,10 +92,10 @@ class program {
      *
      * @param string $soc_sec The objects unique identifier
      * @param string $d_soc_sec
-     * @param string $camp_cod
+     * @param string $camp_cod The person's campus, in the form of the code
      * @param string $entry_date
      * @param string $prg_cod
-     * @param string $div_cod
+     * @param string $div_cod The person's division, in the form of the code
      * @param string $app_date
      * @param string $ack_date
      * @param string $trans_date

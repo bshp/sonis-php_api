@@ -40,6 +40,9 @@
  */
 class enrollment {
 
+    /**
+     * @return bool
+     */
     public static function placeholder() {
         return true;
     }

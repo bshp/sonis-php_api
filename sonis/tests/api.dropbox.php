@@ -3,7 +3,7 @@
  *
  * MIT License
  *
- * Copyright (c) 2019 Jason A. Everling
+ * Copyright (c) 2016 Jason A. Everling
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,27 +23,57 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- *
- *    For Sonis Coldfusion Web Services
- *
- *    By: Jason A. Everling
- *    Email: je...@bshp.edu
- *
  */
 
 /**
  * Sonis API Framework
  *
- * Current version of the framework
+ * Test file for soapapi.cfc, the drp_box.cfc component
  *
- * @file version.php
- * @package Sonis API
+ * @file api.dropbox.php
+ * @package Test
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
+require __DIR__ . '/../config.php';
 
-$branch = 'stable'; // internal git branch
-$version = 1.2; // do not change
-$patch = 3; // do not change
-$release = 'v' . $version . '.' . $patch;
+/**
+ * The method within the component
+ *
+ * @var $method
+ */
+$method = 'program';
+
+/**
+ * Is data is returned, if dropbox set to 'no'
+ *
+ * @var $returns
+ */
+$returns = 'no';
+
+/**
+ * All the arguments to send.
+ *
+ * Required format:
+ * $args = class::function(all your variables)
+ *
+ * @var mixed $args
+ */
+$args = dropbox::program(true, true, false, false, '');
+
+/**
+ * Start the API call process.
+ * Almost every call will look like this.
+ *
+ * @var mixed $request
+ */
+$request = $api->run($method, $returns, $args);
+?>
+<html>
+<body>
+<form>
+    <?php echo $request; ?>
+</form>
+</body>
+</html>

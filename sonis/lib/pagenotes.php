@@ -56,6 +56,8 @@ class pagenotes {
     }
 
     /**
+     * The bottom page note
+     *
      * @param string $pagenote_cod
      * @return array
      */
