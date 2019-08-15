@@ -41,7 +41,9 @@
 class course {
 
     /**
-     * @param $crs_id
+     * Get course core requisites
+     *
+     * @param integer $crs_id The course id
      * @return array
      */
     public static function getcoreq($crs_id) {
@@ -52,7 +54,9 @@ class course {
     }
 
     /**
-     * @param $crs_id
+     * Get course requisites
+     *
+     * @param integer $crs_id The course id
      * @return array
      */
     public static function getcreqs($crs_id) {
@@ -63,7 +67,9 @@ class course {
     }
 
     /**
-     * @param $crs_id
+     * Get course pre-reqs
+     *
+     * @param integer $crs_id The course id
      * @return array
      */
     public static function getprereq($crs_id) {
@@ -74,9 +80,11 @@ class course {
     }
 
     /**
-     * @param $schyear
-     * @param $semlist
-     * @param string $camp_cod
+     * Get course core pre-reqs
+     *
+     * @param integer $schyear The school year in yyyyyy format, 201718
+     * @param integer $semlist The semester, i.e 1,2,3,4..
+     * @param string $camp_cod The campus code
      * @return array
      */
     public static function getprereqco($schyear, $semlist, $camp_cod = '') {
@@ -87,24 +95,4 @@ class course {
         ];
         return $params;
     }
-
-    /**
-     * @param $schyear
-     * @param $semlist
-     * @param $curpage
-     * @param $camp_cod
-     * @param $search
-     * @return array
-     */
-    public static function getresults($schyear, $semlist, $curpage, $camp_cod, $search) {
-        $params = [
-            ['schyear', $schyear],
-            ['semlist', $semlist],
-            ['curpage', $curpage],
-            ['camp_cod', $camp_cod],
-            ['search', $search],
-        ];
-        return $params;
-    }
-
 }

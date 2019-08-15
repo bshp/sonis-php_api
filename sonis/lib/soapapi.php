@@ -94,6 +94,9 @@ class soapapi {
     /**
      * Set SOAP client config
      *
+     * Configurations can be set within config.php
+     * $cfg->opts section.
+     *
      * @return array|SoapClient
      */
     protected function soapConfig() {
@@ -106,7 +109,11 @@ class soapapi {
     }
 
     /**
-     * Make the SOAP call and send output to decrapifier
+     * Make the SOAP call and send output to array processor
+     *
+     * This will make the actual SOAP request and then send
+     * to the array processor to try and cleanup before returning
+     * the results to the output controller
      *
      * @param string $method the method within the component
      * @param string $returns yes or no if returns data

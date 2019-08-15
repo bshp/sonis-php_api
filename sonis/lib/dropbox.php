@@ -43,12 +43,12 @@ class dropbox {
     /**
      * Provides an html list of school years
      *
-     * @param string $value
-     * @param boolean $allow_blank
-     * @param boolean $multi_select
-     * @param boolean $hide
-     * @param integer $size
-     * @param boolean $use_cur_schyr
+     * @param string $value a value for the dropbox
+     * @param boolean $allow_blank Allow blank values, true or false
+     * @param boolean $multi_select Create mutli-select html box, true or false
+     * @param boolean $hide Hide this dropdown by default, true or false
+     * @param integer $size Unsure really, testing shows no change, defaults to '3'
+     * @param boolean $use_cur_schyr True or false, use the current school year on sysvars, defaults to true
      * @return array
      */
     public static function sch_yr($value, $allow_blank, $multi_select, $hide, $size, $use_cur_schyr) {
@@ -66,11 +66,11 @@ class dropbox {
     /**
      * Provides an html list of application terms
      *
-     * @param string $value
-     * @param boolean $allow_blank
-     * @param boolean $multi_select
-     * @param boolean $hide
-     * @param string $Additional_Properties
+     * @param string $value a value for the dropbox
+     * @param boolean $allow_blank Allow blank values, true or false
+     * @param boolean $multi_select Create mutli-select html box, true or false
+     * @param boolean $hide Hide this dropdown by default, true or false
+     * @param string $Additional_Properties Additional props
      * @return array
      */
     public static function app_term($value, $allow_blank, $multi_select, $hide, $Additional_Properties) {
@@ -87,12 +87,12 @@ class dropbox {
     /**
      * Provides an html list of campus'
      *
-     * @param boolean $hide_excludes
-     * @param boolean $allow_blank
-     * @param boolean $multi_select
-     * @param boolean $hide
-     * @param string $value
-     * @param string $Additional_Properties
+     * @param boolean $hide_excludes Hide excluded values as set in Sonis, true or false
+     * @param boolean $allow_blank Allow blank values, true or false
+     * @param boolean $multi_select Create mutli-select html box, true or false
+     * @param boolean $hide Hide this dropdown by default, true or false
+     * @param string $value a value for the dropbox
+     * @param string $Additional_Properties Additional props
      * @return array
      */
     public static function campus($hide_excludes, $allow_blank, $multi_select, $hide, $value, $Additional_Properties) {
@@ -110,10 +110,10 @@ class dropbox {
     /**
      * Provides an html list of countries
      *
-     * @param boolean $allow_blank
-     * @param boolean $multi_select
-     * @param boolean $hide
-     * @param string $Additional_Properties
+     * @param boolean $allow_blank Allow blank values, true or false
+     * @param boolean $multi_select Create mutli-select html box, true or false
+     * @param boolean $hide Hide this dropdown by default, true or false
+     * @param string $Additional_Properties Additional props
      * @return array
      */
     public static function country($allow_blank, $multi_select, $hide, $Additional_Properties) {
@@ -130,12 +130,12 @@ class dropbox {
     /**
      * Provides an html list of counties
      *
-     * @param boolean $allow_blank
-     * @param boolean $multi_select
-     * @param boolean $hide
-     * @param string $Additional_Properties
-     * @param string $value
-     * @param boolean $disp_only
+     * @param boolean $allow_blank Allow blank values, true or false
+     * @param boolean $multi_select Create mutli-select html box, true or false
+     * @param boolean $hide Hide this dropdown by default, true or false
+     * @param string $Additional_Properties Additional props
+     * @param string $value a value for the dropbox
+     * @param boolean $disp_only True or false if editable
      * @return array
      */
     public static function county($allow_blank, $multi_select, $hide, $Additional_Properties, $value, $disp_only) {
@@ -153,10 +153,10 @@ class dropbox {
     /**
      * Provides an html list of degrees
      *
-     * @param boolean $allow_blank
-     * @param boolean $multi_select
-     * @param boolean $hide
-     * @param string $Additional_Properties
+     * @param boolean $allow_blank Allow blank values, true or false
+     * @param boolean $multi_select Create mutli-select html box, true or false
+     * @param boolean $hide Hide this dropdown by default, true or false
+     * @param string $Additional_Properties Additional props
      * @return array
      */
     public static function degree($allow_blank, $multi_select, $hide, $Additional_Properties) {
@@ -172,13 +172,13 @@ class dropbox {
     /**
      * Provides an html list of ethnicity's
      *
-     * @param boolean $allow_blank
-     * @param boolean $multi_select
-     * @param boolean $hide
-     * @param boolean $desc_only
-     * @param string $value
-     * @param int $size
-     * @param boolean $cod_desc
+     * @param boolean $allow_blank Allow blank values, true or false
+     * @param boolean $multi_select Create mutli-select html box, true or false
+     * @param boolean $hide Hide this dropdown by default, true or false
+     * @param boolean $desc_only Unsure really, testing shows no change
+     * @param string $value a value for the dropbox
+     * @param integer $size Unsure really, testing shows no change
+     * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
     public static function ethnic_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
@@ -197,13 +197,13 @@ class dropbox {
     /**
      * Provides an html list of genders
      *
-     * @param boolean $allow_blank
-     * @param boolean $multi_select
-     * @param boolean $hide
-     * @param boolean $desc_only
-     * @param string $value
-     * @param int $size
-     * @param boolean $cod_desc
+     * @param boolean $allow_blank Allow blank values, true or false
+     * @param boolean $multi_select Create mutli-select html box, true or false
+     * @param boolean $hide Hide this dropdown by default, true or false
+     * @param boolean $desc_only Unsure really, testing shows no change
+     * @param string $value a value for the dropbox
+     * @param integer $size Unsure really, testing shows no change
+     * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
     public static function gender_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
@@ -222,10 +222,10 @@ class dropbox {
     /**
      * Provides an html list of interest's
      *
-     * @param boolean $allow_blank
-     * @param boolean $multi_select
-     * @param boolean $hide
-     * @param string $Additional_Properties
+     * @param boolean $allow_blank Allow blank values, true or false
+     * @param boolean $multi_select Create mutli-select html box, true or false
+     * @param boolean $hide Hide this dropdown by default, true or false
+     * @param string $Additional_Properties Additional props
      * @return array
      */
     public static function interest($allow_blank, $multi_select, $hide, $Additional_Properties) {
@@ -242,13 +242,13 @@ class dropbox {
     /**
      * Provides an html list of licenses
      *
-     * @param boolean $allow_blank
-     * @param boolean $multi_select
-     * @param boolean $hide
-     * @param boolean $desc_only
-     * @param string $value
-     * @param int $size
-     * @param boolean $cod_desc
+     * @param boolean $allow_blank Allow blank values, true or false
+     * @param boolean $multi_select Create mutli-select html box, true or false
+     * @param boolean $hide Hide this dropdown by default, true or false
+     * @param boolean $desc_only Unsure really, testing shows no change
+     * @param string $value a value for the dropbox
+     * @param integer $size Unsure really, testing shows no change
+     * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
     public static function licenses_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
@@ -267,10 +267,10 @@ class dropbox {
     /**
      * Provides an html list of state's
      *
-     * @param boolean $allow_blank
-     * @param boolean $multi_select
-     * @param boolean $hide
-     * @param string $Additional_Properties
+     * @param boolean $allow_blank Allow blank values, true or false
+     * @param boolean $multi_select Create mutli-select html box, true or false
+     * @param boolean $hide Hide this dropdown by default, true or false
+     * @param string $Additional_Properties Additional props
      * @return array
      */
     public static function state($allow_blank, $multi_select, $hide, $Additional_Properties) {
@@ -286,11 +286,11 @@ class dropbox {
     /**
      * Provides an html list of programs
      *
-     * @param boolean $hide_excludes
-     * @param boolean $allow_blank
-     * @param boolean $multi_select
-     * @param boolean $hide
-     * @param string $Additional_Properties
+     * @param boolean $hide_excludes Hide excluded values as set in Sonis, true or false
+     * @param boolean $allow_blank Allow blank values, true or false
+     * @param boolean $multi_select Create mutli-select html box, true or false
+     * @param boolean $hide Hide this dropdown by default, true or false
+     * @param string $Additional_Properties Additional props
      * @return array
      */
     public static function program($hide_excludes, $allow_blank, $multi_select, $hide, $Additional_Properties) {
@@ -307,13 +307,13 @@ class dropbox {
     /**
      * Provides an html list of martial status'
      *
-     * @param boolean $allow_blank
-     * @param boolean $multi_select
-     * @param boolean $hide
-     * @param boolean $desc_only
-     * @param string $value
-     * @param int $size
-     * @param boolean $cod_desc
+     * @param boolean $allow_blank Allow blank values, true or false
+     * @param boolean $multi_select Create mutli-select html box, true or false
+     * @param boolean $hide Hide this dropdown by default, true or false
+     * @param boolean $desc_only Unsure really, testing shows no change
+     * @param string $value a value for the dropbox
+     * @param integer $size Unsure really, testing shows no change
+     * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
     public static function marital_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
