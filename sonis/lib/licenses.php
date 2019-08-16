@@ -43,7 +43,7 @@ class licenses {
     /**
      * Deletes a persons license
      *
-     * @param $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @return array
      */
     public static function delete_license($soc_sec) {
@@ -57,13 +57,13 @@ class licenses {
     /**
      * Inserts a persons license
      *
-     * @param $soc_sec
-     * @param $license
-     * @param $lic_no
-     * @param $date_rec
-     * @param $date_exp
-     * @param string $lic_mem
-     * @param string $d_soc_sec
+     * @param string $soc_sec The objects unique identifier
+     * @param string $license The persons license (not dirvers license)
+     * @param string $lic_no The persons license number (not dirvers license)
+     * @param string $date_rec The persons license date received (mm/dd/yyyy)
+     * @param string $date_exp The persons license date expires (mm/dd/yyyy)
+     * @param string $lic_mem The persons license memo
+     * @param string $d_soc_sec The objects unique identifier
      * @return array
      */
     public static function insert_license($soc_sec, $license, $lic_no, $date_rec, $date_exp, $lic_mem = '', $d_soc_sec = '') {
@@ -83,8 +83,8 @@ class licenses {
     /**
      * Search for a persons license
      *
-     * @param $soc_sec
-     * @param string $license
+     * @param string $soc_sec The objects unique identifier
+     * @param string $license The persons license (not dirvers license)
      * @return array
      */
     public static function search($soc_sec, $license = '') {
@@ -99,13 +99,13 @@ class licenses {
     /**
      * Update a persons given license
      *
-     * @param $soc_sec
-     * @param $license
-     * @param string $lic_no
-     * @param string $date_rec
-     * @param string $date_exp
-     * @param string $lic_mem
-     * @param string $d_soc_sec
+     * @param string $soc_sec The objects unique identifier
+     * @param $license The persons license
+     * @param string $lic_no The persons license number (not dirvers license)
+     * @param string $date_rec The persons license date received (mm/dd/yyyy)
+     * @param string $date_exp The persons license date expires (mm/dd/yyyy)
+     * @param string $lic_mem The persons license memo
+     * @param string $d_soc_sec The objects unique identifier
      * @param string $lic_rid
      * @return array
      */

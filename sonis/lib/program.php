@@ -91,10 +91,10 @@ class program {
      * Insert a program record
      *
      * @param string $soc_sec The objects unique identifier
-     * @param string $d_soc_sec
+     * @param string $d_soc_sec The objects unique identifier
      * @param string $camp_cod The person's campus, in the form of the code
      * @param string $entry_date
-     * @param string $prg_cod
+     * @param string $prg_cod Program code
      * @param string $div_cod The person's division, in the form of the code
      * @param string $app_date
      * @param string $ack_date
@@ -111,8 +111,8 @@ class program {
      * @param string $acknowledg
      * @param string $sms_trans
      * @param string $matric_fee
-     * @param string $degree_ap
-     * @param string $degree_ac
+     * @param string $degree_ap Degree applied
+     * @param string $degree_ac Degree accepted
      * @param string $major_ap
      * @param string $major_ac
      * @param string $time_maint
@@ -162,7 +162,7 @@ class program {
      * Prevent repeats update
      *
      * @param string $soc_sec The objects unique identifier
-     * @param string $prg_cod
+     * @param string $prg_cod Program code
      * @return array
      */
     public static function preventrepeats($soc_sec, $prg_cod) {

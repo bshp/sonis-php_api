@@ -67,7 +67,7 @@ class onlineapp {
      * @param string $pin Encrypted PIN using private key
      * @param string $mi The persons middle initial, 1 character
      * @param string $phone The persons phone number
-     * @param int $citizen
+     * @param integer $citizen
      * @param string $zip The persons zip code
      * @param string $mod_stat The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI
      * @return array
@@ -152,7 +152,7 @@ class onlineapp {
      * @param string $soc_sec The objects unique identifier
      * @param string $oa_questions_row
      * @param string $oa_questions_col
-     * @param int $oa_section_rid
+     * @param integer $oa_section_rid
      * @return array
      */
     public static function oa_questions_search_format($soc_sec, $oa_questions_row = '', $oa_questions_col = '', $oa_section_rid = 1) {

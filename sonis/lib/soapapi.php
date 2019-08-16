@@ -72,7 +72,7 @@ class soapapi {
     /**
      * Simple check for the api endpoint
      *
-     * @return bool Returns true or false if endpoint is up
+     * @return boolean Returns true or false if endpoint is up
      */
     public function apiUp() {
         $ch = curl_init($this->wsdl);

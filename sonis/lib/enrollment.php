@@ -41,7 +41,7 @@
 class enrollment {
 
     /**
-     * @return bool
+     * @return boolean
      */
     public static function placeholder() {
         return true;

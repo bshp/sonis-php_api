@@ -44,7 +44,7 @@ class education {
      * Deletes an education record
      *
      * @param string $soc_sec The objects unique identifier
-     * @param string $edu_rid
+     * @param string $edu_rid Edu record id
      * @return array
      */
     public static function delete_education($soc_sec, $edu_rid) {
@@ -61,7 +61,7 @@ class education {
      * Search for an education record
      *
      * @param string $soc_sec The objects unique identifier
-     * @param string $edu_rid
+     * @param string $edu_rid Edu record id
      * @return array
      */
     public static function eduSearch($soc_sec, $edu_rid = '') {
@@ -76,7 +76,7 @@ class education {
      * Inserts a new edu record and sets as default
      *
      * @param string $soc_sec The objects unique identifier
-     * @param string $cohort_cod
+     * @param string $cohort_cod Cohort code
      * @return array
      */
     public static function insert_default_education($soc_sec, $cohort_cod = '') {
@@ -93,15 +93,15 @@ class education {
      * Inserts a new edu record
      *
      * @param string $soc_sec The objects unique identifier
-     * @param string $educmem
-     * @param string $inst_cod
+     * @param string $educmem Educational record memo
+     * @param string $inst_cod Institutional code
      * @param string $mod_stat The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI
-     * @param string $degree
-     * @param string $enter_date
-     * @param string $leav_date
-     * @param string $grad_mo
-     * @param string $grad_year
-     * @param string $graduated
+     * @param string $degree Degree for the given educational record
+     * @param string $enter_date Educational record entry date
+     * @param string $leav_date Educational record leaving date
+     * @param string $grad_mo Educational record gradfuation month
+     * @param string $grad_year Educational record gradfuation year
+     * @param string $graduated Educational record graduated, true or false
      * @return array
      */
     public static function insert_education($soc_sec, $educmem = '', $inst_cod = '', $mod_stat = '', $degree = '', $enter_date = '', $leav_date = '', $grad_mo = '', $grad_year = '', $graduated = '') {
@@ -125,8 +125,8 @@ class education {
      * Inserts a new institution
      *
      * @param string $soc_sec The objects unique identifier
-     * @param string $inst_mem
-     * @param string $edu_rid
+     * @param string $inst_mem Institutional memo
+     * @param string $edu_rid Edu record id
      * @return array
      */
     public static function insert_inst($soc_sec, $inst_mem = '', $edu_rid = '') {
@@ -142,11 +142,11 @@ class education {
     /**
      * Search for institution
      *
-     * @param string $inst_city
-     * @param string $inst_state
-     * @param string $inst_txt
-     * @param string $insttypcod
-     * @param string $inst_cntry
+     * @param string $inst_city Institutional city
+     * @param string $inst_state Institutional state
+     * @param string $inst_txt Institutional description
+     * @param string $insttypcod Institutional type code
+     * @param string $inst_cntry Institutional country
      * @return array
      */
     public static function institutsearch($inst_city = '', $inst_state = '', $inst_txt = '', $insttypcod = '', $inst_cntry = '') {
@@ -165,49 +165,49 @@ class education {
      * Update a given education record
      *
      * @param string $soc_sec The objects unique identifier
-     * @param string $edu_rid
-     * @param string $eduinsttyp
-     * @param string $degree
-     * @param string $credits
-     * @param string $qlty_pnts
+     * @param string $edu_rid Edu record id
+     * @param string $eduinsttyp Institutional type
+     * @param string $degree Degree for the given educational record
+     * @param string $credits Credits
+     * @param string $qlty_pnts Quality point
      * @param string $cqpa
-     * @param string $rankstud
-     * @param string $rankclass
-     * @param string $grad_date
-     * @param string $enter_date
-     * @param string $leav_date
-     * @param string $date_rec
-     * @param string $matric_dt
-     * @param string $trans_rec
-     * @param string $prog_desc
-     * @param string $educmem
-     * @param string $enr_age
-     * @param string $orig_grad
-     * @param string $grad_mo
-     * @param string $grad_year
-     * @param string $graduated
-     * @param string $grad_honors
-     * @param string $nmedu_ce1
-     * @param string $nmedu_le1
-     * @param string $nmedu_ne1
-     * @param string $inst_txt
-     * @param string $cohort_cod
-     * @param string $degree_sought
-     * @param string $prg_sought
-     * @param string $ant_grad_date
-     * @param string $gpa_creds
-     * @param string $transfered
+     * @param string $rankstud Student rank
+     * @param string $rankclass Class rank
+     * @param string $grad_date Graduation date
+     * @param string $enter_date Educational record entry date
+     * @param string $leav_date Educational record leaving date
+     * @param string $date_rec Date received
+     * @param string $matric_dt Matriculation date
+     * @param string $trans_rec Transcripts received
+     * @param string $prog_desc Program description
+     * @param string $educmem Educational record memo
+     * @param string $enr_age Enrollment age
+     * @param string $orig_grad Original graduation date
+     * @param string $grad_mo Educational record gradfuation month
+     * @param string $grad_year Educational record gradfuation year
+     * @param string $graduated Educational record graduated, true or false
+     * @param string $grad_honors Graduated with honors
+     * @param string $nmedu_ce1 Custom Field 1
+     * @param string $nmedu_le1 Custom Field 2
+     * @param string $nmedu_ne1 Custom Field 3
+     * @param string $inst_txt Institutional description
+     * @param string $cohort_cod Cohort code
+     * @param string $degree_sought Degree sought
+     * @param string $prg_sought Program sought
+     * @param string $ant_grad_date Anticipated graduation date
+     * @param string $gpa_creds GPA Credits
+     * @param string $transfered Transfered
      * @param string $grad_stud
-     * @param string $OA_inprocess
-     * @param string $diploma
-     * @param string $employ_waiver_type
+     * @param string $OA_inprocess Online application in progress
+     * @param string $diploma Diploma
+     * @param string $employ_waiver_type Employer waiver type
      * @param string $cur_cod
-     * @param string $prev_instname
-     * @param string $grad_age
-     * @param string $degreeclass_cod
-     * @param string $nmedu_transmem
-     * @param string $employ_waiver
-     * @param string $override
+     * @param string $prev_instname Previous instituion name
+     * @param string $grad_age Graduating age
+     * @param string $degreeclass_cod Degree class code
+     * @param string $nmedu_transmem Transfer memo
+     * @param string $employ_waiver Employer waiver
+     * @param string $override Override flag
      * @return array
      */
     public static function update_education($soc_sec, $edu_rid = '', $eduinsttyp = '', $degree = '', $credits = '', $qlty_pnts = '', $cqpa = '', $rankstud = '', $rankclass = '', $grad_date = '', $enter_date = '', $leav_date = '', $date_rec = '', $matric_dt = '', $trans_rec = '', $prog_desc = '', $educmem = '', $enr_age = '', $orig_grad = '', $grad_mo = '', $grad_year = '', $graduated = '', $grad_honors = '', $nmedu_ce1 = '', $nmedu_le1 = '', $nmedu_ne1 = '', $inst_txt = '', $cohort_cod = '', $degree_sought = '', $prg_sought = '', $ant_grad_date = '', $gpa_creds = '', $transfered = '', $grad_stud = '', $OA_inprocess = '', $diploma = '', $employ_waiver_type = '', $cur_cod = '', $prev_instname = '', $grad_age = '', $degreeclass_cod = '', $nmedu_transmem = '', $employ_waiver = '', $override = '') {

@@ -45,7 +45,7 @@ class pagenotes {
     /**
      * Inserts or updates a note
      *
-     * @param string $pagenote_cod
+     * @param string $pagenote_cod Get a specific page note
      * @return array
      */
     public static function get_pagenote($pagenote_cod) {
@@ -58,7 +58,7 @@ class pagenotes {
     /**
      * The bottom page note
      *
-     * @param string $pagenote_cod
+     * @param string $pagenote_cod Get a specific page note
      * @return array
      */
     public static function get_pagenote_bottom($pagenote_cod) {
