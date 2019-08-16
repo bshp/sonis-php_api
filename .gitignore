@@ -14,7 +14,6 @@ Thumbs.db
 *.versionsBackup
 target
 phpunit.xml
-composer.lock
 composer.phar
 config.php
 behat.yml
