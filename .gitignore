@@ -16,6 +16,8 @@ target
 phpunit.xml
 composer.phar
 config.php
+soapy.php
+sonis.php
 behat.yml
 docs/phpdoc*/
 docs/wiki/
