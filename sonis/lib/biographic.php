@@ -40,6 +40,11 @@
  */
 class biographic {
 
+    private function get_comp() {
+        $result = 'biographic';
+        return $result;
+    }
+
     /**
      * Get First and Lastname
      *
@@ -47,10 +52,14 @@ class biographic {
      * @return array
      */
     public static function getName($soc_sec) {
+        $comp = (new self())->get_comp();
+        $method = 'getName';
+        $returns = 'yes';
         $params = [
             ['soc_sec', $soc_sec]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -62,12 +71,16 @@ class biographic {
      * @return array
      */
     public static function get_enrollstat($soc_sec, $sch_yr = '', $semester = '') {
+        $comp = (new self())->get_comp();
+        $method = 'get_enrollstat';
+        $returns = 'yes';
         $params = [
             ['soc_sec', $soc_sec],
             ['sch_yr', $sch_yr],
             ['semester', $semester]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -77,10 +90,14 @@ class biographic {
      * @return array
      */
     public static function namesearch($soc_sec){
+        $comp = (new self())->get_comp();
+        $method = 'namesearch';
+        $returns = 'yes';
         $params = [
             ['soc_sec', $soc_sec]
         ];
-        return $params;
+        ////return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -90,10 +107,14 @@ class biographic {
      * @return array
      */
     public static function namesearch2($soc_sec){
+        $comp = (new self())->get_comp();
+        $method = 'namesearch2';
+        $returns = 'yes';
         $params = [
             ['soc_sec', $soc_sec]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -108,6 +129,9 @@ class biographic {
      * @return array
      */
     public static function nmcit($soc_sec, $birth_contry = '', $citizen_country = '', $iseas_no = '', $visa_cod = '', $visa_issue_date = '') {
+        $comp = (new self())->get_comp();
+        $method = 'nmcit';
+        $returns = 'yes';
         $params = [
             ['soc_sec', $soc_sec],
             ['birth_contry', $birth_contry],
@@ -116,7 +140,8 @@ class biographic {
             ['visa_cod', $visa_cod],
             ['visa_issue_date', $visa_issue_date]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -127,11 +152,15 @@ class biographic {
      * @return array
      */
     public static function nmcitsearch($soc_sec, $mod_stat = '') {
+        $comp = (new self())->get_comp();
+        $method = 'nmcitsearch';
+        $returns = 'yes';
         $params = [
             ['soc_sec', $soc_sec],
             ['mod_stat', $mod_stat]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -186,6 +215,9 @@ class biographic {
      * @return array
      */
     public static function save_biographic($soc_sec, $mod_stat = '', $first_name = '', $last_name = '', $mi = '', $acadstat_cod = '', $prefix = '', $suffix = '', $maiden = '', $nickname = '', $birthdate = '', $gender = '', $ssn = '', $old_ssn = '', $affiliation_cod = '', $citizen = '', $ethnic_cod = '', $mar_cod = '', $transmem = '', $veteran = '', $releas_inf = '', $releas_dt = '', $div_cod = '', $dept_cod = '', $camp_cod = '', $level_ = '', $tuit_stat = '', $name_mem = '', $pin = '', $newpin = '', $deceased = '', $dec_date = '', $exam_id = '', $online_hld = '', $notpubname = '', $show_email = '', $show_phone = '', $show_addr = '', $show_wkphn = '', $excl_billing = '', $excl_mailing = '', $other_name = '', $fund_stat = '', $photo = '', $iped_stat = '', $operator = '' ) {
+        $comp = (new self())->get_comp();
+        $method = 'save_biographic';
+        $returns = 'yes';
         $params = [
             ['soc_sec', $soc_sec],
             ['mod_stat', $mod_stat],
@@ -235,8 +267,8 @@ class biographic {
             ['operator', $operator]
 
         ];
-
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -261,6 +293,9 @@ class biographic {
      * @return array
      */
     public static function update_descriptive($soc_sec = '', $photo = '', $ssn = '', $gender = '', $ethnic_cod = '', $birthdate = '', $mod_stat = '', $acadstat_cod = '', $affiliation_cod = '', $citizen = '', $mar_cod = '', $veteran = '', $deceased = '', $dec_date = '', $dl_state = '', $memo = '' ) {
+        $comp = (new self())->get_comp();
+        $method = 'update_descriptive';
+        $returns = 'yes';
         $params = [
             ['soc_sec', $soc_sec],
             ['ssn', $ssn],
@@ -279,7 +314,8 @@ class biographic {
             ['birthdate', $birthdate],
             ['memo', $memo]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -351,6 +387,9 @@ class biographic {
      * @return array
      */
     public static function create_biographic($first_name, $last_name, $birthdate, $preferred = '', $st_addr = '', $add_addr = '', $add_add2 = '', $city = '', $state = '', $zip = '', $phone = '', $cell_phone = '', $fax = '', $e_mail = '', $work_phone = '', $county_cod = '', $country = '', $mod_stat = '', $mi = '', $prefix = '', $suffix = '', $maiden = '', $nickname = '', $gender = '', $ssn = '', $affiliation_cod = '', $citizen = '', $ethnic_cod = '', $mar_cod = '', $transmem = '', $veteran = '', $releas_inf = '', $releas_dt = '', $div_cod = '', $dept_cod = '', $camp_cod = '', $level_ = '', $tuit_stat = '', $name_mem = '', $pin = '', $newpin = '', $deceased = '', $dec_date = '', $exam_id = '', $online_hld = '', $notpubname = '', $show_email = '', $show_phone = '', $show_addr = '', $show_wkphn = '', $excl_billing = '', $excl_mailing = '', $fund_stat = '', $photo = '', $iped_stat = '', $operator = '', $address_ce1 = '', $address_ce2 = '', $address_ce3 = '', $address_le1 = '', $address_ne1 = '', $address_de1 = '', $address_fe1 = '' ) {
+        $comp = (new self())->get_comp();
+        $method = 'create_biographic';
+        $returns = 'yes';
         $params = [
             ['mod_stat', $mod_stat],
             ['first_name', $first_name],
@@ -416,7 +455,8 @@ class biographic {
             ['address_de1', $address_de1],
             ['address_fe1', $address_fe1]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -436,6 +476,9 @@ class biographic {
      * @return array
      */
     public static function update_name($soc_sec = '', $mod_stat = '', $first_name = '', $last_name = '', $mi = '', $prefix = '', $suffix = '', $maiden = '', $nickname = '', $other_name = '', $acadstat_cod = '') {
+        $comp = (new self())->get_comp();
+        $method = 'update_name';
+        $returns = 'yes';
         $params = [
             ['soc_sec', $soc_sec],
             ['mod_stat', $mod_stat],
@@ -449,6 +492,7 @@ class biographic {
             ['nickname', $nickname],
             ['other_name', $other_name]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 }

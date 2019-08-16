@@ -15,15 +15,25 @@ PHP: 7.x, it should work with 5.6+, code inspection passes but have not tested.
 PHP Extensions: php_soap and php_curl
 
 ## Configure
-Change the settings in section 1. in config-sample.php and then rename to config.php
+Change the settings in section 1. in sonis-sample.php and then rename to sonis.php
 
 ## Usage
 Using this framework inside your package you just need to include the loader, sonis.php,
 ````
-require __DIR__ . '/sonis.php';
+require __DIR__ . '/sonis/sonis.php';
 ````
 
+Now you can make requests, a simple example to get all the details of a person, each component::method(has documented arguments).
+
+````
+$soc_sec = 'the persons id';
+$args = biographic::namesearch($soc_sec);
+$request = $api->run($args);
+````
 ## Notes 
+
+##### _To-do_:
+Create namspaces to avoid collisions
 
 ##### _Values_:
 Many of the methods might require fields that are not documented as 'required', to try and help, many will have a null value set. You can also update the functions with your own default values.

@@ -36,21 +36,7 @@
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-require __DIR__ . '/../config.php';
-
-/**
- * The method within the component
- *
- * @var $method
- */
-$method = 'getprereq';
-
-/**
- * Is data is returned?
- *
- * @var $returns
- */
-$returns = 'yes';
+require __DIR__ . '/../sonis.php';
 
 /**
  * The object(s) primary key being retrieved
@@ -75,7 +61,7 @@ $args = course::getprereq($crs_id);
  *
  * @var mixed $request
  */
-$request = $api->run($method, $returns, $args);
+$request = $api->run($args);
 
 print_r($request);
 print_r('Sonis API Framework: ' . $release);

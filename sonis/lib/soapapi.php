@@ -72,7 +72,7 @@ class soapapi {
     /**
      * Simple check for the api endpoint
      *
-     * @return bool Returns true or false if endpoint is up
+     * @return boolean Returns true or false if endpoint is up
      */
     public function apiUp() {
         $ch = curl_init($this->wsdl);
@@ -94,6 +94,9 @@ class soapapi {
     /**
      * Set SOAP client config
      *
+     * Configurations can be set within sonis.php
+     * $cfg->opts section.
+     *
      * @return array|SoapClient
      */
     protected function soapConfig() {
@@ -106,18 +109,22 @@ class soapapi {
     }
 
     /**
-     * Make the SOAP call and send output to decrapifier
+     * Make the SOAP call and send output to array processor
      *
-     * @param string $method the method within the component
-     * @param string $returns yes or no if returns data
-     * @param mixed $args contains component::method($key)
+     * This will make the actual SOAP request and then send
+     * to the array processor to try and cleanup before returning
+     * the results to the output controller
+     *
+     * @param mixed $args contains component::method($args)
      * @return array|string Returns output of utils.utils_array_process
      * @example '../tests/api.biographic.php'
      */
-    public function run($method, $returns, $args) {
+    public function run($args) {
         global $utils;
-        //$method = substr($args, strpos($args, ":") + 2);
-        include_once __DIR__ . '/../router.php';
+        $comp = $args['comp'];
+        $method = $args['method'];
+        $params = $args['params'];
+        $returns = $args['returns'];
         $call = $this->soapConfig();
         $result = $call->__soapCall('doAPISomething', [
             'user' => $this->user,
@@ -125,7 +132,7 @@ class soapapi {
             'comp' => 'CFC.' . $comp,
             'meth' => $method,
             'hasReturnVariable' => $returns,
-            'argumentdata' => $args,
+            'argumentdata' => $params,
         ]);
         if ($this->opts['debug']) {
             $message = $call->__getLastRequest();

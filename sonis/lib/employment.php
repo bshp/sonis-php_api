@@ -40,47 +40,59 @@
  */
 class employment {
 
+    private function get_comp() {
+        $result = 'employment';
+        return $result;
+    }
+
     /**
      * Deletes an employment record
      *
-     * @param $emp_rid
+     * @param string $emp_rid employer table id
      * @return array
      */
     public static function delete_employment($emp_rid) {
+        $comp = (new self())->get_comp();
+        $method = 'delete_employment';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['emp_rid', $emp_rid],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
      * Inserts a new employment record
      *
      * @param string $soc_sec The objects unique identifier
-     * @param string $emp_emply
-     * @param string $emp_super
-     * @param string $emp_add1
-     * @param string $emp_add2
-     * @param string $emp_add3
-     * @param string $emp_city
-     * @param string $emp_state
-     * @param string $emp_county
-     * @param string $emp_zip
+     * @param string $emp_emply Employer
+     * @param string $emp_super Employer manager
+     * @param string $emp_add1 Employer address line 1
+     * @param string $emp_add2 Employer address line 1
+     * @param string $emp_add3 Employer address line 1
+     * @param string $emp_city Employer city
+     * @param string $emp_state Employer state
+     * @param string $emp_county Employer county
+     * @param string $emp_zip Employer zipcode
      * @param string $employ_type_rid
-     * @param string $emp_pos
-     * @param string $hrs_week
-     * @param string $start_dt
-     * @param string $stop_dt
-     * @param string $emp_mem
-     * @param string $emp_rid
-     * @param string $empcountry
-     * @param string $when_code
-     * @param string $emp_phone
-     * @param string $homeinst
+     * @param string $emp_pos Employee position
+     * @param string $hrs_week Hours a week
+     * @param string $start_dt Start date mm/dd/yyyy
+     * @param string $stop_dt Stop date mm/dd/yyyy
+     * @param string $emp_mem Employer memo
+     * @param string $emp_rid Employer table id
+     * @param string $empcountry Employer country
+     * @param string $when_code Employer when started mm/dd/yyyy
+     * @param string $emp_phone Employer phone number
+     * @param string $homeinst Home institution
      * @return array
      */
     public static function insert_employment($soc_sec, $emp_emply = '', $emp_super = '', $emp_add1 = '', $emp_add2 = '', $emp_add3 = '', $emp_city = '', $emp_state = '', $emp_county = '', $emp_zip = '', $employ_type_rid = '', $emp_pos = '', $hrs_week = '', $start_dt = '', $stop_dt = '', $emp_mem = '', $emp_rid = '', $empcountry = '', $when_code = '', $emp_phone = '', $homeinst = '') {
+        $comp = (new self())->get_comp();
+        $method = 'insert_employment';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '#MainDir#'],
@@ -106,57 +118,65 @@ class employment {
             ['emp_mem', $emp_mem],
             ['emp_rid', $emp_rid]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
      * Searches for an employment record
      *
      * @param string $soc_sec The objects unique identifier
-     * @param string $emp_rid
+     * @param string $emp_rid employer table id
      * @return array
      */
     public static function search($soc_sec, $emp_rid = '') {
+        $comp = (new self())->get_comp();
+        $method = 'search';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
             ['emp_rid', $emp_rid],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
      * Updates the employment record
      *
      * @param string $soc_sec The objects unique identifier
-     * @param string $emp_emply
-     * @param string $emp_super
-     * @param string $emp_add1
-     * @param string $emp_add2
-     * @param string $emp_add3
-     * @param string $emp_city
-     * @param string $emp_state
-     * @param string $emp_county
-     * @param string $emp_zip
-     * @param string $employ_type_rid
-     * @param string $emp_status
-     * @param string $passed
-     * @param string $emp_email
-     * @param string $number
-     * @param string $emp_pos
-     * @param string $hrs_week
-     * @param string $start_dt
-     * @param string $stop_dt
-     * @param string $emp_mem
-     * @param string $emp_rid
-     * @param string $empcountry
-     * @param string $when_code
-     * @param string $emp_phone
-     * @param string $homeinst
+     * @param string $emp_emply Employer
+     * @param string $emp_super Employer manager
+     * @param string $emp_add1 Employer address line 1
+     * @param string $emp_add2 Employer address line 1
+     * @param string $emp_add3 Employer address line 1
+     * @param string $emp_city Employer city
+     * @param string $emp_state Employer state
+     * @param string $emp_county Employer county
+     * @param string $emp_zip Employer zipcode
+     * @param string $employ_type_rid Employee type table id
+     * @param string $emp_status Employee status
+     * @param string $passed Passed (used differently for various schools)
+     * @param string $emp_email Employee email address
+     * @param string $number Employee number
+     * @param string $emp_pos Employee position
+     * @param string $hrs_week Hours a week
+     * @param string $start_dt Start date mm/dd/yyyy
+     * @param string $stop_dt Stop date mm/dd/yyyy
+     * @param string $emp_mem Employer memo
+     * @param string $emp_rid employer table id
+     * @param string $empcountry Employer country
+     * @param string $when_code Employer when started mm/dd/yyyy
+     * @param string $emp_phone Employer phone number
+     * @param string $homeinst Home institution
      * @return array
      */
     public static function update_employment($soc_sec, $emp_emply = '', $emp_super = '', $emp_add1 = '', $emp_add2 = '', $emp_add3 = '', $emp_city = '', $emp_state = '', $emp_county = '', $emp_zip = '', $employ_type_rid = '', $emp_status = '', $passed = '', $emp_email = '', $number = '', $emp_pos = '', $hrs_week = '', $start_dt = '', $stop_dt = '', $emp_mem = '', $emp_rid = '', $empcountry = '', $when_code = '', $emp_phone = '', $homeinst = '') {
+        $comp = (new self())->get_comp();
+        $method = 'update_employment';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '#MainDir#'],
@@ -186,6 +206,7 @@ class employment {
             ['number', $number],
             ['emp_mem', $emp_mem],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 }

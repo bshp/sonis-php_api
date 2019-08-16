@@ -30,7 +30,7 @@
  *
  * Sonis API Framework
  *
- * Component: oa_emc.cfc, oa_fields.cfc, oa_licenses.cfc, oa_opt_fields.cfc, oa_questions.cfc
+ * Component: student_app.cfc, oa_emc.cfc, oa_fields.cfc, oa_licenses.cfc, oa_opt_fields.cfc, oa_questions.cfc
  *
  * @file onlineapp.php
  * @package Sonis API
@@ -48,13 +48,17 @@ class onlineapp {
      * @return array
      */
     public static function app_login($soc_sec, $pin) {
+        $comp = 'student_app';
+        $method = 'app_login';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
             ['pin', $pin],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -67,12 +71,15 @@ class onlineapp {
      * @param string $pin Encrypted PIN using private key
      * @param string $mi The persons middle initial, 1 character
      * @param string $phone The persons phone number
-     * @param int $citizen
+     * @param integer $citizen
      * @param string $zip The persons zip code
      * @param string $mod_stat The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI
      * @return array
      */
     public static function create($first_name, $last_name, $birthdate, $e_mail, $pin, $mi = '', $phone = '', $citizen = 1, $zip = '', $mod_stat = '') {
+        $comp = 'student_app';
+        $method = 'create';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '//'],
@@ -87,7 +94,8 @@ class onlineapp {
             ['citizen', $citizen],
             ['mod_stat', $mod_stat],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -100,6 +108,9 @@ class onlineapp {
      * @return array
      */
     public static function search($firstname = '', $lastname = '', $birthdate = '', $e_mail = '') {
+        $comp = 'student_app';
+        $method = 'search';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '#MainDir#'],
@@ -108,7 +119,8 @@ class onlineapp {
             ['birthdate', $birthdate],
             ['e_mail', $e_mail]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -119,6 +131,9 @@ class onlineapp {
      * @return array
      */
     public static function insert_oa_questions($soc_sec, $fieldnames) {
+        $comp = 'oa_questions';
+        $method = 'insert_oa_questions';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '#MainDir#'],
@@ -126,7 +141,8 @@ class onlineapp {
             ['soc_sec', $soc_sec],
             ['fieldnames', $fieldnames]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -137,13 +153,17 @@ class onlineapp {
      * @return array
      */
     public static function oa_questions_search($soc_sec, $column = '') {
+        $comp = 'oa_questions';
+        $method = 'oa_questions_search';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
             ['column_', $column],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -152,10 +172,13 @@ class onlineapp {
      * @param string $soc_sec The objects unique identifier
      * @param string $oa_questions_row
      * @param string $oa_questions_col
-     * @param int $oa_section_rid
+     * @param integer $oa_section_rid
      * @return array
      */
     public static function oa_questions_search_format($soc_sec, $oa_questions_row = '', $oa_questions_col = '', $oa_section_rid = 1) {
+        $comp = 'oa_questions';
+        $method = 'oa_questions_search_format';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '#MainDir#'],
@@ -164,6 +187,7 @@ class onlineapp {
             ['oa_questions_col', $oa_questions_col],
             ['oa_section_rid', $oa_section_rid]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 }

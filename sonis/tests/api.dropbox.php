@@ -36,21 +36,7 @@
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-require __DIR__ . '/../config.php';
-
-/**
- * The method within the component
- *
- * @var $method
- */
-$method = 'program';
-
-/**
- * Is data is returned, if dropbox set to 'no'
- *
- * @var $returns
- */
-$returns = 'no';
+require __DIR__ . '/../sonis.php';
 
 /**
  * All the arguments to send.
@@ -68,7 +54,7 @@ $args = dropbox::program(true, true, false, false, '');
  *
  * @var mixed $request
  */
-$request = $api->run($method, $returns, $args);
+$request = $api->run($args);
 ?>
 <html>
 <body>

@@ -42,6 +42,11 @@
  */
 class prospect {
 
+    private function get_comp() {
+        $result = 'addps';
+        return $result;
+    }
+
     /**
      * Inserts a new prospect/inquiry
      *
@@ -60,57 +65,60 @@ class prospect {
      * @param string $nickname The persons preferred name
      * @param string $work_phone The persons work phone number
      * @param string $e_mail The primary email address for the record type
-     * @param string $term_int
-     * @param string $referby
-     * @param string $enstat_cod
-     * @param string $prg_cod
+     * @param string $term_int Applicant term interested in
+     * @param string $referby Referred by
+     * @param string $enstat_cod Enrollment status code
+     * @param string $prg_cod Program code
      * @param string $camp_cod The person's campus, in the form of the code
-     * @param string $comments
-     * @param string $snd_app
-     * @param string $snd_brch
-     * @param string $snd_cat
-     * @param string $snd_f4
-     * @param string $snd_f5
-     * @param string $snd_f6
+     * @param string $comments Comments
+     * @param string $snd_app Workflow send application
+     * @param string $snd_brch Workflow send brochure
+     * @param string $snd_cat Workflow send catalog
+     * @param string $snd_f4 Wokrflow custom
+     * @param string $snd_f5 Wokrflow custom
+     * @param string $snd_f6 Wokrflow custom
      * @param string $snd_3PF
-     * @param string $employer
-     * @param string $moved_dt
-     * @param string $move2app
-     * @param string $contact
+     * @param string $employer Employer
+     * @param string $moved_dt Date moved
+     * @param string $move2app Date moved to applicant
+     * @param string $contact Contact information
      * @param string $state_of_licensure The persons state 2 character code such as TX for Texas where the license was granted
-     * @param string $level_of_education
-     * @param string $level_comp
-     * @param string $hs_prereq
-     * @param string $prg_intrest
-     * @param string $cl_prereq
-     * @param string $prereqenrolled
-     * @param string $cur_emp
-     * @param string $cur_emp_inst_cod
-     * @param string $LPN
-     * @param string $LPN_years
-     * @param string $enroll_month
-     * @param string $enroll_yr
-     * @param string $ref_other
-     * @param string $psprereqcrs_cod
-     * @param string $pref_inst_cod
-     * @param string $webps_ce1
-     * @param string $webps_le1
-     * @param string $webps_ne1
-     * @param string $webps_de1
-     * @param string $webps_fe1
-     * @param string $webps_ce2
-     * @param string $webps_ce3
-     * @param string $incomplete
+     * @param string $level_of_education Persons level of education
+     * @param string $level_comp highest level completed
+     * @param string $hs_prereq Highschool pre-req
+     * @param string $prg_intrest Program interested in
+     * @param string $cl_prereq Class pre-req
+     * @param string $prereqenrolled Pre-req enrolled?
+     * @param string $cur_emp Current employer
+     * @param string $cur_emp_inst_cod Current employer institution code
+     * @param string $LPN Has LPN
+     * @param string $LPN_years For how long
+     * @param string $enroll_month Enrollment month
+     * @param string $enroll_yr Enrollment year
+     * @param string $ref_other Referred by 'other' box
+     * @param string $psprereqcrs_cod Pre-req course code
+     * @param string $pref_inst_cod Preferred institutional code
+     * @param string $webps_ce1 Custom Field
+     * @param string $webps_le1 Custom Field
+     * @param string $webps_ne1 Custom Field
+     * @param string $webps_de1 Custom Field
+     * @param string $webps_fe1 Custom Field
+     * @param string $webps_ce2 Custom Field
+     * @param string $webps_ce3 Custom Field
+     * @param string $incomplete App incomplete
      * @param string $birthdate The persons birthday, such as 05/12/2001
      * @param string $memo1 Memo 1
      * @param string $memo2 Memo 2
      * @param string $memo3 Memo 3
-     * @param string $areas_of_interest_rid
-     * @param string $undergrd_attnd
-     * @param string $undergrd_maj
+     * @param string $areas_of_interest_rid Areas of interest table id
+     * @param string $undergrd_attnd Undergraduate?
+     * @param string $undergrd_maj Undergraduate major
      * @return array
      */
     public static function addnewps($last_name, $first_name, $mi = '', $st_addr = '', $add_addr = '', $add_add2 = '', $city = '', $state = '', $zip = '', $country = '', $phone = '', $cell_phone = '', $nickname = '', $work_phone = '', $e_mail = '', $term_int = '', $referby = '', $enstat_cod = '', $prg_cod = '', $camp_cod = '', $comments = '', $snd_app = '', $snd_brch = '', $snd_cat = '', $snd_f4 = '', $snd_f5 = '', $snd_f6 = '', $snd_3PF = '', $employer = '', $moved_dt = '', $move2app = '', $contact = '', $state_of_licensure = '', $level_of_education = '', $level_comp = '', $hs_prereq = '', $prg_intrest = '', $cl_prereq = '', $prereqenrolled = '', $cur_emp = '', $cur_emp_inst_cod = '', $LPN = '', $LPN_years = '', $enroll_month = '', $enroll_yr = '', $ref_other = '', $psprereqcrs_cod = '', $pref_inst_cod = '', $webps_ce1 = '', $webps_le1 = '', $webps_ne1 = '', $webps_de1 = '', $webps_fe1 = '', $webps_ce2 = '', $webps_ce3 = '', $incomplete = '', $birthdate = '', $memo1 = '', $memo2 = '', $memo3 = '', $areas_of_interest_rid = '', $undergrd_attnd = '', $undergrd_maj = '') {
+        $comp = (new self())->get_comp();
+        $method = 'addnewps';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis_ds#'],
             ['MainDir', '#MainDir#'],
@@ -179,6 +187,7 @@ class prospect {
             ['undergrd_attnd', $undergrd_attnd],
             ['undergrd_maj', $undergrd_maj],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 }

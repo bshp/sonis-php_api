@@ -42,29 +42,42 @@
  */
 class pagenotes {
 
+    private function get_comp() {
+        $result = 'pagenote';
+        return $result;
+    }
+
     /**
      * Inserts or updates a note
      *
-     * @param string $pagenote_cod
+     * @param string $pagenote_cod Get a specific page note
      * @return array
      */
     public static function get_pagenote($pagenote_cod) {
+        $comp = (new self())->get_comp();
+        $method = 'get_pagenote';
+        $returns = 'yes';
         $params = [
             ['pagenote_cod', $pagenote_cod],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
      * The bottom page note
      *
-     * @param string $pagenote_cod
+     * @param string $pagenote_cod Get a specific page note
      * @return array
      */
     public static function get_pagenote_bottom($pagenote_cod) {
+        $comp = (new self())->get_comp();
+        $method = 'get_pagenote_bottom';
+        $returns = 'yes';
         $params = [
             ['pagenote_cod', $pagenote_cod],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 }

@@ -41,7 +41,7 @@ include __DIR__ . '/version.php'; //Set version vars for later use
 
 /**
  * will be called when needed,
- * config.php takes care of this rest.
+ * sonis.php takes care of this rest.
  */
 spl_autoload_register(function($lib) {
     include __DIR__ . '/lib/' . $lib . '.php';

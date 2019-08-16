@@ -14,8 +14,10 @@ Thumbs.db
 *.versionsBackup
 target
 phpunit.xml
-composer.lock
 composer.phar
 config.php
+soapy.php
+sonis.php
 behat.yml
 docs/phpdoc*/
+docs/wiki/

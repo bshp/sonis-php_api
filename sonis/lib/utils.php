@@ -56,7 +56,7 @@ class utils {
      * trigger_error and/or can fail.
      *
      * @param string $msg
-     * @param bool $fail Is it fatal?
+     * @param boolean $fail Is it fatal?
      * @return mixed
      * @link http://docs.php.net/manual/en/function.trigger-error.php
      */
@@ -181,7 +181,7 @@ class utils {
      * Send Coldfusion exception to system defined errorlog
      *
      * @param string $array
-     * @return bool
+     * @return boolean
      * @link http://docs.php.net/manual/en/function.error-log.php
      */
     public function utils_array_exception($array) {
@@ -226,7 +226,7 @@ class utils {
      * Change all keys in an array to lowercase
      *
      * @param array $array
-     * @return array|bool
+     * @return array|boolean
      * @link http://docs.php.net/manual/en/function.array-change-key-case.php
      */
     public function utils_array_lc($array) {
@@ -238,7 +238,7 @@ class utils {
      * Reduce/Deduplicate an array using array_merge
      *
      * @param array $array
-     * @return array|bool
+     * @return array|boolean
      * @link http://docs.php.net/manual/en/function.array-reduce.php
      */
     public function utils_array_merge($array) {
@@ -250,7 +250,7 @@ class utils {
      * Trim an array using array_map
      *
      * @param array $array
-     * @return array|bool
+     * @return array|boolean
      * @link http://docs.php.net/manual/en/function.array-map.php
      */
     public function utils_array_trim($array) {

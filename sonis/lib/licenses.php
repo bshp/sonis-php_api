@@ -30,7 +30,7 @@
  *
  * Sonis API Framework
  *
- * Component: licenses.cfc
+ * Component: oa_licenses.cfc
  *
  * @file licenses.php
  * @package Sonis API
@@ -40,33 +40,45 @@
  */
 class licenses {
 
+    private function get_comp() {
+        $result = 'oa_licenses';
+        return $result;
+    }
+
     /**
      * Deletes a persons license
      *
-     * @param $soc_sec
+     * @param string $soc_sec The objects unique identifier
      * @return array
      */
     public static function delete_license($soc_sec) {
+        $comp = (new self())->get_comp();
+        $method = 'delete_license';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['soc_sec', $soc_sec],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
      * Inserts a persons license
      *
-     * @param $soc_sec
-     * @param $license
-     * @param $lic_no
-     * @param $date_rec
-     * @param $date_exp
-     * @param string $lic_mem
-     * @param string $d_soc_sec
+     * @param string $soc_sec The objects unique identifier
+     * @param string $license The persons license (not dirvers license)
+     * @param string $lic_no The persons license number (not dirvers license)
+     * @param string $date_rec The persons license date received (mm/dd/yyyy)
+     * @param string $date_exp The persons license date expires (mm/dd/yyyy)
+     * @param string $lic_mem The persons license memo
+     * @param string $d_soc_sec The objects unique identifier
      * @return array
      */
     public static function insert_license($soc_sec, $license, $lic_no, $date_rec, $date_exp, $lic_mem = '', $d_soc_sec = '') {
+        $comp = (new self())->get_comp();
+        $method = 'insert_license';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['soc_sec', $soc_sec],
@@ -77,39 +89,47 @@ class licenses {
             ['lic_mem', $lic_mem],
             ['d_soc_sec', $d_soc_sec],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
      * Search for a persons license
      *
-     * @param $soc_sec
-     * @param string $license
+     * @param string $soc_sec The objects unique identifier
+     * @param string $license The persons license (not dirvers license)
      * @return array
      */
     public static function search($soc_sec, $license = '') {
+        $comp = (new self())->get_comp();
+        $method = 'search';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['soc_sec', $soc_sec],
             ['license', $license],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
      * Update a persons given license
      *
-     * @param $soc_sec
-     * @param $license
-     * @param string $lic_no
-     * @param string $date_rec
-     * @param string $date_exp
-     * @param string $lic_mem
-     * @param string $d_soc_sec
+     * @param string $soc_sec The objects unique identifier
+     * @param $license The persons license
+     * @param string $lic_no The persons license number (not dirvers license)
+     * @param string $date_rec The persons license date received (mm/dd/yyyy)
+     * @param string $date_exp The persons license date expires (mm/dd/yyyy)
+     * @param string $lic_mem The persons license memo
+     * @param string $d_soc_sec The objects unique identifier
      * @param string $lic_rid
      * @return array
      */
     public static function update_license($soc_sec, $license, $lic_no = '', $date_rec = '', $date_exp = '', $lic_mem = '', $d_soc_sec = '', $lic_rid = '') {
+        $comp = (new self())->get_comp();
+        $method = 'update_license';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['soc_sec', $soc_sec],
@@ -121,6 +141,7 @@ class licenses {
             ['d_soc_sec', $d_soc_sec],
             ['lic_rid', $lic_rid],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 }
