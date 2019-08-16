@@ -39,20 +39,6 @@
 require __DIR__ . '/../config.php';
 
 /**
- * The method within the component
- *
- * @var string $method
- */
-$method = 'addressSearch';
-
-/**
- * Is data returned? Yes or No
- *
- * @var string $returns
- */
-$returns = 'yes';
-
-/**
  * Required for an address record,
  * if set to 'no' then multiple arrays
  * will be returned
@@ -86,7 +72,7 @@ $args = address::addressSearch($soc_sec, $preferred);
  *
  * @var mixed $request
  */
-$request = $api->run($method, $returns, $args);
+$request = $api->run($args);
 
 print_r($request);
 print_r('Sonis API Framework: ' . $release);
