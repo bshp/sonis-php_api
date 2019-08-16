@@ -40,6 +40,11 @@
  */
 class address {
 
+    private function get_comp() {
+        $result = 'address';
+        return $result;
+    }
+
     /**
      * Add to an existing user record
      *
@@ -60,6 +65,9 @@ class address {
      * @return array
      */
     public static function add_address($soc_sec, $preferred, $st_addr = '', $add_addr = '', $add_add2 = '', $city = '', $state = '', $zip = '', $phone = '', $cell_phone = '', $work_phone = '', $county_cod = '', $country = '', $e_mail = '' ) {
+        $comp = (new self())->get_comp();
+        $method = 'add_address';
+        $returns = 'yes';
         $params = [
             ['soc_sec', $soc_sec],
             ['preferred', $preferred],
@@ -76,7 +84,8 @@ class address {
             ['country', $country],
             ['e_mail', $e_mail]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -87,12 +96,16 @@ class address {
      * @return array
      */
     public static function addressSearch($soc_sec, $preferred) {
+        $comp = (new self())->get_comp();
+        $method = 'addressSearch';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['soc_sec', $soc_sec],
             ['preferred', $preferred]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -117,6 +130,9 @@ class address {
      * @return array
      */
     public static function insert_address($soc_sec, $preferred, $st_addr = '', $add_addr = '', $add_add2 = '', $city = '', $state = '', $zip = '', $phone = '', $cell_phone = '', $fax = '', $e_mail = '', $work_phone = '', $county_cod = '', $country = '', $operator = '' ) {
+        $comp = (new self())->get_comp();
+        $method = 'insert_address';
+        $returns = 'yes';
         $params = [
             ['soc_sec', $soc_sec],
             ['preferred', $preferred],
@@ -135,7 +151,8 @@ class address {
             ['country', $country],
             ['operator', $operator],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -160,6 +177,9 @@ class address {
      * @return array
      */
     public static function update_address($soc_sec, $add_add2 = '', $add_addr = '', $cell_phone = '', $city = '', $country = '', $county_cod = '', $e_mail = '', $fax = '', $phone = '', $st_addr = '', $state = '', $work_phone = '', $zip = '', $cell_provider = '', $text_me = '') {
+        $comp = (new self())->get_comp();
+        $method = 'update_address';
+        $returns = 'yes';
         $params = [
             ['soc_sec', $soc_sec],
             ['add_add2', $add_add2],
@@ -178,6 +198,7 @@ class address {
             ['cell_provider', $cell_provider],
             ['text_me', $text_me],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 }

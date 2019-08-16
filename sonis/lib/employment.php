@@ -40,6 +40,11 @@
  */
 class employment {
 
+    private function get_comp() {
+        $result = 'employment';
+        return $result;
+    }
+
     /**
      * Deletes an employment record
      *
@@ -47,11 +52,15 @@ class employment {
      * @return array
      */
     public static function delete_employment($emp_rid) {
+        $comp = (new self())->get_comp();
+        $method = 'delete_employment';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['emp_rid', $emp_rid],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -81,6 +90,9 @@ class employment {
      * @return array
      */
     public static function insert_employment($soc_sec, $emp_emply = '', $emp_super = '', $emp_add1 = '', $emp_add2 = '', $emp_add3 = '', $emp_city = '', $emp_state = '', $emp_county = '', $emp_zip = '', $employ_type_rid = '', $emp_pos = '', $hrs_week = '', $start_dt = '', $stop_dt = '', $emp_mem = '', $emp_rid = '', $empcountry = '', $when_code = '', $emp_phone = '', $homeinst = '') {
+        $comp = (new self())->get_comp();
+        $method = 'insert_employment';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '#MainDir#'],
@@ -106,7 +118,8 @@ class employment {
             ['emp_mem', $emp_mem],
             ['emp_rid', $emp_rid]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -117,13 +130,17 @@ class employment {
      * @return array
      */
     public static function search($soc_sec, $emp_rid = '') {
+        $comp = (new self())->get_comp();
+        $method = 'search';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
             ['emp_rid', $emp_rid],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -157,6 +174,9 @@ class employment {
      * @return array
      */
     public static function update_employment($soc_sec, $emp_emply = '', $emp_super = '', $emp_add1 = '', $emp_add2 = '', $emp_add3 = '', $emp_city = '', $emp_state = '', $emp_county = '', $emp_zip = '', $employ_type_rid = '', $emp_status = '', $passed = '', $emp_email = '', $number = '', $emp_pos = '', $hrs_week = '', $start_dt = '', $stop_dt = '', $emp_mem = '', $emp_rid = '', $empcountry = '', $when_code = '', $emp_phone = '', $homeinst = '') {
+        $comp = (new self())->get_comp();
+        $method = 'update_employment';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '#MainDir#'],
@@ -186,6 +206,7 @@ class employment {
             ['number', $number],
             ['emp_mem', $emp_mem],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 }

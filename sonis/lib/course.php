@@ -40,6 +40,11 @@
  */
 class course {
 
+    private function get_comp() {
+        $result = 'crs_sec_list';
+        return $result;
+    }
+
     /**
      * Get course core requisites
      *
@@ -47,10 +52,14 @@ class course {
      * @return array
      */
     public static function getcoreq($crs_id) {
+        $comp = (new self())->get_comp();
+        $method = 'getcoreq';
+        $returns = 'yes';
         $params = [
             ['crs_id', $crs_id],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -60,10 +69,14 @@ class course {
      * @return array
      */
     public static function getcreqs($crs_id) {
+        $comp = (new self())->get_comp();
+        $method = 'getcreqs';
+        $returns = 'yes';
         $params = [
             ['crs_id', $crs_id],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -73,10 +86,14 @@ class course {
      * @return array
      */
     public static function getprereq($crs_id) {
+        $comp = (new self())->get_comp();
+        $method = 'getprereq';
+        $returns = 'yes';
         $params = [
             ['crs_id', $crs_id],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -88,11 +105,15 @@ class course {
      * @return array
      */
     public static function getprereqco($schyear, $semlist, $camp_cod = '') {
+        $comp = (new self())->get_comp();
+        $method = 'getprereqco';
+        $returns = 'yes';
         $params = [
             ['schyear', $schyear],
             ['semlist', $semlist],
             ['camp_cod', $camp_cod]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 }

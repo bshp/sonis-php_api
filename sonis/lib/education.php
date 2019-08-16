@@ -40,6 +40,11 @@
  */
 class education {
 
+    private function get_comp() {
+        $result = 'education';
+        return $result;
+    }
+
     /**
      * Deletes an education record
      *
@@ -48,13 +53,17 @@ class education {
      * @return array
      */
     public static function delete_education($soc_sec, $edu_rid) {
+        $comp = (new self())->get_comp();
+        $method = 'delete_education';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
             ['edu_rid', $edu_rid]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -65,11 +74,15 @@ class education {
      * @return array
      */
     public static function eduSearch($soc_sec, $edu_rid = '') {
+        $comp = (new self())->get_comp();
+        $method = 'eduSearch';
+        $returns = 'yes';
         $params = [
             ['soc_sec', $soc_sec],
             ['edu_rid', $edu_rid],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -80,13 +93,17 @@ class education {
      * @return array
      */
     public static function insert_default_education($soc_sec, $cohort_cod = '') {
+        $comp = (new self())->get_comp();
+        $method = 'insert_default_education';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['CurDrive', '#session.CurDrive#'],
             ['soc_sec', $soc_sec],
             ['cohort_cod', $cohort_cod]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -105,6 +122,9 @@ class education {
      * @return array
      */
     public static function insert_education($soc_sec, $educmem = '', $inst_cod = '', $mod_stat = '', $degree = '', $enter_date = '', $leav_date = '', $grad_mo = '', $grad_year = '', $graduated = '') {
+        $comp = (new self())->get_comp();
+        $method = 'insert_education';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['soc_sec', $soc_sec],
@@ -118,7 +138,8 @@ class education {
             ['grad_year', $grad_year],
             ['graduated', $graduated]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -130,13 +151,17 @@ class education {
      * @return array
      */
     public static function insert_inst($soc_sec, $inst_mem = '', $edu_rid = '') {
+        $comp = (new self())->get_comp();
+        $method = 'insert_inst';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['soc_sec', $soc_sec],
             ['inst_mem', $inst_mem],
             ['edu_rid', $edu_rid],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -150,6 +175,9 @@ class education {
      * @return array
      */
     public static function institutsearch($inst_city = '', $inst_state = '', $inst_txt = '', $insttypcod = '', $inst_cntry = '') {
+        $comp = (new self())->get_comp();
+        $method = 'institutsearch';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['inst_city', $inst_city],
@@ -158,7 +186,8 @@ class education {
             ['inst_txt', $inst_txt],
             ['insttypcod', $insttypcod],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -211,6 +240,9 @@ class education {
      * @return array
      */
     public static function update_education($soc_sec, $edu_rid = '', $eduinsttyp = '', $degree = '', $credits = '', $qlty_pnts = '', $cqpa = '', $rankstud = '', $rankclass = '', $grad_date = '', $enter_date = '', $leav_date = '', $date_rec = '', $matric_dt = '', $trans_rec = '', $prog_desc = '', $educmem = '', $enr_age = '', $orig_grad = '', $grad_mo = '', $grad_year = '', $graduated = '', $grad_honors = '', $nmedu_ce1 = '', $nmedu_le1 = '', $nmedu_ne1 = '', $inst_txt = '', $cohort_cod = '', $degree_sought = '', $prg_sought = '', $ant_grad_date = '', $gpa_creds = '', $transfered = '', $grad_stud = '', $OA_inprocess = '', $diploma = '', $employ_waiver_type = '', $cur_cod = '', $prev_instname = '', $grad_age = '', $degreeclass_cod = '', $nmedu_transmem = '', $employ_waiver = '', $override = '') {
+        $comp = (new self())->get_comp();
+        $method = 'update_education';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['soc_sec', $soc_sec],
@@ -258,6 +290,7 @@ class education {
             ['employ_waiver', $employ_waiver],
             ['override', $override],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 }

@@ -42,6 +42,11 @@
  */
 class program {
 
+    private function get_comp() {
+        $result = 'program';
+        return $result;
+    }
+
     /**
      * Search for a program
      *
@@ -49,12 +54,16 @@ class program {
      * @return array
      */
     public static function approgsearch($soc_sec) {
+        $comp = (new self())->get_comp();
+        $method = 'approgsearch';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -64,12 +73,16 @@ class program {
      * @return array
      */
     public static function complete_app($soc_sec) {
+        $comp = (new self())->get_comp();
+        $method = 'complete_app';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -79,12 +92,16 @@ class program {
      * @return array
      */
     public static function delete_approg($app_rid) {
+        $comp = (new self())->get_comp();
+        $method = 'delete_approg';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '#MainDir#'],
             ['app_rid', $app_rid]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -122,6 +139,9 @@ class program {
      * @return array
      */
     public static function insert_approg($soc_sec, $d_soc_sec = '', $camp_cod = '', $entry_date = '', $prg_cod = '', $div_cod = '', $app_date = '', $ack_date = '', $trans_date = '', $is_applicant = '', $preferred = '', $incomplete = '', $app_rid = '', $ref_source = '', $fee_rec = '', $apfee_dt = '', $prior_app = '', $app_yr = '', $acknowledg = '', $sms_trans = '', $matric_fee = '', $degree_ap = '', $degree_ac = '', $major_ap = '', $major_ac = '', $time_maint = '', $date_maint = '', $trans_done = '', $operator = '') {
+        $comp = (new self())->get_comp();
+        $method = 'insert_approg';
+        $returns = 'yes';
         $params = [
             ['d_soc_sec', $d_soc_sec],
             ['soc_sec', $soc_sec],
@@ -155,7 +175,8 @@ class program {
             ['is_applicant', $is_applicant],
             ['preferred', $preferred]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -166,13 +187,17 @@ class program {
      * @return array
      */
     public static function preventrepeats($soc_sec, $prg_cod) {
+        $comp = (new self())->get_comp();
+        $method = 'preventrepeats';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
             ['prg_cod', $prg_cod],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -182,11 +207,15 @@ class program {
      * @return array
      */
     public static function programSearch($soc_sec) {
+        $comp = (new self())->get_comp();
+        $method = 'programSearch';
+        $returns = 'yes';
         $params = [
             ['sonis_ds', '#sonis.ds#'],
             ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 }
