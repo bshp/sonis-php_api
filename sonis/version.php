@@ -43,7 +43,7 @@
  * @license https://opensource.org/licenses/MIT
  */
 
-$branch = 'stable'; // internal git branch
-$version = 1.3; // do not change
+$branch = 'master'; // internal git branch
+$version = 2.0; // do not change
 $patch = 0; // do not change
 $release = 'v' . $version . '.' . $patch;

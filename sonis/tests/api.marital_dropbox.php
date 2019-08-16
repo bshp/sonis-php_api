@@ -39,20 +39,6 @@
 require __DIR__ . '/../config.php';
 
 /**
- * The method within the component
- *
- * @var $method
- */
-$method = 'marital_drop';
-
-/**
- * Is data is returned, if dropbox set to 'no'
- *
- * @var $returns
- */
-$returns = 'no';
-
-/**
  * All the arguments to send.
  *
  * Required format:
@@ -68,7 +54,7 @@ $args = dropbox::marital_drop(true, false, false, true, true );
  *
  * @var mixed $request
  */
-$request = $api->run($method, $returns, $args);
+$request = $api->run($args);
 ?>
 <html>
 <body>

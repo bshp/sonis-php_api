@@ -39,20 +39,6 @@
 require __DIR__ . '/../config.php';
 
 /**
- * The method within the component
- *
- * @var $method
- */
-$method = 'namesearch';
-
-/**
- * Is data is returned?
- *
- * @var $returns
- */
-$returns = 'yes';
-
-/**
  * The object(s) primary key being retrieved
  *
  * @var $soc_sec
@@ -75,7 +61,7 @@ $args = biographic::namesearch($soc_sec);
  *
  * @var mixed $request
  */
-$request = $api->run($method, $returns, $args);
+$request = $api->run($args);
 
 print_r($request);
 print_r('Sonis API Framework: ' . $release);

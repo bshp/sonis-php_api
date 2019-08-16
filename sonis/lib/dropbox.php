@@ -40,6 +40,11 @@
  */
 class dropbox {
 
+    private function get_comp() {
+        $result = 'drp_box';
+        return $result;
+    }
+
     /**
      * Provides an html list of school years
      *
@@ -52,6 +57,9 @@ class dropbox {
      * @return array
      */
     public static function sch_yr($value, $allow_blank, $multi_select, $hide, $size, $use_cur_schyr) {
+        $comp = (new self())->get_comp();
+        $method = 'sch_yr';
+        $returns = 'no';
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],
@@ -60,7 +68,8 @@ class dropbox {
             ['size', $size],
             ['use_cur_schyr', $use_cur_schyr],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -74,6 +83,9 @@ class dropbox {
      * @return array
      */
     public static function app_term($value, $allow_blank, $multi_select, $hide, $Additional_Properties) {
+        $comp = (new self())->get_comp();
+        $method = 'app_term';
+        $returns = 'no';
         $params = [
             ['value_', $value],
             ['allow_blank', $allow_blank],
@@ -81,7 +93,8 @@ class dropbox {
             ['hide', $hide],
             ['Additional_Properties', $Additional_Properties]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -96,6 +109,9 @@ class dropbox {
      * @return array
      */
     public static function campus($hide_excludes, $allow_blank, $multi_select, $hide, $value, $Additional_Properties) {
+        $comp = (new self())->get_comp();
+        $method = 'campus';
+        $returns = 'no';
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],
@@ -104,7 +120,8 @@ class dropbox {
             ['Additional_Properties', $Additional_Properties],
             ['hide_excludes', $hide_excludes]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -117,6 +134,9 @@ class dropbox {
      * @return array
      */
     public static function country($allow_blank, $multi_select, $hide, $Additional_Properties) {
+        $comp = (new self())->get_comp();
+        $method = 'country';
+        $returns = 'no';
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],
@@ -124,7 +144,8 @@ class dropbox {
             ['Additional_Properties', $Additional_Properties]
         ];
 
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -139,6 +160,9 @@ class dropbox {
      * @return array
      */
     public static function county($allow_blank, $multi_select, $hide, $Additional_Properties, $value, $disp_only) {
+        $comp = (new self())->get_comp();
+        $method = 'county';
+        $returns = 'no';
         $params = [
             ['value_', $value],
             ['allow_blank', $allow_blank],
@@ -147,7 +171,8 @@ class dropbox {
             ['Additional_Properties', $Additional_Properties],
             ['disp_only', $disp_only]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -160,13 +185,17 @@ class dropbox {
      * @return array
      */
     public static function degree($allow_blank, $multi_select, $hide, $Additional_Properties) {
+        $comp = (new self())->get_comp();
+        $method = 'degree';
+        $returns = 'no';
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],
             ['hide', $hide],
             ['Additional_Properties', $Additional_Properties]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -182,6 +211,9 @@ class dropbox {
      * @return array
      */
     public static function ethnic_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
+        $comp = 'ethnic';
+        $method = 'ethnic_drop';
+        $returns = 'no';
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],
@@ -191,7 +223,8 @@ class dropbox {
             ['cod_desc', $cod_desc],
             ['desc_only', $desc_only],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -207,6 +240,9 @@ class dropbox {
      * @return array
      */
     public static function gender_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
+        $comp = 'gender';
+        $method = 'gender_drop';
+        $returns = 'no';
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],
@@ -216,7 +252,8 @@ class dropbox {
             ['cod_desc', $cod_desc],
             ['desc_only', $desc_only],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -229,6 +266,9 @@ class dropbox {
      * @return array
      */
     public static function interest($allow_blank, $multi_select, $hide, $Additional_Properties) {
+        $comp = (new self())->get_comp();
+        $method = 'interest';
+        $returns = 'no';
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],
@@ -236,7 +276,8 @@ class dropbox {
             ['Additional_Properties', $Additional_Properties]
         ];
 
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -252,6 +293,9 @@ class dropbox {
      * @return array
      */
     public static function licenses_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
+        $comp = 'licenses';
+        $method = 'licenses_drop';
+        $returns = 'no';
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],
@@ -261,7 +305,8 @@ class dropbox {
             ['cod_desc', $cod_desc],
             ['desc_only', $desc_only],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -274,13 +319,17 @@ class dropbox {
      * @return array
      */
     public static function state($allow_blank, $multi_select, $hide, $Additional_Properties) {
+        $comp = (new self())->get_comp();
+        $method = 'state';
+        $returns = 'no';
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],
             ['hide', $hide],
             ['Additional_Properties', $Additional_Properties]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -294,6 +343,9 @@ class dropbox {
      * @return array
      */
     public static function program($hide_excludes, $allow_blank, $multi_select, $hide, $Additional_Properties) {
+        $comp = (new self())->get_comp();
+        $method = 'program';
+        $returns = 'no';
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],
@@ -301,7 +353,8 @@ class dropbox {
             ['Additional_Properties', $Additional_Properties],
             ['hide_excludes', $hide_excludes]
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 
     /**
@@ -317,6 +370,9 @@ class dropbox {
      * @return array
      */
     public static function marital_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
+        $comp = 'marital';
+        $method = 'marital_drop';
+        $returns = 'no';
         $params = [
             ['allow_blank', $allow_blank],
             ['multi_select', $multi_select],
@@ -326,6 +382,7 @@ class dropbox {
             ['cod_desc', $cod_desc],
             ['desc_only', $desc_only],
         ];
-        return $params;
+        //return $params;
+        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
     }
 }

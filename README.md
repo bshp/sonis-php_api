@@ -23,6 +23,13 @@ Using this framework inside your package you just need to include the loader, so
 require __DIR__ . '/sonis.php';
 ````
 
+Now you can make requests, a simple example to get all the details of a person, each component::method(has documented arguments).
+
+````
+$soc_sec = 'the persons id';
+$args = biographic::namesearch($soc_sec);
+$request = $api->run($args);
+````
 ## Notes 
 
 ##### _Values_:

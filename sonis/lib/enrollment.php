@@ -40,6 +40,11 @@
  */
 class enrollment {
 
+    private function get_comp() {
+        $result = 'enrollment';
+        return $result;
+    }
+
     /**
      * @return boolean
      */
