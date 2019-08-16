@@ -57,8 +57,6 @@ class education {
         $method = 'delete_education';
         $returns = 'yes';
         $params = [
-            ['sonis_ds', '#sonis.ds#'],
-            ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
             ['edu_rid', $edu_rid]
         ];
@@ -92,13 +90,11 @@ class education {
      * @param string $cohort_cod Cohort code
      * @return array
      */
-    public static function insert_default_education($soc_sec, $cohort_cod = '') {
+    public static function insert_default_education($soc_sec, $cohort_cod) {
         $comp = (new self())->get_comp();
         $method = 'insert_default_education';
         $returns = 'yes';
         $params = [
-            ['sonis_ds', '#sonis.ds#'],
-            ['CurDrive', '#session.CurDrive#'],
             ['soc_sec', $soc_sec],
             ['cohort_cod', $cohort_cod]
         ];
@@ -121,12 +117,11 @@ class education {
      * @param string $graduated Educational record graduated, true or false
      * @return array
      */
-    public static function insert_education($soc_sec, $educmem = '', $inst_cod = '', $mod_stat = '', $degree = '', $enter_date = '', $leav_date = '', $grad_mo = '', $grad_year = '', $graduated = '') {
+    public static function insert_education($soc_sec, $educmem, $inst_cod, $mod_stat, $degree, $enter_date, $leav_date, $grad_mo, $grad_year, $graduated) {
         $comp = (new self())->get_comp();
         $method = 'insert_education';
         $returns = 'yes';
         $params = [
-            ['sonis_ds', '#sonis.ds#'],
             ['soc_sec', $soc_sec],
             ['inst_txt', $educmem],
             ['inst_cod', $inst_cod],
@@ -155,7 +150,6 @@ class education {
         $method = 'insert_inst';
         $returns = 'yes';
         $params = [
-            ['sonis_ds', '#sonis.ds#'],
             ['soc_sec', $soc_sec],
             ['inst_mem', $inst_mem],
             ['edu_rid', $edu_rid],
@@ -179,7 +173,6 @@ class education {
         $method = 'institutsearch';
         $returns = 'yes';
         $params = [
-            ['sonis_ds', '#sonis.ds#'],
             ['inst_city', $inst_city],
             ['inst_cntry', $inst_cntry],
             ['inst_state', $inst_state],
@@ -239,12 +232,11 @@ class education {
      * @param string $override Override flag
      * @return array
      */
-    public static function update_education($soc_sec, $edu_rid = '', $eduinsttyp = '', $degree = '', $credits = '', $qlty_pnts = '', $cqpa = '', $rankstud = '', $rankclass = '', $grad_date = '', $enter_date = '', $leav_date = '', $date_rec = '', $matric_dt = '', $trans_rec = '', $prog_desc = '', $educmem = '', $enr_age = '', $orig_grad = '', $grad_mo = '', $grad_year = '', $graduated = '', $grad_honors = '', $nmedu_ce1 = '', $nmedu_le1 = '', $nmedu_ne1 = '', $inst_txt = '', $cohort_cod = '', $degree_sought = '', $prg_sought = '', $ant_grad_date = '', $gpa_creds = '', $transfered = '', $grad_stud = '', $OA_inprocess = '', $diploma = '', $employ_waiver_type = '', $cur_cod = '', $prev_instname = '', $grad_age = '', $degreeclass_cod = '', $nmedu_transmem = '', $employ_waiver = '', $override = '') {
+    public static function update_education($soc_sec, $edu_rid, $eduinsttyp, $degree, $credits, $qlty_pnts, $cqpa, $rankstud, $rankclass, $grad_date, $enter_date, $leav_date, $date_rec, $matric_dt, $trans_rec, $prog_desc, $educmem, $enr_age, $orig_grad, $grad_mo, $grad_year, $graduated, $grad_honors, $nmedu_ce1, $nmedu_le1, $nmedu_ne1, $inst_txt, $cohort_cod, $degree_sought, $prg_sought, $ant_grad_date, $gpa_creds, $transfered, $grad_stud, $OA_inprocess, $diploma, $employ_waiver_type, $cur_cod, $prev_instname, $grad_age, $degreeclass_cod, $nmedu_transmem, $employ_waiver, $override) {
         $comp = (new self())->get_comp();
         $method = 'update_education';
         $returns = 'yes';
         $params = [
-            ['sonis_ds', '#sonis.ds#'],
             ['soc_sec', $soc_sec],
             ['edu_rid', $edu_rid],
             ['eduinsttyp', $eduinsttyp],
