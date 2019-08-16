@@ -638,10 +638,8 @@ class dropbox {
      * @param boolean $allow_blank Allow blank values, true or false, this must be true if $value is not set
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
-     * @param boolean $desc_only Unsure really, testing shows no change
      * @param string $value the default value to be used, selected automatically, defaults to blank
      * @param integer $size Unsure really, testing shows no change
-     * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
     public static function zone_drop($allow_blank, $multi_select, $hide, $value = '', $size = 3) {
