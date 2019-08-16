@@ -30,7 +30,7 @@
  *
  * API configuration
  *
- * @file config.php
+ * @file sonis.php
  * @package Core
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016

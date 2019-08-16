@@ -36,7 +36,7 @@
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-require __DIR__ . '/../config.php';
+require __DIR__ . '/../sonis.php';
 
 /**
  * The object(s) primary key being retrieved

@@ -94,7 +94,7 @@ class soapapi {
     /**
      * Set SOAP client config
      *
-     * Configurations can be set within config.php
+     * Configurations can be set within sonis.php
      * $cfg->opts section.
      *
      * @return array|SoapClient

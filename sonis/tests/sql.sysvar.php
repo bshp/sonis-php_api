@@ -36,7 +36,7 @@
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-require __DIR__ . '/../config.php';
+require __DIR__ . '/../sonis.php';
 
 /**
  * SOAP SQL is the easiest to work with.
