@@ -115,16 +115,16 @@ class soapapi {
      * to the array processor to try and cleanup before returning
      * the results to the output controller
      *
-     * @param string $method the method within the component
-     * @param string $returns yes or no if returns data
-     * @param mixed $args contains component::method($key)
+     * @param mixed $args contains component::method($args)
      * @return array|string Returns output of utils.utils_array_process
      * @example '../tests/api.biographic.php'
      */
-    public function run($method, $returns, $args) {
+    public function run($args) {
         global $utils;
-        //$method = substr($args, strpos($args, ":") + 2);
-        include_once __DIR__ . '/../router.php';
+        $comp = $args['comp'];
+        $method = $args['method'];
+        $params = $args['params'];
+        $returns = $args['returns'];
         $call = $this->soapConfig();
         $result = $call->__soapCall('doAPISomething', [
             'user' => $this->user,
@@ -132,7 +132,7 @@ class soapapi {
             'comp' => 'CFC.' . $comp,
             'meth' => $method,
             'hasReturnVariable' => $returns,
-            'argumentdata' => $args,
+            'argumentdata' => $params,
         ]);
         if ($this->opts['debug']) {
             $message = $call->__getLastRequest();
