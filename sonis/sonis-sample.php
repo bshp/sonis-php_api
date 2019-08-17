@@ -104,7 +104,7 @@ if ($cfg->proxy_auth) {
 //===========================
 // ensure api is reachable  #
 //===========================
-if (!$api->apiUp()) {
+if (!$api->api_up()) {
     die('Sonis API is not available, please check your settings (username, password, and/or url)');
 }
 //closing tag left out on purpose to prevent trailing whitespaces

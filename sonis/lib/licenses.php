@@ -56,7 +56,6 @@ class licenses {
         $method = 'delete_license';
         $returns = 'yes';
         $params = [
-            ['sonis_ds', '#sonis.ds#'],
             ['soc_sec', $soc_sec],
         ];
         //return $params;
@@ -75,12 +74,11 @@ class licenses {
      * @param string $d_soc_sec The objects unique identifier
      * @return array
      */
-    public static function insert_license($soc_sec, $license, $lic_no, $date_rec, $date_exp, $lic_mem = '', $d_soc_sec = '') {
+    public static function insert_license($soc_sec, $license, $lic_no, $date_rec, $date_exp, $lic_mem, $d_soc_sec = '') {
         $comp = (new self())->get_comp();
         $method = 'insert_license';
         $returns = 'yes';
         $params = [
-            ['sonis_ds', '#sonis.ds#'],
             ['soc_sec', $soc_sec],
             ['soc_sec', $license],
             ['lic_no', $lic_no],
@@ -105,7 +103,6 @@ class licenses {
         $method = 'search';
         $returns = 'yes';
         $params = [
-            ['sonis_ds', '#sonis.ds#'],
             ['soc_sec', $soc_sec],
             ['license', $license],
         ];
@@ -126,12 +123,11 @@ class licenses {
      * @param string $lic_rid
      * @return array
      */
-    public static function update_license($soc_sec, $license, $lic_no = '', $date_rec = '', $date_exp = '', $lic_mem = '', $d_soc_sec = '', $lic_rid = '') {
+    public static function update_license($soc_sec, $license, $lic_no, $date_rec, $date_exp, $lic_mem, $lic_rid, $d_soc_sec = '') {
         $comp = (new self())->get_comp();
         $method = 'update_license';
         $returns = 'yes';
         $params = [
-            ['sonis_ds', '#sonis.ds#'],
             ['soc_sec', $soc_sec],
             ['license', $license],
             ['lic_no', $lic_no],

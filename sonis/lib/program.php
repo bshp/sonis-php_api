@@ -58,8 +58,6 @@ class program {
         $method = 'approgsearch';
         $returns = 'yes';
         $params = [
-            ['sonis_ds', '#sonis.ds#'],
-            ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
         ];
         //return $params;
@@ -77,8 +75,6 @@ class program {
         $method = 'complete_app';
         $returns = 'yes';
         $params = [
-            ['sonis_ds', '#sonis.ds#'],
-            ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
         ];
         //return $params;
@@ -96,8 +92,6 @@ class program {
         $method = 'delete_approg';
         $returns = 'yes';
         $params = [
-            ['sonis_ds', '#sonis.ds#'],
-            ['MainDir', '#MainDir#'],
             ['app_rid', $app_rid]
         ];
         //return $params;
@@ -138,7 +132,7 @@ class program {
      * @param string $operator The persons unqiue ID adding or modifying the record. Please change the value
      * @return array
      */
-    public static function insert_approg($soc_sec, $d_soc_sec = '', $camp_cod = '', $entry_date = '', $prg_cod = '', $div_cod = '', $app_date = '', $ack_date = '', $trans_date = '', $is_applicant = '', $preferred = '', $incomplete = '', $app_rid = '', $ref_source = '', $fee_rec = '', $apfee_dt = '', $prior_app = '', $app_yr = '', $acknowledg = '', $sms_trans = '', $matric_fee = '', $degree_ap = '', $degree_ac = '', $major_ap = '', $major_ac = '', $time_maint = '', $date_maint = '', $trans_done = '', $operator = '') {
+    public static function insert_approg($soc_sec, $camp_cod, $entry_date, $prg_cod, $div_cod, $app_date, $ack_date, $trans_date, $is_applicant, $preferred, $incomplete, $app_rid, $ref_source, $fee_rec, $apfee_dt, $prior_app, $app_yr, $acknowledg, $sms_trans, $matric_fee, $degree_ap, $degree_ac, $major_ap, $major_ac, $time_maint, $date_maint, $trans_done, $d_soc_sec = '', $operator) {
         $comp = (new self())->get_comp();
         $method = 'insert_approg';
         $returns = 'yes';
@@ -170,8 +164,6 @@ class program {
             ['date_maint', $date_maint],
             ['trans_done', $trans_done],
             ['operator', $operator],
-            ['MainDir', '#MainDir#'],
-            ['CurDrive', '#session.CurDrive#'],
             ['is_applicant', $is_applicant],
             ['preferred', $preferred]
         ];
@@ -191,8 +183,6 @@ class program {
         $method = 'preventrepeats';
         $returns = 'yes';
         $params = [
-            ['sonis_ds', '#sonis.ds#'],
-            ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
             ['prg_cod', $prg_cod],
         ];
@@ -211,8 +201,6 @@ class program {
         $method = 'programSearch';
         $returns = 'yes';
         $params = [
-            ['sonis_ds', '#sonis.ds#'],
-            ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
         ];
         //return $params;
