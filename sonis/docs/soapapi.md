@@ -23,59 +23,6 @@ Methods
 -------
 
 
-### __construct
-
-    mixed soapapi::__construct()
-
-Decepticon Constructor
-
-
-
-* Visibility: **public**
-
-
-
-
-### apiConfig
-
-    array soapapi::apiConfig()
-
-Store api config variables
-
-
-
-* Visibility: **public**
-
-
-
-
-### apiUp
-
-    boolean soapapi::apiUp()
-
-Simple check for the api endpoint
-
-
-
-* Visibility: **public**
-
-
-
-
-### soapConfig
-
-    array|\SoapClient soapapi::soapConfig()
-
-Set SOAP client config
-
-Configurations can be set within sonis.php
-$cfg->opts section.
-
-* Visibility: **protected**
-
-
-
-
 ### run
 
     array|string soapapi::run(mixed $args)

@@ -23,19 +23,6 @@ Methods
 -------
 
 
-### __construct
-
-    mixed soapsql::__construct()
-
-Decepticon Constructor
-
-
-
-* Visibility: **public**
-
-
-
-
 ### run
 
     array|mixed soapsql::run(string $sql)

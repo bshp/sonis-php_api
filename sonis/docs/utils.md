@@ -21,6 +21,61 @@ Methods
 -------
 
 
+### __construct
+
+    mixed utils::__construct()
+
+Decepticon Constructor
+
+
+
+* Visibility: **public**
+
+
+
+
+### utils_api_cfg
+
+    array utils::utils_api_cfg()
+
+Store api config variables
+
+
+
+* Visibility: **public**
+
+
+
+
+### utils_api_up
+
+    boolean utils::utils_api_up()
+
+Simple check for the api endpoint
+
+
+
+* Visibility: **public**
+
+
+
+
+### utils_debug_soap
+
+    boolean|mixed utils::utils_debug_soap(mixed $call)
+
+Debugging a SOAP call, handle routing
+
+
+
+* Visibility: **public**
+
+
+#### Arguments
+* $call **mixed** - &lt;p&gt;The SOAP call that is executed&lt;/p&gt;
+
+
+
 ### utils_dt
 
     false|string utils::utils_dt(string $date)
@@ -228,5 +283,23 @@ just return the given object($obj).
 
 #### Arguments
 * $obj **object** - &lt;p&gt;The object to create an array from&lt;/p&gt;
+
+
+
+### utils_soap_client
+
+    array|\SoapClient utils::utils_soap_client($wsdl, $opts)
+
+Set SOAP client config
+
+Configurations can be set within sonis.php
+$cfg->opts section.
+
+* Visibility: **public**
+
+
+#### Arguments
+* $wsdl **mixed**
+* $opts **mixed**
 
 
