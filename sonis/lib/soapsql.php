@@ -43,18 +43,6 @@
 class soapsql {
 
     /**
-     * Decepticon Constructor
-     */
-    public function __construct() {
-        global $cfg;
-        $this->user = $cfg->user;
-        $this->pass = $cfg->pass;
-        $this->host = $cfg->host;
-        $this->opts = $cfg->opts;
-        $this->wsdl = $cfg->host . '/cfc/soapsql.cfc?wsdl';
-    }
-
-    /**
      * Run raw sql statements.
      *
      * Do we really need to make soapsql difficult? it's
@@ -71,19 +59,18 @@ class soapsql {
      * @todo more cleanup, add debugging, maybe check for injections
      */
     public function run($sql) {
-        global $utils;
+        global $cfg, $utils;
         $sql = preg_replace("/[\;]/", '', $sql);
         $params = [
-            'user' => $this->user,
-            'pass' => $this->pass,
+            'user' => $cfg->user,
+            'pass' => $cfg->pass,
             'sql' => $sql,
         ];
-        try {
-            $call = new SoapClient($this->wsdl, $this->opts['soap']);
-        } catch (Exception $exception) {
-            return ['error' => messages::msg_soap_client_error() . $exception];
-        }
+        $call = $utils->utils_soap_client($cfg->host . '/cfc/soapsql.cfc?wsdl', $cfg->opts['soap']);
         $result = $call->__soapCall("doSQLSomething", $params);
+        if ($cfg->opts['debug']) {
+            $utils->utils_debug_soap($call);
+        }
         return $utils->utils_array_process($result);
     }
 }

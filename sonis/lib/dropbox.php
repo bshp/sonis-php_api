@@ -643,8 +643,8 @@ class dropbox {
      * @return array
      */
     public static function zone_drop($allow_blank, $multi_select, $hide, $value = '', $size = 3) {
-        $comp = 'zones';
-        $method = 'zones_drop';
+        $comp = 'zone';
+        $method = 'zone_drop';
         $returns = 'no';
         $params = [
             ['allow_blank', $allow_blank],
