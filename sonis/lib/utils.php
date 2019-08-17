@@ -102,6 +102,20 @@ class utils {
     }
 
     /**
+     * Debugging a SOAP call, handle routing
+     *
+     * @param mixed $call The SOAP call that is executed
+     * @return bool|mixed
+     */
+    public function utils_debug_soap($call) {
+        $message = $call->__getLastRequest();
+        if ($this->opts['debug_display']) {
+            return print_r($message);
+        }
+        return error_log($message, 0);
+    }
+
+    /**
      * Format date/time to yyyy-mm-dd
      *
      * @param string $date

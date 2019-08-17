@@ -68,6 +68,9 @@ class soapsql {
         ];
         $call = $utils->utils_soap_client($cfg->host . '/cfc/soapsql.cfc?wsdl', $cfg->opts['soap']);
         $result = $call->__soapCall("doSQLSomething", $params);
+        if ($cfg->opts['debug']) {
+            $utils->utils_debug_soap($call);
+        }
         return $utils->utils_array_process($result);
     }
 }

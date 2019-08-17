@@ -69,8 +69,7 @@ class soapapi {
             'argumentdata' => $params,
         ]);
         if ($cfg->opts['debug']) {
-            $message = $call->__getLastRequest();
-            error_log($message, 0);
+            $utils->utils_debug_soap($call);
         }
         return $utils->utils_array_process($result);
     }
