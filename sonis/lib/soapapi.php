@@ -50,6 +50,12 @@ class soapapi {
         $this->user = $cfg->user;
         $this->pass = $cfg->pass;
         $this->host = $cfg->host;
+        $this->proxy_net = $cfg->proxy_net;
+        $this->proxy_auth = $cfg->proxy_auth;
+        $this->proxy_host = $cfg->proxy_host;
+        $this->proxy_port = $cfg->proxy_port;
+        $this->proxy_user = $cfg->proxy_user;
+        $this->proxy_pass = $cfg->proxy_pass;
         $this->opts = $cfg->opts;
         $this->wsdl = $cfg->host . '/cfc/soapapi.cfc?wsdl';
     }
@@ -59,7 +65,7 @@ class soapapi {
      *
      * @return array
      */
-    public function apiConfig() {
+    public function api_cfg() {
         return [
             'user' => $this->user,
             'pass' => $this->pass,
@@ -74,12 +80,20 @@ class soapapi {
      *
      * @return boolean Returns true or false if endpoint is up
      */
-    public function apiUp() {
+    public function api_up() {
         $ch = curl_init($this->wsdl);
         curl_setopt($ch, CURLOPT_HEADER, true);
         curl_setopt($ch, CURLOPT_NOBODY, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
         curl_setopt($ch, CURLOPT_TIMEOUT,5);
+        if ($this->proxy_net) {
+            curl_setopt($ch, CURLOPT_PROXY, $this->proxy_host);
+            curl_setopt($ch, CURLOPT_PROXYPORT, $this->proxy_port);
+        }
+        if ($this->proxy_auth) {
+            curl_setopt($ch, CURLOPT_USERPWD, "$this->proxy_user:$this->proxy_pass");
+        }
         $output = curl_exec($ch);
         $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
@@ -99,7 +113,7 @@ class soapapi {
      *
      * @return array|SoapClient
      */
-    protected function soapConfig() {
+    protected function soap_client() {
         try {
             $result = new SoapClient($this->wsdl, $this->opts['soap']);
         } catch (Exception $exception) {
@@ -125,7 +139,7 @@ class soapapi {
         $method = $args['method'];
         $params = $args['params'];
         $returns = $args['returns'];
-        $call = $this->soapConfig();
+        $call = $this->soap_client();
         $result = $call->__soapCall('doAPISomething', [
             'user' => $this->user,
             'pass' => $this->pass,
