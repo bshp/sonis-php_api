@@ -97,8 +97,8 @@ class onlineapp {
     /**
      * Search for a given online applicant
      *
-     * @param string $firstname
-     * @param string $lastname
+     * @param string $firstname The persons firstname
+     * @param string $lastname The persons lastname
      * @param string $birthdate The persons birthday, such as 05/12/2001
      * @param string $e_mail The primary email address for the record type
      * @return array
@@ -164,7 +164,7 @@ class onlineapp {
      * @param integer $oa_section_rid
      * @return array
      */
-    public static function oa_questions_search_format($soc_sec, $oa_questions_row, $oa_questions_col, $oa_section_rid = 1) {
+    public static function oa_questions_search_format($soc_sec, $oa_questions_row, $oa_questions_col, $oa_section_rid) {
         $comp = 'oa_questions';
         $method = 'oa_questions_search_format';
         $returns = 'yes';
