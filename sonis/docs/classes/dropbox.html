@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">126</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1919258798"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1919258798" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/address.html">address</a></li>
+                                                    <li class="class"><a href="../classes/biographic.html">biographic</a></li>
+                                                    <li class="class"><a href="../classes/course.html">course</a></li>
+                                                    <li class="class"><a href="../classes/dropbox.html">dropbox</a></li>
+                                                    <li class="class"><a href="../classes/education.html">education</a></li>
+                                                    <li class="class"><a href="../classes/employment.html">employment</a></li>
+                                                    <li class="class"><a href="../classes/enrollment.html">enrollment</a></li>
+                                                    <li class="class"><a href="../classes/focus.html">focus</a></li>
+                                                    <li class="class"><a href="../classes/licenses.html">licenses</a></li>
+                                                    <li class="class"><a href="../classes/messages.html">messages</a></li>
+                                                    <li class="class"><a href="../classes/onlineapp.html">onlineapp</a></li>
+                                                    <li class="class"><a href="../classes/pagenotes.html">pagenotes</a></li>
+                                                    <li class="class"><a href="../classes/person.html">person</a></li>
+                                                    <li class="class"><a href="../classes/program.html">program</a></li>
+                                                    <li class="class"><a href="../classes/prospect.html">prospect</a></li>
+                                                    <li class="class"><a href="../classes/soapapi.html">soapapi</a></li>
+                                                    <li class="class"><a href="../classes/soapsql.html">soapsql</a></li>
+                                                    <li class="class"><a href="../classes/utils.html">utils</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>dropbox</h1>
+                    <p><em>Class dropbox</em></p>
+                    <p>Sonis API Framework</p>
+<p>Component: drp_box.cfc</p>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/dropbox.html#method_app_term" class="">app_term()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_campus" class="">campus()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_country" class="">country()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_county" class="">county()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_degree" class="">degree()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_enrollStatus" class="">enrollStatus()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_dept_drop" class="">dept_drop()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_ethnic_drop" class="">ethnic_drop()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_gender_drop" class="">gender_drop()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_interest" class="">interest()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_LevelofEdu" class="">LevelofEdu()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_licenses_drop" class="">licenses_drop()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_marital_drop" class="">marital_drop()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_prog_drop" class="">prog_drop()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_program" class="">program()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_state" class="">state()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_stateoflicensure" class="">stateoflicensure()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_sch_yr_drop" class="">sch_yr_drop()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_semester_drop" class="">semester_drop()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_termInterest" class="">termInterest()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_tuitstat_drop" class="">tuitstat_drop()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_visa_drop" class="">visa_drop()</a><br />
+                                                                    <a href="../classes/dropbox.html#method_zone_drop" class="">zone_drop()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <a href="../classes/dropbox.html#method_get_comp" class="">get_comp()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/lib.dropbox.html"><div class="path-wrapper">lib\dropbox.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Sonis API</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\dropbox</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                file
+                            </th>
+                            <td>
+                                                                    <p>dropbox.php</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                author
+                            </th>
+                            <td>
+                                                                    <p>Jason A. Everling <a href="mailto:jason...@gmail.com">jason...@gmail.com</a></p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                copyright
+                            </th>
+                            <td>
+                                                                    <p>2016</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                license
+                            </th>
+                            <td>
+                                                                    <p><a href="https://opensource.org/licenses/MIT">https://opensource.org/licenses/MIT</a></p>
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                        
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_app_term" name="method_app_term" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">app_term()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">app_term(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, string  <span class="argument">$Additional_Properties</span>, string  <span class="argument">$value = &#039;&#039;</span>) : array</pre>
+                <p><em>Provides an html list of application terms</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$Additional_Properties </td>
+                                <td><p>Additional props</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>the default value to be used, selected automatically, defaults to blank</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_campus" name="method_campus" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">campus()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">campus(boolean  <span class="argument">$hide_excludes</span>, boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, string  <span class="argument">$Additional_Properties</span>, string  <span class="argument">$value = &#039;&#039;</span>) : array</pre>
+                <p><em>Provides an html list of campus&#039;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide_excludes </td>
+                                <td><p>Hide excluded values as set in Sonis, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$Additional_Properties </td>
+                                <td><p>Additional props</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>the default value to be used, selected automatically, defaults to blank</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_country" name="method_country" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">country()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">country(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, string  <span class="argument">$Additional_Properties</span>) : array</pre>
+                <p><em>Provides an html list of countries</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$Additional_Properties </td>
+                                <td><p>Additional props</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_county" name="method_county" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">county()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">county(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, string  <span class="argument">$Additional_Properties</span>, boolean  <span class="argument">$disp_only</span>, string  <span class="argument">$value = &#039;&#039;</span>) : array</pre>
+                <p><em>Provides an html list of counties</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$Additional_Properties </td>
+                                <td><p>Additional props</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$disp_only </td>
+                                <td><p>True or false if editable</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>the default value to be used, selected automatically, defaults to blank</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_degree" name="method_degree" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">degree()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">degree(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, string  <span class="argument">$Additional_Properties</span>) : array</pre>
+                <p><em>Provides an html list of degrees</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$Additional_Properties </td>
+                                <td><p>Additional props</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_enrollStatus" name="method_enrollStatus" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">enrollStatus()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">enrollStatus(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, string  <span class="argument">$Additional_Properties</span>, string  <span class="argument">$value = &#039;&#039;</span>) : array</pre>
+                <p><em>Provides an html list of degrees</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$Additional_Properties </td>
+                                <td><p>Additional props</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>the default value to be used, selected automatically, defaults to blank</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_dept_drop" name="method_dept_drop" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">dept_drop()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">dept_drop(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, boolean  <span class="argument">$desc_only</span>, boolean  <span class="argument">$cod_desc</span>, string  <span class="argument">$value = &#039;&#039;</span>, integer  <span class="argument">$size = 3</span>) : array</pre>
+                <p><em>Provides an html list of departments</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$desc_only </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$cod_desc </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>the default value to be used, selected automatically, defaults to blank</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$size </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ethnic_drop" name="method_ethnic_drop" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">ethnic_drop()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ethnic_drop(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, boolean  <span class="argument">$desc_only</span>, boolean  <span class="argument">$cod_desc</span>, string  <span class="argument">$value = &#039;&#039;</span>, integer  <span class="argument">$size = 3</span>) : array</pre>
+                <p><em>Provides an html list of ethnicity&#039;s</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$desc_only </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$cod_desc </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>the default value to be used, selected automatically, defaults to blank</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$size </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_gender_drop" name="method_gender_drop" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">gender_drop()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">gender_drop(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, boolean  <span class="argument">$desc_only</span>, boolean  <span class="argument">$cod_desc</span>, string  <span class="argument">$value = &#039;&#039;</span>, integer  <span class="argument">$size = 3</span>) : array</pre>
+                <p><em>Provides an html list of genders</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$desc_only </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$cod_desc </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>the default value to be used, selected automatically, defaults to blank</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$size </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_interest" name="method_interest" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">interest()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">interest(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, string  <span class="argument">$Additional_Properties</span>) : array</pre>
+                <p><em>Provides an html list of interest&#039;s</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$Additional_Properties </td>
+                                <td><p>Additional props</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_LevelofEdu" name="method_LevelofEdu" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">LevelofEdu()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">LevelofEdu(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, string  <span class="argument">$Additional_Properties</span>) : array</pre>
+                <p><em>Provides an html list of levels of education</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$Additional_Properties </td>
+                                <td><p>Additional props</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_licenses_drop" name="method_licenses_drop" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">licenses_drop()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">licenses_drop(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, boolean  <span class="argument">$desc_only</span>, boolean  <span class="argument">$cod_desc</span>, string  <span class="argument">$value = &#039;&#039;</span>, integer  <span class="argument">$size = 3</span>) : array</pre>
+                <p><em>Provides an html list of licenses</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$desc_only </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$cod_desc </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>the default value to be used, selected automatically, defaults to blank</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$size </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_marital_drop" name="method_marital_drop" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">marital_drop()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">marital_drop(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, boolean  <span class="argument">$desc_only</span>, boolean  <span class="argument">$cod_desc</span>, string  <span class="argument">$value = &#039;&#039;</span>, integer  <span class="argument">$size = 3</span>) : array</pre>
+                <p><em>Provides an html list of martial status&#039;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$desc_only </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$cod_desc </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>the default value to be used, selected automatically, defaults to blank</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$size </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_prog_drop" name="method_prog_drop" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">prog_drop()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">prog_drop(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, boolean  <span class="argument">$desc_only</span>, boolean  <span class="argument">$cod_desc</span>, boolean  <span class="argument">$excl_prg</span>, string  <span class="argument">$value = &#039;&#039;</span>, integer  <span class="argument">$size = 3</span>) : array</pre>
+                <p><em>Provides an html list of programs</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$desc_only </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$cod_desc </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$excl_prg </td>
+                                <td><p>Exclude hidden programs in Sonis</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>the default value to be used, selected automatically, defaults to blank</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$size </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_program" name="method_program" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">program()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">program(boolean  <span class="argument">$hide_excludes</span>, boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, string  <span class="argument">$Additional_Properties</span>) : array</pre>
+                <p><em>Provides an html list of programs</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide_excludes </td>
+                                <td><p>Hide excluded values as set in Sonis, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$Additional_Properties </td>
+                                <td><p>Additional props</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_state" name="method_state" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">state()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">state(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, string  <span class="argument">$Additional_Properties</span>) : array</pre>
+                <p><em>Provides an html list of state&#039;s</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$Additional_Properties </td>
+                                <td><p>Additional props</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_stateoflicensure" name="method_stateoflicensure" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">stateoflicensure()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">stateoflicensure(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, string  <span class="argument">$Additional_Properties</span>) : array</pre>
+                <p><em>Provides an html list of states of licensure</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$Additional_Properties </td>
+                                <td><p>Additional props</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_sch_yr_drop" name="method_sch_yr_drop" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">sch_yr_drop()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">sch_yr_drop(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, boolean  <span class="argument">$use_cur_sem</span>, string  <span class="argument">$value = &#039;&#039;</span>, integer  <span class="argument">$size = 3</span>) : array</pre>
+                <p><em>Provides an html list of school years</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$use_cur_sem </td>
+                                <td><p>true or false to use current semester as default</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>the default value to be used, selected automatically, defaults to blank</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$size </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_semester_drop" name="method_semester_drop" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">semester_drop()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">semester_drop(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, boolean  <span class="argument">$desc_only</span>, boolean  <span class="argument">$cod_desc</span>, boolean  <span class="argument">$use_cur_sem</span>, string  <span class="argument">$value = &#039;&#039;</span>, integer  <span class="argument">$size = 3</span>) : array</pre>
+                <p><em>Provides an html list of semesters</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$desc_only </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$cod_desc </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$use_cur_sem </td>
+                                <td><p>true or false to use current semester as default</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>the default value to be used, selected automatically, defaults to blank</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$size </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_termInterest" name="method_termInterest" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">termInterest()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">termInterest(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, string  <span class="argument">$Additional_Properties</span>) : array</pre>
+                <p><em>Provides an html list of terms/semester interested in</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$Additional_Properties </td>
+                                <td><p>Additional props</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_tuitstat_drop" name="method_tuitstat_drop" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">tuitstat_drop()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">tuitstat_drop(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, boolean  <span class="argument">$desc_only</span>, boolean  <span class="argument">$cod_desc</span>, string  <span class="argument">$value = &#039;&#039;</span>, integer  <span class="argument">$size = 3</span>) : array</pre>
+                <p><em>Provides an html list of tuition status&#039;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$desc_only </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$cod_desc </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>the default value to be used, selected automatically, defaults to blank</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$size </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_visa_drop" name="method_visa_drop" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">visa_drop()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">visa_drop(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, boolean  <span class="argument">$desc_only</span>, boolean  <span class="argument">$cod_desc</span>, string  <span class="argument">$value = &#039;&#039;</span>, integer  <span class="argument">$size = 3</span>) : array</pre>
+                <p><em>Provides an html list of visas&#039;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$desc_only </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$cod_desc </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>the default value to be used, selected automatically, defaults to blank</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$size </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_zone_drop" name="method_zone_drop" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">zone_drop()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">zone_drop(boolean  <span class="argument">$allow_blank</span>, boolean  <span class="argument">$multi_select</span>, boolean  <span class="argument">$hide</span>, string  <span class="argument">$value = &#039;&#039;</span>, integer  <span class="argument">$size = 3</span>) : array</pre>
+                <p><em>Provides an html list of zones, i.e dbo.zone</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$allow_blank </td>
+                                <td><p>Allow blank values, true or false, this must be true if $value is not set</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$multi_select </td>
+                                <td><p>Create mutli-select html box, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$hide </td>
+                                <td><p>Hide this dropdown by default, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>the default value to be used, selected automatically, defaults to blank</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$size </td>
+                                <td><p>Unsure really, testing shows no change</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_get_comp" name="method_get_comp" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">get_comp()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">get_comp() </pre>
+                <p><em></em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">dropbox.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/lib\dropbox.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on August 16th, 2019 at 19:04.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

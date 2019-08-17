@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">126</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1651549637"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1651549637" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/address.html">address</a></li>
+                                                    <li class="class"><a href="../classes/biographic.html">biographic</a></li>
+                                                    <li class="class"><a href="../classes/course.html">course</a></li>
+                                                    <li class="class"><a href="../classes/dropbox.html">dropbox</a></li>
+                                                    <li class="class"><a href="../classes/education.html">education</a></li>
+                                                    <li class="class"><a href="../classes/employment.html">employment</a></li>
+                                                    <li class="class"><a href="../classes/enrollment.html">enrollment</a></li>
+                                                    <li class="class"><a href="../classes/focus.html">focus</a></li>
+                                                    <li class="class"><a href="../classes/licenses.html">licenses</a></li>
+                                                    <li class="class"><a href="../classes/messages.html">messages</a></li>
+                                                    <li class="class"><a href="../classes/onlineapp.html">onlineapp</a></li>
+                                                    <li class="class"><a href="../classes/pagenotes.html">pagenotes</a></li>
+                                                    <li class="class"><a href="../classes/person.html">person</a></li>
+                                                    <li class="class"><a href="../classes/program.html">program</a></li>
+                                                    <li class="class"><a href="../classes/prospect.html">prospect</a></li>
+                                                    <li class="class"><a href="../classes/soapapi.html">soapapi</a></li>
+                                                    <li class="class"><a href="../classes/soapsql.html">soapsql</a></li>
+                                                    <li class="class"><a href="../classes/utils.html">utils</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>education</h1>
+                    <p><em>Class education</em></p>
+                    <p>Sonis API Framework</p>
+<p>Component: education.cfc</p>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/education.html#method_delete_education" class="">delete_education()</a><br />
+                                                                    <a href="../classes/education.html#method_eduSearch" class="">eduSearch()</a><br />
+                                                                    <a href="../classes/education.html#method_insert_default_education" class="">insert_default_education()</a><br />
+                                                                    <a href="../classes/education.html#method_insert_education" class="">insert_education()</a><br />
+                                                                    <a href="../classes/education.html#method_insert_inst" class="">insert_inst()</a><br />
+                                                                    <a href="../classes/education.html#method_institutsearch" class="">institutsearch()</a><br />
+                                                                    <a href="../classes/education.html#method_update_education" class="">update_education()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <a href="../classes/education.html#method_get_comp" class="">get_comp()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/lib.education.html"><div class="path-wrapper">lib\education.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Sonis API</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\education</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                file
+                            </th>
+                            <td>
+                                                                    <p>education.php</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                author
+                            </th>
+                            <td>
+                                                                    <p>Jason A. Everling <a href="mailto:jason...@gmail.com">jason...@gmail.com</a></p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                copyright
+                            </th>
+                            <td>
+                                                                    <p>2016</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                license
+                            </th>
+                            <td>
+                                                                    <p><a href="https://opensource.org/licenses/MIT">https://opensource.org/licenses/MIT</a></p>
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                        
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_delete_education" name="method_delete_education" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">delete_education()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">delete_education(string  <span class="argument">$soc_sec</span>, string  <span class="argument">$edu_rid</span>) : array</pre>
+                <p><em>Deletes an education record</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$soc_sec </td>
+                                <td><p>The objects unique identifier</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$edu_rid </td>
+                                <td><p>Edu record id</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_eduSearch" name="method_eduSearch" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">eduSearch()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">eduSearch(string  <span class="argument">$soc_sec</span>, string  <span class="argument">$edu_rid = &#039;&#039;</span>) : array</pre>
+                <p><em>Search for an education record</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$soc_sec </td>
+                                <td><p>The objects unique identifier</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$edu_rid </td>
+                                <td><p>Edu record id</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_insert_default_education" name="method_insert_default_education" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">insert_default_education()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">insert_default_education(string  <span class="argument">$soc_sec</span>, string  <span class="argument">$cohort_cod</span>) : array</pre>
+                <p><em>Inserts a new edu record and sets as default</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$soc_sec </td>
+                                <td><p>The objects unique identifier</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$cohort_cod </td>
+                                <td><p>Cohort code</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_insert_education" name="method_insert_education" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">insert_education()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">insert_education(string  <span class="argument">$soc_sec</span>, string  <span class="argument">$educmem</span>, string  <span class="argument">$inst_cod</span>, string  <span class="argument">$mod_stat</span>, string  <span class="argument">$degree</span>, string  <span class="argument">$enter_date</span>, string  <span class="argument">$leav_date</span>, string  <span class="argument">$grad_mo</span>, string  <span class="argument">$grad_year</span>, string  <span class="argument">$graduated</span>) : array</pre>
+                <p><em>Inserts a new edu record</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$soc_sec </td>
+                                <td><p>The objects unique identifier</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$educmem </td>
+                                <td><p>Educational record memo</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$inst_cod </td>
+                                <td><p>Institutional code</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$mod_stat </td>
+                                <td><p>The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$degree </td>
+                                <td><p>Degree for the given educational record</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$enter_date </td>
+                                <td><p>Educational record entry date</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$leav_date </td>
+                                <td><p>Educational record leaving date</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$grad_mo </td>
+                                <td><p>Educational record gradfuation month</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$grad_year </td>
+                                <td><p>Educational record gradfuation year</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$graduated </td>
+                                <td><p>Educational record graduated, true or false</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_insert_inst" name="method_insert_inst" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">insert_inst()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">insert_inst(string  <span class="argument">$soc_sec</span>, string  <span class="argument">$inst_mem = &#039;&#039;</span>, string  <span class="argument">$edu_rid = &#039;&#039;</span>) : array</pre>
+                <p><em>Inserts a new institution</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$soc_sec </td>
+                                <td><p>The objects unique identifier</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$inst_mem </td>
+                                <td><p>Institutional memo</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$edu_rid </td>
+                                <td><p>Edu record id</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_institutsearch" name="method_institutsearch" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">institutsearch()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">institutsearch(string  <span class="argument">$inst_city = &#039;&#039;</span>, string  <span class="argument">$inst_state = &#039;&#039;</span>, string  <span class="argument">$inst_txt = &#039;&#039;</span>, string  <span class="argument">$insttypcod = &#039;&#039;</span>, string  <span class="argument">$inst_cntry = &#039;&#039;</span>) : array</pre>
+                <p><em>Search for institution</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$inst_city </td>
+                                <td><p>Institutional city</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$inst_state </td>
+                                <td><p>Institutional state</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$inst_txt </td>
+                                <td><p>Institutional description</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$insttypcod </td>
+                                <td><p>Institutional type code</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$inst_cntry </td>
+                                <td><p>Institutional country</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_update_education" name="method_update_education" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">update_education()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">update_education(string  <span class="argument">$soc_sec</span>, string  <span class="argument">$edu_rid</span>, string  <span class="argument">$eduinsttyp</span>, string  <span class="argument">$degree</span>, string  <span class="argument">$credits</span>, string  <span class="argument">$qlty_pnts</span>, string  <span class="argument">$cqpa</span>, string  <span class="argument">$rankstud</span>, string  <span class="argument">$rankclass</span>, string  <span class="argument">$grad_date</span>, string  <span class="argument">$enter_date</span>, string  <span class="argument">$leav_date</span>, string  <span class="argument">$date_rec</span>, string  <span class="argument">$matric_dt</span>, string  <span class="argument">$trans_rec</span>, string  <span class="argument">$prog_desc</span>, string  <span class="argument">$educmem</span>, string  <span class="argument">$enr_age</span>, string  <span class="argument">$orig_grad</span>, string  <span class="argument">$grad_mo</span>, string  <span class="argument">$grad_year</span>, string  <span class="argument">$graduated</span>, string  <span class="argument">$grad_honors</span>, string  <span class="argument">$nmedu_ce1</span>, string  <span class="argument">$nmedu_le1</span>, string  <span class="argument">$nmedu_ne1</span>, string  <span class="argument">$inst_txt</span>, string  <span class="argument">$cohort_cod</span>, string  <span class="argument">$degree_sought</span>, string  <span class="argument">$prg_sought</span>, string  <span class="argument">$ant_grad_date</span>, string  <span class="argument">$gpa_creds</span>, string  <span class="argument">$transfered</span>, string  <span class="argument">$grad_stud</span>, string  <span class="argument">$OA_inprocess</span>, string  <span class="argument">$diploma</span>, string  <span class="argument">$employ_waiver_type</span>, string  <span class="argument">$cur_cod</span>, string  <span class="argument">$prev_instname</span>, string  <span class="argument">$grad_age</span>, string  <span class="argument">$degreeclass_cod</span>, string  <span class="argument">$nmedu_transmem</span>, string  <span class="argument">$employ_waiver</span>, string  <span class="argument">$override</span>) : array</pre>
+                <p><em>Update a given education record</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$soc_sec </td>
+                                <td><p>The objects unique identifier</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$edu_rid </td>
+                                <td><p>Edu record id</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$eduinsttyp </td>
+                                <td><p>Institutional type</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$degree </td>
+                                <td><p>Degree for the given educational record</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$credits </td>
+                                <td><p>Credits</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$qlty_pnts </td>
+                                <td><p>Quality point</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$cqpa </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$rankstud </td>
+                                <td><p>Student rank</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$rankclass </td>
+                                <td><p>Class rank</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$grad_date </td>
+                                <td><p>Graduation date</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$enter_date </td>
+                                <td><p>Educational record entry date</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$leav_date </td>
+                                <td><p>Educational record leaving date</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$date_rec </td>
+                                <td><p>Date received</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$matric_dt </td>
+                                <td><p>Matriculation date</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$trans_rec </td>
+                                <td><p>Transcripts received</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$prog_desc </td>
+                                <td><p>Program description</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$educmem </td>
+                                <td><p>Educational record memo</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$enr_age </td>
+                                <td><p>Enrollment age</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$orig_grad </td>
+                                <td><p>Original graduation date</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$grad_mo </td>
+                                <td><p>Educational record gradfuation month</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$grad_year </td>
+                                <td><p>Educational record gradfuation year</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$graduated </td>
+                                <td><p>Educational record graduated, true or false</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$grad_honors </td>
+                                <td><p>Graduated with honors</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$nmedu_ce1 </td>
+                                <td><p>Custom Field 1</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$nmedu_le1 </td>
+                                <td><p>Custom Field 2</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$nmedu_ne1 </td>
+                                <td><p>Custom Field 3</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$inst_txt </td>
+                                <td><p>Institutional description</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$cohort_cod </td>
+                                <td><p>Cohort code</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$degree_sought </td>
+                                <td><p>Degree sought</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$prg_sought </td>
+                                <td><p>Program sought</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$ant_grad_date </td>
+                                <td><p>Anticipated graduation date</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$gpa_creds </td>
+                                <td><p>GPA Credits</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$transfered </td>
+                                <td><p>Transfered</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$grad_stud </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$OA_inprocess </td>
+                                <td><p>Online application in progress</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$diploma </td>
+                                <td><p>Diploma</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$employ_waiver_type </td>
+                                <td><p>Employer waiver type</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$cur_cod </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$prev_instname </td>
+                                <td><p>Previous instituion name</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$grad_age </td>
+                                <td><p>Graduating age</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$degreeclass_cod </td>
+                                <td><p>Degree class code</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$nmedu_transmem </td>
+                                <td><p>Transfer memo</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$employ_waiver </td>
+                                <td><p>Employer waiver</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$override </td>
+                                <td><p>Override flag</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_get_comp" name="method_get_comp" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">get_comp()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">get_comp() </pre>
+                <p><em></em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">education.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/lib\education.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on August 16th, 2019 at 19:04.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
