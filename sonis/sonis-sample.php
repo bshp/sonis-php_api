@@ -66,7 +66,8 @@ $cfg->opts = [
         'exceptions' => 1,
         'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
     ],
-    'debug' => false, // Print the executed SOAP call to the PHP error log as defined in your php.ini
+    'debug' => false, // Log the executed SOAP call to the default error log
+    'debug_display' => false, // Display debug messages instead of sending to system error log
 ];
 //=======================================
 // Nothing should be changed below this #
