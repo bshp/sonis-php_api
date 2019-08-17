@@ -43,86 +43,6 @@
 class soapapi {
 
     /**
-     * Decepticon Constructor
-     */
-    public function __construct() {
-        global $cfg;
-        $this->user = $cfg->user;
-        $this->pass = $cfg->pass;
-        $this->host = $cfg->host;
-        $this->proxy_net = $cfg->proxy_net;
-        $this->proxy_auth = $cfg->proxy_auth;
-        $this->proxy_host = $cfg->proxy_host;
-        $this->proxy_port = $cfg->proxy_port;
-        $this->proxy_user = $cfg->proxy_user;
-        $this->proxy_pass = $cfg->proxy_pass;
-        $this->opts = $cfg->opts;
-        $this->wsdl = $cfg->host . '/cfc/soapapi.cfc?wsdl';
-    }
-
-    /**
-     * Store api config variables
-     *
-     * @return array
-     */
-    public function api_cfg() {
-        return [
-            'user' => $this->user,
-            'pass' => $this->pass,
-            'host' => $this->host,
-            'opts' => $this->opts,
-            'wsdl' => $this->wsdl,
-        ];
-    }
-
-    /**
-     * Simple check for the api endpoint
-     *
-     * @return boolean Returns true or false if endpoint is up
-     */
-    public function api_up() {
-        $ch = curl_init($this->wsdl);
-        curl_setopt($ch, CURLOPT_HEADER, true);
-        curl_setopt($ch, CURLOPT_NOBODY, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-        curl_setopt($ch, CURLOPT_TIMEOUT,5);
-        if ($this->proxy_net) {
-            curl_setopt($ch, CURLOPT_PROXY, $this->proxy_host);
-            curl_setopt($ch, CURLOPT_PROXYPORT, $this->proxy_port);
-        }
-        if ($this->proxy_auth) {
-            curl_setopt($ch, CURLOPT_USERPWD, "$this->proxy_user:$this->proxy_pass");
-        }
-        $output = curl_exec($ch);
-        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
-        //don't really need detailed error codes
-        switch ($httpcode) {
-            case 200:
-                return true;
-        }
-        return false;
-    }
-
-    /**
-     * Set SOAP client config
-     *
-     * Configurations can be set within sonis.php
-     * $cfg->opts section.
-     *
-     * @return array|SoapClient
-     */
-    protected function soap_client() {
-        try {
-            $result = new SoapClient($this->wsdl, $this->opts['soap']);
-        } catch (Exception $exception) {
-            return ['error' => messages::msg_soap_client_error() . $exception];
-        }
-        return $result;
-    }
-
-    /**
      * Make the SOAP call and send output to array processor
      *
      * This will make the actual SOAP request and then send
@@ -134,21 +54,21 @@ class soapapi {
      * @example '../tests/api.biographic.php'
      */
     public function run($args) {
-        global $utils;
+        global $cfg, $utils;
         $comp = $args['comp'];
         $method = $args['method'];
         $params = $args['params'];
         $returns = $args['returns'];
-        $call = $this->soap_client();
+        $call = $utils->utils_soap_client($cfg->host . '/cfc/soapapi.cfc?wsdl', $cfg->opts['soap']);
         $result = $call->__soapCall('doAPISomething', [
-            'user' => $this->user,
-            'pass' => $this->pass,
+            'user' => $cfg->user,
+            'pass' => $cfg->pass,
             'comp' => 'CFC.' . $comp,
             'meth' => $method,
             'hasReturnVariable' => $returns,
             'argumentdata' => $params,
         ]);
-        if ($this->opts['debug']) {
+        if ($cfg->opts['debug']) {
             $message = $call->__getLastRequest();
             error_log($message, 0);
         }
