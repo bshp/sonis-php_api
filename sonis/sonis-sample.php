@@ -40,11 +40,10 @@
 require __DIR__ . '/lib.php';
 
 global $cfg;  // Needed for PHPUnit
-
+$cfg = new stdClass();
 //========================================
 // 1. Configure Sonis API Details        #
 //========================================
-$cfg = new stdClass();
 $cfg->user          =  'your user'; // your api user
 $cfg->pass          =  'users password'; // your api password
 $cfg->host          =  'https://www.example.com'; // your sonis host url, do not append a forward slash /
@@ -105,7 +104,7 @@ if ($cfg->proxy_auth) {
 //===========================
 // ensure api is reachable  #
 //===========================
-if (!$api->api_up()) {
+if (!$utils->utils_api_up()) {
     die('Sonis API is not available, please check your settings (username, password, and/or url)');
 }
 //closing tag left out on purpose to prevent trailing whitespaces
