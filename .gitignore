@@ -22,3 +22,5 @@ behat.yml
 */docs/phpdoc*/
 docs/wiki/
 sonis/docs/structure.xml
+sonis/tests/prod_*_test.php
+sonis/tests/dev_*_test.php
