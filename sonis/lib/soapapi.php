@@ -54,21 +54,21 @@ class soapapi {
      * @example '../tests/api.biographic.php'
      */
     public function run($args) {
-        global $cfg, $utils;
+        global $utils;
         $comp = $args['comp'];
         $method = $args['method'];
         $params = $args['params'];
         $returns = $args['returns'];
-        $call = $utils->utils_soap_client($cfg->host . '/cfc/soapapi.cfc?wsdl', $cfg->opts['soap']);
+        $call = $utils->utils_soap_client($utils->utils_api_cfg()['host'] . '/cfc/soapapi.cfc?wsdl', $utils->utils_api_cfg()['opts']['soap']);
         $result = $call->__soapCall('doAPISomething', [
-            'user' => $cfg->user,
-            'pass' => $cfg->pass,
+            'user' => $utils->utils_api_cfg()['user'],
+            'pass' => $utils->utils_api_cfg()['pass'],
             'comp' => 'CFC.' . $comp,
             'meth' => $method,
             'hasReturnVariable' => $returns,
             'argumentdata' => $params,
         ]);
-        if ($cfg->opts['debug']) {
+        if ($utils->utils_api_cfg()['opts']['debug']) {
             $utils->utils_debug_soap($call);
         }
         return $utils->utils_array_process($result);
