@@ -59,16 +59,16 @@ class soapsql {
      * @todo more cleanup, add debugging, maybe check for injections
      */
     public function run($sql) {
-        global $cfg, $utils;
-        $sql = preg_replace("/[\;]/", '', $sql);
+        global $utils;
+        $sql = preg_replace("/[;]/", '', $sql);
         $params = [
-            'user' => $cfg->user,
-            'pass' => $cfg->pass,
+            'user' => $utils->utils_api_cfg()['user'],
+            'pass' => $utils->utils_api_cfg()['pass'],
             'sql' => $sql,
         ];
-        $call = $utils->utils_soap_client($cfg->host . '/cfc/soapsql.cfc?wsdl', $cfg->opts['soap']);
+        $call = $utils->utils_soap_client($utils->utils_api_cfg()['host'] . '/cfc/soapsql.cfc?wsdl', $utils->utils_api_cfg()['opts']['soap']);
         $result = $call->__soapCall("doSQLSomething", $params);
-        if ($cfg->opts['debug']) {
+        if ($utils->utils_api_cfg()['opts']['debug']) {
             $utils->utils_debug_soap($call);
         }
         return $utils->utils_array_process($result);

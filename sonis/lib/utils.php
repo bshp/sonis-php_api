@@ -47,7 +47,7 @@ class utils {
         global $cfg;
         $this->user = $cfg->user;
         $this->pass = $cfg->pass;
-        $this->host = $cfg->host;
+        $this->host = rtrim($cfg->host, '/');
         $this->proxy_net = $cfg->proxy_net;
         $this->proxy_auth = $cfg->proxy_auth;
         $this->proxy_host = $cfg->proxy_host;
