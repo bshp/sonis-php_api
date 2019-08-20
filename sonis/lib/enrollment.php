@@ -42,7 +42,12 @@ namespace Jenzabar\Sonis\Api;
  */
 class enrollment {
 
-    private function get_comp() {
+    /**
+     * Get the component for the method
+     *
+     * @return string $result The sonis web services component
+     */
+    public function get_comp() {
         $result = 'enrollment';
         return $result;
     }

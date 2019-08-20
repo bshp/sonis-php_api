@@ -42,7 +42,12 @@ namespace Jenzabar\Sonis\Api;
  */
 class dropbox {
 
-    private function get_comp() {
+    /**
+     * Get the component for the method
+     *
+     * @return string $result The sonis web services component
+     */
+    public function get_comp() {
         $result = 'drp_box';
         return $result;
     }

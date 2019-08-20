@@ -42,6 +42,9 @@ namespace Jenzabar\Sonis\Api;
  */
 class person {
 
+    /**
+     * @return bool
+     */
     public function bio() {
         return true;
     }

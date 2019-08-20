@@ -42,18 +42,37 @@ namespace Jenzabar\Sonis\Api;
  */
 class focus {
 
+    /**
+     * @return bool
+     */
     public function user() {
         return true;
     }
+
+    /**
+     * @return bool
+     */
     public function course() {
         return true;
     }
+
+    /**
+     * @return bool
+     */
     public function group() {
         return true;
     }
+
+    /**
+     * @return bool
+     */
     public function role() {
         return true;
     }
+
+    /**
+     * @return bool
+     */
     public function dept() {
         return true;
     }

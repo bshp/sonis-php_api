@@ -44,7 +44,12 @@ namespace Jenzabar\Sonis\Api;
  */
 class pagenotes {
 
-    private function get_comp() {
+    /**
+     * Get the component for the method
+     *
+     * @return string $result The sonis web services component
+     */
+    public function get_comp() {
         $result = 'pagenote';
         return $result;
     }
