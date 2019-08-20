@@ -42,7 +42,8 @@ namespace Jenzabar\Sonis\Api;
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class soapsql {
+class soapsql
+{
 
     /**
      * Run raw sql statements.
@@ -60,7 +61,8 @@ class soapsql {
      * @example '../tests/sql.sysvar.php'
      * @todo more cleanup, add debugging, maybe check for injections
      */
-    public function run($sql) {
+    public function run($sql)
+    {
         global $utils;
         $sql = preg_replace("/[;]/", '', $sql);
         $params = [

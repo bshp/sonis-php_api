@@ -40,7 +40,8 @@ namespace Jenzabar\Sonis\Api;
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class messages {
+class messages
+{
 
     /**
      * Returns a static API unavailable message
@@ -50,7 +51,8 @@ class messages {
      *
      * @return string
      */
-    public static function msg_api_unavailable() {
+    public static function msg_api_unavailable()
+    {
         return 'Sonis API is not available, please check your settings (username, password, and/or url)';
     }
 
@@ -61,7 +63,8 @@ class messages {
      *
      * @return string
      */
-    public static function msg_array_error() {
+    public static function msg_array_error()
+    {
         return 'An error has occurred, check the log for more details';
     }
 
@@ -73,7 +76,8 @@ class messages {
      *
      * @return string
      */
-    public static function msg_soap_client_error() {
+    public static function msg_soap_client_error()
+    {
         return 'There was a problem with the client config, SOAP Error: ';
     }
 
@@ -85,7 +89,8 @@ class messages {
      *
      * @return string
      */
-    public static function msg_undefined_error() {
+    public static function msg_undefined_error()
+    {
         return 'An undefined message was received';
     }
 }

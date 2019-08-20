@@ -40,14 +40,16 @@ namespace Jenzabar\Sonis\Api;
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class employment {
+class employment
+{
 
     /**
      * Get the component for the method
      *
      * @return string $result The sonis web services component
      */
-    public function get_comp() {
+    public function get_comp()
+    {
         $result = 'employment';
         return $result;
     }
@@ -58,7 +60,8 @@ class employment {
      * @param string $emp_rid employer table id
      * @return array
      */
-    public static function delete_employment($emp_rid) {
+    public static function delete_employment($emp_rid)
+    {
         $comp = (new self())->get_comp();
         $method = 'delete_employment';
         $returns = 'yes';
@@ -99,7 +102,8 @@ class employment {
      * @param string $homeinst Home institution
      * @return array
      */
-    public static function insert_employment($soc_sec, $emp_emply, $emp_super, $emp_add1, $emp_add2, $emp_add3, $emp_city, $emp_state, $emp_county, $emp_zip, $employ_type_rid, $emp_pos, $hrs_week, $start_dt, $stop_dt, $emp_mem, $emp_rid, $empcountry, $when_code, $emp_phone, $homeinst) {
+    public static function insert_employment($soc_sec, $emp_emply, $emp_super, $emp_add1, $emp_add2, $emp_add3, $emp_city, $emp_state, $emp_county, $emp_zip, $employ_type_rid, $emp_pos, $hrs_week, $start_dt, $stop_dt, $emp_mem, $emp_rid, $empcountry, $when_code, $emp_phone, $homeinst)
+    {
         $comp = (new self())->get_comp();
         $method = 'insert_employment';
         $returns = 'yes';
@@ -141,7 +145,8 @@ class employment {
      * @param string $emp_rid employer table id
      * @return array
      */
-    public static function search($soc_sec, $emp_rid = '') {
+    public static function search($soc_sec, $emp_rid = '')
+    {
         $comp = (new self())->get_comp();
         $method = 'search';
         $returns = 'yes';
@@ -187,7 +192,8 @@ class employment {
      * @param string $homeinst Home institution
      * @return array
      */
-    public static function update_employment($soc_sec, $emp_emply, $emp_super, $emp_add1, $emp_add2, $emp_add3, $emp_city, $emp_state, $emp_county, $emp_zip, $employ_type_rid, $emp_status, $passed, $emp_email, $number, $emp_pos, $hrs_week, $start_dt, $stop_dt, $emp_mem, $emp_rid, $empcountry, $when_code, $emp_phone, $homeinst) {
+    public static function update_employment($soc_sec, $emp_emply, $emp_super, $emp_add1, $emp_add2, $emp_add3, $emp_city, $emp_state, $emp_county, $emp_zip, $employ_type_rid, $emp_status, $passed, $emp_email, $number, $emp_pos, $hrs_week, $start_dt, $stop_dt, $emp_mem, $emp_rid, $empcountry, $when_code, $emp_phone, $homeinst)
+    {
         $comp = (new self())->get_comp();
         $method = 'update_employment';
         $returns = 'yes';

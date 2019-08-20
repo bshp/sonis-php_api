@@ -40,14 +40,16 @@ namespace Jenzabar\Sonis\Api;
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class address {
+class address
+{
 
     /**
      * Get the component for the method
      *
      * @return string $result The sonis web services component
      */
-    public function get_comp() {
+    public function get_comp()
+    {
         $result = 'address';
         return $result;
     }
@@ -71,7 +73,8 @@ class address {
      * @param string $e_mail The primary email address for the record type
      * @return array
      */
-    public static function add_address($soc_sec, $preferred, $st_addr, $add_addr, $add_add2, $city, $state, $zip, $phone, $cell_phone, $work_phone, $county_cod, $country, $e_mail ) {
+    public static function add_address($soc_sec, $preferred, $st_addr, $add_addr, $add_add2, $city, $state, $zip, $phone, $cell_phone, $work_phone, $county_cod, $country, $e_mail)
+    {
         $comp = (new self())->get_comp();
         $method = 'add_address';
         $returns = 'yes';
@@ -106,7 +109,8 @@ class address {
      * @param string $preferred The persons preferred address, yes or no
      * @return array
      */
-    public static function addressSearch($soc_sec, $preferred) {
+    public static function addressSearch($soc_sec, $preferred)
+    {
         $comp = (new self())->get_comp();
         $method = 'addressSearch';
         $returns = 'yes';
@@ -143,7 +147,8 @@ class address {
      * @param string $operator The persons unqiue ID adding or modifying the record. Please change the value
      * @return array
      */
-    public static function insert_address($soc_sec, $preferred, $st_addr, $add_addr, $add_add2, $city, $state, $zip, $phone, $cell_phone, $fax, $e_mail, $work_phone, $county_cod, $country, $operator ) {
+    public static function insert_address($soc_sec, $preferred, $st_addr, $add_addr, $add_add2, $city, $state, $zip, $phone, $cell_phone, $fax, $e_mail, $work_phone, $county_cod, $country, $operator)
+    {
         $comp = (new self())->get_comp();
         $method = 'insert_address';
         $returns = 'yes';
@@ -194,7 +199,8 @@ class address {
      * @param string $text_me
      * @return array
      */
-    public static function update_address($soc_sec, $add_add2, $add_addr, $cell_phone, $city, $country, $county_cod, $e_mail, $fax, $phone, $st_addr, $state, $work_phone, $zip, $cell_provider, $text_me) {
+    public static function update_address($soc_sec, $add_add2, $add_addr, $cell_phone, $city, $country, $county_cod, $e_mail, $fax, $phone, $st_addr, $state, $work_phone, $zip, $cell_provider, $text_me)
+    {
         $comp = (new self())->get_comp();
         $method = 'update_address';
         $returns = 'yes';

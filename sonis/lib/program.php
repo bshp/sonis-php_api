@@ -42,14 +42,16 @@ namespace Jenzabar\Sonis\Api;
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class program {
+class program
+{
 
     /**
      * Get the component for the method
      *
      * @return string $result The sonis web services component
      */
-    public function get_comp() {
+    public function get_comp()
+    {
         $result = 'program';
         return $result;
     }
@@ -60,7 +62,8 @@ class program {
      * @param string $soc_sec The objects unique identifier
      * @return array
      */
-    public static function approgsearch($soc_sec) {
+    public static function approgsearch($soc_sec)
+    {
         $comp = (new self())->get_comp();
         $method = 'approgsearch';
         $returns = 'yes';
@@ -81,7 +84,8 @@ class program {
      * @param string $soc_sec The objects unique identifier
      * @return array
      */
-    public static function complete_app($soc_sec) {
+    public static function complete_app($soc_sec)
+    {
         $comp = (new self())->get_comp();
         $method = 'complete_app';
         $returns = 'yes';
@@ -102,7 +106,8 @@ class program {
      * @param $app_rid
      * @return array
      */
-    public static function delete_approg($app_rid) {
+    public static function delete_approg($app_rid)
+    {
         $comp = (new self())->get_comp();
         $method = 'delete_approg';
         $returns = 'yes';
@@ -151,7 +156,8 @@ class program {
      * @param string $operator The persons unqiue ID adding or modifying the record. Please change the value
      * @return array
      */
-    public static function insert_approg($soc_sec, $camp_cod, $entry_date, $prg_cod, $div_cod, $app_date, $ack_date, $trans_date, $is_applicant, $preferred, $incomplete, $app_rid, $ref_source, $fee_rec, $apfee_dt, $prior_app, $app_yr, $acknowledg, $sms_trans, $matric_fee, $degree_ap, $degree_ac, $major_ap, $major_ac, $time_maint, $date_maint, $trans_done, $d_soc_sec = '', $operator) {
+    public static function insert_approg($soc_sec, $camp_cod, $entry_date, $prg_cod, $div_cod, $app_date, $ack_date, $trans_date, $is_applicant, $preferred, $incomplete, $app_rid, $ref_source, $fee_rec, $apfee_dt, $prior_app, $app_yr, $acknowledg, $sms_trans, $matric_fee, $degree_ap, $degree_ac, $major_ap, $major_ac, $time_maint, $date_maint, $trans_done, $d_soc_sec = '', $operator)
+    {
         $comp = (new self())->get_comp();
         $method = 'insert_approg';
         $returns = 'yes';
@@ -201,7 +207,8 @@ class program {
      * @param string $prg_cod Program code
      * @return array
      */
-    public static function preventrepeats($soc_sec, $prg_cod) {
+    public static function preventrepeats($soc_sec, $prg_cod)
+    {
         $comp = (new self())->get_comp();
         $method = 'preventrepeats';
         $returns = 'yes';
@@ -223,7 +230,8 @@ class program {
      * @param string $soc_sec The objects unique identifier
      * @return array
      */
-    public static function programSearch($soc_sec) {
+    public static function programSearch($soc_sec)
+    {
         $comp = (new self())->get_comp();
         $method = 'programSearch';
         $returns = 'yes';

@@ -40,14 +40,16 @@ namespace Jenzabar\Sonis\Api;
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class dropbox {
+class dropbox
+{
 
     /**
      * Get the component for the method
      *
      * @return string $result The sonis web services component
      */
-    public function get_comp() {
+    public function get_comp()
+    {
         $result = 'drp_box';
         return $result;
     }
@@ -62,7 +64,8 @@ class dropbox {
      * @param string $Additional_Properties Additional props
      * @return array
      */
-    public static function app_term($allow_blank, $multi_select, $hide, $Additional_Properties, $value = '') {
+    public static function app_term($allow_blank, $multi_select, $hide, $Additional_Properties, $value = '')
+    {
         $comp = (new self())->get_comp();
         $method = 'app_term';
         $returns = 'no';
@@ -92,7 +95,8 @@ class dropbox {
      * @param string $Additional_Properties Additional props
      * @return array
      */
-    public static function campus($hide_excludes, $allow_blank, $multi_select, $hide, $Additional_Properties, $value = '') {
+    public static function campus($hide_excludes, $allow_blank, $multi_select, $hide, $Additional_Properties, $value = '')
+    {
         $comp = (new self())->get_comp();
         $method = 'campus';
         $returns = 'no';
@@ -121,7 +125,8 @@ class dropbox {
      * @param string $Additional_Properties Additional props
      * @return array
      */
-    public static function country($allow_blank, $multi_select, $hide, $Additional_Properties) {
+    public static function country($allow_blank, $multi_select, $hide, $Additional_Properties)
+    {
         $comp = (new self())->get_comp();
         $method = 'country';
         $returns = 'no';
@@ -151,7 +156,8 @@ class dropbox {
      * @param boolean $disp_only True or false if editable
      * @return array
      */
-    public static function county($allow_blank, $multi_select, $hide, $Additional_Properties, $disp_only, $value = '') {
+    public static function county($allow_blank, $multi_select, $hide, $Additional_Properties, $disp_only, $value = '')
+    {
         $comp = (new self())->get_comp();
         $method = 'county';
         $returns = 'no';
@@ -180,7 +186,8 @@ class dropbox {
      * @param string $Additional_Properties Additional props
      * @return array
      */
-    public static function degree($allow_blank, $multi_select, $hide, $Additional_Properties) {
+    public static function degree($allow_blank, $multi_select, $hide, $Additional_Properties)
+    {
         $comp = (new self())->get_comp();
         $method = 'degree';
         $returns = 'no';
@@ -208,7 +215,8 @@ class dropbox {
      * @param string $Additional_Properties Additional props
      * @return array
      */
-    public static function enrollStatus($allow_blank, $multi_select, $hide, $Additional_Properties, $value = '') {
+    public static function enrollStatus($allow_blank, $multi_select, $hide, $Additional_Properties, $value = '')
+    {
         $comp = (new self())->get_comp();
         $method = 'enrollStatus';
         $returns = 'no';
@@ -239,7 +247,8 @@ class dropbox {
      * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
-    public static function dept_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
+    public static function dept_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
+    {
         $comp = 'dept';
         $method = 'dept_drop';
         $returns = 'no';
@@ -272,7 +281,8 @@ class dropbox {
      * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
-    public static function ethnic_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
+    public static function ethnic_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
+    {
         $comp = 'ethnic';
         $method = 'ethnic_drop';
         $returns = 'no';
@@ -305,7 +315,8 @@ class dropbox {
      * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
-    public static function gender_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
+    public static function gender_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
+    {
         $comp = 'gender';
         $method = 'gender_drop';
         $returns = 'no';
@@ -335,7 +346,8 @@ class dropbox {
      * @param string $Additional_Properties Additional props
      * @return array
      */
-    public static function interest($allow_blank, $multi_select, $hide, $Additional_Properties) {
+    public static function interest($allow_blank, $multi_select, $hide, $Additional_Properties)
+    {
         $comp = (new self())->get_comp();
         $method = 'interest';
         $returns = 'no';
@@ -363,7 +375,8 @@ class dropbox {
      * @param string $Additional_Properties Additional props
      * @return array
      */
-    public static function LevelofEdu($allow_blank, $multi_select, $hide, $Additional_Properties) {
+    public static function LevelofEdu($allow_blank, $multi_select, $hide, $Additional_Properties)
+    {
         $comp = (new self())->get_comp();
         $method = 'LevelofEdu';
         $returns = 'no';
@@ -394,7 +407,8 @@ class dropbox {
      * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
-    public static function licenses_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
+    public static function licenses_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
+    {
         $comp = 'licenses';
         $method = 'licenses_drop';
         $returns = 'no';
@@ -427,7 +441,8 @@ class dropbox {
      * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
-    public static function marital_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
+    public static function marital_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
+    {
         $comp = 'marital';
         $method = 'marital_drop';
         $returns = 'no';
@@ -461,7 +476,8 @@ class dropbox {
      * @param boolean $excl_prg Exclude hidden programs in Sonis
      * @return array
      */
-    public static function prog_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $excl_prg, $value = '', $size = 3) {
+    public static function prog_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $excl_prg, $value = '', $size = 3)
+    {
         $comp = 'prog';
         $method = 'prog_drop';
         $returns = 'no';
@@ -493,7 +509,8 @@ class dropbox {
      * @param string $Additional_Properties Additional props
      * @return array
      */
-    public static function program($hide_excludes, $allow_blank, $multi_select, $hide, $Additional_Properties) {
+    public static function program($hide_excludes, $allow_blank, $multi_select, $hide, $Additional_Properties)
+    {
         $comp = (new self())->get_comp();
         $method = 'program';
         $returns = 'no';
@@ -521,7 +538,8 @@ class dropbox {
      * @param string $Additional_Properties Additional props
      * @return array
      */
-    public static function state($allow_blank, $multi_select, $hide, $Additional_Properties) {
+    public static function state($allow_blank, $multi_select, $hide, $Additional_Properties)
+    {
         $comp = (new self())->get_comp();
         $method = 'state';
         $returns = 'no';
@@ -548,7 +566,8 @@ class dropbox {
      * @param string $Additional_Properties Additional props
      * @return array
      */
-    public static function stateoflicensure($allow_blank, $multi_select, $hide, $Additional_Properties) {
+    public static function stateoflicensure($allow_blank, $multi_select, $hide, $Additional_Properties)
+    {
         $comp = (new self())->get_comp();
         $method = 'stateoflicensure';
         $returns = 'no';
@@ -578,7 +597,8 @@ class dropbox {
      * @param boolean $use_cur_sem true or false to use current semester as default
      * @return array
      */
-    public static function sch_yr_drop($allow_blank, $multi_select, $hide, $use_cur_sem, $value = '', $size = 3) {
+    public static function sch_yr_drop($allow_blank, $multi_select, $hide, $use_cur_sem, $value = '', $size = 3)
+    {
         $comp = 'sch_yr';
         $method = 'sch_yr_drop';
         $returns = 'no';
@@ -611,7 +631,8 @@ class dropbox {
      * @param boolean $use_cur_sem true or false to use current semester as default
      * @return array
      */
-    public static function semester_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $use_cur_sem, $value = '', $size = 3) {
+    public static function semester_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $use_cur_sem, $value = '', $size = 3)
+    {
         $comp = 'semester';
         $method = 'semester_drop';
         $returns = 'no';
@@ -642,7 +663,8 @@ class dropbox {
      * @param string $Additional_Properties Additional props
      * @return array
      */
-    public static function termInterest($allow_blank, $multi_select, $hide, $Additional_Properties) {
+    public static function termInterest($allow_blank, $multi_select, $hide, $Additional_Properties)
+    {
         $comp = (new self())->get_comp();
         $method = 'termInterest';
         $returns = 'no';
@@ -673,7 +695,8 @@ class dropbox {
      * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
-    public static function tuitstat_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
+    public static function tuitstat_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
+    {
         $comp = 'tuitstat';
         $method = 'tuitstat_drop';
         $returns = 'no';
@@ -706,7 +729,8 @@ class dropbox {
      * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
-    public static function visa_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3) {
+    public static function visa_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
+    {
         $comp = 'visa';
         $method = 'visa_drop';
         $returns = 'no';
@@ -737,7 +761,8 @@ class dropbox {
      * @param integer $size Unsure really, testing shows no change
      * @return array
      */
-    public static function zone_drop($allow_blank, $multi_select, $hide, $value = '', $size = 3) {
+    public static function zone_drop($allow_blank, $multi_select, $hide, $value = '', $size = 3)
+    {
         $comp = 'zone';
         $method = 'zone_drop';
         $returns = 'no';

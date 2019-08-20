@@ -40,14 +40,16 @@ namespace Jenzabar\Sonis\Api;
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class course {
+class course
+{
 
     /**
      * Get the component for the method
      *
      * @return string $result The sonis web services component
      */
-    public function get_comp() {
+    public function get_comp()
+    {
         $result = 'crs_sec_list';
         return $result;
     }
@@ -58,7 +60,8 @@ class course {
      * @param integer $crs_id The course id
      * @return array
      */
-    public static function getcoreq($crs_id) {
+    public static function getcoreq($crs_id)
+    {
         $comp = (new self())->get_comp();
         $method = 'getcoreq';
         $returns = 'yes';
@@ -79,7 +82,8 @@ class course {
      * @param integer $crs_id The course id
      * @return array
      */
-    public static function getcreqs($crs_id) {
+    public static function getcreqs($crs_id)
+    {
         $comp = (new self())->get_comp();
         $method = 'getcreqs';
         $returns = 'yes';
@@ -100,7 +104,8 @@ class course {
      * @param integer $crs_id The course id
      * @return array
      */
-    public static function getprereq($crs_id) {
+    public static function getprereq($crs_id)
+    {
         $comp = (new self())->get_comp();
         $method = 'getprereq';
         $returns = 'yes';
@@ -123,7 +128,8 @@ class course {
      * @param string $camp_cod The campus code
      * @return array
      */
-    public static function getprereqco($schyear, $semlist, $camp_cod = '') {
+    public static function getprereqco($schyear, $semlist, $camp_cod = '')
+    {
         $comp = (new self())->get_comp();
         $method = 'getprereqco';
         $returns = 'yes';

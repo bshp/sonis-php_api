@@ -40,14 +40,16 @@ namespace Jenzabar\Sonis\Api;
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class licenses {
+class licenses
+{
 
     /**
      * Get the component for the method
      *
      * @return string $result The sonis web services component
      */
-    public function get_comp() {
+    public function get_comp()
+    {
         $result = 'oa_licenses';
         return $result;
     }
@@ -58,7 +60,8 @@ class licenses {
      * @param string $soc_sec The objects unique identifier
      * @return array
      */
-    public static function delete_license($soc_sec) {
+    public static function delete_license($soc_sec)
+    {
         $comp = (new self())->get_comp();
         $method = 'delete_license';
         $returns = 'yes';
@@ -85,7 +88,8 @@ class licenses {
      * @param string $d_soc_sec The objects unique identifier
      * @return array
      */
-    public static function insert_license($soc_sec, $license, $lic_no, $date_rec, $date_exp, $lic_mem, $d_soc_sec = '') {
+    public static function insert_license($soc_sec, $license, $lic_no, $date_rec, $date_exp, $lic_mem, $d_soc_sec = '')
+    {
         $comp = (new self())->get_comp();
         $method = 'insert_license';
         $returns = 'yes';
@@ -113,7 +117,8 @@ class licenses {
      * @param string $license The persons license (not dirvers license)
      * @return array
      */
-    public static function search($soc_sec, $license = '') {
+    public static function search($soc_sec, $license = '')
+    {
         $comp = (new self())->get_comp();
         $method = 'search';
         $returns = 'yes';
@@ -142,7 +147,8 @@ class licenses {
      * @param string $lic_rid
      * @return array
      */
-    public static function update_license($soc_sec, $license, $lic_no, $date_rec, $date_exp, $lic_mem, $lic_rid, $d_soc_sec = '') {
+    public static function update_license($soc_sec, $license, $lic_no, $date_rec, $date_exp, $lic_mem, $lic_rid, $d_soc_sec = '')
+    {
         $comp = (new self())->get_comp();
         $method = 'update_license';
         $returns = 'yes';

@@ -42,7 +42,8 @@ namespace Jenzabar\Sonis\Api;
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class soapapi {
+class soapapi
+{
 
     /**
      * Make the SOAP call and send output to array processor
@@ -55,7 +56,8 @@ class soapapi {
      * @return array|string Returns output of utils.utils_array_process
      * @example '../tests/api.biographic.php'
      */
-    public function run($args) {
+    public function run($args)
+    {
         global $utils;
         $comp = $args['comp'];
         $method = $args['method'];

@@ -40,12 +40,14 @@ namespace Jenzabar\Sonis\Api;
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class person {
+class person
+{
 
     /**
      * @return bool
      */
-    public function bio() {
+    public function bio()
+    {
         return true;
     }
 }

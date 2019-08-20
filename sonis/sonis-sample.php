@@ -48,15 +48,15 @@ global $cfg;  // Needed for PHPUnit
 //========================================
 // 1. Configure Sonis API Details        #
 //========================================
-$cfg->user          =  'your user'; // your api user
-$cfg->pass          =  'users password'; // your api password
-$cfg->host          =  'https://www.example.com'; // your sonis host url, do not append a forward slash /
-$cfg->proxy_net     =   false; // true if your network goes through a proxy
-$cfg->proxy_auth    =   false; // true if your proxy is authenticated
-$cfg->proxy_host    =  ''; // proxy host, fqdn or ip
-$cfg->proxy_port    =  ''; // proxy port
-$cfg->proxy_user    =  ''; // proxy username
-$cfg->proxy_pass    =  ''; // proxy password
+$cfg->user          = 'your user'; // your api user
+$cfg->pass          = 'users password'; // your api password
+$cfg->host          = 'https://www.example.com'; // your sonis host url, do not append a forward slash /
+$cfg->proxy_net     = false; // true if your network goes through a proxy
+$cfg->proxy_auth    = false; // true if your proxy is authenticated
+$cfg->proxy_host    = ''; // proxy host, fqdn or ip
+$cfg->proxy_port    = ''; // proxy port
+$cfg->proxy_user    = ''; // proxy username
+$cfg->proxy_pass    = ''; // proxy password
 
 //========================================
 // 2. Expert: Configure Endpoint Options #
@@ -90,19 +90,19 @@ $utils = new utils();
 /**
  * If proxy needed, add addt'l opts
  *
- *@var $cfg->proxy_net
+ * @var $cfg ->proxy_net
  */
 if ($cfg->proxy_net) {
-    array_push($cfg->opts['soap'], $cfg->proxy_host,$cfg->proxy_port);
+    array_push($cfg->opts['soap'], $cfg->proxy_host, $cfg->proxy_port);
 }
 
 /**
  * If proxy authenticated, add addt'l opts
  *
- *@var $cfg->proxy_auth
+ * @var $cfg ->proxy_auth
  */
 if ($cfg->proxy_auth) {
-    array_push($cfg->opts['soap'], $cfg->proxy_user,$cfg->proxy_pass);
+    array_push($cfg->opts['soap'], $cfg->proxy_user, $cfg->proxy_pass);
 }
 
 //===========================
