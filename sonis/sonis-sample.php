@@ -109,6 +109,6 @@ if ($cfg->proxy_auth) {
 // ensure api is reachable  #
 //===========================
 if (!$utils->utils_api_up()) {
-    die('Sonis API is not available, please check your settings (username, password, and/or url)');
+    $utils->utils_event_error(messages::msg_api_unavailable(), true);
 }
 //closing tag left out on purpose to prevent trailing whitespaces
