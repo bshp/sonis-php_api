@@ -25,6 +25,11 @@
  *
  */
 
+namespace Jenzabar\Sonis\Api;
+
+use Exception;
+use SoapClient;
+
 /**
  * Class utils
  *

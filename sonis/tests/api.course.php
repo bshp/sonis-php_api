@@ -36,6 +36,9 @@
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
+
+namespace Jenzabar\Sonis\Api;
+
 require __DIR__ . '/../sonis.php';
 
 /**

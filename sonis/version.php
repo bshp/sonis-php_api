@@ -43,6 +43,8 @@
  * @license https://opensource.org/licenses/MIT
  */
 
+namespace Jenzabar\Sonis\Api;
+
 $branch = 'master'; // internal git branch
 $version = 2.1; // do not change
 $patch = 0; // do not change
