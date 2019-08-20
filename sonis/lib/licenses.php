@@ -58,8 +58,12 @@ class licenses {
         $params = [
             ['soc_sec', $soc_sec],
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -87,8 +91,12 @@ class licenses {
             ['lic_mem', $lic_mem],
             ['d_soc_sec', $d_soc_sec],
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -106,8 +114,12 @@ class licenses {
             ['soc_sec', $soc_sec],
             ['license', $license],
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -137,7 +149,11 @@ class licenses {
             ['d_soc_sec', $d_soc_sec],
             ['lic_rid', $lic_rid],
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 }

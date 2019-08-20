@@ -58,8 +58,12 @@ class biographic {
         $params = [
             ['soc_sec', $soc_sec]
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -79,8 +83,12 @@ class biographic {
             ['sch_yr', $sch_yr],
             ['semester', $semester]
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -113,8 +121,12 @@ class biographic {
         $params = [
             ['soc_sec', $soc_sec]
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -140,8 +152,12 @@ class biographic {
             ['visa_cod', $visa_cod],
             ['visa_issue_date', $visa_issue_date]
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -159,8 +175,12 @@ class biographic {
             ['soc_sec', $soc_sec],
             ['mod_stat', $mod_stat]
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -267,8 +287,12 @@ class biographic {
             ['operator', $operator]
 
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -314,8 +338,12 @@ class biographic {
             ['birthdate', $birthdate],
             ['memo', $memo]
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -455,8 +483,12 @@ class biographic {
             ['address_de1', $address_de1],
             ['address_fe1', $address_fe1]
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -492,7 +524,11 @@ class biographic {
             ['nickname', $nickname],
             ['other_name', $other_name]
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 }

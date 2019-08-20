@@ -184,7 +184,11 @@ class prospect {
             ['undergrd_attnd', $undergrd_attnd],
             ['undergrd_maj', $undergrd_maj],
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 }
