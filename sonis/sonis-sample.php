@@ -37,10 +37,14 @@
  * @license https://opensource.org/licenses/MIT
  */
 
-require __DIR__ . '/lib.php';
+namespace Jenzabar\Sonis\Api;
+
+use stdClass;
+
+require __DIR__ . './lib.php';
 
 global $cfg;  // Needed for PHPUnit
-$cfg = new stdClass();
+
 //========================================
 // 1. Configure Sonis API Details        #
 //========================================

@@ -37,12 +37,24 @@
  * @license https://opensource.org/licenses/MIT
  */
 
-include __DIR__ . '/version.php'; //Set version vars for later use
+namespace Jenzabar\Sonis\Api;
+
+include __DIR__ . '/version.php';
 
 /**
- * will be called when needed,
- * sonis.php takes care of this rest.
+ * The autoloader,
+ * sonis.php does everything else
  */
-spl_autoload_register(function($lib) {
-    include __DIR__ . '/lib/' . $lib . '.php';
+spl_autoload_register(function ($lib) {
+    $ns = 'Jenzabar\\Sonis\\Api';
+    $path = __DIR__ . '/lib/';
+    $strlen = strlen($ns);
+    if (strncmp($ns, $lib, $strlen) !== 0) {
+        return;
+    }
+    $class = substr($lib, $strlen);
+    $library_file = $path . str_replace('\\', '/', $class) . '.php';
+    if (file_exists($library_file)) {
+        require $library_file;
+    }
 });
