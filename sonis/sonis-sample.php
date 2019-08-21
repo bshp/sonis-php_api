@@ -41,7 +41,7 @@ namespace Jenzabar\Sonis\Api;
 
 use stdClass;
 
-require __DIR__ . './lib.php';
+require __DIR__ . '/lib.php';
 
 global $cfg;  // Needed for PHPUnit
 
