@@ -42,6 +42,22 @@ namespace Jenzabar\Sonis\Api;
 include __DIR__ . '/version.php';
 
 /**
+ * Set defaults if undefined
+ */
+if (!defined('PROXY_NET')) {
+    define('PROXY_NET', false);
+}
+if (!defined('PROXY_AUTH')) {
+    define('PROXY_AUTH', false);
+}
+if (!defined('SOAP_DEBUG')) {
+    define('SOAP_DEBUG', false);
+}
+if (!defined('SOAP_DEBUG_DISPLAY')) {
+    define('SOAP_DEBUG_DISPLAY', false);
+}
+
+/**
  * The autoloader,
  * sonis.php does everything else
  */
