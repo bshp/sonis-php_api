@@ -83,8 +83,8 @@ class employment
      * @param string $emp_emply Employer
      * @param string $emp_super Employer manager
      * @param string $emp_add1 Employer address line 1
-     * @param string $emp_add2 Employer address line 1
-     * @param string $emp_add3 Employer address line 1
+     * @param string $emp_add2 Employer address line 2
+     * @param string $emp_add3 Employer address line 3
      * @param string $emp_city Employer city
      * @param string $emp_state Employer state
      * @param string $emp_county Employer county
@@ -169,8 +169,8 @@ class employment
      * @param string $emp_emply Employer
      * @param string $emp_super Employer manager
      * @param string $emp_add1 Employer address line 1
-     * @param string $emp_add2 Employer address line 1
-     * @param string $emp_add3 Employer address line 1
+     * @param string $emp_add2 Employer address line 2
+     * @param string $emp_add3 Employer address line 3
      * @param string $emp_city Employer city
      * @param string $emp_state Employer state
      * @param string $emp_county Employer county
@@ -198,8 +198,6 @@ class employment
         $method = 'update_employment';
         $returns = 'yes';
         $params = [
-            ['sonis_ds', '#sonis.ds#'],
-            ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
             ['emp_rid', $emp_rid],
             ['emp_emply', $emp_emply],
