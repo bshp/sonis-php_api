@@ -407,4 +407,20 @@ class utils
         }
         return $result;
     }
+
+    /**
+     * Check if string begins with
+     *
+     * Returns true or false if a given $start_string is
+     * found in the given $string
+     *
+     * @param string $string The string to search in
+     * @param string $start_string The value to search for
+     * @return bool True or False if found
+     */
+    public function utils_starts_with($string, $start_string)
+    {
+        $len = strlen($start_string);
+        return (substr($string, 0, $len) === $start_string);
+    }
 }
