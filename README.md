@@ -10,16 +10,33 @@ Many more methods exist in the Sonis API, those are being added as needed.
 Documentation wil be added to the github wiki soon, mostly generated from phpdoc.
 
 ## Requirements
-PHP: 7.x, it should work with 5.6+, code inspection passes but have not tested.
+PHP: 7.x +, it should work with 5.6 but have not tested.
 
 PHP Extensions: php_soap and php_curl
 
 ## Configure
-Change the settings in section 1. in sonis-sample.php and then rename to sonis.php
-
-## Usage
-Using this framework inside your package you just need to include the loader, sonis.php,
+Within your application or projects config file, define the required constants,
 ````
+define('SONIS_USER', 'username');  // Replace 'username' with your Sonis API username
+define('SONIS_PASSWORD', 'password'); // Replace 'password' with your Sonis API username
+define('SONIS_HOST', 'https://sonis.example.edu'); // Replace 'https://sonis.example.edu' with your Sonis API url
+````
+Optional:
+````
+define('PROXY_NET', false); // true or false if proxy needed
+define('PROXY_AUTH', false); // true or false if proxy authenticated
+define('PROXY_HOST', ''); // Proxy host, DNS or IPv4
+define('PROXY_PORT, ''); // Proxy port
+define('PROXY_USER, ''); //Proxy username if authenticated
+define('PROXY_PASS, ''); // Proxy password
+define('SOAP_DEBUG', false); // Send SOAP debug messages to your system log, true or false
+define('SOAP_DEBUG_DISPLAY', false); // Display the debug messages, requires SOAP_DEBUG true
+````
+## Usage
+Using this framework inside your package you just need to include the loader, sonis.php. You can check /tests/api.biographic.php as an example
+````
+use Jenzabar\Sonis\Api\biographic;
+
 require __DIR__ . '/sonis/sonis.php';
 ````
 
@@ -33,7 +50,7 @@ $request = $api->run($args);
 ## Notes 
 
 ##### _To-do_:
-Create namspaces to avoid collisions
+Random cleanup and organization
 
 ##### _Values_:
 Many of the methods might require almost every field to be sent even if null, searches on the other hand can usually take just one value. If you send an update to a record and do not specify all the current fields then it will erase the fields in Sonis. For an update request, it is best to run a get or search request on the object you are updating first to prefill all the current variables then however you are updating the content replace those values and then run the update method.
