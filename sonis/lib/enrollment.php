@@ -25,6 +25,8 @@
  *
  */
 
+namespace Jenzabar\Sonis\Api;
+
 /**
  * Class enrollment
  *
@@ -38,9 +40,16 @@
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class enrollment {
+class enrollment
+{
 
-    private function get_comp() {
+    /**
+     * Get the component for the method
+     *
+     * @return string $result The sonis web services component
+     */
+    public function get_comp()
+    {
         $result = 'enrollment';
         return $result;
     }
@@ -48,7 +57,8 @@ class enrollment {
     /**
      * @return boolean
      */
-    public static function placeholder() {
+    public static function placeholder()
+    {
         return true;
     }
 

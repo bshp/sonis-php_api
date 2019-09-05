@@ -25,6 +25,8 @@
  *
  */
 
+namespace Jenzabar\Sonis\Api;
+
 /**
  * Class prospect
  *
@@ -40,9 +42,16 @@
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class prospect {
+class prospect
+{
 
-    private function get_comp() {
+    /**
+     * Get the component for the method
+     *
+     * @return string $result The sonis web services component
+     */
+    public function get_comp()
+    {
         $result = 'addps';
         return $result;
     }
@@ -115,7 +124,8 @@ class prospect {
      * @param string $undergrd_maj Undergraduate major
      * @return array
      */
-    public static function addnewps($last_name, $first_name, $mi, $st_addr, $add_addr, $add_add2, $city, $state, $zip, $country, $phone, $cell_phone, $nickname, $work_phone, $e_mail, $term_int, $referby, $enstat_cod, $prg_cod, $camp_cod, $comments, $snd_app, $snd_brch, $snd_cat, $snd_f4, $snd_f5, $snd_f6, $snd_3PF, $employer, $moved_dt, $move2app, $contact, $state_of_licensure, $level_of_education, $level_comp, $hs_prereq, $prg_intrest, $cl_prereq, $prereqenrolled, $cur_emp, $cur_emp_inst_cod, $LPN, $LPN_years, $enroll_month, $enroll_yr, $ref_other, $psprereqcrs_cod, $pref_inst_cod, $webps_ce1, $webps_le1, $webps_ne1, $webps_de1, $webps_fe1, $webps_ce2, $webps_ce3, $incomplete, $birthdate, $memo1, $memo2, $memo3, $areas_of_interest_rid, $undergrd_attnd, $undergrd_maj ) {
+    public static function addnewps($last_name, $first_name, $mi, $st_addr, $add_addr, $add_add2, $city, $state, $zip, $country, $phone, $cell_phone, $nickname, $work_phone, $e_mail, $term_int, $referby, $enstat_cod, $prg_cod, $camp_cod, $comments, $snd_app, $snd_brch, $snd_cat, $snd_f4, $snd_f5, $snd_f6, $snd_3PF, $employer, $moved_dt, $move2app, $contact, $state_of_licensure, $level_of_education, $level_comp, $hs_prereq, $prg_intrest, $cl_prereq, $prereqenrolled, $cur_emp, $cur_emp_inst_cod, $LPN, $LPN_years, $enroll_month, $enroll_yr, $ref_other, $psprereqcrs_cod, $pref_inst_cod, $webps_ce1, $webps_le1, $webps_ne1, $webps_de1, $webps_fe1, $webps_ce2, $webps_ce3, $incomplete, $birthdate, $memo1, $memo2, $memo3, $areas_of_interest_rid, $undergrd_attnd, $undergrd_maj)
+    {
         $comp = (new self())->get_comp();
         $method = 'addnewps';
         $returns = 'yes';
@@ -184,7 +194,11 @@ class prospect {
             ['undergrd_attnd', $undergrd_attnd],
             ['undergrd_maj', $undergrd_maj],
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 }

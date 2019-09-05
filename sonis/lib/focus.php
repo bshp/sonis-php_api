@@ -25,6 +25,8 @@
  *
  */
 
+namespace Jenzabar\Sonis\Api;
+
 /**
  * Class focus
  *
@@ -38,21 +40,46 @@
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class focus {
+class focus
+{
 
-    public function user() {
+    /**
+     * @return bool
+     */
+    public function user()
+    {
         return true;
     }
-    public function course() {
+
+    /**
+     * @return bool
+     */
+    public function course()
+    {
         return true;
     }
-    public function group() {
+
+    /**
+     * @return bool
+     */
+    public function group()
+    {
         return true;
     }
-    public function role() {
+
+    /**
+     * @return bool
+     */
+    public function role()
+    {
         return true;
     }
-    public function dept() {
+
+    /**
+     * @return bool
+     */
+    public function dept()
+    {
         return true;
     }
 }

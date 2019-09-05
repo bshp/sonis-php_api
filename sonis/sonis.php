@@ -1,6 +1,5 @@
 <?php
 /**
- *
  * MIT License
  *
  * Copyright (c) 2016 Jason A. Everling
@@ -37,22 +36,27 @@
  * @license https://opensource.org/licenses/MIT
  */
 
+namespace Jenzabar\Sonis\Api;
+
+use stdClass;
+
 require __DIR__ . '/lib.php';
 
 global $cfg;  // Needed for PHPUnit
+
 $cfg = new stdClass();
 //========================================
 // 1. Configure Sonis API Details        #
 //========================================
-$cfg->user          =  'your user'; // your api user
-$cfg->pass          =  'users password'; // your api password
-$cfg->host          =  'https://www.example.com'; // your sonis host url, do not append a forward slash /
-$cfg->proxy_net     =   false; // true if your network goes through a proxy
-$cfg->proxy_auth    =   false; // true if your proxy is authenticated
-$cfg->proxy_host    =  ''; // proxy host, fqdn or ip
-$cfg->proxy_port    =  ''; // proxy port
-$cfg->proxy_user    =  ''; // proxy username
-$cfg->proxy_pass    =  ''; // proxy password
+$cfg->user          =  SONIS_USER;
+$cfg->pass          =  SONIS_PASSWORD;
+$cfg->host          =  SONIS_HOST;
+$cfg->proxy_net     =  PROXY_NET;
+$cfg->proxy_auth    =  PROXY_AUTH;
+$cfg->proxy_host    =  '';
+$cfg->proxy_port    =  '';
+$cfg->proxy_user    =  '';
+$cfg->proxy_pass    =  '';
 
 //========================================
 // 2. Expert: Configure Endpoint Options #
@@ -65,8 +69,8 @@ $cfg->opts = [
         'exceptions' => 1,
         'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
     ],
-    'debug' => false, // Log the executed SOAP call to the default error log
-    'debug_display' => false, // Display debug messages instead of sending to system error log
+    'debug' => SOAP_DEBUG, // Print the executed SOAP call to the PHP error log as defined in your php.ini
+    'debug_display' => SOAP_DEBUG_DISPLAY, // Display debug messages instead of sending to system error log
 ];
 //=======================================
 // Nothing should be changed below this #
@@ -89,7 +93,7 @@ $utils = new utils();
  *@var $cfg->proxy_net
  */
 if ($cfg->proxy_net) {
-    array_push($cfg->opts['soap'], $cfg->proxy_host,$cfg->proxy_port);
+    array_push($cfg->opts['soap'], $cfg->proxy_host, $cfg->proxy_port);
 }
 
 /**
@@ -98,13 +102,13 @@ if ($cfg->proxy_net) {
  *@var $cfg->proxy_auth
  */
 if ($cfg->proxy_auth) {
-    array_push($cfg->opts['soap'], $cfg->proxy_user,$cfg->proxy_pass);
+    array_push($cfg->opts['soap'], $cfg->proxy_user, $cfg->proxy_pass);
 }
-
+$cfg->host = rtrim($cfg->host, '/');
 //===========================
 // ensure api is reachable  #
 //===========================
 if (!$utils->utils_api_up()) {
-    die('Sonis API is not available, please check your settings (username, password, and/or url)');
+    $utils->utils_event_error(messages::msg_api_unavailable(), true);
 }
 //closing tag left out on purpose to prevent trailing whitespaces

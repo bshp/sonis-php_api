@@ -25,6 +25,8 @@
  *
  */
 
+namespace Jenzabar\Sonis\Api;
+
 /**
  * Class education
  *
@@ -38,9 +40,16 @@
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class education {
+class education
+{
 
-    private function get_comp() {
+    /**
+     * Get the component for the method
+     *
+     * @return string $result The sonis web services component
+     */
+    public function get_comp()
+    {
         $result = 'education';
         return $result;
     }
@@ -52,7 +61,8 @@ class education {
      * @param string $edu_rid Edu record id
      * @return array
      */
-    public static function delete_education($soc_sec, $edu_rid) {
+    public static function delete_education($soc_sec, $edu_rid)
+    {
         $comp = (new self())->get_comp();
         $method = 'delete_education';
         $returns = 'yes';
@@ -61,7 +71,12 @@ class education {
             ['edu_rid', $edu_rid]
         ];
         //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -71,7 +86,8 @@ class education {
      * @param string $edu_rid Edu record id
      * @return array
      */
-    public static function eduSearch($soc_sec, $edu_rid = '') {
+    public static function eduSearch($soc_sec, $edu_rid = '')
+    {
         $comp = (new self())->get_comp();
         $method = 'eduSearch';
         $returns = 'yes';
@@ -79,8 +95,12 @@ class education {
             ['soc_sec', $soc_sec],
             ['edu_rid', $edu_rid],
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -90,7 +110,8 @@ class education {
      * @param string $cohort_cod Cohort code
      * @return array
      */
-    public static function insert_default_education($soc_sec, $cohort_cod) {
+    public static function insert_default_education($soc_sec, $cohort_cod)
+    {
         $comp = (new self())->get_comp();
         $method = 'insert_default_education';
         $returns = 'yes';
@@ -98,8 +119,12 @@ class education {
             ['soc_sec', $soc_sec],
             ['cohort_cod', $cohort_cod]
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -117,7 +142,8 @@ class education {
      * @param string $graduated Educational record graduated, true or false
      * @return array
      */
-    public static function insert_education($soc_sec, $educmem, $inst_cod, $mod_stat, $degree, $enter_date, $leav_date, $grad_mo, $grad_year, $graduated) {
+    public static function insert_education($soc_sec, $educmem, $inst_cod, $mod_stat, $degree, $enter_date, $leav_date, $grad_mo, $grad_year, $graduated)
+    {
         $comp = (new self())->get_comp();
         $method = 'insert_education';
         $returns = 'yes';
@@ -133,8 +159,12 @@ class education {
             ['grad_year', $grad_year],
             ['graduated', $graduated]
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -145,7 +175,8 @@ class education {
      * @param string $edu_rid Edu record id
      * @return array
      */
-    public static function insert_inst($soc_sec, $inst_mem = '', $edu_rid = '') {
+    public static function insert_inst($soc_sec, $inst_mem = '', $edu_rid = '')
+    {
         $comp = (new self())->get_comp();
         $method = 'insert_inst';
         $returns = 'yes';
@@ -154,8 +185,12 @@ class education {
             ['inst_mem', $inst_mem],
             ['edu_rid', $edu_rid],
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -168,7 +203,8 @@ class education {
      * @param string $inst_cntry Institutional country
      * @return array
      */
-    public static function institutsearch($inst_city = '', $inst_state = '', $inst_txt = '', $insttypcod = '', $inst_cntry = '') {
+    public static function institutsearch($inst_city = '', $inst_state = '', $inst_txt = '', $insttypcod = '', $inst_cntry = '')
+    {
         $comp = (new self())->get_comp();
         $method = 'institutsearch';
         $returns = 'yes';
@@ -179,8 +215,12 @@ class education {
             ['inst_txt', $inst_txt],
             ['insttypcod', $insttypcod],
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -232,7 +272,8 @@ class education {
      * @param string $override Override flag
      * @return array
      */
-    public static function update_education($soc_sec, $edu_rid, $eduinsttyp, $degree, $credits, $qlty_pnts, $cqpa, $rankstud, $rankclass, $grad_date, $enter_date, $leav_date, $date_rec, $matric_dt, $trans_rec, $prog_desc, $educmem, $enr_age, $orig_grad, $grad_mo, $grad_year, $graduated, $grad_honors, $nmedu_ce1, $nmedu_le1, $nmedu_ne1, $inst_txt, $cohort_cod, $degree_sought, $prg_sought, $ant_grad_date, $gpa_creds, $transfered, $grad_stud, $OA_inprocess, $diploma, $employ_waiver_type, $cur_cod, $prev_instname, $grad_age, $degreeclass_cod, $nmedu_transmem, $employ_waiver, $override) {
+    public static function update_education($soc_sec, $edu_rid, $eduinsttyp, $degree, $credits, $qlty_pnts, $cqpa, $rankstud, $rankclass, $grad_date, $enter_date, $leav_date, $date_rec, $matric_dt, $trans_rec, $prog_desc, $educmem, $enr_age, $orig_grad, $grad_mo, $grad_year, $graduated, $grad_honors, $nmedu_ce1, $nmedu_le1, $nmedu_ne1, $inst_txt, $cohort_cod, $degree_sought, $prg_sought, $ant_grad_date, $gpa_creds, $transfered, $grad_stud, $OA_inprocess, $diploma, $employ_waiver_type, $cur_cod, $prev_instname, $grad_age, $degreeclass_cod, $nmedu_transmem, $employ_waiver, $override)
+    {
         $comp = (new self())->get_comp();
         $method = 'update_education';
         $returns = 'yes';
@@ -282,7 +323,11 @@ class education {
             ['employ_waiver', $employ_waiver],
             ['override', $override],
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 }

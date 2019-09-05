@@ -36,6 +36,13 @@
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
+
+use Jenzabar\Sonis\Api\dropbox;
+
+define('SONIS_USER', 'username');  // your api user
+define('SONIS_PASSWORD', 'password'); // your api password
+define('SONIS_HOST', 'https://sonis.example.edu'); // your sonis host url, do not append /
+
 require __DIR__ . '/../sonis.php';
 
 /**

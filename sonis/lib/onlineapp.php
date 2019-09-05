@@ -25,6 +25,8 @@
  *
  */
 
+namespace Jenzabar\Sonis\Api;
+
 /**
  * Class onlineapp
  *
@@ -38,7 +40,8 @@
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class onlineapp {
+class onlineapp
+{
 
     /**
      * Logon function for the online app
@@ -47,7 +50,8 @@ class onlineapp {
      * @param string $pin Encrypted PIN using private key
      * @return array
      */
-    public static function app_login($soc_sec, $pin) {
+    public static function app_login($soc_sec, $pin)
+    {
         $comp = 'student_app';
         $method = 'app_login';
         $returns = 'yes';
@@ -55,8 +59,12 @@ class onlineapp {
             ['soc_sec', $soc_sec],
             ['pin', $pin],
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -74,7 +82,8 @@ class onlineapp {
      * @param string $mod_stat The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI
      * @return array
      */
-    public static function create($first_name, $last_name, $birthdate, $e_mail, $pin, $mi, $phone, $citizen = 1, $zip, $mod_stat) {
+    public static function create($first_name, $last_name, $birthdate, $e_mail, $pin, $mi, $phone, $citizen = 1, $zip, $mod_stat)
+    {
         $comp = 'student_app';
         $method = 'create';
         $returns = 'yes';
@@ -90,8 +99,12 @@ class onlineapp {
             ['citizen', $citizen],
             ['mod_stat', $mod_stat],
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -103,7 +116,8 @@ class onlineapp {
      * @param string $e_mail The primary email address for the record type
      * @return array
      */
-    public static function search($firstname, $lastname, $birthdate, $e_mail) {
+    public static function search($firstname, $lastname, $birthdate, $e_mail)
+    {
         $comp = 'student_app';
         $method = 'search';
         $returns = 'yes';
@@ -113,8 +127,12 @@ class onlineapp {
             ['birthdate', $birthdate],
             ['e_mail', $e_mail]
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -124,7 +142,8 @@ class onlineapp {
      * @param string $fieldnames
      * @return array
      */
-    public static function insert_oa_questions($soc_sec, $fieldnames) {
+    public static function insert_oa_questions($soc_sec, $fieldnames)
+    {
         $comp = 'oa_questions';
         $method = 'insert_oa_questions';
         $returns = 'yes';
@@ -132,8 +151,12 @@ class onlineapp {
             ['soc_sec', $soc_sec],
             ['fieldnames', $fieldnames]
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -143,7 +166,8 @@ class onlineapp {
      * @param string $column
      * @return array
      */
-    public static function oa_questions_search($soc_sec, $column) {
+    public static function oa_questions_search($soc_sec, $column)
+    {
         $comp = 'oa_questions';
         $method = 'oa_questions_search';
         $returns = 'yes';
@@ -151,8 +175,12 @@ class onlineapp {
             ['soc_sec', $soc_sec],
             ['column_', $column],
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -164,7 +192,8 @@ class onlineapp {
      * @param integer $oa_section_rid
      * @return array
      */
-    public static function oa_questions_search_format($soc_sec, $oa_questions_row, $oa_questions_col, $oa_section_rid) {
+    public static function oa_questions_search_format($soc_sec, $oa_questions_row, $oa_questions_col, $oa_section_rid)
+    {
         $comp = 'oa_questions';
         $method = 'oa_questions_search_format';
         $returns = 'yes';
@@ -174,7 +203,11 @@ class onlineapp {
             ['oa_questions_col', $oa_questions_col],
             ['oa_section_rid', $oa_section_rid]
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 }

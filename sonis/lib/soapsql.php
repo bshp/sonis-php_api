@@ -25,6 +25,8 @@
  *
  */
 
+namespace Jenzabar\Sonis\Api;
+
 /**
  * Class soapsql
  *
@@ -40,7 +42,8 @@
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class soapsql {
+class soapsql
+{
 
     /**
      * Run raw sql statements.
@@ -58,9 +61,12 @@ class soapsql {
      * @example '../tests/sql.sysvar.php'
      * @todo more cleanup, add debugging, maybe check for injections
      */
-    public function run($sql) {
+    public function run($sql)
+    {
         global $utils;
+        $returns = true;
         $sql = preg_replace("/[;]/", '', $sql);
+        $sqlcmds = ['DELETE', 'INSERT', 'UPDATE',];
         $params = [
             'user' => $utils->utils_api_cfg()['user'],
             'pass' => $utils->utils_api_cfg()['pass'],
@@ -70,6 +76,16 @@ class soapsql {
         $result = $call->__soapCall("doSQLSomething", $params);
         if ($utils->utils_api_cfg()['opts']['debug']) {
             $utils->utils_debug_soap($call);
+        }
+        /** Iterate through sql statement, dont send specific types through the processor */
+        foreach ($sqlcmds as $sqlcmd) {
+            if ($utils->utils_starts_with($sql, $sqlcmd)) {
+                $returns = false;
+            }
+        }
+        if (!$returns) {
+            $call->__soapCall("doSQLSomething", $params);
+            return 'OK: 200';
         }
         return $utils->utils_array_process($result);
     }

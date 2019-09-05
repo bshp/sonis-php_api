@@ -25,6 +25,8 @@
  *
  */
 
+namespace Jenzabar\Sonis\Api;
+
 /**
  * Class pagenotes
  *
@@ -40,9 +42,16 @@
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class pagenotes {
+class pagenotes
+{
 
-    private function get_comp() {
+    /**
+     * Get the component for the method
+     *
+     * @return string $result The sonis web services component
+     */
+    public function get_comp()
+    {
         $result = 'pagenote';
         return $result;
     }
@@ -53,15 +62,20 @@ class pagenotes {
      * @param string $pagenote_cod Get a specific page note
      * @return array
      */
-    public static function get_pagenote($pagenote_cod) {
+    public static function get_pagenote($pagenote_cod)
+    {
         $comp = (new self())->get_comp();
         $method = 'get_pagenote';
         $returns = 'yes';
         $params = [
             ['pagenote_cod', $pagenote_cod],
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -70,14 +84,19 @@ class pagenotes {
      * @param string $pagenote_cod Get a specific page note
      * @return array
      */
-    public static function get_pagenote_bottom($pagenote_cod) {
+    public static function get_pagenote_bottom($pagenote_cod)
+    {
         $comp = (new self())->get_comp();
         $method = 'get_pagenote_bottom';
         $returns = 'yes';
         $params = [
             ['pagenote_cod', $pagenote_cod],
         ];
-        //return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 }

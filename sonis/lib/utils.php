@@ -25,6 +25,11 @@
  *
  */
 
+namespace Jenzabar\Sonis\Api;
+
+use Exception;
+use SoapClient;
+
 /**
  * Class utils
  *
@@ -38,12 +43,14 @@
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class utils {
+class utils
+{
 
     /**
      * Decepticon Constructor
      */
-    public function __construct() {
+    public function __construct()
+    {
         global $cfg;
         $this->user = $cfg->user;
         $this->pass = $cfg->pass;
@@ -62,7 +69,8 @@ class utils {
      *
      * @return array
      */
-    public function utils_api_cfg() {
+    public function utils_api_cfg()
+    {
         return [
             'user' => $this->user,
             'pass' => $this->pass,
@@ -76,13 +84,14 @@ class utils {
      *
      * @return boolean Returns true or false if endpoint is up
      */
-    public function utils_api_up() {
+    public function utils_api_up()
+    {
         $ch = curl_init($this->host . '/cfc/soapapi.cfc?wsdl');
         curl_setopt($ch, CURLOPT_HEADER, true);
         curl_setopt($ch, CURLOPT_NOBODY, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-        curl_setopt($ch, CURLOPT_TIMEOUT,5);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
         if ($this->proxy_net) {
             curl_setopt($ch, CURLOPT_PROXY, $this->proxy_host);
             curl_setopt($ch, CURLOPT_PROXYPORT, $this->proxy_port);
@@ -107,7 +116,8 @@ class utils {
      * @param mixed $call The SOAP call that is executed
      * @return bool|mixed
      */
-    public function utils_debug_soap($call) {
+    public function utils_debug_soap($call)
+    {
         $message = $call->__getLastRequest();
         if ($this->opts['debug_display']) {
             return print_r($message);
@@ -122,7 +132,8 @@ class utils {
      * @return false|string
      * http://docs.php.net/manual/en/function.date.php
      */
-    public function utils_dt($date) {
+    public function utils_dt($date)
+    {
         return date("Y-m-d", strtotime($date));
     }
 
@@ -135,7 +146,8 @@ class utils {
      * @return mixed
      * @link http://docs.php.net/manual/en/function.trigger-error.php
      */
-    public function utils_event_error($msg, $fail) {
+    public function utils_event_error($msg, $fail)
+    {
         if (!$fail) {
             return trigger_error($msg);
         }
@@ -151,7 +163,8 @@ class utils {
      * @return false|string
      * http://docs.php.net/manual/en/function.strtolower.php
      */
-    public function utils_lc($data) {
+    public function utils_lc($data)
+    {
         return strtolower($data);
     }
 
@@ -163,7 +176,8 @@ class utils {
      * @return false|string
      * @link http://docs.php.net/manual/en/function.strtoupper.php
      */
-    public function utils_uc($data) {
+    public function utils_uc($data)
+    {
         return strtoupper($data);
     }
 
@@ -183,7 +197,8 @@ class utils {
      * @link http://docs.php.net/manual/en/function.array-reduce.php
      * @link http://docs.php.net/manual/en/function.array-map.php
      */
-    public function utils_array_process($array) {
+    public function utils_array_process($array)
+    {
         global $wsdl;
         if (is_object($array)) {
             $obj = $this->utils_array_trim($this->utils_array_merge($array));
@@ -191,7 +206,7 @@ class utils {
                 $result = $this->utils_array_combine($array->columnList, $obj);
             } else {
                 if (count($array->data) > 0) {
-                    foreach($array->data AS $column => $data) {
+                    foreach ($array->data AS $column => $data) {
                         $result[] = $this->utils_array_combine($array->columnList, $data);
                     }
                 } else {
@@ -216,7 +231,7 @@ class utils {
              *
              * @todo Figure out a way to handle these errors better
              */
-            if(is_string($array)) {
+            if (is_string($array)) {
                 if (strpos($array, 'Error')) {
                     $this->utils_array_exception($array);
                     $this->utils_event_error(messages::msg_array_error(), true);
@@ -240,14 +255,15 @@ class utils {
      * @link http://docs.php.net/manual/en/function.array-combine.php#118397
      * @author welcome@el-mustafa.com
      */
-    public function utils_array_combine($keys, $values) {
+    public function utils_array_combine($keys, $values)
+    {
         $result = [];
         foreach ($keys as $i => $k) {
             $result[$k][] = $values[$i];
         }
-        array_walk($result, function(&$v){
-            $v = (count($v) == 1) ? array_pop($v): $v;
-            }
+        array_walk($result, function (&$v) {
+            $v = (count($v) == 1) ? array_pop($v) : $v;
+        }
         );
         return $result;
     }
@@ -259,7 +275,8 @@ class utils {
      * @return boolean
      * @link http://docs.php.net/manual/en/function.error-log.php
      */
-    public function utils_array_exception($array) {
+    public function utils_array_exception($array)
+    {
         return error_log($array);
     }
 
@@ -276,7 +293,8 @@ class utils {
      * @return array
      * @link http://docs.php.net/manual/en/function.is-array.php
      */
-    public function utils_array_create_assoc($array) {
+    public function utils_array_create_assoc($array)
+    {
         $result = [];
         $convert = ((isset($array['data'])) && (is_array($array['data'])) && ($array['data'] != []));
         if ($convert) {
@@ -291,8 +309,7 @@ class utils {
         }
         if ($result == []) {
             return ($array);
-        }
-        else {
+        } else {
             return ($result);
         }
     }
@@ -304,7 +321,8 @@ class utils {
      * @return array|boolean
      * @link http://docs.php.net/manual/en/function.array-change-key-case.php
      */
-    public function utils_array_lc($array) {
+    public function utils_array_lc($array)
+    {
         $result = array_change_key_case($array, CASE_LOWER);
         return $result;
     }
@@ -316,7 +334,8 @@ class utils {
      * @return array|boolean
      * @link http://docs.php.net/manual/en/function.array-reduce.php
      */
-    public function utils_array_merge($array) {
+    public function utils_array_merge($array)
+    {
         $result = array_reduce($array->data, 'array_merge', []);
         return $result;
     }
@@ -328,7 +347,8 @@ class utils {
      * @return array|boolean
      * @link http://docs.php.net/manual/en/function.array-map.php
      */
-    public function utils_array_trim($array) {
+    public function utils_array_trim($array)
+    {
         $result = array_map('trim', $array);
         return $result;
     }
@@ -348,7 +368,8 @@ class utils {
      * @link http://docs.php.net/manual/en/function.array-keys.php
      * @link http://docs.php.net/manual/en/function.get-object-vars.php
      */
-    public function utils_obj_to_array($obj) {
+    public function utils_obj_to_array($obj)
+    {
         $result = [];
         if (!is_array($obj)) {
             if (is_object($obj)) {
@@ -377,12 +398,29 @@ class utils {
      *
      * @return array|SoapClient
      */
-    public function utils_soap_client($wsdl, $opts) {
+    public function utils_soap_client($wsdl, $opts)
+    {
         try {
             $result = new SoapClient($wsdl, $opts);
         } catch (Exception $exception) {
             return ['error' => messages::msg_soap_client_error() . $exception];
         }
         return $result;
+    }
+
+    /**
+     * Check if string begins with
+     *
+     * Returns true or false if a given $start_string is
+     * found in the given $string
+     *
+     * @param string $string The string to search in
+     * @param string $start_string The value to search for
+     * @return bool True or False if found
+     */
+    public function utils_starts_with($string, $start_string)
+    {
+        $len = strlen($start_string);
+        return (substr($string, 0, $len) === $start_string);
     }
 }
