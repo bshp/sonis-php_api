@@ -1,8 +1,8 @@
 {
   "name": "bshp/sonis-php_api",
+  "description": "Sonis API Framework for PHP",
   "type": "library",
-  "description": "PHPUnit and Behat",
-  "keywords": ["phpunit", "behat", "testing"],
+  "keywords": ["sonis", "jenzabar"],
   "license": "MIT",
   "authors": [
     {
@@ -27,5 +27,8 @@
     "phpunit/phpunit": ">=6.0 <8.0",
     "squizlabs/php_codesniffer": "3.4.2",
     "friendsofphp/php-cs-fixer": "*"
+  },
+  "autoload": {
+    "psr-4": {"Jenzabar\\Sonis\\API\\": "sonis/"}
   }
 }
