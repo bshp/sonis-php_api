@@ -62,6 +62,7 @@ class utils
         $this->proxy_user = $cfg->proxy_user;
         $this->proxy_pass = $cfg->proxy_pass;
         $this->opts = $cfg->opts;
+        $this->release = $cfg->release;
     }
 
     /**
@@ -76,6 +77,7 @@ class utils
             'pass' => $this->pass,
             'host' => $this->host,
             'opts' => $this->opts,
+            'release' => $this->release,
         ];
     }
 
@@ -422,5 +424,28 @@ class utils
     {
         $len = strlen($start_string);
         return (substr($string, 0, $len) === $start_string);
+    }
+
+    /**
+     * Returns the Sonis PHP API version information
+     *
+     * @return string $result API version for Sonis
+     */
+    public function get_version($key)
+    {
+        $result = '';
+        $maj = $this->utils_api_cfg()['release']['version'];
+        $patch = $this->utils_api_cfg()['release']['patch'];
+        $full = 'v' . $maj . '.' . $patch;
+        if ($key == 'major') {
+            $result = $maj;
+        }
+        if ($key == 'patch') {
+            $result = $patch;
+        }
+        if ($key == 'pretty') {
+            $result = $full;
+        }
+        return $result;
     }
 }
