@@ -73,16 +73,14 @@ $cfg->opts = [
     'debug_display' => SOAP_DEBUG_DISPLAY, // Display debug messages instead of sending to system error log
 ];
 //=======================================
-// Nothing should be changed below this #
+// 3. Version - DO NOT MODIFY          #
 //=======================================
+$cfg->release = [
+    'branch' => 'master', // do not change
+    'version' => 2.3, // do not change
+    'patch' => 0, // do not change
+];
 //
-//===========================
-// initialize endpoints     #
-//===========================
-$api = new soapapi();
-$stmt = new soapsql();
-$utils = new utils();
-
 //===========================
 // proxy parameters         #
 //===========================
@@ -108,6 +106,7 @@ $cfg->host = rtrim($cfg->host, '/');
 //===========================
 // ensure api is reachable  #
 //===========================
+$utils = new utils();
 if (!$utils->utils_api_up()) {
     $utils->utils_event_error(messages::msg_api_unavailable(), true);
 }
