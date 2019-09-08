@@ -35,6 +35,7 @@ define('SOAP_DEBUG_DISPLAY', false); // Display the debug messages, requires SOA
 ## Usage
 Using this framework inside your package you just need to include the loader, sonis.php. You can check /tests/api.biographic.php as an example
 ````
+use Jenzabar\Sonis\Api\soapapi;
 use Jenzabar\Sonis\Api\biographic;
 
 require __DIR__ . '/sonis/sonis.php';
@@ -45,7 +46,7 @@ Now you can make requests, a simple example to get all the details of a person, 
 ````
 $soc_sec = 'the persons id';
 $args = biographic::namesearch($soc_sec);
-$request = $api->run($args);
+$request = soapapi::run($args);
 ````
 ## Notes 
 
