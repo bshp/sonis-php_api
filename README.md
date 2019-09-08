@@ -26,9 +26,9 @@ Optional:
 define('PROXY_NET', false); // true or false if proxy needed
 define('PROXY_AUTH', false); // true or false if proxy authenticated
 define('PROXY_HOST', ''); // Proxy host, DNS or IPv4
-define('PROXY_PORT, ''); // Proxy port
-define('PROXY_USER, ''); //Proxy username if authenticated
-define('PROXY_PASS, ''); // Proxy password
+define('PROXY_PORT', ''); // Proxy port
+define('PROXY_USER', ''); //Proxy username if authenticated
+define('PROXY_PASS', ''); // Proxy password
 define('SOAP_DEBUG', false); // Send SOAP debug messages to your system log, true or false
 define('SOAP_DEBUG_DISPLAY', false); // Display the debug messages, requires SOAP_DEBUG true
 ````
