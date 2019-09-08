@@ -39,8 +39,6 @@
 
 namespace Jenzabar\Sonis\Api;
 
-include __DIR__ . '/version.php';
-
 /**
  * Set defaults if undefined
  */
