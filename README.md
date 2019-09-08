@@ -72,9 +72,9 @@ with all the values from your search and then you can replace the values that ne
 
 Recommended:
 
-_Inserts and Searches(Reads)_ - Use $api(API), returns everything you need with a simple soap request versus large sql statements
+_Inserts and Searches(Reads)_ - Use soapapi, returns everything you need with a simple soap request versus large sql statements
 
-_Updates and Deletes(Writes)_ - Use $stmt(SQL), it's the reverse as the previous, a simple request to update values versus a huge soap request.
+_Updates and Deletes(Writes)_ - Use soapsql, it's the reverse as the previous, a simple request to update values versus a huge soap request.
 
 ##### _Errors_:
 The SOAP API does not do a good job of reporting errors as an http error code and instead returns a bunch of html as a string. Although there is a function that will log the error and print an error message, the only way to figure the cause is to read your php and/or coldfusion exception logs.
