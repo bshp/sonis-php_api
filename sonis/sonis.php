@@ -53,10 +53,10 @@ $cfg->pass          =  SONIS_PASSWORD;
 $cfg->host          =  SONIS_HOST;
 $cfg->proxy_net     =  PROXY_NET;
 $cfg->proxy_auth    =  PROXY_AUTH;
-$cfg->proxy_host    =  '';
-$cfg->proxy_port    =  '';
-$cfg->proxy_user    =  '';
-$cfg->proxy_pass    =  '';
+$cfg->proxy_host    =  PROXY_HOST;
+$cfg->proxy_port    =  PROXY_PORT;
+$cfg->proxy_user    =  PROXY_USER;
+$cfg->proxy_pass    =  PROXY_PASS;
 
 //========================================
 // 2. Expert: Configure Endpoint Options #
