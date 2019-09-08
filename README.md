@@ -26,15 +26,16 @@ Optional:
 define('PROXY_NET', false); // true or false if proxy needed
 define('PROXY_AUTH', false); // true or false if proxy authenticated
 define('PROXY_HOST', ''); // Proxy host, DNS or IPv4
-define('PROXY_PORT, ''); // Proxy port
-define('PROXY_USER, ''); //Proxy username if authenticated
-define('PROXY_PASS, ''); // Proxy password
+define('PROXY_PORT', ''); // Proxy port
+define('PROXY_USER', ''); //Proxy username if authenticated
+define('PROXY_PASS', ''); // Proxy password
 define('SOAP_DEBUG', false); // Send SOAP debug messages to your system log, true or false
 define('SOAP_DEBUG_DISPLAY', false); // Display the debug messages, requires SOAP_DEBUG true
 ````
 ## Usage
 Using this framework inside your package you just need to include the loader, sonis.php. You can check /tests/api.biographic.php as an example
 ````
+use Jenzabar\Sonis\Api\soapapi;
 use Jenzabar\Sonis\Api\biographic;
 
 require __DIR__ . '/sonis/sonis.php';
@@ -45,7 +46,7 @@ Now you can make requests, a simple example to get all the details of a person, 
 ````
 $soc_sec = 'the persons id';
 $args = biographic::namesearch($soc_sec);
-$request = $api->run($args);
+$request = soapapi::run($args);
 ````
 ## Notes 
 
@@ -71,9 +72,9 @@ with all the values from your search and then you can replace the values that ne
 
 Recommended:
 
-_Inserts and Searches(Reads)_ - Use $api(API), returns everything you need with a simple soap request versus large sql statements
+_Inserts and Searches(Reads)_ - Use soapapi, returns everything you need with a simple soap request versus large sql statements
 
-_Updates and Deletes(Writes)_ - Use $stmt(SQL), it's the reverse as the previous, a simple request to update values versus a huge soap request.
+_Updates and Deletes(Writes)_ - Use soapsql, it's the reverse as the previous, a simple request to update values versus a huge soap request.
 
 ##### _Errors_:
 The SOAP API does not do a good job of reporting errors as an http error code and instead returns a bunch of html as a string. Although there is a function that will log the error and print an error message, the only way to figure the cause is to read your php and/or coldfusion exception logs.

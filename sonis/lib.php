@@ -39,8 +39,6 @@
 
 namespace Jenzabar\Sonis\Api;
 
-include __DIR__ . '/version.php';
-
 /**
  * Set defaults if undefined
  */
@@ -49,6 +47,18 @@ if (!defined('PROXY_NET')) {
 }
 if (!defined('PROXY_AUTH')) {
     define('PROXY_AUTH', false);
+}
+if (!defined('PROXY_HOST')) {
+    define('PROXY_HOST', '');
+}
+if (!defined('PROXY_PORT')) {
+    define('PROXY_PORT', '');
+}
+if (!defined('PROXY_USER')) {
+    define('PROXY_USER', '');
+}
+if (!defined('PROXY_PASS')) {
+    define('PROXY_PASS', '');
 }
 if (!defined('SOAP_DEBUG')) {
     define('SOAP_DEBUG', false);

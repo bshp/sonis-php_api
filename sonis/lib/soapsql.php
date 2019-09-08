@@ -61,7 +61,7 @@ class soapsql
      * @example '../tests/sql.sysvar.php'
      * @todo more cleanup, add debugging, maybe check for injections
      */
-    public function run($sql)
+    public static function run($sql)
     {
         global $utils;
         $returns = true;

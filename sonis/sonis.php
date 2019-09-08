@@ -53,10 +53,10 @@ $cfg->pass          =  SONIS_PASSWORD;
 $cfg->host          =  SONIS_HOST;
 $cfg->proxy_net     =  PROXY_NET;
 $cfg->proxy_auth    =  PROXY_AUTH;
-$cfg->proxy_host    =  '';
-$cfg->proxy_port    =  '';
-$cfg->proxy_user    =  '';
-$cfg->proxy_pass    =  '';
+$cfg->proxy_host    =  PROXY_HOST;
+$cfg->proxy_port    =  PROXY_PORT;
+$cfg->proxy_user    =  PROXY_USER;
+$cfg->proxy_pass    =  PROXY_PASS;
 
 //========================================
 // 2. Expert: Configure Endpoint Options #
@@ -73,16 +73,14 @@ $cfg->opts = [
     'debug_display' => SOAP_DEBUG_DISPLAY, // Display debug messages instead of sending to system error log
 ];
 //=======================================
-// Nothing should be changed below this #
+// 3. Version - DO NOT MODIFY          #
 //=======================================
+$cfg->release = [
+    'branch' => 'master', // do not change
+    'version' => 2.3, // do not change
+    'patch' => 0, // do not change
+];
 //
-//===========================
-// initialize endpoints     #
-//===========================
-$api = new soapapi();
-$stmt = new soapsql();
-$utils = new utils();
-
 //===========================
 // proxy parameters         #
 //===========================
@@ -108,6 +106,7 @@ $cfg->host = rtrim($cfg->host, '/');
 //===========================
 // ensure api is reachable  #
 //===========================
+$utils = new utils();
 if (!$utils->utils_api_up()) {
     $utils->utils_event_error(messages::msg_api_unavailable(), true);
 }

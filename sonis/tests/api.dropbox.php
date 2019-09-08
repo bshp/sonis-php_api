@@ -37,6 +37,7 @@
  * @license https://opensource.org/licenses/MIT
  */
 
+use Jenzabar\Sonis\Api\soapapi;
 use Jenzabar\Sonis\Api\dropbox;
 
 define('SONIS_USER', 'username');  // your api user
@@ -61,13 +62,13 @@ $args = dropbox::program(true, true, false, false, '');
  *
  * @var mixed $request
  */
-$request = $api->run($args);
+$request = soapapi::run($args);
 ?>
 <html>
 <body>
 <form>
     <?php echo $request; ?>
-    <p><?php print_r('Sonis API Framework: ' . $release); ?> </p>
+    <p><?php print_r('Sonis API Framework: ' . $utils->get_version('pretty')); ?> </p>
 </form>
 </body>
 </html>

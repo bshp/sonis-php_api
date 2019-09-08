@@ -56,7 +56,7 @@ class soapapi
      * @return array|string Returns output of utils.utils_array_process
      * @example '../tests/api.biographic.php'
      */
-    public function run($args)
+    public static function run($args)
     {
         global $utils;
         $comp = $args['comp'];
