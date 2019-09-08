@@ -37,7 +37,7 @@
  * @license https://opensource.org/licenses/MIT
  */
 
-use Jenzabar\Sonis\Api;
+use Jenzabar\Sonis\Api\soapsql;
 
 define('SONIS_USER', 'username');  // your api user
 define('SONIS_PASSWORD', 'password'); // your api password
@@ -59,10 +59,10 @@ require __DIR__ . '/../sonis.php';
  * The query statement to be
  * ran in regular sql language.
  *
- * @var string $sql
+ * @var string $stmt
  * @example "SELECT TOP 1 * FROM sysvar"
  */
-$sql = "SELECT TOP 1 * FROM sysvar";
+$stmt = "SELECT TOP 1 * FROM sysvar";
 
 /**
  * Stores the data queried in $result.
@@ -72,7 +72,7 @@ $sql = "SELECT TOP 1 * FROM sysvar";
  * @var array $result
  * @example $result['FIRST_NAME'];
  */
-$result = $stmt->run($sql);
+$result = soapsql::run($stmt);
 
 print_r($result);
-print_r('Sonis API Framework: ' . $release);
+print_r('Sonis API Framework: ' . $utils->get_version('pretty'));

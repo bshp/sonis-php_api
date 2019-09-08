@@ -37,6 +37,7 @@
  * @license https://opensource.org/licenses/MIT
  */
 
+use Jenzabar\Sonis\Api\soapapi;
 use Jenzabar\Sonis\Api\biographic;
 
 define('SONIS_USER', 'username');  // your api user
@@ -68,7 +69,7 @@ $args = biographic::namesearch($soc_sec);
  *
  * @var mixed $request
  */
-$request = $api->run($args);
+$request = soapapi::run($args);
 
 print_r($request);
-print_r('Sonis API Framework: ' . $release);
+print_r('Sonis API Framework: ' . $utils->get_version('pretty'));
