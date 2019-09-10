@@ -55,6 +55,28 @@ class dropbox
     }
 
     /**
+     * Creates an html list for yes/no options with values 0 and 1
+     *
+     * @param boolean $allow_blank Allow blank values, true or false, this must be true if $value is not set
+     * @return string $result the HTML select value
+     */
+    public static function boolean_box($allow_blank)
+    {
+        $result = '<select>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>';
+        if ($allow_blank) {
+            $result = '<select>
+                        <option value="0"></option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>';
+        }
+        return $result;
+    }
+
+    /**
      * Provides an html list of application terms
      *
      * @param string $value the default value to be used, selected automatically, defaults to blank
