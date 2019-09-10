@@ -58,16 +58,17 @@ class dropbox
      * Creates an html list for yes/no options with values 0 and 1
      *
      * @param boolean $allow_blank Allow blank values, true or false, this must be true if $value is not set
+     * @param string $Additional_Properties Add additional html properties for <select>
      * @return string $result the HTML select value
      */
-    public static function boolean_box($allow_blank)
+    public static function boolean_box($allow_blank, $Additional_Properties)
     {
-        $result = '<select>
+        $result = '<select ' . $Additional_Properties . '>
                         <option value="0">No</option>
                         <option value="1">Yes</option>
                     </select>';
         if ($allow_blank) {
-            $result = '<select>
+            $result = '<select ' . $Additional_Properties . '>
                         <option value="0"></option>
                         <option value="0">No</option>
                         <option value="1">Yes</option>
@@ -83,7 +84,7 @@ class dropbox
      * @param boolean $allow_blank Allow blank values, true or false, this must be true if $value is not set
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
-     * @param string $Additional_Properties Additional props
+     * @param string $Additional_Properties Add additional html properties for <select>
      * @return array
      */
     public static function app_term($allow_blank, $multi_select, $hide, $Additional_Properties, $value = '')
@@ -114,7 +115,7 @@ class dropbox
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
      * @param string $value the default value to be used, selected automatically, defaults to blank
-     * @param string $Additional_Properties Additional props
+     * @param string $Additional_Properties Add additional html properties for <select>
      * @return array
      */
     public static function campus($hide_excludes, $allow_blank, $multi_select, $hide, $Additional_Properties, $value = '')
@@ -144,7 +145,7 @@ class dropbox
      * @param boolean $allow_blank Allow blank values, true or false, this must be true if $value is not set
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
-     * @param string $Additional_Properties Additional props
+     * @param string $Additional_Properties Add additional html properties for <select>
      * @return array
      */
     public static function country($allow_blank, $multi_select, $hide, $Additional_Properties)
@@ -173,7 +174,7 @@ class dropbox
      * @param boolean $allow_blank Allow blank values, true or false, this must be true if $value is not set
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
-     * @param string $Additional_Properties Additional props
+     * @param string $Additional_Properties Add additional html properties for <select>
      * @param string $value the default value to be used, selected automatically, defaults to blank
      * @param boolean $disp_only True or false if editable
      * @return array
@@ -205,7 +206,7 @@ class dropbox
      * @param boolean $allow_blank Allow blank values, true or false, this must be true if $value is not set
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
-     * @param string $Additional_Properties Additional props
+     * @param string $Additional_Properties Add additional html properties for <select>
      * @return array
      */
     public static function degree($allow_blank, $multi_select, $hide, $Additional_Properties)
@@ -234,7 +235,7 @@ class dropbox
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
      * @param string $value the default value to be used, selected automatically, defaults to blank
-     * @param string $Additional_Properties Additional props
+     * @param string $Additional_Properties Add additional html properties for <select>
      * @return array
      */
     public static function enrollStatus($allow_blank, $multi_select, $hide, $Additional_Properties, $value = '')
@@ -365,7 +366,7 @@ class dropbox
      * @param boolean $allow_blank Allow blank values, true or false, this must be true if $value is not set
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
-     * @param string $Additional_Properties Additional props
+     * @param string $Additional_Properties Add additional html properties for <select>
      * @return array
      */
     public static function interest($allow_blank, $multi_select, $hide, $Additional_Properties)
@@ -394,7 +395,7 @@ class dropbox
      * @param boolean $allow_blank Allow blank values, true or false, this must be true if $value is not set
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
-     * @param string $Additional_Properties Additional props
+     * @param string $Additional_Properties Add additional html properties for <select>
      * @return array
      */
     public static function LevelofEdu($allow_blank, $multi_select, $hide, $Additional_Properties)
@@ -528,7 +529,7 @@ class dropbox
      * @param boolean $allow_blank Allow blank values, true or false, this must be true if $value is not set
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
-     * @param string $Additional_Properties Additional props
+     * @param string $Additional_Properties Add additional html properties for <select>
      * @return array
      */
     public static function program($hide_excludes, $allow_blank, $multi_select, $hide, $Additional_Properties)
@@ -557,7 +558,7 @@ class dropbox
      * @param boolean $allow_blank Allow blank values, true or false, this must be true if $value is not set
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
-     * @param string $Additional_Properties Additional props
+     * @param string $Additional_Properties Add additional html properties for <select>
      * @return array
      */
     public static function state($allow_blank, $multi_select, $hide, $Additional_Properties)
@@ -585,7 +586,7 @@ class dropbox
      * @param boolean $allow_blank Allow blank values, true or false, this must be true if $value is not set
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
-     * @param string $Additional_Properties Additional props
+     * @param string $Additional_Properties Add additional html properties for <select>
      * @return array
      */
     public static function stateoflicensure($allow_blank, $multi_select, $hide, $Additional_Properties)
@@ -682,7 +683,7 @@ class dropbox
      * @param boolean $allow_blank Allow blank values, true or false, this must be true if $value is not set
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
-     * @param string $Additional_Properties Additional props
+     * @param string $Additional_Properties Add additional html properties for <select>
      * @return array
      */
     public static function termInterest($allow_blank, $multi_select, $hide, $Additional_Properties)
