@@ -86,7 +86,7 @@ class education
      * @param string $edu_rid Edu record id
      * @return array
      */
-    public static function eduSearch($soc_sec, $edu_rid = '')
+    public static function eduSearch($soc_sec, $edu_rid)
     {
         $comp = (new self())->get_comp();
         $method = 'eduSearch';
@@ -175,7 +175,7 @@ class education
      * @param string $edu_rid Edu record id
      * @return array
      */
-    public static function insert_inst($soc_sec, $inst_mem = '', $edu_rid = '')
+    public static function insert_inst($soc_sec, $inst_mem, $edu_rid)
     {
         $comp = (new self())->get_comp();
         $method = 'insert_inst';
@@ -203,7 +203,7 @@ class education
      * @param string $inst_cntry Institutional country
      * @return array
      */
-    public static function institutsearch($inst_city = '', $inst_state = '', $inst_txt = '', $insttypcod = '', $inst_cntry = '')
+    public static function institutsearch($inst_state, $inst_city, $inst_txt, $insttypcod, $inst_cntry)
     {
         $comp = (new self())->get_comp();
         $method = 'institutsearch';
