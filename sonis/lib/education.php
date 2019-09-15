@@ -86,7 +86,7 @@ class education
      * @param string $edu_rid Edu record id
      * @return array
      */
-    public static function eduSearch($soc_sec, $edu_rid)
+    public static function eduSearch($soc_sec, $edu_rid = '')
     {
         $comp = (new self())->get_comp();
         $method = 'eduSearch';
