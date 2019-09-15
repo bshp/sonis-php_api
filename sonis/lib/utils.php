@@ -317,7 +317,8 @@ class utils
     }
 
     /**
-     * Change all keys in an array to lowercase
+     * Change all keys in an array to lowercase,
+     * works on multi-dimensional arrays as well.
      *
      * @param array $array
      * @return array|boolean
@@ -325,8 +326,32 @@ class utils
      */
     public function utils_array_lc($array)
     {
-        $result = array_change_key_case($array, CASE_LOWER);
+        $multi_array = false;
+        if (is_array($array) && isset($array[0])) {
+            $multi_array = true;
+        }
+        if ($multi_array) {
+            $result = $this->utils_array_of_arrays_lc($array);
+        } else {
+            $result = array_change_key_case($array, CASE_LOWER);
+        }
         return $result;
+    }
+
+    /**
+     * Change key case to lower for multi-dimensional arrays
+     *
+     * @param array $array
+     * @return array
+     */
+    private function utils_array_of_arrays_lc($array)
+    {
+        return array_map(function ($item) {
+            if (is_array($item)) {
+                $item = $this->utils_array_of_arrays_lc($item);
+            }
+            return $item;
+        }, array_change_key_case($array, CASE_LOWER));
     }
 
     /**
