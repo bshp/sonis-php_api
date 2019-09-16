@@ -151,6 +151,7 @@ class employment
         $method = 'search';
         $returns = 'yes';
         $params = [
+            ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
             ['emp_rid', $emp_rid],
         ];
