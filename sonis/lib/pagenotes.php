@@ -45,16 +45,7 @@ namespace Jenzabar\Sonis\Api;
 class pagenotes
 {
 
-    /**
-     * Get the component for the method
-     *
-     * @return string $result The sonis web services component
-     */
-    public function get_comp()
-    {
-        $result = 'pagenote';
-        return $result;
-    }
+    private static $comp = 'pagenote';
 
     /**
      * Inserts or updates a note
@@ -64,7 +55,7 @@ class pagenotes
      */
     public static function get_pagenote($pagenote_cod)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'get_pagenote';
         $returns = 'yes';
         $params = [
@@ -86,7 +77,7 @@ class pagenotes
      */
     public static function get_pagenote_bottom($pagenote_cod)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'get_pagenote_bottom';
         $returns = 'yes';
         $params = [

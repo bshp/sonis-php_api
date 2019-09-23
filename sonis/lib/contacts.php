@@ -50,6 +50,8 @@ namespace Jenzabar\Sonis\Api;
 class contacts
 {
 
+    private static $comp = 'oa_emc';
+
     /**
      * Deletes a contact record
      *
@@ -58,7 +60,7 @@ class contacts
      */
     public static function delete_emc($nmemc_rid)
     {
-        $comp = 'oa_emc';
+        $comp = self::$comp;
         $method = 'delete_emc';
         $returns = 'yes';
         $params = [
@@ -107,7 +109,7 @@ class contacts
         $memo,
         $d_soc_sec =''
     ) {
-        $comp = 'oa_emc';
+        $comp = self::$comp;
         $method = 'insert_emc';
         $returns = 'yes';
         $params = [
@@ -144,7 +146,7 @@ class contacts
      */
     public static function search($soc_sec, $nmemc_rid = '')
     {
-        $comp = 'oa_emc';
+        $comp = self::$comp;
         $method = 'search';
         $returns = 'yes';
         $params = [
@@ -195,7 +197,7 @@ class contacts
         $nmemc_rid,
         $d_soc_sec = ''
     ) {
-        $comp = 'oa_emc';
+        $comp = self::$comp;
         $method = 'update_emc';
         $returns = 'yes';
         $params = [

@@ -43,6 +43,8 @@ namespace Jenzabar\Sonis\Api;
 class onlineapp
 {
 
+    private static $comp = 'student_app';
+
     /**
      * Logon function for the online app
      *
