@@ -53,7 +53,6 @@ class lang
      * Get a language string for the $key provided
      *
      * @param string $key The key identifier for the language string
-     * @param string $i18n The locale to be used, default is en
      * @return mixed $key The language string for the key defined
      */
     public static function get($key)
