@@ -49,7 +49,7 @@ namespace Jenzabar\Sonis\Api;
 class selectable
 {
 
-    private static function options_list($options, $allow_blank)
+    private static function options_list($options, $allow_blank = '')
     {
         global $utils;
         $stmt = '';
@@ -107,7 +107,7 @@ class selectable
         return $result;
     }
 
-    public static function cell_provider($user = '', $allow_blank = '')
+    public static function cell_provider($user, $allow_blank = '')
     {
         global $utils;
         $list = self::options_list('cell_provider', $allow_blank);
@@ -119,7 +119,6 @@ class selectable
                     WHERE a.soc_sec = '$user'
                     ORDER BY c.cell_provider ASC";
             $selected = $utils->utils_array_lc(soapsql::run($stmt));
-            $list = self::options_list('cell_provider');
             return '<option value="' . $selected['cell_provider'] . '" selected>' . $selected['cell_provider'] . '</option>' . $list;
         }
         return $list;
