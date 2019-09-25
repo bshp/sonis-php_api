@@ -49,6 +49,13 @@ namespace Jenzabar\Sonis\Api;
 class selectable
 {
 
+    /**
+     * Get the users selected option and/or return the select list
+     *
+     * @param string $options The dropdown to be returned
+     * @param boolean|string $allow_blank add a blank <option> value to the select list, true or false
+     * @return string $result The select list
+     */
     private static function options_list($options, $allow_blank = '')
     {
         global $utils;
@@ -107,6 +114,13 @@ class selectable
         return $result;
     }
 
+    /**
+     * Returns a dropbox for cell providers, either with the 'selected' value or not if $user is defined
+     *
+     * @param string $user The user id to get the selected value for
+     * @param boolean|string $allow_blank add a blank <option> value to the select list, true or false
+     * @return string $list The select list
+     */
     public static function cell_provider($user, $allow_blank = '')
     {
         global $utils;
@@ -124,6 +138,13 @@ class selectable
         return $list;
     }
 
+    /**
+     * Returns a dropbox for countries, either with the 'selected' value or not if $user is defined
+     *
+     * @param string $user The user id to get the selected value for
+     * @param boolean|string $allow_blank add a blank <option> value to the select list, true or false
+     * @return string $list The select list
+     */
     public static function country($user = '', $allow_blank = '')
     {
         global $utils;
@@ -141,6 +162,13 @@ class selectable
         return $list;
     }
 
+    /**
+     * Returns a dropbox for ethnicity, either with the 'selected' value or not if $user is defined
+     *
+     * @param string $user The user id to get the selected value for
+     * @param boolean|string $allow_blank add a blank <option> value to the select list, true or false
+     * @return string $list The select list
+     */
     public static function ethnicity($user = '', $allow_blank = '')
     {
         global $utils;
@@ -156,6 +184,13 @@ class selectable
         return $list;
     }
 
+    /**
+     * Returns a dropbox for gender's, either with the 'selected' value or not if $user is defined
+     *
+     * @param string $user The user id to get the selected value for
+     * @param boolean|string $allow_blank add a blank <option> value to the select list, true or false
+     * @return string $list The select list
+     */
     public static function gender($user = '', $allow_blank = '')
     {
         global $utils;
@@ -172,6 +207,13 @@ class selectable
         return $list;
     }
 
+    /**
+     * Returns a dropbox for institutions, either with the 'selected' value or not if $user is defined
+     *
+     * @param string $user The user id to get the selected value for
+     * @param boolean|string $allow_blank add a blank <option> value to the select list, true or false
+     * @return string $list The select list
+     */
     public static function institution($user = '', $allow_blank = '')
     {
         global $utils;
@@ -189,6 +231,13 @@ class selectable
         return $list;
     }
 
+    /**
+     * Returns a dropbox for marital status, either with the 'selected' value or not if $user is defined
+     *
+     * @param string $user The user id to get the selected value for
+     * @param boolean|string $allow_blank add a blank <option> value to the select list, true or false
+     * @return string $list The select list
+     */
     public static function marital($user = '', $allow_blank = '')
     {
         global $utils;
@@ -204,6 +253,13 @@ class selectable
         return $list;
     }
 
+    /**
+     * Returns a dropbox for states, either with the 'selected' value or not if $user is defined
+     *
+     * @param string $user The user id to get the selected value for
+     * @param boolean|string $allow_blank add a blank <option> value to the select list, true or false
+     * @return string $list The select list
+     */
     public static function state($user = '', $allow_blank = '')
     {
         global $utils;
