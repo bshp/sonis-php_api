@@ -236,7 +236,7 @@ class utils
             if (is_string($array)) {
                 if (strpos($array, 'Error')) {
                     $this->utils_array_exception($array);
-                    $this->utils_event_error(messages::msg_array_error(), true);
+                    $this->utils_event_error(lang::get('array_error'), true);
                 } else {
                     $result = $array;
                 }
@@ -430,7 +430,7 @@ class utils
         try {
             $result = new SoapClient($wsdl, $opts);
         } catch (Exception $exception) {
-            return ['error' => messages::msg_soap_client_error() . $exception];
+            return ['error' => lang::get('soap_client_error') . $exception];
         }
         return $result;
     }

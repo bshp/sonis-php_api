@@ -57,7 +57,7 @@ $cfg->proxy_host    =  PROXY_HOST;
 $cfg->proxy_port    =  PROXY_PORT;
 $cfg->proxy_user    =  PROXY_USER;
 $cfg->proxy_pass    =  PROXY_PASS;
-
+$cfg->api_locale    = 'en-US';
 //========================================
 // 2. Expert: Configure Endpoint Options #
 //========================================
@@ -108,6 +108,6 @@ $cfg->host = rtrim($cfg->host, '/');
 //===========================
 $utils = new utils();
 if (!$utils->utils_api_up()) {
-    $utils->utils_event_error(messages::msg_api_unavailable(), true);
+    $utils->utils_event_error(lang::get('api_unavailable'), true);
 }
 //closing tag left out on purpose to prevent trailing whitespaces
