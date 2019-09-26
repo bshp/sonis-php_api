@@ -71,6 +71,11 @@ class selectable
             $key = 'country';
             $value = 'country_txt';
         }
+        if ($options == 'department') {
+            $stmt = "SELECT RTRIM(dept_cod) AS dept_cod, RTRIM(dept_txt) AS dept_txt FROM dept WHERE disabled = '0' ORDER BY dept_cod ASC";
+            $key = 'dept_cod';
+            $value = 'dept_txt';
+        }
         if ($options == 'ethnicity') {
             $stmt = "SELECT rtrim(e.ethnic_cod) as ethnic_cod, rtrim(e.ethnic_txt) as ethnic_txt FROM ethnic AS e ORDER BY e.ethnic_txt ASC";
             $key = 'ethnic_cod';
@@ -158,6 +163,28 @@ class selectable
                     ORDER BY c.country_txt ASC";
             $selected = $utils->utils_array_lc(soapsql::run($stmt));
             return '<option value="' . $selected['country'] . '" selected>' . $selected['country_txt'] . '</option>' . $list;
+        }
+        return $list;
+    }
+
+    /**
+     * Returns a dropbox for departments, either with the 'selected' value or not if $user is defined
+     *
+     * @param string $user The user id to get the selected value for
+     * @param boolean|string $allow_blank add a blank <option> value to the select list, true or false
+     * @return string $list The select list
+     */
+    public static function department($user = '', $allow_blank = '')
+    {
+        global $utils;
+        $list = self::options_list('department', $allow_blank);
+        if ($user != '') {
+            $stmt = "SELECT n.soc_sec, n.dept_cod, rtrim(d.dept_cod) AS dept_cod, rtrim(d.dept_txt) AS dept_txt
+                     FROM name n
+                        INNER JOIN dept d on n.dept_cod = d.dept_cod
+                     WHERE n.soc_sec = '$user'";
+            $selected = $utils->utils_array_lc(soapsql::run($stmt));
+            return '<option value="' . $selected['dept_cod'] . '" selected>' . $selected['dept_txt'] . '</option>' . $list;
         }
         return $list;
     }
