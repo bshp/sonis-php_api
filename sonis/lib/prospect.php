@@ -121,6 +121,7 @@ class prospect
         $method = 'addnewps';
         $returns = 'yes';
         $params = [
+            ['MainDir', '#MainDir#'],
             ['last_name', $last_name],
             ['first_name', $first_name],
             ['mi', $mi],
