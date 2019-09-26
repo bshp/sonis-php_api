@@ -111,6 +111,38 @@ class utils
         }
         return false;
     }
+    
+    /**
+     * Generate a UUID, either in coldfusion (cf) format or standard
+     *
+     * @param string $format Either 'cf' or 'rfc'
+     * @param string $case Return as uppercase or lowercase, either of 'lc' or 'uc'
+     * @return string $uuid The generated UUID
+     */
+    public function utils_create_uuid($format = '', $case = '')
+    {
+        if ($format == 'cf') {
+            $uuid = sprintf('%04x%04x-%04x-%04x-%04x%04x%04x%04x',
+                mt_rand(0, 0xffff), mt_rand(0, 0xffff),
+                mt_rand(0, 0xffff),
+                mt_rand(0, 0x0C2f) | 0x4000,
+                mt_rand(0, 0x3fff) | 0x8000,
+                mt_rand(0, 0x2Aff), mt_rand(0, 0xffD3), mt_rand(0, 0xff4B)
+            );
+        } else {
+           $uuid = sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+                mt_rand(0, 0xffff), mt_rand(0, 0xffff),
+                mt_rand(0, 0xffff),
+                mt_rand(0, 0x0C2f) | 0x4000,
+                mt_rand(0, 0x3fff) | 0x8000,
+                mt_rand(0, 0x2Aff), mt_rand(0, 0xffD3), mt_rand(0, 0xff4B)
+            );
+        }
+        if ($case == 'uc') {
+            return strtoupper($uuid);
+        }
+        return $uuid;
+    }
 
     /**
      * Debugging a SOAP call, handle routing
