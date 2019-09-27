@@ -190,6 +190,34 @@ class utils
     }
 
     /**
+     * Generate a random number
+     *
+     * Some tables require a random (*_rid field),
+     * this will create a compatible integer for use.
+     *
+     * @suffix Either a 0 or 1 suffixed to match Sonis rid's
+     * @author Jason A. Everling
+     * @return string the generated number
+     */
+    public function utils_generateID($suffix = '')
+    {
+        $result = '';
+        $now = date("Ymd");
+        $rnd = rand(100000000, 999999999);
+        $valid = ['0', '1'];
+        if ($suffix != '') {
+            if (in_array($suffix, $valid)) {
+                $result = $now . $rnd . $suffix;
+            } else {
+                $result = 'Invalid suffix supplied, must be a 0 or 1';
+            }
+        } else {
+            $result = $now . $rnd . '0';
+        }
+        return $result;
+    }
+
+    /**
      * Convert given string $data to lowercase,
      * using strtolower
      *
