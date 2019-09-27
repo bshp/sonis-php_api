@@ -59,8 +59,8 @@ class lang
     {
 
         global $cfg;
-        $i18n = $cfg->api_locale;
-        $root = $cfg->api_dir;
+        $i18n = $cfg->locale;
+        $root = $cfg->root;
 
         $locale = $root . 'lang/' . $i18n . '.php';
 
