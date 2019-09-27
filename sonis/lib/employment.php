@@ -43,16 +43,7 @@ namespace Jenzabar\Sonis\Api;
 class employment
 {
 
-    /**
-     * Get the component for the method
-     *
-     * @return string $result The sonis web services component
-     */
-    public function get_comp()
-    {
-        $result = 'employment';
-        return $result;
-    }
+    private static $comp = 'employment';
 
     /**
      * Deletes an employment record
@@ -62,7 +53,7 @@ class employment
      */
     public static function delete_employment($emp_rid)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'delete_employment';
         $returns = 'yes';
         $params = [
@@ -104,7 +95,7 @@ class employment
      */
     public static function insert_employment($soc_sec, $emp_emply, $emp_super, $emp_add1, $emp_add2, $emp_add3, $emp_city, $emp_state, $emp_county, $emp_zip, $employ_type_rid, $emp_pos, $hrs_week, $start_dt, $stop_dt, $emp_mem, $emp_rid, $empcountry, $when_code, $emp_phone, $homeinst)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'insert_employment';
         $returns = 'yes';
         $params = [
@@ -147,10 +138,11 @@ class employment
      */
     public static function search($soc_sec, $emp_rid = '')
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'search';
         $returns = 'yes';
         $params = [
+            ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
             ['emp_rid', $emp_rid],
         ];
@@ -194,7 +186,7 @@ class employment
      */
     public static function update_employment($soc_sec, $emp_emply, $emp_super, $emp_add1, $emp_add2, $emp_add3, $emp_city, $emp_state, $emp_county, $emp_zip, $employ_type_rid, $emp_status, $passed, $emp_email, $number, $emp_pos, $hrs_week, $start_dt, $stop_dt, $emp_mem, $emp_rid, $empcountry, $when_code, $emp_phone, $homeinst)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'update_employment';
         $returns = 'yes';
         $params = [

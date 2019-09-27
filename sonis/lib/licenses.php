@@ -43,30 +43,23 @@ namespace Jenzabar\Sonis\Api;
 class licenses
 {
 
-    /**
-     * Get the component for the method
-     *
-     * @return string $result The sonis web services component
-     */
-    public function get_comp()
-    {
-        $result = 'oa_licenses';
-        return $result;
-    }
+    private static $comp = 'oa_licenses';
 
     /**
      * Deletes a persons license
      *
      * @param string $soc_sec The objects unique identifier
+     * @param string $lic_rid The Sonis license RID
      * @return array
      */
-    public static function delete_license($soc_sec)
+    public static function delete_license($soc_sec, $lic_rid = '')
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'delete_license';
         $returns = 'yes';
         $params = [
             ['soc_sec', $soc_sec],
+            ['lic_rid', $lic_rid],
         ];
         return [
             'comp' => $comp,
@@ -90,10 +83,11 @@ class licenses
      */
     public static function insert_license($soc_sec, $license, $lic_no, $date_rec, $date_exp, $lic_mem, $d_soc_sec = '')
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'insert_license';
         $returns = 'yes';
         $params = [
+            ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
             ['soc_sec', $license],
             ['lic_no', $lic_no],
@@ -114,17 +108,18 @@ class licenses
      * Search for a persons license
      *
      * @param string $soc_sec The objects unique identifier
-     * @param string $license The persons license (not dirvers license)
+     * @param string $lic_rid The Sonis license RID
      * @return array
      */
-    public static function search($soc_sec, $license = '')
+    public static function search($soc_sec, $lic_rid = '')
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'search';
         $returns = 'yes';
         $params = [
+            ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
-            ['license', $license],
+            ['lic_rid', $lic_rid],
         ];
         return [
             'comp' => $comp,
@@ -147,12 +142,21 @@ class licenses
      * @param string $lic_rid
      * @return array
      */
-    public static function update_license($soc_sec, $license, $lic_no, $date_rec, $date_exp, $lic_mem, $lic_rid, $d_soc_sec = '')
-    {
-        $comp = (new self())->get_comp();
+    public static function update_license(
+        $soc_sec,
+        $license,
+        $lic_no,
+        $date_rec,
+        $date_exp,
+        $lic_mem,
+        $lic_rid = '',
+        $d_soc_sec = ''
+    ) {
+        $comp = self::$comp;
         $method = 'update_license';
         $returns = 'yes';
         $params = [
+            ['MainDir', '#MainDir#'],
             ['soc_sec', $soc_sec],
             ['license', $license],
             ['lic_no', $lic_no],

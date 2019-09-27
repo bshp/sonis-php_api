@@ -43,16 +43,7 @@ namespace Jenzabar\Sonis\Api;
 class biographic
 {
 
-    /**
-     * Get the component for the method
-     *
-     * @return string $result The sonis web services component
-     */
-    public function get_comp()
-    {
-        $result = 'biographic';
-        return $result;
-    }
+    private static $comp = 'biographic';
 
     /**
      * Get First and Lastname
@@ -62,7 +53,7 @@ class biographic
      */
     public static function getName($soc_sec)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'getName';
         $returns = 'yes';
         $params = [
@@ -84,9 +75,12 @@ class biographic
      * @param string $semester the semester, either 1,2,3,4
      * @return array
      */
-    public static function get_enrollstat($soc_sec, $sch_yr, $semester)
-    {
-        $comp = (new self())->get_comp();
+    public static function get_enrollstat(
+        $soc_sec,
+        $sch_yr,
+        $semester
+    ) {
+        $comp = self::$comp;
         $method = 'get_enrollstat';
         $returns = 'yes';
         $params = [
@@ -110,7 +104,7 @@ class biographic
      */
     public static function namesearch($soc_sec)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'namesearch';
         $returns = 'yes';
         $params = [
@@ -128,7 +122,7 @@ class biographic
      */
     public static function namesearch2($soc_sec)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'namesearch2';
         $returns = 'yes';
         $params = [
@@ -153,9 +147,15 @@ class biographic
      * @param string $visa_issue_date
      * @return array
      */
-    public static function nmcit($soc_sec, $birth_contry, $citizen_country, $iseas_no, $visa_cod, $visa_issue_date)
-    {
-        $comp = (new self())->get_comp();
+    public static function nmcit(
+        $soc_sec,
+        $birth_contry,
+        $citizen_country,
+        $iseas_no,
+        $visa_cod,
+        $visa_issue_date
+    ) {
+        $comp = self::$comp;
         $method = 'nmcit';
         $returns = 'yes';
         $params = [
@@ -183,7 +183,7 @@ class biographic
      */
     public static function nmcitsearch($soc_sec, $mod_stat = '')
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'nmcitsearch';
         $returns = 'yes';
         $params = [
@@ -249,9 +249,55 @@ class biographic
      * @param string $operator The persons unqiue ID adding or modifying the record. Please change the value
      * @return array
      */
-    public static function save_biographic($soc_sec, $mod_stat, $first_name, $last_name, $mi, $acadstat_cod, $prefix, $suffix, $maiden, $nickname, $birthdate, $gender, $ssn, $old_ssn, $affiliation_cod, $citizen, $ethnic_cod, $mar_cod, $transmem, $veteran, $releas_inf, $releas_dt, $div_cod, $dept_cod, $camp_cod, $level_, $tuit_stat, $name_mem, $pin, $newpin, $deceased, $dec_date, $exam_id, $online_hld, $notpubname, $show_email, $show_phone, $show_addr, $show_wkphn, $excl_billing, $excl_mailing, $other_name, $fund_stat, $photo, $iped_stat, $operator)
-    {
-        $comp = (new self())->get_comp();
+    public static function save_biographic(
+        $soc_sec,
+        $mod_stat,
+        $first_name,
+        $last_name,
+        $mi,
+        $acadstat_cod,
+        $prefix,
+        $suffix,
+        $maiden,
+        $nickname,
+        $birthdate,
+        $gender,
+        $ssn,
+        $old_ssn,
+        $affiliation_cod,
+        $citizen,
+        $ethnic_cod,
+        $mar_cod,
+        $transmem,
+        $veteran,
+        $releas_inf,
+        $releas_dt,
+        $div_cod,
+        $dept_cod,
+        $camp_cod,
+        $level_,
+        $tuit_stat,
+        $name_mem,
+        $pin,
+        $newpin,
+        $deceased,
+        $dec_date,
+        $exam_id,
+        $online_hld,
+        $notpubname,
+        $show_email,
+        $show_phone,
+        $show_addr,
+        $show_wkphn,
+        $excl_billing,
+        $excl_mailing,
+        $other_name,
+        $fund_stat,
+        $photo,
+        $iped_stat,
+        $operator
+    ) {
+        $comp = self::$comp;
         $method = 'save_biographic';
         $returns = 'yes';
         $params = [
@@ -332,9 +378,25 @@ class biographic
      * @param string $memo Primary memo on Bio page
      * @return array
      */
-    public static function update_descriptive($soc_sec, $photo, $ssn, $gender, $ethnic_cod, $birthdate, $mod_stat, $acadstat_cod, $affiliation_cod, $citizen, $mar_cod, $veteran, $deceased, $dec_date, $dl_state, $memo)
-    {
-        $comp = (new self())->get_comp();
+    public static function update_descriptive(
+        $soc_sec,
+        $photo,
+        $ssn,
+        $gender,
+        $ethnic_cod,
+        $birthdate,
+        $mod_stat,
+        $acadstat_cod,
+        $affiliation_cod,
+        $citizen,
+        $mar_cod,
+        $veteran,
+        $deceased,
+        $dec_date,
+        $dl_state,
+        $memo
+    ) {
+        $comp = self::$comp;
         $method = 'update_descriptive';
         $returns = 'yes';
         $params = [
@@ -431,10 +493,73 @@ class biographic
      * @param string $address_fe1 Custom address field
      * @return array
      */
-    public static function create_biographic($first_name, $last_name, $birthdate, $preferred, $st_addr, $add_addr, $add_add2, $city, $state, $zip, $phone, $cell_phone, $fax, $e_mail, $work_phone, $county_cod, $country, $mod_stat, $mi, $prefix, $suffix, $maiden, $nickname, $gender, $ssn, $affiliation_cod, $citizen, $ethnic_cod, $mar_cod, $transmem, $veteran, $releas_inf, $releas_dt, $div_cod, $dept_cod, $camp_cod, $level_, $tuit_stat, $name_mem, $pin, $newpin, $deceased, $dec_date, $exam_id, $online_hld, $notpubname, $show_email, $show_phone, $show_addr, $show_wkphn, $excl_billing, $excl_mailing, $fund_stat, $photo, $iped_stat, $operator, $address_ce1, $address_ce2, $address_ce3, $address_le1, $address_ne1, $address_de1, $address_fe1)
-    {
-        $comp = (new self())->get_comp();
-        $method = 'create_biographic';
+    public static function create_biographic(
+        $mod_stat,
+        $first_name,
+        $last_name,
+        $mi,
+        $prefix,
+        $suffix,
+        $maiden,
+        $nickname,
+        $birthdate,
+        $gender,
+        $ssn,
+        $affiliation_cod,
+        $citizen,
+        $ethnic_cod,
+        $mar_cod,
+        $transmem,
+        $veteran,
+        $releas_inf,
+        $releas_dt,
+        $div_cod,
+        $dept_cod,
+        $camp_cod,
+        $level_,
+        $tuit_stat,
+        $name_mem,
+        $pin,
+        $newpin,
+        $deceased,
+        $dec_date,
+        $exam_id,
+        $online_hld,
+        $notpubname,
+        $show_email,
+        $show_phone,
+        $show_addr,
+        $show_wkphn,
+        $excl_billing,
+        $excl_mailing,
+        $fund_stat,
+        $photo,
+        $iped_stat,
+        $operator,
+        $preferred,
+        $st_addr,
+        $add_addr,
+        $add_add2,
+        $city,
+        $state,
+        $zip,
+        $phone,
+        $cell_phone,
+        $fax,
+        $e_mail,
+        $work_phone,
+        $county_cod,
+        $country,
+        $address_ce1,
+        $address_ce2,
+        $address_ce3,
+        $address_le1,
+        $address_ne1,
+        $address_de1,
+        $address_fe1
+    ) {
+        $comp = self::$comp;
+        $method = 'insert_name';
         $returns = 'yes';
         $params = [
             ['mod_stat', $mod_stat],
@@ -525,9 +650,20 @@ class biographic
      * @param string $acadstat_cod
      * @return array
      */
-    public static function update_name($soc_sec, $mod_stat, $first_name, $last_name, $mi, $prefix, $suffix, $maiden, $nickname, $other_name, $acadstat_cod)
-    {
-        $comp = (new self())->get_comp();
+    public static function update_name(
+        $soc_sec,
+        $mod_stat,
+        $first_name,
+        $last_name,
+        $mi,
+        $prefix,
+        $suffix,
+        $maiden,
+        $nickname,
+        $other_name,
+        $acadstat_cod
+    ) {
+        $comp = self::$comp;
         $method = 'update_name';
         $returns = 'yes';
         $params = [

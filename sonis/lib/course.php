@@ -43,16 +43,7 @@ namespace Jenzabar\Sonis\Api;
 class course
 {
 
-    /**
-     * Get the component for the method
-     *
-     * @return string $result The sonis web services component
-     */
-    public function get_comp()
-    {
-        $result = 'crs_sec_list';
-        return $result;
-    }
+    private static $comp = 'crs_sec_list';
 
     /**
      * Get course core requisites
@@ -62,7 +53,7 @@ class course
      */
     public static function getcoreq($crs_id)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'getcoreq';
         $returns = 'yes';
         $params = [
@@ -84,7 +75,7 @@ class course
      */
     public static function getcreqs($crs_id)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'getcreqs';
         $returns = 'yes';
         $params = [
@@ -106,7 +97,7 @@ class course
      */
     public static function getprereq($crs_id)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'getprereq';
         $returns = 'yes';
         $params = [
@@ -130,7 +121,7 @@ class course
      */
     public static function getprereqco($schyear, $semlist, $camp_cod = '')
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'getprereqco';
         $returns = 'yes';
         $params = [

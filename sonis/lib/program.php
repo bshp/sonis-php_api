@@ -45,16 +45,7 @@ namespace Jenzabar\Sonis\Api;
 class program
 {
 
-    /**
-     * Get the component for the method
-     *
-     * @return string $result The sonis web services component
-     */
-    public function get_comp()
-    {
-        $result = 'program';
-        return $result;
-    }
+    private static $comp = 'program';
 
     /**
      * Search for a program
@@ -64,7 +55,7 @@ class program
      */
     public static function approgsearch($soc_sec)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'approgsearch';
         $returns = 'yes';
         $params = [
@@ -86,7 +77,7 @@ class program
      */
     public static function complete_app($soc_sec)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'complete_app';
         $returns = 'yes';
         $params = [
@@ -108,7 +99,7 @@ class program
      */
     public static function delete_approg($app_rid)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'delete_approg';
         $returns = 'yes';
         $params = [
@@ -158,7 +149,7 @@ class program
      */
     public static function insert_approg($soc_sec, $camp_cod, $entry_date, $prg_cod, $div_cod, $app_date, $ack_date, $trans_date, $is_applicant, $preferred, $incomplete, $app_rid, $ref_source, $fee_rec, $apfee_dt, $prior_app, $app_yr, $acknowledg, $sms_trans, $matric_fee, $degree_ap, $degree_ac, $major_ap, $major_ac, $time_maint, $date_maint, $trans_done, $d_soc_sec = '', $operator)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'insert_approg';
         $returns = 'yes';
         $params = [
@@ -209,7 +200,7 @@ class program
      */
     public static function preventrepeats($soc_sec, $prg_cod)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'preventrepeats';
         $returns = 'yes';
         $params = [
@@ -232,7 +223,7 @@ class program
      */
     public static function programSearch($soc_sec)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'programSearch';
         $returns = 'yes';
         $params = [

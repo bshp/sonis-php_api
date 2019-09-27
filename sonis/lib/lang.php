@@ -23,74 +23,53 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
+ *
+ *    For Sonis Coldfusion Web Services
+ *
+ *    By: Jason A. Everling
+ *    Email: jeverling@bshp.edu
+ *
  */
 
 namespace Jenzabar\Sonis\Api;
 
 /**
- * Class messages
+ * Class lang
  *
- * Utilities
+ * Language
  *
- * Messages related to various functions
+ * Language strings used in the api
  *
- * @file messages.php
- * @package Utilities
+ * @file lang.php
+ * @package Language
  * @author Jason A. Everling <jason...@gmail.com>
- * @copyright 2016
+ * @copyright 2019
  * @license https://opensource.org/licenses/MIT
  */
-class messages
+class lang
 {
 
     /**
-     * Returns a static API unavailable message
+     * Get a language string for the $key provided
      *
-     * 'Sonis API is not available, please check
-     * your settings (username, password, and/or url)'
-     *
-     * @return string
+     * @param string $key The key identifier for the language string
+     * @return mixed $key The language string for the key defined
      */
-    public static function msg_api_unavailable()
+    public static function get($key)
     {
-        return 'Sonis API is not available, please check your settings (username, password, and/or url)';
+
+        global $cfg;
+        $i18n = $cfg->locale;
+        $root = $cfg->root;
+
+        $locale = $root . '/lang/' . $i18n . '.php';
+
+        if ($i18n == '') {
+            include $root . '/lang/en-US.php';
+        } else {
+            include $locale;
+        }
+        return $lang[$key];
     }
 
-    /**
-     * Returns a static generic error message
-     *
-     * 'An error has occurred, check the log for more details'
-     *
-     * @return string
-     */
-    public static function msg_array_error()
-    {
-        return 'An error has occurred, check the log for more details';
-    }
-
-    /**
-     * Returns a SOAP error message
-     *
-     * 'There was a problem with the client config,
-     * SOAP Error: '
-     *
-     * @return string
-     */
-    public static function msg_soap_client_error()
-    {
-        return 'There was a problem with the client config, SOAP Error: ';
-    }
-
-    /**
-     * Returns a static undefined error message
-     *
-     * 'An undefined message was received'
-     *
-     *
-     * @return string
-     */
-    public static function msg_undefined_error()
-    {
-        return 'An undefined message was received';
-    }
 }

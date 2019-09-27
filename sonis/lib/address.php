@@ -43,16 +43,7 @@ namespace Jenzabar\Sonis\Api;
 class address
 {
 
-    /**
-     * Get the component for the method
-     *
-     * @return string $result The sonis web services component
-     */
-    public function get_comp()
-    {
-        $result = 'address';
-        return $result;
-    }
+    private static $comp = 'address';
 
     /**
      * Add to an existing user record
@@ -75,7 +66,7 @@ class address
      */
     public static function add_address($soc_sec, $preferred, $st_addr, $add_addr, $add_add2, $city, $state, $zip, $phone, $cell_phone, $work_phone, $county_cod, $country, $e_mail)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'add_address';
         $returns = 'yes';
         $params = [
@@ -111,7 +102,7 @@ class address
      */
     public static function addressSearch($soc_sec, $preferred)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'addressSearch';
         $returns = 'yes';
         $params = [
@@ -149,7 +140,7 @@ class address
      */
     public static function insert_address($soc_sec, $preferred, $st_addr, $add_addr, $add_add2, $city, $state, $zip, $phone, $cell_phone, $fax, $e_mail, $work_phone, $county_cod, $country, $operator)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'insert_address';
         $returns = 'yes';
         $params = [
@@ -201,7 +192,7 @@ class address
      */
     public static function update_address($soc_sec, $add_add2, $add_addr, $cell_phone, $city, $country, $county_cod, $e_mail, $fax, $phone, $st_addr, $state, $work_phone, $zip, $cell_provider, $text_me)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'update_address';
         $returns = 'yes';
         $params = [

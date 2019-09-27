@@ -43,16 +43,7 @@ namespace Jenzabar\Sonis\Api;
 class dropbox
 {
 
-    /**
-     * Get the component for the method
-     *
-     * @return string $result The sonis web services component
-     */
-    public function get_comp()
-    {
-        $result = 'drp_box';
-        return $result;
-    }
+    private static $comp = 'drp_box';
 
     /**
      * Creates an html list for yes/no options with values 0 and 1
@@ -89,7 +80,7 @@ class dropbox
      */
     public static function app_term($allow_blank, $multi_select, $hide, $Additional_Properties, $value = '')
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'app_term';
         $returns = 'no';
         $params = [
@@ -120,7 +111,7 @@ class dropbox
      */
     public static function campus($hide_excludes, $allow_blank, $multi_select, $hide, $Additional_Properties, $value = '')
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'campus';
         $returns = 'no';
         $params = [
@@ -150,7 +141,7 @@ class dropbox
      */
     public static function country($allow_blank, $multi_select, $hide, $Additional_Properties)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'country';
         $returns = 'no';
         $params = [
@@ -181,7 +172,7 @@ class dropbox
      */
     public static function county($allow_blank, $multi_select, $hide, $Additional_Properties, $disp_only, $value = '')
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'county';
         $returns = 'no';
         $params = [
@@ -211,7 +202,7 @@ class dropbox
      */
     public static function degree($allow_blank, $multi_select, $hide, $Additional_Properties)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'degree';
         $returns = 'no';
         $params = [
@@ -240,7 +231,7 @@ class dropbox
      */
     public static function enrollStatus($allow_blank, $multi_select, $hide, $Additional_Properties, $value = '')
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'enrollStatus';
         $returns = 'no';
         $params = [
@@ -371,7 +362,7 @@ class dropbox
      */
     public static function interest($allow_blank, $multi_select, $hide, $Additional_Properties)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'interest';
         $returns = 'no';
         $params = [
@@ -400,7 +391,7 @@ class dropbox
      */
     public static function LevelofEdu($allow_blank, $multi_select, $hide, $Additional_Properties)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'LevelofEdu';
         $returns = 'no';
         $params = [
@@ -534,7 +525,7 @@ class dropbox
      */
     public static function program($hide_excludes, $allow_blank, $multi_select, $hide, $Additional_Properties)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'program';
         $returns = 'no';
         $params = [
@@ -563,7 +554,7 @@ class dropbox
      */
     public static function state($allow_blank, $multi_select, $hide, $Additional_Properties)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'state';
         $returns = 'no';
         $params = [
@@ -591,7 +582,7 @@ class dropbox
      */
     public static function stateoflicensure($allow_blank, $multi_select, $hide, $Additional_Properties)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'stateoflicensure';
         $returns = 'no';
         $params = [
@@ -688,7 +679,7 @@ class dropbox
      */
     public static function termInterest($allow_blank, $multi_select, $hide, $Additional_Properties)
     {
-        $comp = (new self())->get_comp();
+        $comp = self::$comp;
         $method = 'termInterest';
         $returns = 'no';
         $params = [

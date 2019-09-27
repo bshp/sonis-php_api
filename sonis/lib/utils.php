@@ -111,6 +111,46 @@ class utils
         }
         return false;
     }
+    
+    /**
+     * Generate a UUID, either in coldfusion (cf) format or standard
+     *
+     * @param string $format Either 'cf' or 'rfc'
+     * @param string $case Return as uppercase or lowercase, either of 'lc' or 'uc'
+     * @return string $uuid The generated UUID
+     */
+    public function utils_create_uuid($format = '', $case = '')
+    {
+        if ($format == 'cf') {
+            $uuid = sprintf(
+                '%04x%04x-%04x-%04x-%04x%04x%04x%04x',
+                mt_rand(0, 0xffff),
+                mt_rand(0, 0xffff),
+                mt_rand(0, 0xffff),
+                mt_rand(0, 0x0C2f) | 0x4000,
+                mt_rand(0, 0x3fff) | 0x8000,
+                mt_rand(0, 0x2Aff),
+                mt_rand(0, 0xffD3),
+                mt_rand(0, 0xff4B)
+            );
+        } else {
+            $uuid = sprintf(
+                '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+                mt_rand(0, 0xffff),
+                mt_rand(0, 0xffff),
+                mt_rand(0, 0xffff),
+                mt_rand(0, 0x0C2f) | 0x4000,
+                mt_rand(0, 0x3fff) | 0x8000,
+                mt_rand(0, 0x2Aff),
+                mt_rand(0, 0xffD3),
+                mt_rand(0, 0xff4B)
+            );
+        }
+        if ($case == 'uc') {
+            return strtoupper($uuid);
+        }
+        return $uuid;
+    }
 
     /**
      * Debugging a SOAP call, handle routing
@@ -155,6 +195,35 @@ class utils
         }
         trigger_error($msg);
         die();
+    }
+
+    /**
+     * Generate a random number
+     *
+     * Some tables require a random (*_rid field),
+     * this will create a compatible integer for use.
+     *
+     * @suffix Either a 0 or 1 suffixed to match Sonis rid's
+     * @example 201909282842393810
+     * @author Jason A. Everling
+     * @return string the generated number
+     */
+    public function utils_generateRID($suffix = '')
+    {
+        $result = '';
+        $now = date("Ymd");
+        $rnd = rand(100000000, 999999999);
+        $valid = ['0', '1'];
+        if ($suffix != '') {
+            if (in_array($suffix, $valid)) {
+                $result = $now . $rnd . $suffix;
+            } else {
+                $result = lang::get('invalid_rid');
+            }
+        } else {
+            $result = $now . $rnd . '0';
+        }
+        return $result;
     }
 
     /**
@@ -236,7 +305,7 @@ class utils
             if (is_string($array)) {
                 if (strpos($array, 'Error')) {
                     $this->utils_array_exception($array);
-                    $this->utils_event_error(messages::msg_array_error(), true);
+                    $this->utils_event_error(lang::get('array_error'), true);
                 } else {
                     $result = $array;
                 }
@@ -317,7 +386,8 @@ class utils
     }
 
     /**
-     * Change all keys in an array to lowercase
+     * Change all keys in an array to lowercase,
+     * works on multi-dimensional arrays as well.
      *
      * @param array $array
      * @return array|boolean
@@ -325,8 +395,32 @@ class utils
      */
     public function utils_array_lc($array)
     {
-        $result = array_change_key_case($array, CASE_LOWER);
+        $multi_array = false;
+        if (is_array($array) && isset($array[0])) {
+            $multi_array = true;
+        }
+        if ($multi_array) {
+            $result = $this->utils_array_of_arrays_lc($array);
+        } else {
+            $result = array_change_key_case($array, CASE_LOWER);
+        }
         return $result;
+    }
+
+    /**
+     * Change key case to lower for multi-dimensional arrays
+     *
+     * @param array $array
+     * @return array
+     */
+    private function utils_array_of_arrays_lc($array)
+    {
+        return array_map(function ($item) {
+            if (is_array($item)) {
+                $item = $this->utils_array_of_arrays_lc($item);
+            }
+            return $item;
+        }, array_change_key_case($array, CASE_LOWER));
     }
 
     /**
@@ -405,7 +499,7 @@ class utils
         try {
             $result = new SoapClient($wsdl, $opts);
         } catch (Exception $exception) {
-            return ['error' => messages::msg_soap_client_error() . $exception];
+            return ['error' => lang::get('soap_client_error') . $exception];
         }
         return $result;
     }

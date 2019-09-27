@@ -3,7 +3,7 @@
  *
  * MIT License
  *
- * Copyright (c) 2016 Jason A. Everling
+ * Copyright (c) 2019 Jason A. Everling
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,34 +23,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
+ *
+ *    For Sonis Coldfusion Web Services
+ *
+ *    By: Jason A. Everling
+ *    Email: jeverling@bshp.edu
+ *
  */
 
-namespace Jenzabar\Sonis\Api;
-
-/**
- * Class enrollment
- *
- * Sonis API Framework
- *
- * Component: enrollment.cfc
- *
- * @file enrollment.php
- * @package Sonis API
- * @author Jason A. Everling <jason...@gmail.com>
- * @copyright 2016
- * @license https://opensource.org/licenses/MIT
- */
-class enrollment
-{
-
-    private static $comp = 'enrollment';
-
-    /**
-     * @return boolean
-     */
-    public static function placeholder()
-    {
-        return true;
-    }
-
-}
+$lang['api_unavailable'] = 'Sonis API is not available, please check your settings (username, password, and/or url)';
+$lang['array_error'] = 'An error has occurred, check the log for more details';
+$lang['soap_client_error'] = 'There was a problem with the client config, SOAP Error: ';
+$lang['undefined_error'] = 'An undefined message was received';
+$lang['invalid_rid'] = 'Invalid suffix supplied, must be a 0 or 1';

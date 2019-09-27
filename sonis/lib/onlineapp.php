@@ -43,6 +43,8 @@ namespace Jenzabar\Sonis\Api;
 class onlineapp
 {
 
+    private static $comp = 'student_app';
+
     /**
      * Logon function for the online app
      *
@@ -192,7 +194,7 @@ class onlineapp
      * @param integer $oa_section_rid
      * @return array
      */
-    public static function oa_questions_search_format($soc_sec, $oa_questions_row, $oa_questions_col, $oa_section_rid)
+    public static function oa_questions_search_format($soc_sec, $oa_questions_row, $oa_questions_col, $oa_section_rid = '')
     {
         $comp = 'oa_questions';
         $method = 'oa_questions_search_format';
