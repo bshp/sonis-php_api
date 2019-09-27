@@ -199,7 +199,7 @@ class utils
      * @author Jason A. Everling
      * @return string the generated number
      */
-    public function utils_generateID($suffix = '')
+    public function utils_generateRID($suffix = '')
     {
         $result = '';
         $now = date("Ymd");
