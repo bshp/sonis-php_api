@@ -196,6 +196,7 @@ class utils
      * this will create a compatible integer for use.
      *
      * @suffix Either a 0 or 1 suffixed to match Sonis rid's
+     * @example 201909282842393810
      * @author Jason A. Everling
      * @return string the generated number
      */
