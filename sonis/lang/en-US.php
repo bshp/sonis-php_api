@@ -35,3 +35,4 @@ $lang['api_unavailable'] = 'Sonis API is not available, please check your settin
 $lang['array_error'] = 'An error has occurred, check the log for more details';
 $lang['soap_client_error'] = 'There was a problem with the client config, SOAP Error: ';
 $lang['undefined_error'] = 'An undefined message was received';
+$lang['invalid_rid'] = 'Invalid suffix supplied, must be a 0 or 1';

@@ -210,7 +210,7 @@ class utils
             if (in_array($suffix, $valid)) {
                 $result = $now . $rnd . $suffix;
             } else {
-                $result = 'Invalid suffix supplied, must be a 0 or 1';
+                $result = lang::get('invalid_rid');
             }
         } else {
             $result = $now . $rnd . '0';
