@@ -58,7 +58,7 @@ $cfg->proxy_port    =  PROXY_PORT;
 $cfg->proxy_user    =  PROXY_USER;
 $cfg->proxy_pass    =  PROXY_PASS;
 $cfg->locale        = 'en-US';
-$cfg->root          = __DIR__ . '/';
+$cfg->root          = __DIR__;
 //========================================
 // 2. Expert: Configure Endpoint Options #
 //========================================

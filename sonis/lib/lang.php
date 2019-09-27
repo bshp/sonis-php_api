@@ -62,10 +62,10 @@ class lang
         $i18n = $cfg->locale;
         $root = $cfg->root;
 
-        $locale = $root . 'lang/' . $i18n . '.php';
+        $locale = $root . '/lang/' . $i18n . '.php';
 
         if ($i18n == '') {
-            include $root . 'lang/en-US.php';
+            include $root . '/lang/en-US.php';
         } else {
             include $locale;
         }
