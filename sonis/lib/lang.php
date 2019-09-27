@@ -60,10 +60,12 @@ class lang
 
         global $cfg;
         $i18n = $cfg->api_locale;
-        $locale = '../lang/' . $i18n . '.php';
+        $root = $cfg->api_dir;
+
+        $locale = $root . 'lang/' . $i18n . '.php';
 
         if ($i18n == '') {
-            include '../lang/en-US.php';
+            include $root . 'lang/en-US.php';
         } else {
             include $locale;
         }
