@@ -78,7 +78,7 @@ $cfg->opts = [
 //=======================================
 $cfg->release = [
     'branch' => 'master', // do not change
-    'version' => 2.3, // do not change
+    'version' => 3.0, // do not change
     'patch' => 0, // do not change
 ];
 //
