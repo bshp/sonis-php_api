@@ -113,6 +113,24 @@ class utils
     }
 
     /**
+     * Generates a new Sonis ID
+     *
+     * @lastname string the persons last name
+     * @return string the generated id
+     */
+    public function utils_create_id($lastname)
+    {
+        $ln = $this->utils_uc(substr($lastname, 0, 2));
+        do {
+            $sonisid = $ln . rand(1000000, 9999000);
+            $stmt = "SELECT soc_sec FROM name WHERE soc_sec = '$sonisid'";
+            $matcher = soapsql::run($stmt);
+        } while ($matcher != 0);
+        $result = $sonisid;
+        return $result;
+    }
+
+    /**
      * Generate an RID for Sonis
      *
      * Some tables require a random (*_rid field),
@@ -176,9 +194,9 @@ class utils
             );
         }
         if ($case == 'uc') {
-            return strtoupper($uuid);
+            return $this->utils_uc($uuid);
         }
-        return $uuid;
+        return $this->utils_lc($uuid);
     }
 
     /**
