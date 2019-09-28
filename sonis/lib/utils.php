@@ -111,6 +111,35 @@ class utils
         }
         return false;
     }
+
+    /**
+     * Generate an RID for Sonis
+     *
+     * Some tables require a random (*_rid field),
+     * this will create a compatible integer for use.
+     *
+     * @suffix Either a 0 or 1 suffixed to match Sonis rid's
+     * @example 201909282842393810
+     * @author Jason A. Everling
+     * @return string the generated number
+     */
+    public function utils_create_rid($suffix = '')
+    {
+        $result = '';
+        $now = date("Ymd");
+        $rnd = rand(100000000, 999999999);
+        $valid = ['0', '1'];
+        if ($suffix != '') {
+            if (in_array($suffix, $valid)) {
+                $result = $now . $rnd . $suffix;
+            } else {
+                $result = lang::get('invalid_rid');
+            }
+        } else {
+            $result = $now . $rnd . '0';
+        }
+        return $result;
+    }
     
     /**
      * Generate a UUID, either in coldfusion (cf) format or standard
@@ -195,35 +224,6 @@ class utils
         }
         trigger_error($msg);
         die();
-    }
-
-    /**
-     * Generate a random number
-     *
-     * Some tables require a random (*_rid field),
-     * this will create a compatible integer for use.
-     *
-     * @suffix Either a 0 or 1 suffixed to match Sonis rid's
-     * @example 201909282842393810
-     * @author Jason A. Everling
-     * @return string the generated number
-     */
-    public function utils_generateRID($suffix = '')
-    {
-        $result = '';
-        $now = date("Ymd");
-        $rnd = rand(100000000, 999999999);
-        $valid = ['0', '1'];
-        if ($suffix != '') {
-            if (in_array($suffix, $valid)) {
-                $result = $now . $rnd . $suffix;
-            } else {
-                $result = lang::get('invalid_rid');
-            }
-        } else {
-            $result = $now . $rnd . '0';
-        }
-        return $result;
     }
 
     /**
