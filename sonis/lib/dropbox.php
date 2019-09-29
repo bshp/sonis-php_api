@@ -34,15 +34,20 @@ namespace Jenzabar\Sonis\Api;
  *
  * Component: drp_box.cfc
  *
- * @file dropbox.php
+ * @file Dropbox.php
  * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class dropbox
+class Dropbox
 {
 
+    /**
+     * The Sonis component to call
+     *
+     * @var string $comp
+     */
     private static $comp = 'drp_box';
 
     /**
@@ -52,7 +57,7 @@ class dropbox
      * @param string $Additional_Properties Add additional html properties for <select>
      * @return string $result the HTML select value
      */
-    public static function boolean_box($allow_blank, $Additional_Properties)
+    public static function booleanBox($allow_blank, $Additional_Properties)
     {
         $result = '<select ' . $Additional_Properties . '>
                         <option value="0">No</option>
@@ -71,14 +76,14 @@ class dropbox
     /**
      * Provides an html list of application terms
      *
-     * @param string $value the default value to be used, selected automatically, defaults to blank
      * @param boolean $allow_blank Allow blank values, true or false, this must be true if $value is not set
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
      * @param string $Additional_Properties Add additional html properties for <select>
+     * @param string $value the default value to be used, selected automatically, defaults to blank
      * @return array
      */
-    public static function app_term($allow_blank, $multi_select, $hide, $Additional_Properties, $value = '')
+    public static function appTerm($allow_blank, $multi_select, $hide, $Additional_Properties, $value = '')
     {
         $comp = self::$comp;
         $method = 'app_term';
@@ -105,12 +110,18 @@ class dropbox
      * @param boolean $allow_blank Allow blank values, true or false, this must be true if $value is not set
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
-     * @param string $value the default value to be used, selected automatically, defaults to blank
      * @param string $Additional_Properties Add additional html properties for <select>
+     * @param string $value the default value to be used, selected automatically, defaults to blank
      * @return array
      */
-    public static function campus($hide_excludes, $allow_blank, $multi_select, $hide, $Additional_Properties, $value = '')
-    {
+    public static function campus(
+        $hide_excludes,
+        $allow_blank,
+        $multi_select,
+        $hide,
+        $Additional_Properties,
+        $value = ''
+    ) {
         $comp = self::$comp;
         $method = 'campus';
         $returns = 'no';
@@ -166,8 +177,8 @@ class dropbox
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
      * @param string $Additional_Properties Add additional html properties for <select>
-     * @param string $value the default value to be used, selected automatically, defaults to blank
      * @param boolean $disp_only True or false if editable
+     * @param string $value the default value to be used, selected automatically, defaults to blank
      * @return array
      */
     public static function county($allow_blank, $multi_select, $hide, $Additional_Properties, $disp_only, $value = '')
@@ -225,8 +236,8 @@ class dropbox
      * @param boolean $allow_blank Allow blank values, true or false, this must be true if $value is not set
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
-     * @param string $value the default value to be used, selected automatically, defaults to blank
      * @param string $Additional_Properties Add additional html properties for <select>
+     * @param string $value the default value to be used, selected automatically, defaults to blank
      * @return array
      */
     public static function enrollStatus($allow_blank, $multi_select, $hide, $Additional_Properties, $value = '')
@@ -256,12 +267,12 @@ class dropbox
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
      * @param boolean $desc_only Unsure really, testing shows no change
+     * @param boolean $cod_desc Unsure really, testing shows no change
      * @param string $value the default value to be used, selected automatically, defaults to blank
      * @param integer $size Unsure really, testing shows no change
-     * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
-    public static function dept_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
+    public static function department($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
     {
         $comp = 'dept';
         $method = 'dept_drop';
@@ -290,12 +301,12 @@ class dropbox
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
      * @param boolean $desc_only Unsure really, testing shows no change
+     * @param boolean $cod_desc Unsure really, testing shows no change
      * @param string $value the default value to be used, selected automatically, defaults to blank
      * @param integer $size Unsure really, testing shows no change
-     * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
-    public static function ethnic_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
+    public static function ethnicity($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
     {
         $comp = 'ethnic';
         $method = 'ethnic_drop';
@@ -324,12 +335,12 @@ class dropbox
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
      * @param boolean $desc_only Unsure really, testing shows no change
+     * @param boolean $cod_desc Unsure really, testing shows no change
      * @param string $value the default value to be used, selected automatically, defaults to blank
      * @param integer $size Unsure really, testing shows no change
-     * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
-    public static function gender_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
+    public static function gender($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
     {
         $comp = 'gender';
         $method = 'gender_drop';
@@ -389,7 +400,7 @@ class dropbox
      * @param string $Additional_Properties Add additional html properties for <select>
      * @return array
      */
-    public static function LevelofEdu($allow_blank, $multi_select, $hide, $Additional_Properties)
+    public static function levelOfEdu($allow_blank, $multi_select, $hide, $Additional_Properties)
     {
         $comp = self::$comp;
         $method = 'LevelofEdu';
@@ -416,12 +427,12 @@ class dropbox
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
      * @param boolean $desc_only Unsure really, testing shows no change
+     * @param boolean $cod_desc Unsure really, testing shows no change
      * @param string $value the default value to be used, selected automatically, defaults to blank
      * @param integer $size Unsure really, testing shows no change
-     * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
-    public static function licenses_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
+    public static function licenses($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
     {
         $comp = 'licenses';
         $method = 'licenses_drop';
@@ -450,12 +461,12 @@ class dropbox
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
      * @param boolean $desc_only Unsure really, testing shows no change
+     * @param boolean $cod_desc Unsure really, testing shows no change
      * @param string $value the default value to be used, selected automatically, defaults to blank
      * @param integer $size Unsure really, testing shows no change
-     * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
-    public static function marital_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
+    public static function marital($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
     {
         $comp = 'marital';
         $method = 'marital_drop';
@@ -484,14 +495,22 @@ class dropbox
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
      * @param boolean $desc_only Unsure really, testing shows no change
-     * @param string $value the default value to be used, selected automatically, defaults to blank
-     * @param integer $size Unsure really, testing shows no change
      * @param boolean $cod_desc Unsure really, testing shows no change
      * @param boolean $excl_prg Exclude hidden programs in Sonis
+     * @param string $value the default value to be used, selected automatically, defaults to blank
+     * @param integer $size Unsure really, testing shows no change
      * @return array
      */
-    public static function prog_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $excl_prg, $value = '', $size = 3)
-    {
+    public static function programs(
+        $allow_blank,
+        $multi_select,
+        $hide,
+        $desc_only,
+        $cod_desc,
+        $excl_prg,
+        $value = '',
+        $size = 3
+    ) {
         $comp = 'prog';
         $method = 'prog_drop';
         $returns = 'no';
@@ -580,7 +599,7 @@ class dropbox
      * @param string $Additional_Properties Add additional html properties for <select>
      * @return array
      */
-    public static function stateoflicensure($allow_blank, $multi_select, $hide, $Additional_Properties)
+    public static function stateOfLicensure($allow_blank, $multi_select, $hide, $Additional_Properties)
     {
         $comp = self::$comp;
         $method = 'stateoflicensure';
@@ -606,12 +625,12 @@ class dropbox
      * @param boolean $allow_blank Allow blank values, true or false, this must be true if $value is not set
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
+     * @param boolean $use_cur_sem true or false to use current semester as default
      * @param string $value the default value to be used, selected automatically, defaults to blank
      * @param integer $size Unsure really, testing shows no change
-     * @param boolean $use_cur_sem true or false to use current semester as default
      * @return array
      */
-    public static function sch_yr_drop($allow_blank, $multi_select, $hide, $use_cur_sem, $value = '', $size = 3)
+    public static function schoolYears($allow_blank, $multi_select, $hide, $use_cur_sem, $value = '', $size = 3)
     {
         $comp = 'sch_yr';
         $method = 'sch_yr_drop';
@@ -639,14 +658,22 @@ class dropbox
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
      * @param boolean $desc_only Unsure really, testing shows no change
-     * @param string $value the default value to be used, selected automatically, defaults to blank
-     * @param integer $size Unsure really, testing shows no change
      * @param boolean $cod_desc Unsure really, testing shows no change
      * @param boolean $use_cur_sem true or false to use current semester as default
+     * @param string $value the default value to be used, selected automatically, defaults to blank
+     * @param integer $size Unsure really, testing shows no change
      * @return array
      */
-    public static function semester_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $use_cur_sem, $value = '', $size = 3)
-    {
+    public static function semesters(
+        $allow_blank,
+        $multi_select,
+        $hide,
+        $desc_only,
+        $cod_desc,
+        $use_cur_sem,
+        $value = '',
+        $size = 3
+    ) {
         $comp = 'semester';
         $method = 'semester_drop';
         $returns = 'no';
@@ -704,13 +731,20 @@ class dropbox
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
      * @param boolean $desc_only Unsure really, testing shows no change
+     * @param boolean $cod_desc Unsure really, testing shows no change
      * @param string $value the default value to be used, selected automatically, defaults to blank
      * @param integer $size Unsure really, testing shows no change
-     * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
-    public static function tuitstat_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
-    {
+    public static function tuitionStatus(
+        $allow_blank,
+        $multi_select,
+        $hide,
+        $desc_only,
+        $cod_desc,
+        $value = '',
+        $size = 3
+    ) {
         $comp = 'tuitstat';
         $method = 'tuitstat_drop';
         $returns = 'no';
@@ -738,12 +772,12 @@ class dropbox
      * @param boolean $multi_select Create mutli-select html box, true or false
      * @param boolean $hide Hide this dropdown by default, true or false
      * @param boolean $desc_only Unsure really, testing shows no change
+     * @param boolean $cod_desc Unsure really, testing shows no change
      * @param string $value the default value to be used, selected automatically, defaults to blank
      * @param integer $size Unsure really, testing shows no change
-     * @param boolean $cod_desc Unsure really, testing shows no change
      * @return array
      */
-    public static function visa_drop($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
+    public static function visa($allow_blank, $multi_select, $hide, $desc_only, $cod_desc, $value = '', $size = 3)
     {
         $comp = 'visa';
         $method = 'visa_drop';
@@ -775,7 +809,7 @@ class dropbox
      * @param integer $size Unsure really, testing shows no change
      * @return array
      */
-    public static function zone_drop($allow_blank, $multi_select, $hide, $value = '', $size = 3)
+    public static function zones($allow_blank, $multi_select, $hide, $value = '', $size = 3)
     {
         $comp = 'zone';
         $method = 'zone_drop';

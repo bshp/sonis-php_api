@@ -3,7 +3,7 @@
  *
  * MIT License
  *
- * Copyright (c) 2016 Jason A. Everling
+ * Copyright (c) 2019 Jason A. Everling
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,25 +23,30 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- */
-
-/**
- * Sonis API Framework
  *
- * Library loader
+ *    For Sonis Coldfusion Web Services
  *
- * @file lib.php
- * @package Core
- * @author Jason A. Everling <jason...@gmail.com>
- * @copyright 2016
- * @license https://opensource.org/licenses/MIT
+ *    By: Jason A. Everling
+ *    Email: jeverling@bshp.edu
+ *
  */
 
 namespace Jenzabar\Sonis\Api;
 
+set_include_path(__DIR__ . '/lib');
+
 /**
- * Set defaults if undefined
+ * The autoloader,
+ * sonis.php does everything else
  */
+spl_autoload_register(function ($className) {
+    $class = explode('\\', $className);
+    require end($class) . '.php';
+});
+
+//============================
+// Set defaults if undefined #
+//============================
 if (!defined('PROXY_NET')) {
     define('PROXY_NET', false);
 }
@@ -66,21 +71,3 @@ if (!defined('SOAP_DEBUG')) {
 if (!defined('SOAP_DEBUG_DISPLAY')) {
     define('SOAP_DEBUG_DISPLAY', false);
 }
-
-/**
- * The autoloader,
- * sonis.php does everything else
- */
-spl_autoload_register(function ($lib) {
-    $ns = 'Jenzabar\\Sonis\\Api';
-    $path = __DIR__ . '/lib/';
-    $strlen = strlen($ns);
-    if (strncmp($ns, $lib, $strlen) !== 0) {
-        return;
-    }
-    $class = substr($lib, $strlen);
-    $library_file = $path . str_replace('\\', '/', $class) . '.php';
-    if (file_exists($library_file)) {
-        require $library_file;
-    }
-});

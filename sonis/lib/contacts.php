@@ -34,22 +34,27 @@
 namespace Jenzabar\Sonis\Api;
 
 /**
- * Class contacts
+ * Class Contacts
  *
  * Separated from OA because it also works
  * on normal emergency contact records
  *
  * Component: oa_emc.cfc
  *
- * @file onlineapp.php
+ * @file Contacts.php
  * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class contacts
+class Contacts
 {
 
+    /**
+     * The Sonis component to call
+     *
+     * @var string $comp
+     */
     private static $comp = 'oa_emc';
 
     /**
@@ -58,7 +63,7 @@ class contacts
      * @param string $nmemc_rid the record id to be deleted
      * @return array
      */
-    public static function delete_emc($nmemc_rid)
+    public static function deleteEmc($nmemc_rid)
     {
         $comp = self::$comp;
         $method = 'delete_emc';
@@ -93,7 +98,7 @@ class contacts
      * @param string $d_soc_sec not needed
      * @return array
      */
-    public static function insert_emc(
+    public static function insertEmc(
         $soc_sec,
         $nmemc_name,
         $nmemc_phone1,
@@ -107,7 +112,7 @@ class contacts
         $zip2,
         $e_mail3,
         $memo,
-        $d_soc_sec =''
+        $d_soc_sec = ''
     ) {
         $comp = self::$comp;
         $method = 'insert_emc';
@@ -144,7 +149,7 @@ class contacts
      * @param string $nmemc_rid the contact record id if known
      * @return array
      */
-    public static function search($soc_sec, $nmemc_rid = '')
+    public static function searchEmc($soc_sec, $nmemc_rid = '')
     {
         $comp = self::$comp;
         $method = 'search';
@@ -163,6 +168,8 @@ class contacts
     }
 
     /**
+     * Update an emergency contact record
+     *
      * @param string $soc_sec the persons id
      * @param string $nmemc_name contact name
      * @param string $nmemc_phone1 contact phone
@@ -180,7 +187,7 @@ class contacts
      * @param string $d_soc_sec not needed
      * @return array
      */
-    public static function update_emc(
+    public static function updateEmc(
         $soc_sec,
         $nmemc_name,
         $nmemc_phone1,
@@ -225,5 +232,4 @@ class contacts
             'method' => $method
         ];
     }
-
 }

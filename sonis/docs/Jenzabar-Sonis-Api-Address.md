@@ -1,4 +1,4 @@
-address
+Jenzabar\Sonis\Api\Address
 ===============
 
 Class address
@@ -8,35 +8,36 @@ Sonis API Framework
 Component: address.cfc
 
 
-* Class name: address
-* Namespace: 
+* Class name: Address
+* Namespace: Jenzabar\Sonis\Api
 
 
 
 
 
+Properties
+----------
+
+
+### $comp
+
+    private string $comp = 'address'
+
+The Sonis component to call
+
+
+
+* Visibility: **private**
+* This property is **static**.
 
 
 Methods
 -------
 
 
-### get_comp
+### addAddress
 
-    mixed address::get_comp()
-
-
-
-
-
-* Visibility: **private**
-
-
-
-
-### add_address
-
-    array address::add_address(string $soc_sec, string $preferred, string $st_addr, string $add_addr, string $add_add2, string $city, string $state, string $zip, string $phone, string $cell_phone, string $work_phone, string $county_cod, string $country, string $e_mail)
+    array Jenzabar\Sonis\Api\Address::addAddress(string $soc_sec, string $preferred, string $st_addr, string $add_addr, string $add_add2, string $city, string $state, string $zip, string $phone, string $cell_phone, string $work_phone, string $county_cod, string $country, string $e_mail)
 
 Add to an existing user record
 
@@ -58,7 +59,7 @@ Add to an existing user record
 * $phone **string** - &lt;p&gt;The persons phone number&lt;/p&gt;
 * $cell_phone **string** - &lt;p&gt;The persons cell phone number&lt;/p&gt;
 * $work_phone **string** - &lt;p&gt;The persons work phone number&lt;/p&gt;
-* $county_cod **string** - &lt;p&gt;The 2 character code for county such as BX for Bexar. It is best to use a dropbox for these&lt;/p&gt;
+* $county_cod **string** - &lt;p&gt;The 2 character code for county such as BX for Bexar&lt;/p&gt;
 * $country **string** - &lt;p&gt;The 2 character code for country like US&lt;/p&gt;
 * $e_mail **string** - &lt;p&gt;The primary email address for the record type&lt;/p&gt;
 
@@ -66,7 +67,7 @@ Add to an existing user record
 
 ### addressSearch
 
-    array address::addressSearch(string $soc_sec, string $preferred)
+    array Jenzabar\Sonis\Api\Address::addressSearch(string $soc_sec, string $preferred)
 
 Search for an address
 
@@ -82,9 +83,9 @@ Search for an address
 
 
 
-### insert_address
+### insertAddress
 
-    array address::insert_address(string $soc_sec, string $preferred, string $st_addr, string $add_addr, string $add_add2, string $city, string $state, string $zip, string $phone, string $cell_phone, string $fax, string $e_mail, string $work_phone, string $county_cod, string $country, string $operator)
+    array Jenzabar\Sonis\Api\Address::insertAddress(string $soc_sec, string $preferred, string $st_addr, string $add_addr, string $add_add2, string $city, string $state, string $zip, string $phone, string $cell_phone, string $fax, string $e_mail, string $work_phone, string $county_cod, string $country, string $operator)
 
 Insert a new address record
 
@@ -108,15 +109,15 @@ Insert a new address record
 * $fax **string** - &lt;p&gt;The objects fax number&lt;/p&gt;
 * $e_mail **string** - &lt;p&gt;The primary email address for the record type&lt;/p&gt;
 * $work_phone **string** - &lt;p&gt;The persons work phone number&lt;/p&gt;
-* $county_cod **string** - &lt;p&gt;The 2 character code for county such as BX for Bexar. It is best to use a dropbox for these&lt;/p&gt;
+* $county_cod **string** - &lt;p&gt;The 2 character code for county such as BX for Bexar&lt;/p&gt;
 * $country **string** - &lt;p&gt;The 2 character code for country like US&lt;/p&gt;
 * $operator **string** - &lt;p&gt;The persons unqiue ID adding or modifying the record. Please change the value&lt;/p&gt;
 
 
 
-### update_address
+### updateAddress
 
-    array address::update_address(string $soc_sec, string $add_add2, string $add_addr, string $cell_phone, string $city, string $country, string $county_cod, string $e_mail, string $fax, string $phone, string $st_addr, string $state, string $work_phone, string $zip, string $cell_provider, string $text_me)
+    array Jenzabar\Sonis\Api\Address::updateAddress(string $soc_sec, string $add_add2, string $add_addr, string $cell_phone, string $city, string $country, string $county_cod, string $e_mail, string $fax, string $phone, string $st_addr, string $state, string $work_phone, string $zip, string $cell_provider, string $text_me)
 
 Update an existing address record
 
@@ -133,7 +134,7 @@ Update an existing address record
 * $cell_phone **string** - &lt;p&gt;The persons cell phone number&lt;/p&gt;
 * $city **string** - &lt;p&gt;The persons city&lt;/p&gt;
 * $country **string** - &lt;p&gt;The 2 character code for country like US&lt;/p&gt;
-* $county_cod **string** - &lt;p&gt;The 2 character code for county such as BX for Bexar. It is best to use a dropbox for these&lt;/p&gt;
+* $county_cod **string** - &lt;p&gt;The 2 character code for county such as BX for Bexar&lt;/p&gt;
 * $e_mail **string** - &lt;p&gt;The primary email address for the record type&lt;/p&gt;
 * $fax **string** - &lt;p&gt;The objects fax number&lt;/p&gt;
 * $phone **string** - &lt;p&gt;The persons phone number&lt;/p&gt;

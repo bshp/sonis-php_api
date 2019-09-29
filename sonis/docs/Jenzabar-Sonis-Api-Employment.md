@@ -1,4 +1,4 @@
-employment
+Jenzabar\Sonis\Api\Employment
 ===============
 
 Class employment
@@ -8,35 +8,36 @@ Sonis API Framework
 Component: employment.cfc
 
 
-* Class name: employment
-* Namespace: 
+* Class name: Employment
+* Namespace: Jenzabar\Sonis\Api
 
 
 
 
 
+Properties
+----------
+
+
+### $comp
+
+    private string $comp = 'employment'
+
+The Sonis component to call
+
+
+
+* Visibility: **private**
+* This property is **static**.
 
 
 Methods
 -------
 
 
-### get_comp
+### deleteEmployment
 
-    mixed employment::get_comp()
-
-
-
-
-
-* Visibility: **private**
-
-
-
-
-### delete_employment
-
-    array employment::delete_employment(string $emp_rid)
+    array Jenzabar\Sonis\Api\Employment::deleteEmployment(string $emp_rid)
 
 Deletes an employment record
 
@@ -51,9 +52,9 @@ Deletes an employment record
 
 
 
-### insert_employment
+### insertEmployment
 
-    array employment::insert_employment(string $soc_sec, string $emp_emply, string $emp_super, string $emp_add1, string $emp_add2, string $emp_add3, string $emp_city, string $emp_state, string $emp_county, string $emp_zip, string $employ_type_rid, string $emp_pos, string $hrs_week, string $start_dt, string $stop_dt, string $emp_mem, string $emp_rid, string $empcountry, string $when_code, string $emp_phone, string $homeinst)
+    array Jenzabar\Sonis\Api\Employment::insertEmployment(string $soc_sec, string $emp_emply, string $emp_super, string $emp_add1, string $emp_add2, string $emp_add3, string $emp_city, string $emp_state, string $emp_county, string $emp_zip, string $employ_type_rid, string $emp_pos, string $hrs_week, string $start_dt, string $stop_dt, string $emp_mem, string $emp_rid, string $empcountry, string $when_code, string $emp_phone, string $homeinst)
 
 Inserts a new employment record
 
@@ -68,8 +69,8 @@ Inserts a new employment record
 * $emp_emply **string** - &lt;p&gt;Employer&lt;/p&gt;
 * $emp_super **string** - &lt;p&gt;Employer manager&lt;/p&gt;
 * $emp_add1 **string** - &lt;p&gt;Employer address line 1&lt;/p&gt;
-* $emp_add2 **string** - &lt;p&gt;Employer address line 1&lt;/p&gt;
-* $emp_add3 **string** - &lt;p&gt;Employer address line 1&lt;/p&gt;
+* $emp_add2 **string** - &lt;p&gt;Employer address line 2&lt;/p&gt;
+* $emp_add3 **string** - &lt;p&gt;Employer address line 3&lt;/p&gt;
 * $emp_city **string** - &lt;p&gt;Employer city&lt;/p&gt;
 * $emp_state **string** - &lt;p&gt;Employer state&lt;/p&gt;
 * $emp_county **string** - &lt;p&gt;Employer county&lt;/p&gt;
@@ -88,9 +89,9 @@ Inserts a new employment record
 
 
 
-### search
+### searchEmployment
 
-    array employment::search(string $soc_sec, string $emp_rid)
+    array Jenzabar\Sonis\Api\Employment::searchEmployment(string $soc_sec, string $emp_rid)
 
 Searches for an employment record
 
@@ -106,9 +107,9 @@ Searches for an employment record
 
 
 
-### update_employment
+### updateEmployment
 
-    array employment::update_employment(string $soc_sec, string $emp_emply, string $emp_super, string $emp_add1, string $emp_add2, string $emp_add3, string $emp_city, string $emp_state, string $emp_county, string $emp_zip, string $employ_type_rid, string $emp_status, string $passed, string $emp_email, string $number, string $emp_pos, string $hrs_week, string $start_dt, string $stop_dt, string $emp_mem, string $emp_rid, string $empcountry, string $when_code, string $emp_phone, string $homeinst)
+    array Jenzabar\Sonis\Api\Employment::updateEmployment(string $soc_sec, string $emp_emply, string $emp_super, string $emp_add1, string $emp_add2, string $emp_add3, string $emp_city, string $emp_state, string $emp_county, string $emp_zip, string $employ_type_rid, string $emp_status, string $passed, string $emp_email, string $number, string $emp_pos, string $hrs_week, string $start_dt, string $stop_dt, string $emp_mem, string $emp_rid, string $empcountry, string $when_code, string $emp_phone, string $homeinst)
 
 Updates the employment record
 
@@ -123,8 +124,8 @@ Updates the employment record
 * $emp_emply **string** - &lt;p&gt;Employer&lt;/p&gt;
 * $emp_super **string** - &lt;p&gt;Employer manager&lt;/p&gt;
 * $emp_add1 **string** - &lt;p&gt;Employer address line 1&lt;/p&gt;
-* $emp_add2 **string** - &lt;p&gt;Employer address line 1&lt;/p&gt;
-* $emp_add3 **string** - &lt;p&gt;Employer address line 1&lt;/p&gt;
+* $emp_add2 **string** - &lt;p&gt;Employer address line 2&lt;/p&gt;
+* $emp_add3 **string** - &lt;p&gt;Employer address line 3&lt;/p&gt;
 * $emp_city **string** - &lt;p&gt;Employer city&lt;/p&gt;
 * $emp_state **string** - &lt;p&gt;Employer state&lt;/p&gt;
 * $emp_county **string** - &lt;p&gt;Employer county&lt;/p&gt;

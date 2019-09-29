@@ -1,29 +1,43 @@
-onlineapp
+Jenzabar\Sonis\Api\OnlineApp
 ===============
 
-Class onlineapp
+Class OnlineApp
 
 Sonis API Framework
 
 Component: student_app.cfc, oa_emc.cfc, oa_fields.cfc, oa_licenses.cfc, oa_opt_fields.cfc, oa_questions.cfc
 
 
-* Class name: onlineapp
-* Namespace: 
+* Class name: OnlineApp
+* Namespace: Jenzabar\Sonis\Api
 
 
 
 
 
+Properties
+----------
+
+
+### $comp
+
+    private string $comp = 'student_app'
+
+The Sonis component to call
+
+
+
+* Visibility: **private**
+* This property is **static**.
 
 
 Methods
 -------
 
 
-### app_login
+### appLogin
 
-    array onlineapp::app_login(string $soc_sec, string $pin)
+    array Jenzabar\Sonis\Api\OnlineApp::appLogin(string $soc_sec, string $pin)
 
 Logon function for the online app
 
@@ -39,9 +53,9 @@ Logon function for the online app
 
 
 
-### create
+### createApp
 
-    array onlineapp::create(string $first_name, string $last_name, string $birthdate, string $e_mail, string $pin, string $mi, string $phone, integer $citizen, string $zip, string $mod_stat)
+    array Jenzabar\Sonis\Api\OnlineApp::createApp(string $first_name, string $last_name, string $birthdate, string $e_mail, string $pin, string $mi, string $phone, string $zip, string $mod_stat, integer $citizen)
 
 Creates a new online app and person if new into the nmoa table
 
@@ -59,15 +73,15 @@ Creates a new online app and person if new into the nmoa table
 * $pin **string** - &lt;p&gt;Encrypted PIN using private key&lt;/p&gt;
 * $mi **string** - &lt;p&gt;The persons middle initial, 1 character&lt;/p&gt;
 * $phone **string** - &lt;p&gt;The persons phone number&lt;/p&gt;
-* $citizen **integer**
 * $zip **string** - &lt;p&gt;The persons zip code&lt;/p&gt;
 * $mod_stat **string** - &lt;p&gt;The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI&lt;/p&gt;
+* $citizen **integer**
 
 
 
-### search
+### searchApp
 
-    array onlineapp::search(string $firstname, string $lastname, string $birthdate, string $e_mail)
+    array Jenzabar\Sonis\Api\OnlineApp::searchApp(string $firstname, string $lastname, string $birthdate, string $e_mail)
 
 Search for a given online applicant
 
@@ -85,9 +99,9 @@ Search for a given online applicant
 
 
 
-### insert_oa_questions
+### insertOAQuestions
 
-    array onlineapp::insert_oa_questions(string $soc_sec, string $fieldnames)
+    array Jenzabar\Sonis\Api\OnlineApp::insertOAQuestions(string $soc_sec, string $fieldnames)
 
 Insert a new online app question
 
@@ -103,9 +117,9 @@ Insert a new online app question
 
 
 
-### oa_questions_search
+### searchOAQuestions
 
-    array onlineapp::oa_questions_search(string $soc_sec, string $column)
+    array Jenzabar\Sonis\Api\OnlineApp::searchOAQuestions(string $soc_sec, string $column)
 
 Search for an online app question
 
@@ -121,9 +135,9 @@ Search for an online app question
 
 
 
-### oa_questions_search_format
+### searchOAQuestionsFormat
 
-    array onlineapp::oa_questions_search_format(string $soc_sec, string $oa_questions_row, string $oa_questions_col, integer $oa_section_rid)
+    array Jenzabar\Sonis\Api\OnlineApp::searchOAQuestionsFormat(string $soc_sec, string $oa_questions_row, string $oa_questions_col, integer $oa_section_rid)
 
 The search format
 

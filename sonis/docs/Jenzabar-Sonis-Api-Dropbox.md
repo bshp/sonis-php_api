@@ -1,4 +1,4 @@
-dropbox
+Jenzabar\Sonis\Api\Dropbox
 ===============
 
 Class dropbox
@@ -8,35 +8,54 @@ Sonis API Framework
 Component: drp_box.cfc
 
 
-* Class name: dropbox
-* Namespace: 
+* Class name: Dropbox
+* Namespace: Jenzabar\Sonis\Api
 
 
 
 
 
+Properties
+----------
+
+
+### $comp
+
+    private string $comp = 'drp_box'
+
+The Sonis component to call
+
+
+
+* Visibility: **private**
+* This property is **static**.
 
 
 Methods
 -------
 
 
-### get_comp
+### booleanBox
 
-    mixed dropbox::get_comp()
+    string Jenzabar\Sonis\Api\Dropbox::booleanBox(boolean $allow_blank, string $Additional_Properties)
 
-
-
-
-
-* Visibility: **private**
+Creates an html list for yes/no options with values 0 and 1
 
 
 
+* Visibility: **public**
+* This method is **static**.
 
-### app_term
 
-    array dropbox::app_term(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties, string $value)
+#### Arguments
+* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
+* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
+
+
+
+### appTerm
+
+    array Jenzabar\Sonis\Api\Dropbox::appTerm(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties, string $value)
 
 Provides an html list of application terms
 
@@ -50,14 +69,14 @@ Provides an html list of application terms
 * $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
 * $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
 * $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Additional props&lt;/p&gt;
+* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
 * $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
 
 
 
 ### campus
 
-    array dropbox::campus(boolean $hide_excludes, boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties, string $value)
+    array Jenzabar\Sonis\Api\Dropbox::campus(boolean $hide_excludes, boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties, string $value)
 
 Provides an html list of campus'
 
@@ -72,14 +91,14 @@ Provides an html list of campus'
 * $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
 * $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
 * $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Additional props&lt;/p&gt;
+* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
 * $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
 
 
 
 ### country
 
-    array dropbox::country(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties)
+    array Jenzabar\Sonis\Api\Dropbox::country(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties)
 
 Provides an html list of countries
 
@@ -93,13 +112,13 @@ Provides an html list of countries
 * $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
 * $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
 * $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Additional props&lt;/p&gt;
+* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
 
 
 
 ### county
 
-    array dropbox::county(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties, boolean $disp_only, string $value)
+    array Jenzabar\Sonis\Api\Dropbox::county(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties, boolean $disp_only, string $value)
 
 Provides an html list of counties
 
@@ -113,7 +132,7 @@ Provides an html list of counties
 * $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
 * $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
 * $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Additional props&lt;/p&gt;
+* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
 * $disp_only **boolean** - &lt;p&gt;True or false if editable&lt;/p&gt;
 * $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
 
@@ -121,7 +140,7 @@ Provides an html list of counties
 
 ### degree
 
-    array dropbox::degree(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties)
+    array Jenzabar\Sonis\Api\Dropbox::degree(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties)
 
 Provides an html list of degrees
 
@@ -135,13 +154,13 @@ Provides an html list of degrees
 * $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
 * $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
 * $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Additional props&lt;/p&gt;
+* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
 
 
 
 ### enrollStatus
 
-    array dropbox::enrollStatus(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties, string $value)
+    array Jenzabar\Sonis\Api\Dropbox::enrollStatus(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties, string $value)
 
 Provides an html list of degrees
 
@@ -155,14 +174,14 @@ Provides an html list of degrees
 * $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
 * $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
 * $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Additional props&lt;/p&gt;
+* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
 * $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
 
 
 
-### dept_drop
+### department
 
-    array dropbox::dept_drop(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, string $value, integer $size)
+    array Jenzabar\Sonis\Api\Dropbox::department(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, string $value, integer $size)
 
 Provides an html list of departments
 
@@ -183,9 +202,9 @@ Provides an html list of departments
 
 
 
-### ethnic_drop
+### ethnicity
 
-    array dropbox::ethnic_drop(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, string $value, integer $size)
+    array Jenzabar\Sonis\Api\Dropbox::ethnicity(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, string $value, integer $size)
 
 Provides an html list of ethnicity's
 
@@ -206,9 +225,9 @@ Provides an html list of ethnicity's
 
 
 
-### gender_drop
+### gender
 
-    array dropbox::gender_drop(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, string $value, integer $size)
+    array Jenzabar\Sonis\Api\Dropbox::gender(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, string $value, integer $size)
 
 Provides an html list of genders
 
@@ -231,7 +250,7 @@ Provides an html list of genders
 
 ### interest
 
-    array dropbox::interest(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties)
+    array Jenzabar\Sonis\Api\Dropbox::interest(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties)
 
 Provides an html list of interest's
 
@@ -245,13 +264,13 @@ Provides an html list of interest's
 * $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
 * $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
 * $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Additional props&lt;/p&gt;
+* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
 
 
 
-### LevelofEdu
+### levelOfEdu
 
-    array dropbox::LevelofEdu(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties)
+    array Jenzabar\Sonis\Api\Dropbox::levelOfEdu(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties)
 
 Provides an html list of levels of education
 
@@ -265,13 +284,13 @@ Provides an html list of levels of education
 * $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
 * $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
 * $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Additional props&lt;/p&gt;
+* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
 
 
 
-### licenses_drop
+### licenses
 
-    array dropbox::licenses_drop(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, string $value, integer $size)
+    array Jenzabar\Sonis\Api\Dropbox::licenses(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, string $value, integer $size)
 
 Provides an html list of licenses
 
@@ -292,9 +311,9 @@ Provides an html list of licenses
 
 
 
-### marital_drop
+### marital
 
-    array dropbox::marital_drop(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, string $value, integer $size)
+    array Jenzabar\Sonis\Api\Dropbox::marital(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, string $value, integer $size)
 
 Provides an html list of martial status'
 
@@ -315,9 +334,9 @@ Provides an html list of martial status'
 
 
 
-### prog_drop
+### programs
 
-    array dropbox::prog_drop(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, boolean $excl_prg, string $value, integer $size)
+    array Jenzabar\Sonis\Api\Dropbox::programs(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, boolean $excl_prg, string $value, integer $size)
 
 Provides an html list of programs
 
@@ -341,7 +360,7 @@ Provides an html list of programs
 
 ### program
 
-    array dropbox::program(boolean $hide_excludes, boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties)
+    array Jenzabar\Sonis\Api\Dropbox::program(boolean $hide_excludes, boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties)
 
 Provides an html list of programs
 
@@ -356,13 +375,13 @@ Provides an html list of programs
 * $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
 * $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
 * $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Additional props&lt;/p&gt;
+* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
 
 
 
 ### state
 
-    array dropbox::state(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties)
+    array Jenzabar\Sonis\Api\Dropbox::state(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties)
 
 Provides an html list of state's
 
@@ -376,13 +395,13 @@ Provides an html list of state's
 * $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
 * $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
 * $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Additional props&lt;/p&gt;
+* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
 
 
 
-### stateoflicensure
+### stateOfLicensure
 
-    array dropbox::stateoflicensure(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties)
+    array Jenzabar\Sonis\Api\Dropbox::stateOfLicensure(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties)
 
 Provides an html list of states of licensure
 
@@ -396,13 +415,13 @@ Provides an html list of states of licensure
 * $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
 * $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
 * $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Additional props&lt;/p&gt;
+* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
 
 
 
-### sch_yr_drop
+### schoolYears
 
-    array dropbox::sch_yr_drop(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $use_cur_sem, string $value, integer $size)
+    array Jenzabar\Sonis\Api\Dropbox::schoolYears(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $use_cur_sem, string $value, integer $size)
 
 Provides an html list of school years
 
@@ -422,9 +441,9 @@ Provides an html list of school years
 
 
 
-### semester_drop
+### semesters
 
-    array dropbox::semester_drop(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, boolean $use_cur_sem, string $value, integer $size)
+    array Jenzabar\Sonis\Api\Dropbox::semesters(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, boolean $use_cur_sem, string $value, integer $size)
 
 Provides an html list of semesters
 
@@ -448,7 +467,7 @@ Provides an html list of semesters
 
 ### termInterest
 
-    array dropbox::termInterest(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties)
+    array Jenzabar\Sonis\Api\Dropbox::termInterest(boolean $allow_blank, boolean $multi_select, boolean $hide, string $Additional_Properties)
 
 Provides an html list of terms/semester interested in
 
@@ -462,13 +481,13 @@ Provides an html list of terms/semester interested in
 * $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
 * $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
 * $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Additional props&lt;/p&gt;
+* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
 
 
 
-### tuitstat_drop
+### tuitionStatus
 
-    array dropbox::tuitstat_drop(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, string $value, integer $size)
+    array Jenzabar\Sonis\Api\Dropbox::tuitionStatus(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, string $value, integer $size)
 
 Provides an html list of tuition status'
 
@@ -489,9 +508,9 @@ Provides an html list of tuition status'
 
 
 
-### visa_drop
+### visa
 
-    array dropbox::visa_drop(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, string $value, integer $size)
+    array Jenzabar\Sonis\Api\Dropbox::visa(boolean $allow_blank, boolean $multi_select, boolean $hide, boolean $desc_only, boolean $cod_desc, string $value, integer $size)
 
 Provides an html list of visas'
 
@@ -512,9 +531,9 @@ Provides an html list of visas'
 
 
 
-### zone_drop
+### zones
 
-    array dropbox::zone_drop(boolean $allow_blank, boolean $multi_select, boolean $hide, string $value, integer $size)
+    array Jenzabar\Sonis\Api\Dropbox::zones(boolean $allow_blank, boolean $multi_select, boolean $hide, string $value, integer $size)
 
 Provides an html list of zones, i.e dbo.zone
 

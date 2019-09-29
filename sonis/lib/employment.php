@@ -34,15 +34,20 @@ namespace Jenzabar\Sonis\Api;
  *
  * Component: employment.cfc
  *
- * @file employment.php
+ * @file Employment.php
  * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class employment
+class Employment
 {
 
+    /**
+     * The Sonis component to call
+     *
+     * @var string $comp
+     */
     private static $comp = 'employment';
 
     /**
@@ -51,7 +56,7 @@ class employment
      * @param string $emp_rid employer table id
      * @return array
      */
-    public static function delete_employment($emp_rid)
+    public static function deleteEmployment($emp_rid)
     {
         $comp = self::$comp;
         $method = 'delete_employment';
@@ -93,8 +98,29 @@ class employment
      * @param string $homeinst Home institution
      * @return array
      */
-    public static function insert_employment($soc_sec, $emp_emply, $emp_super, $emp_add1, $emp_add2, $emp_add3, $emp_city, $emp_state, $emp_county, $emp_zip, $employ_type_rid, $emp_pos, $hrs_week, $start_dt, $stop_dt, $emp_mem, $emp_rid, $empcountry, $when_code, $emp_phone, $homeinst)
-    {
+    public static function insertEmployment(
+        $soc_sec,
+        $emp_emply,
+        $emp_super,
+        $emp_add1,
+        $emp_add2,
+        $emp_add3,
+        $emp_city,
+        $emp_state,
+        $emp_county,
+        $emp_zip,
+        $employ_type_rid,
+        $emp_pos,
+        $hrs_week,
+        $start_dt,
+        $stop_dt,
+        $emp_mem,
+        $emp_rid,
+        $empcountry,
+        $when_code,
+        $emp_phone,
+        $homeinst
+    ) {
         $comp = self::$comp;
         $method = 'insert_employment';
         $returns = 'yes';
@@ -136,7 +162,7 @@ class employment
      * @param string $emp_rid employer table id
      * @return array
      */
-    public static function search($soc_sec, $emp_rid = '')
+    public static function searchEmployment($soc_sec, $emp_rid = '')
     {
         $comp = self::$comp;
         $method = 'search';
@@ -184,8 +210,33 @@ class employment
      * @param string $homeinst Home institution
      * @return array
      */
-    public static function update_employment($soc_sec, $emp_emply, $emp_super, $emp_add1, $emp_add2, $emp_add3, $emp_city, $emp_state, $emp_county, $emp_zip, $employ_type_rid, $emp_status, $passed, $emp_email, $number, $emp_pos, $hrs_week, $start_dt, $stop_dt, $emp_mem, $emp_rid, $empcountry, $when_code, $emp_phone, $homeinst)
-    {
+    public static function updateEmployment(
+        $soc_sec,
+        $emp_emply,
+        $emp_super,
+        $emp_add1,
+        $emp_add2,
+        $emp_add3,
+        $emp_city,
+        $emp_state,
+        $emp_county,
+        $emp_zip,
+        $employ_type_rid,
+        $emp_status,
+        $passed,
+        $emp_email,
+        $number,
+        $emp_pos,
+        $hrs_week,
+        $start_dt,
+        $stop_dt,
+        $emp_mem,
+        $emp_rid,
+        $empcountry,
+        $when_code,
+        $emp_phone,
+        $homeinst
+    ) {
         $comp = self::$comp;
         $method = 'update_employment';
         $returns = 'yes';

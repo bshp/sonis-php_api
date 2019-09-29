@@ -1,7 +1,7 @@
-pagenotes
+Jenzabar\Sonis\Api\PageNotes
 ===============
 
-Class pagenotes
+Class PageNotes
 
 Sonis API Framework
 
@@ -10,35 +10,36 @@ Component: pagenote.cfc
 Usage: Notes on various pages throughout
 
 
-* Class name: pagenotes
-* Namespace: 
+* Class name: PageNotes
+* Namespace: Jenzabar\Sonis\Api
 
 
 
 
 
+Properties
+----------
+
+
+### $comp
+
+    private string $comp = 'pagenote'
+
+The Sonis component to call
+
+
+
+* Visibility: **private**
+* This property is **static**.
 
 
 Methods
 -------
 
 
-### get_comp
+### getPageNote
 
-    mixed pagenotes::get_comp()
-
-
-
-
-
-* Visibility: **private**
-
-
-
-
-### get_pagenote
-
-    array pagenotes::get_pagenote(string $pagenote_cod)
+    array Jenzabar\Sonis\Api\PageNotes::getPageNote(string $pagenote_cod)
 
 Inserts or updates a note
 
@@ -53,9 +54,9 @@ Inserts or updates a note
 
 
 
-### get_pagenote_bottom
+### getPageNoteBottom
 
-    array pagenotes::get_pagenote_bottom(string $pagenote_cod)
+    array Jenzabar\Sonis\Api\PageNotes::getPageNoteBottom(string $pagenote_cod)
 
 The bottom page note
 

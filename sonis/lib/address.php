@@ -34,15 +34,20 @@ namespace Jenzabar\Sonis\Api;
  *
  * Component: address.cfc
  *
- * @file address.php
+ * @file Address.php
  * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class address
+class Address
 {
 
+    /**
+     * The Sonis component to call
+     *
+     * @var string $comp
+     */
     private static $comp = 'address';
 
     /**
@@ -59,13 +64,27 @@ class address
      * @param string $phone The persons phone number
      * @param string $cell_phone The persons cell phone number
      * @param string $work_phone The persons work phone number
-     * @param string $county_cod The 2 character code for county such as BX for Bexar. It is best to use a dropbox for these
+     * @param string $county_cod The 2 character code for county such as BX for Bexar
      * @param string $country The 2 character code for country like US
      * @param string $e_mail The primary email address for the record type
      * @return array
      */
-    public static function add_address($soc_sec, $preferred, $st_addr, $add_addr, $add_add2, $city, $state, $zip, $phone, $cell_phone, $work_phone, $county_cod, $country, $e_mail)
-    {
+    public static function addAddress(
+        $soc_sec,
+        $preferred,
+        $st_addr,
+        $add_addr,
+        $add_add2,
+        $city,
+        $state,
+        $zip,
+        $phone,
+        $cell_phone,
+        $work_phone,
+        $county_cod,
+        $country,
+        $e_mail
+    ) {
         $comp = self::$comp;
         $method = 'add_address';
         $returns = 'yes';
@@ -133,13 +152,29 @@ class address
      * @param string $fax The objects fax number
      * @param string $e_mail The primary email address for the record type
      * @param string $work_phone The persons work phone number
-     * @param string $county_cod The 2 character code for county such as BX for Bexar. It is best to use a dropbox for these
+     * @param string $county_cod The 2 character code for county such as BX for Bexar
      * @param string $country The 2 character code for country like US
      * @param string $operator The persons unqiue ID adding or modifying the record. Please change the value
      * @return array
      */
-    public static function insert_address($soc_sec, $preferred, $st_addr, $add_addr, $add_add2, $city, $state, $zip, $phone, $cell_phone, $fax, $e_mail, $work_phone, $county_cod, $country, $operator)
-    {
+    public static function insertAddress(
+        $soc_sec,
+        $preferred,
+        $st_addr,
+        $add_addr,
+        $add_add2,
+        $city,
+        $state,
+        $zip,
+        $phone,
+        $cell_phone,
+        $fax,
+        $e_mail,
+        $work_phone,
+        $county_cod,
+        $country,
+        $operator
+    ) {
         $comp = self::$comp;
         $method = 'insert_address';
         $returns = 'yes';
@@ -178,7 +213,7 @@ class address
      * @param string $cell_phone The persons cell phone number
      * @param string $city The persons city
      * @param string $country The 2 character code for country like US
-     * @param string $county_cod The 2 character code for county such as BX for Bexar. It is best to use a dropbox for these
+     * @param string $county_cod The 2 character code for county such as BX for Bexar
      * @param string $e_mail The primary email address for the record type
      * @param string $fax The objects fax number
      * @param string $phone The persons phone number
@@ -190,8 +225,24 @@ class address
      * @param string $text_me
      * @return array
      */
-    public static function update_address($soc_sec, $add_add2, $add_addr, $cell_phone, $city, $country, $county_cod, $e_mail, $fax, $phone, $st_addr, $state, $work_phone, $zip, $cell_provider, $text_me)
-    {
+    public static function updateAddress(
+        $soc_sec,
+        $add_add2,
+        $add_addr,
+        $cell_phone,
+        $city,
+        $country,
+        $county_cod,
+        $e_mail,
+        $fax,
+        $phone,
+        $st_addr,
+        $state,
+        $work_phone,
+        $zip,
+        $cell_provider,
+        $text_me
+    ) {
         $comp = self::$comp;
         $method = 'update_address';
         $returns = 'yes';

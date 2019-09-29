@@ -40,13 +40,13 @@ namespace Jenzabar\Sonis\Api;
  *
  * Select fields with the user selected value
  *
- * @file selectable.php
+ * @file Selectable.php
  * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2019
  * @license https://opensource.org/licenses/MIT
  */
-class selectable
+class Selectable
 {
 
     /**
@@ -56,7 +56,7 @@ class selectable
      * @param boolean|string $allow_blank add a blank <option> value to the select list, true or false
      * @return string $result The select list
      */
-    private static function options_list($options, $allow_blank = '')
+    private static function optionsList($options, $allow_blank = '')
     {
         global $utils;
         $stmt = '';
@@ -104,7 +104,7 @@ class selectable
         if ($stmt == '') {
             return false;
         }
-        $items = $utils->utils_array_lc(soapsql::run($stmt));
+        $items = $utils->arrayLC(SoapSql::run($stmt));
 
         if ($allow_blank) {
             foreach ($items as $item) {
@@ -126,10 +126,10 @@ class selectable
      * @param boolean|string $allow_blank add a blank <option> value to the select list, true or false
      * @return string $list The select list
      */
-    public static function cell_provider($user, $allow_blank = '')
+    public static function cellProvider($user, $allow_blank = '')
     {
         global $utils;
-        $list = self::options_list('cell_provider', $allow_blank);
+        $list = self::optionsList('cell_provider', $allow_blank);
         if ($user != '') {
             $stmt = "SELECT a.soc_sec, rtrim(c.cell_provider) as cell_provider, rtrim(c.cell_provider_url) as cell_provider_url
                      FROM address AS a 
@@ -137,7 +137,7 @@ class selectable
                             AND a.preferred = '1'
                     WHERE a.soc_sec = '$user'
                     ORDER BY c.cell_provider ASC";
-            $selected = $utils->utils_array_lc(soapsql::run($stmt));
+            $selected = $utils->arrayLC(SoapSql::run($stmt));
             return '<option value="' . $selected['cell_provider'] . '" selected>' . $selected['cell_provider'] . '</option>' . $list;
         }
         return $list;
@@ -153,7 +153,7 @@ class selectable
     public static function country($user = '', $allow_blank = '')
     {
         global $utils;
-        $list = self::options_list('country', $allow_blank);
+        $list = self::optionsList('country', $allow_blank);
         if ($user != '') {
             $stmt = "SELECT a.soc_sec, rtrim(c.country) as country, rtrim(c.country_txt) as country_txt
                      FROM address AS a
@@ -161,7 +161,7 @@ class selectable
                             AND a.preferred = '1' 
                     WHERE a.soc_sec = '$user'
                     ORDER BY c.country_txt ASC";
-            $selected = $utils->utils_array_lc(soapsql::run($stmt));
+            $selected = $utils->arrayLC(SoapSql::run($stmt));
             return '<option value="' . $selected['country'] . '" selected>' . $selected['country_txt'] . '</option>' . $list;
         }
         return $list;
@@ -177,13 +177,13 @@ class selectable
     public static function department($user = '', $allow_blank = '')
     {
         global $utils;
-        $list = self::options_list('department', $allow_blank);
+        $list = self::optionsList('department', $allow_blank);
         if ($user != '') {
             $stmt = "SELECT n.soc_sec, n.dept_cod, rtrim(d.dept_cod) AS dept_cod, rtrim(d.dept_txt) AS dept_txt
                      FROM name n
                         INNER JOIN dept d on n.dept_cod = d.dept_cod
                      WHERE n.soc_sec = '$user'";
-            $selected = $utils->utils_array_lc(soapsql::run($stmt));
+            $selected = $utils->arrayLC(SoapSql::run($stmt));
             return '<option value="' . $selected['dept_cod'] . '" selected>' . $selected['dept_txt'] . '</option>' . $list;
         }
         return $list;
@@ -199,13 +199,13 @@ class selectable
     public static function ethnicity($user = '', $allow_blank = '')
     {
         global $utils;
-        $list = self::options_list('ethnicity', $allow_blank);
+        $list = self::optionsList('ethnicity', $allow_blank);
         if ($user != '') {
             $stmt = "SELECT n.soc_sec, rtrim(e.ethnic_cod) as ethnic_cod, rtrim(e.ethnic_txt) as ethnic_txt
                      FROM name AS n
                         INNER JOIN ethnic AS e ON n.ethnic_cod = e.ethnic_cod 
                     WHERE n.soc_sec = '$user'";
-            $selected = $utils->utils_array_lc(soapsql::run($stmt));
+            $selected = $utils->arrayLC(SoapSql::run($stmt));
             return '<option value="' . $selected['ethnic_cod'] . '" selected>' . $selected['ethnic_txt'] . '</option>' . $list;
         }
         return $list;
@@ -221,14 +221,14 @@ class selectable
     public static function gender($user = '', $allow_blank = '')
     {
         global $utils;
-        $list = self::options_list('gender', $allow_blank);
+        $list = self::optionsList('gender', $allow_blank);
         if ($user != '') {
             $stmt = "SELECT n.soc_sec, rtrim(g.gender_cod) as gender_cod, rtrim(g.gender_txt) as gender_txt
                      FROM name AS n
                         INNER JOIN gender AS g ON n.gender = g.gender_cod
                     WHERE n.soc_sec = '$user'
                     ORDER BY g.gender_txt ASC";
-            $selected = $utils->utils_array_lc(soapsql::run($stmt));
+            $selected = $utils->arrayLC(SoapSql::run($stmt));
             return '<option value="' . $selected['gender_cod'] . '" selected>' . $selected['gender_txt'] . '</option>' . $list;
         }
         return $list;
@@ -244,7 +244,7 @@ class selectable
     public static function institution($user = '', $allow_blank = '')
     {
         global $utils;
-        $list = self::options_list('institution', $allow_blank);
+        $list = self::optionsList('institution', $allow_blank);
         if ($user != '') {
             $stmt = "SELECT n.soc_sec, rtrim(i.inst_txt) as inst_txt, rtrim(i.insttypcod) as insttypcod, rtrim(i.inst_cod) as inst_cod
                      FROM name AS n
@@ -252,7 +252,7 @@ class selectable
                         INNER JOIN institut AS i ON e.inst_cod = i.inst_cod 
                     WHERE n.soc_sec = '$user'
                     ORDER BY i.inst_txt ASC";
-            $selected = $utils->utils_array_lc(soapsql::run($stmt));
+            $selected = $utils->arrayLC(SoapSql::run($stmt));
             return '<option value="' . $selected['inst_cod'] . '" selected>' . $selected['inst_txt'] . '</option>' . $list;
         }
         return $list;
@@ -268,13 +268,13 @@ class selectable
     public static function marital($user = '', $allow_blank = '')
     {
         global $utils;
-        $list = self::options_list('marital', $allow_blank);
+        $list = self::optionsList('marital', $allow_blank);
         if ($user != '') {
             $stmt = "SELECT n.soc_sec, rtrim(m.mar_cod) as mar_cod, rtrim(m.mar_txt) as mar_txt
                      FROM name AS n
                         INNER JOIN marital AS m ON n.mar_cod = m.mar_cod 
                     WHERE n.soc_sec = '$user'";
-            $selected = $utils->utils_array_lc(soapsql::run($stmt));
+            $selected = $utils->arrayLC(SoapSql::run($stmt));
             return '<option value="' . $selected['mar_cod'] . '" selected>' . $selected['mar_txt'] . '</option>' . $list;
         }
         return $list;
@@ -290,14 +290,14 @@ class selectable
     public static function state($user = '', $allow_blank = '')
     {
         global $utils;
-        $list = self::options_list('state', $allow_blank);
+        $list = self::optionsList('state', $allow_blank);
         if ($user != '') {
             $stmt = "SELECT a.soc_sec, rtrim(s.state_name) as state_name, rtrim(s.state_abbr) as state_abbr 
                      FROM address AS a 
                         INNER JOIN state AS s ON a.state = s.state_abbr AND a.preferred = '1' 
                         WHERE a.soc_sec = '$user'
                         ORDER BY s.state_name ASC";
-            $selected = $utils->utils_array_lc(soapsql::run($stmt));
+            $selected = $utils->arrayLC(SoapSql::run($stmt));
             return '<option value="' . $selected['state_abbr'] . '" selected>' . $selected['state_name'] . '</option>' . $list;
         }
         return $list;

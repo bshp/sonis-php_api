@@ -28,21 +28,21 @@
 namespace Jenzabar\Sonis\Api;
 
 /**
- * Class soapapi
+ * Class SoapApi
  *
  * Sonis API Framework
  *
- * Component: soapapi.cfc
+ * Component: SoapApi.cfc
  *
  * Usage: Call the SOAP API endpoint for requested data
  *
- * @file soapapi.php
+ * @file SoapApi.php
  * @package Core
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class soapapi
+class SoapApi
 {
 
     /**
@@ -53,8 +53,8 @@ class soapapi
      * the results to the output controller
      *
      * @param mixed $args contains component::method($args)
-     * @return array|string Returns output of utils.utils_array_process
-     * @example '../tests/api.biographic.php'
+     * @return array|string Returns output of utils.arrayProcess
+     * @example '../tests/api.Biographic.php'
      */
     public static function run($args)
     {
@@ -63,18 +63,24 @@ class soapapi
         $method = $args['method'];
         $params = $args['params'];
         $returns = $args['returns'];
-        $call = $utils->utils_soap_client($utils->utils_api_cfg()['host'] . '/cfc/soapapi.cfc?wsdl', $utils->utils_api_cfg()['opts']['soap']);
-        $result = $call->__soapCall('doAPISomething', [
-            'user' => $utils->utils_api_cfg()['user'],
-            'pass' => $utils->utils_api_cfg()['pass'],
+        $call = $utils->soapClient(
+            $utils->apiCfg()['host'] . '/cfc/SoapApi.cfc?wsdl',
+            $utils->apiCfg()['opts']['soap']
+        );
+        $result = $call->__soapCall(
+            'doAPISomething',
+            [
+            'user' => $utils->apiCfg()['user'],
+            'pass' => $utils->apiCfg()['pass'],
             'comp' => 'CFC.' . $comp,
             'meth' => $method,
             'hasReturnVariable' => $returns,
             'argumentdata' => $params,
-        ]);
-        if ($utils->utils_api_cfg()['opts']['debug']) {
-            $utils->utils_debug_soap($call);
+            ]
+        );
+        if ($utils->apiCfg()['opts']['debug']) {
+            $utils->debugSoap($call);
         }
-        return $utils->utils_array_process($result);
+        return $utils->arrayProcess($result);
     }
 }

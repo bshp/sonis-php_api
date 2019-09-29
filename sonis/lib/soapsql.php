@@ -28,27 +28,27 @@
 namespace Jenzabar\Sonis\Api;
 
 /**
- * Class soapsql
+ * Class SoapSql
  *
  * Sonis API Framework
  *
- * Component: soapsql.cfc
+ * Component: SoapSql.cfc
  *
  * Usage: Call the SOAP SQL endpoint for requested data
  *
- * @file soapsql.php
+ * @file SoapSql.php
  * @package Core
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class soapsql
+class SoapSql
 {
 
     /**
      * Run raw sql statements.
      *
-     * Do we really need to make soapsql difficult? it's
+     * Do we really need to make SoapSql difficult? it's
      * just a statement with no other options
      *
      * All frontend code should check for sql injection's
@@ -68,18 +68,24 @@ class soapsql
         $sql = preg_replace("/[;]/", '', $sql);
         $sqlcmds = ['DELETE', 'INSERT', 'UPDATE',];
         $params = [
-            'user' => $utils->utils_api_cfg()['user'],
-            'pass' => $utils->utils_api_cfg()['pass'],
+            'user' => $utils->apiCfg()['user'],
+            'pass' => $utils->apiCfg()['pass'],
             'sql' => $sql,
         ];
-        $call = $utils->utils_soap_client($utils->utils_api_cfg()['host'] . '/cfc/soapsql.cfc?wsdl', $utils->utils_api_cfg()['opts']['soap']);
-        $result = $call->__soapCall("doSQLSomething", $params);
-        if ($utils->utils_api_cfg()['opts']['debug']) {
-            $utils->utils_debug_soap($call);
+        $call = $utils->soapClient(
+            $utils->apiCfg()['host'] . '/cfc/SoapSql.cfc?wsdl',
+            $utils->apiCfg()['opts']['soap']
+        );
+        $result = $call->__soapCall(
+            'doSQLSomething',
+            $params
+        );
+        if ($utils->apiCfg()['opts']['debug']) {
+            $utils->debugSoap($call);
         }
         /** Iterate through sql statement, dont send specific types through the processor */
         foreach ($sqlcmds as $sqlcmd) {
-            if ($utils->utils_starts_with($sql, $sqlcmd)) {
+            if ($utils->startsWith($sql, $sqlcmd)) {
                 $returns = false;
             }
         }
@@ -87,6 +93,6 @@ class soapsql
             $call->__soapCall("doSQLSomething", $params);
             return 'OK: 200';
         }
-        return $utils->utils_array_process($result);
+        return $utils->arrayProcess($result);
     }
 }

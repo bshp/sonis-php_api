@@ -1,4 +1,4 @@
-education
+Jenzabar\Sonis\Api\Education
 ===============
 
 Class education
@@ -8,35 +8,36 @@ Sonis API Framework
 Component: education.cfc
 
 
-* Class name: education
-* Namespace: 
+* Class name: Education
+* Namespace: Jenzabar\Sonis\Api
 
 
 
 
 
+Properties
+----------
+
+
+### $comp
+
+    private string $comp = 'education'
+
+The Sonis component to call
+
+
+
+* Visibility: **private**
+* This property is **static**.
 
 
 Methods
 -------
 
 
-### get_comp
+### deleteEducation
 
-    mixed education::get_comp()
-
-
-
-
-
-* Visibility: **private**
-
-
-
-
-### delete_education
-
-    array education::delete_education(string $soc_sec, string $edu_rid)
+    array Jenzabar\Sonis\Api\Education::deleteEducation(string $soc_sec, string $edu_rid)
 
 Deletes an education record
 
@@ -54,7 +55,7 @@ Deletes an education record
 
 ### eduSearch
 
-    array education::eduSearch(string $soc_sec, string $edu_rid)
+    array Jenzabar\Sonis\Api\Education::eduSearch(string $soc_sec, string $edu_rid)
 
 Search for an education record
 
@@ -70,9 +71,9 @@ Search for an education record
 
 
 
-### insert_default_education
+### insertDefaultEducation
 
-    array education::insert_default_education(string $soc_sec, string $cohort_cod)
+    array Jenzabar\Sonis\Api\Education::insertDefaultEducation(string $soc_sec, string $cohort_cod)
 
 Inserts a new edu record and sets as default
 
@@ -88,9 +89,9 @@ Inserts a new edu record and sets as default
 
 
 
-### insert_education
+### insertEducation
 
-    array education::insert_education(string $soc_sec, string $educmem, string $inst_cod, string $mod_stat, string $degree, string $enter_date, string $leav_date, string $grad_mo, string $grad_year, string $graduated)
+    array Jenzabar\Sonis\Api\Education::insertEducation(string $soc_sec, string $educmem, string $inst_cod, string $mod_stat, string $degree, string $enter_date, string $leav_date, string $grad_mo, string $grad_year, string $graduated)
 
 Inserts a new edu record
 
@@ -114,9 +115,9 @@ Inserts a new edu record
 
 
 
-### insert_inst
+### insertInstitution
 
-    array education::insert_inst(string $soc_sec, string $inst_mem, string $edu_rid)
+    array Jenzabar\Sonis\Api\Education::insertInstitution(string $soc_sec, string $inst_mem, string $edu_rid)
 
 Inserts a new institution
 
@@ -133,9 +134,9 @@ Inserts a new institution
 
 
 
-### institutsearch
+### searchInstitution
 
-    array education::institutsearch(string $inst_city, string $inst_state, string $inst_txt, string $insttypcod, string $inst_cntry)
+    array Jenzabar\Sonis\Api\Education::searchInstitution(string $inst_state, string $inst_city, string $inst_txt, string $insttypcod, string $inst_cntry)
 
 Search for institution
 
@@ -146,17 +147,17 @@ Search for institution
 
 
 #### Arguments
-* $inst_city **string** - &lt;p&gt;Institutional city&lt;/p&gt;
 * $inst_state **string** - &lt;p&gt;Institutional state&lt;/p&gt;
+* $inst_city **string** - &lt;p&gt;Institutional city&lt;/p&gt;
 * $inst_txt **string** - &lt;p&gt;Institutional description&lt;/p&gt;
 * $insttypcod **string** - &lt;p&gt;Institutional type code&lt;/p&gt;
 * $inst_cntry **string** - &lt;p&gt;Institutional country&lt;/p&gt;
 
 
 
-### update_education
+### updateEducation
 
-    array education::update_education(string $soc_sec, string $edu_rid, string $eduinsttyp, string $degree, string $credits, string $qlty_pnts, string $cqpa, string $rankstud, string $rankclass, string $grad_date, string $enter_date, string $leav_date, string $date_rec, string $matric_dt, string $trans_rec, string $prog_desc, string $educmem, string $enr_age, string $orig_grad, string $grad_mo, string $grad_year, string $graduated, string $grad_honors, string $nmedu_ce1, string $nmedu_le1, string $nmedu_ne1, string $inst_txt, string $cohort_cod, string $degree_sought, string $prg_sought, string $ant_grad_date, string $gpa_creds, string $transfered, string $grad_stud, string $OA_inprocess, string $diploma, string $employ_waiver_type, string $cur_cod, string $prev_instname, string $grad_age, string $degreeclass_cod, string $nmedu_transmem, string $employ_waiver, string $override)
+    array Jenzabar\Sonis\Api\Education::updateEducation(string $soc_sec, string $edu_rid, string $eduinsttyp, string $degree, string $credits, string $qlty_pnts, string $cqpa, string $rankstud, string $rankclass, string $grad_date, string $enter_date, string $leav_date, string $date_rec, string $matric_dt, string $trans_rec, string $prog_desc, string $educmem, string $enr_age, string $orig_grad, string $grad_mo, string $grad_year, string $graduated, string $grad_honors, string $nmedu_ce1, string $nmedu_le1, string $nmedu_ne1, string $inst_txt, string $cohort_cod, string $degree_sought, string $prg_sought, string $ant_grad_date, string $gpa_creds, string $transfered, string $grad_stud, string $OA_inprocess, string $diploma, string $employ_waiver_type, string $cur_cod, string $prev_instname, string $grad_age, string $degreeclass_cod, string $nmedu_transmem, string $employ_waiver, string $override)
 
 Update a given education record
 

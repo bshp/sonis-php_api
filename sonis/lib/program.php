@@ -36,15 +36,20 @@ namespace Jenzabar\Sonis\Api;
  *
  * Usage: Program related, mainly for applicants
  *
- * @file program.php
+ * @file Program.php
  * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class program
+class Program
 {
 
+    /**
+     * The Sonis component to call
+     *
+     * @var string $comp
+     */
     private static $comp = 'program';
 
     /**
@@ -53,7 +58,7 @@ class program
      * @param string $soc_sec The objects unique identifier
      * @return array
      */
-    public static function approgsearch($soc_sec)
+    public static function appProgramSearch($soc_sec)
     {
         $comp = self::$comp;
         $method = 'approgsearch';
@@ -75,7 +80,7 @@ class program
      * @param string $soc_sec The objects unique identifier
      * @return array
      */
-    public static function complete_app($soc_sec)
+    public static function appComplete($soc_sec)
     {
         $comp = self::$comp;
         $method = 'complete_app';
@@ -97,7 +102,7 @@ class program
      * @param $app_rid
      * @return array
      */
-    public static function delete_approg($app_rid)
+    public static function appProgramDelete($app_rid)
     {
         $comp = self::$comp;
         $method = 'delete_approg';
@@ -117,7 +122,6 @@ class program
      * Insert a program record
      *
      * @param string $soc_sec The objects unique identifier
-     * @param string $d_soc_sec The objects unique identifier
      * @param string $camp_cod The person's campus, in the form of the code
      * @param string $entry_date
      * @param string $prg_cod Program code
@@ -145,10 +149,40 @@ class program
      * @param string $date_maint
      * @param string $trans_done
      * @param string $operator The persons unqiue ID adding or modifying the record. Please change the value
+     * @param string $d_soc_sec The objects unique identifier
      * @return array
      */
-    public static function insert_approg($soc_sec, $camp_cod, $entry_date, $prg_cod, $div_cod, $app_date, $ack_date, $trans_date, $is_applicant, $preferred, $incomplete, $app_rid, $ref_source, $fee_rec, $apfee_dt, $prior_app, $app_yr, $acknowledg, $sms_trans, $matric_fee, $degree_ap, $degree_ac, $major_ap, $major_ac, $time_maint, $date_maint, $trans_done, $d_soc_sec = '', $operator)
-    {
+    public static function insertAppProgram(
+        $soc_sec,
+        $camp_cod,
+        $entry_date,
+        $prg_cod,
+        $div_cod,
+        $app_date,
+        $ack_date,
+        $trans_date,
+        $is_applicant,
+        $preferred,
+        $incomplete,
+        $app_rid,
+        $ref_source,
+        $fee_rec,
+        $apfee_dt,
+        $prior_app,
+        $app_yr,
+        $acknowledg,
+        $sms_trans,
+        $matric_fee,
+        $degree_ap,
+        $degree_ac,
+        $major_ap,
+        $major_ac,
+        $time_maint,
+        $date_maint,
+        $trans_done,
+        $operator,
+        $d_soc_sec = ''
+    ) {
         $comp = self::$comp;
         $method = 'insert_approg';
         $returns = 'yes';
@@ -198,7 +232,7 @@ class program
      * @param string $prg_cod Program code
      * @return array
      */
-    public static function preventrepeats($soc_sec, $prg_cod)
+    public static function preventRepeats($soc_sec, $prg_cod)
     {
         $comp = self::$comp;
         $method = 'preventrepeats';

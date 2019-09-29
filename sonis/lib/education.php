@@ -34,15 +34,20 @@ namespace Jenzabar\Sonis\Api;
  *
  * Component: education.cfc
  *
- * @file education.php
+ * @file Education.php
  * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class education
+class Education
 {
 
+    /**
+     * The Sonis component to call
+     *
+     * @var string $comp
+     */
     private static $comp = 'education';
 
     /**
@@ -52,7 +57,7 @@ class education
      * @param string $edu_rid Edu record id
      * @return array
      */
-    public static function delete_education($soc_sec, $edu_rid)
+    public static function deleteEducation($soc_sec, $edu_rid)
     {
         $comp = self::$comp;
         $method = 'delete_education';
@@ -101,7 +106,7 @@ class education
      * @param string $cohort_cod Cohort code
      * @return array
      */
-    public static function insert_default_education($soc_sec, $cohort_cod)
+    public static function insertDefaultEducation($soc_sec, $cohort_cod)
     {
         $comp = self::$comp;
         $method = 'insert_default_education';
@@ -133,8 +138,18 @@ class education
      * @param string $graduated Educational record graduated, true or false
      * @return array
      */
-    public static function insert_education($soc_sec, $educmem, $inst_cod, $mod_stat, $degree, $enter_date, $leav_date, $grad_mo, $grad_year, $graduated)
-    {
+    public static function insertEducation(
+        $soc_sec,
+        $educmem,
+        $inst_cod,
+        $mod_stat,
+        $degree,
+        $enter_date,
+        $leav_date,
+        $grad_mo,
+        $grad_year,
+        $graduated
+    ) {
         $comp = self::$comp;
         $method = 'insert_education';
         $returns = 'yes';
@@ -166,7 +181,7 @@ class education
      * @param string $edu_rid Edu record id
      * @return array
      */
-    public static function insert_inst($soc_sec, $inst_mem, $edu_rid)
+    public static function insertInstitution($soc_sec, $inst_mem, $edu_rid)
     {
         $comp = self::$comp;
         $method = 'insert_inst';
@@ -187,14 +202,14 @@ class education
     /**
      * Search for institution
      *
-     * @param string $inst_city Institutional city
      * @param string $inst_state Institutional state
+     * @param string $inst_city Institutional city
      * @param string $inst_txt Institutional description
      * @param string $insttypcod Institutional type code
      * @param string $inst_cntry Institutional country
      * @return array
      */
-    public static function institutsearch($inst_state, $inst_city, $inst_txt, $insttypcod, $inst_cntry)
+    public static function searchInstitution($inst_state, $inst_city, $inst_txt, $insttypcod, $inst_cntry)
     {
         $comp = self::$comp;
         $method = 'institutsearch';
@@ -263,8 +278,52 @@ class education
      * @param string $override Override flag
      * @return array
      */
-    public static function update_education($soc_sec, $edu_rid, $eduinsttyp, $degree, $credits, $qlty_pnts, $cqpa, $rankstud, $rankclass, $grad_date, $enter_date, $leav_date, $date_rec, $matric_dt, $trans_rec, $prog_desc, $educmem, $enr_age, $orig_grad, $grad_mo, $grad_year, $graduated, $grad_honors, $nmedu_ce1, $nmedu_le1, $nmedu_ne1, $inst_txt, $cohort_cod, $degree_sought, $prg_sought, $ant_grad_date, $gpa_creds, $transfered, $grad_stud, $OA_inprocess, $diploma, $employ_waiver_type, $cur_cod, $prev_instname, $grad_age, $degreeclass_cod, $nmedu_transmem, $employ_waiver, $override)
-    {
+    public static function updateEducation(
+        $soc_sec,
+        $edu_rid,
+        $eduinsttyp,
+        $degree,
+        $credits,
+        $qlty_pnts,
+        $cqpa,
+        $rankstud,
+        $rankclass,
+        $grad_date,
+        $enter_date,
+        $leav_date,
+        $date_rec,
+        $matric_dt,
+        $trans_rec,
+        $prog_desc,
+        $educmem,
+        $enr_age,
+        $orig_grad,
+        $grad_mo,
+        $grad_year,
+        $graduated,
+        $grad_honors,
+        $nmedu_ce1,
+        $nmedu_le1,
+        $nmedu_ne1,
+        $inst_txt,
+        $cohort_cod,
+        $degree_sought,
+        $prg_sought,
+        $ant_grad_date,
+        $gpa_creds,
+        $transfered,
+        $grad_stud,
+        $OA_inprocess,
+        $diploma,
+        $employ_waiver_type,
+        $cur_cod,
+        $prev_instname,
+        $grad_age,
+        $degreeclass_cod,
+        $nmedu_transmem,
+        $employ_waiver,
+        $override
+    ) {
         $comp = self::$comp;
         $method = 'update_education';
         $returns = 'yes';

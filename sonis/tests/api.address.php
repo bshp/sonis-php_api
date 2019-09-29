@@ -28,17 +28,17 @@
 /**
  * Sonis API Framework
  *
- * Test file for soapapi.cfc, the address.cfc component
+ * Test file for SoapApi.cfc, the address.cfc component
  *
- * @file api.address.php
+ * @file api.Address.php
  * @package Test
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
 
-use Jenzabar\Sonis\Api\soapapi;
-use Jenzabar\Sonis\Api\address;
+use Jenzabar\Sonis\Api\SoapApi;
+use Jenzabar\Sonis\Api\Address;
 
 define('SONIS_USER', 'username');  // your api user
 define('SONIS_PASSWORD', 'password'); // your api password
@@ -72,7 +72,7 @@ $soc_sec = '000000000';
  *
  * @var mixed $args
  */
-$args = address::addressSearch($soc_sec, $preferred);
+$args = Address::addressSearch($soc_sec, $preferred);
 
 /**
  * Start the API call process.
@@ -80,7 +80,7 @@ $args = address::addressSearch($soc_sec, $preferred);
  *
  * @var mixed $request
  */
-$request = soapapi::run($args);
+$request = SoapApi::run($args);
 
 print_r($request);
-print_r('Sonis API Framework: ' . $utils->get_version('pretty'));
+print_r('Sonis API Framework: ' . $utils->getVersion('pretty'));

@@ -28,17 +28,17 @@
 /**
  * Sonis API Framework
  *
- * Test file for soapapi.cfc, the drp_box.cfc component
+ * Test file for SoapApi.cfc, the drp_box.cfc component
  *
- * @file api.dropbox.php
+ * @file api.Dropbox.php
  * @package Test
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
 
-use Jenzabar\Sonis\Api\soapapi;
-use Jenzabar\Sonis\Api\dropbox;
+use Jenzabar\Sonis\Api\SoapApi;
+use Jenzabar\Sonis\Api\Dropbox;
 
 define('SONIS_USER', 'username');  // your api user
 define('SONIS_PASSWORD', 'password'); // your api password
@@ -54,7 +54,7 @@ require __DIR__ . '/../sonis.php';
  *
  * @var mixed $args
  */
-$args = dropbox::program(true, true, false, false, '');
+$args = Dropbox::program(true, true, false, false, '');
 
 /**
  * Start the API call process.
@@ -62,13 +62,13 @@ $args = dropbox::program(true, true, false, false, '');
  *
  * @var mixed $request
  */
-$request = soapapi::run($args);
+$request = SoapApi::run($args);
 ?>
 <html>
 <body>
 <form>
     <?php echo $request; ?>
-    <p><?php print_r('Sonis API Framework: ' . $utils->get_version('pretty')); ?> </p>
+    <p><?php print_r('Sonis API Framework: ' . $utils->getVersion('pretty')); ?> </p>
 </form>
 </body>
 </html>

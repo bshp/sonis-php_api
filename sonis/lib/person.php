@@ -34,17 +34,20 @@ namespace Jenzabar\Sonis\Api;
  *
  * Grouped functions related to a person
  *
- * @file person.php
+ * @file Person.php
  * @package Utilities
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class person
+class Person
 {
 
     /**
-     * @return bool
+     * A placeholder for future use
+     *
+     * @todo Complete person class
+     * @return boolean
      */
     public function bio()
     {

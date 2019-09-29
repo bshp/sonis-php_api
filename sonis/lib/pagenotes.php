@@ -28,7 +28,7 @@
 namespace Jenzabar\Sonis\Api;
 
 /**
- * Class pagenotes
+ * Class PageNotes
  *
  * Sonis API Framework
  *
@@ -36,15 +36,20 @@ namespace Jenzabar\Sonis\Api;
  *
  * Usage: Notes on various pages throughout
  *
- * @file pagenotes.php
+ * @file PageNotes.php
  * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class pagenotes
+class PageNotes
 {
 
+    /**
+     * The Sonis component to call
+     *
+     * @var string $comp
+     */
     private static $comp = 'pagenote';
 
     /**
@@ -53,7 +58,7 @@ class pagenotes
      * @param string $pagenote_cod Get a specific page note
      * @return array
      */
-    public static function get_pagenote($pagenote_cod)
+    public static function getPageNote($pagenote_cod)
     {
         $comp = self::$comp;
         $method = 'get_pagenote';
@@ -75,7 +80,7 @@ class pagenotes
      * @param string $pagenote_cod Get a specific page note
      * @return array
      */
-    public static function get_pagenote_bottom($pagenote_cod)
+    public static function getPageNoteBottom($pagenote_cod)
     {
         $comp = self::$comp;
         $method = 'get_pagenote_bottom';

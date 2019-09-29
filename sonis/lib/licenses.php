@@ -34,15 +34,20 @@ namespace Jenzabar\Sonis\Api;
  *
  * Component: oa_licenses.cfc
  *
- * @file licenses.php
+ * @file Licenses.php
  * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class licenses
+class Licenses
 {
 
+    /**
+     * The Sonis component to call
+     *
+     * @var string $comp
+     */
     private static $comp = 'oa_licenses';
 
     /**
@@ -52,7 +57,7 @@ class licenses
      * @param string $lic_rid The Sonis license RID
      * @return array
      */
-    public static function delete_license($soc_sec, $lic_rid = '')
+    public static function deleteLicense($soc_sec, $lic_rid = '')
     {
         $comp = self::$comp;
         $method = 'delete_license';
@@ -81,7 +86,7 @@ class licenses
      * @param string $d_soc_sec The objects unique identifier
      * @return array
      */
-    public static function insert_license($soc_sec, $license, $lic_no, $date_rec, $date_exp, $lic_mem, $d_soc_sec = '')
+    public static function insertLicense($soc_sec, $license, $lic_no, $date_rec, $date_exp, $lic_mem, $d_soc_sec = '')
     {
         $comp = self::$comp;
         $method = 'insert_license';
@@ -111,7 +116,7 @@ class licenses
      * @param string $lic_rid The Sonis license RID
      * @return array
      */
-    public static function search($soc_sec, $lic_rid = '')
+    public static function searchLicense($soc_sec, $lic_rid = '')
     {
         $comp = self::$comp;
         $method = 'search';
@@ -133,16 +138,16 @@ class licenses
      * Update a persons given license
      *
      * @param string $soc_sec The objects unique identifier
-     * @param $license The persons license
+     * @param string $license The persons license
      * @param string $lic_no The persons license number (not dirvers license)
      * @param string $date_rec The persons license date received (mm/dd/yyyy)
      * @param string $date_exp The persons license date expires (mm/dd/yyyy)
      * @param string $lic_mem The persons license memo
+     * @param string $lic_rid The random id of the object
      * @param string $d_soc_sec The objects unique identifier
-     * @param string $lic_rid
      * @return array
      */
-    public static function update_license(
+    public static function updateLicense(
         $soc_sec,
         $license,
         $lic_no,

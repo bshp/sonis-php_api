@@ -1,4 +1,4 @@
-course
+Jenzabar\Sonis\Api\Course
 ===============
 
 Class course
@@ -8,35 +8,36 @@ Sonis API Framework
 Component: crs_sec_list.cfc
 
 
-* Class name: course
-* Namespace: 
+* Class name: Course
+* Namespace: Jenzabar\Sonis\Api
 
 
 
 
 
+Properties
+----------
+
+
+### $comp
+
+    private string $comp = 'crs_sec_list'
+
+The Sonis component to call
+
+
+
+* Visibility: **private**
+* This property is **static**.
 
 
 Methods
 -------
 
 
-### get_comp
+### getCoreReq
 
-    mixed course::get_comp()
-
-
-
-
-
-* Visibility: **private**
-
-
-
-
-### getcoreq
-
-    array course::getcoreq(integer $crs_id)
+    array Jenzabar\Sonis\Api\Course::getCoreReq(integer $crs_id)
 
 Get course core requisites
 
@@ -51,9 +52,9 @@ Get course core requisites
 
 
 
-### getcreqs
+### getCourseReqs
 
-    array course::getcreqs(integer $crs_id)
+    array Jenzabar\Sonis\Api\Course::getCourseReqs(integer $crs_id)
 
 Get course requisites
 
@@ -68,9 +69,9 @@ Get course requisites
 
 
 
-### getprereq
+### getPreReqs
 
-    array course::getprereq(integer $crs_id)
+    array Jenzabar\Sonis\Api\Course::getPreReqs(integer $crs_id)
 
 Get course pre-reqs
 
@@ -85,9 +86,9 @@ Get course pre-reqs
 
 
 
-### getprereqco
+### getCoursePreReqs
 
-    array course::getprereqco(integer $schyear, integer $semlist, string $camp_cod)
+    array Jenzabar\Sonis\Api\Course::getCoursePreReqs(integer $schyear, integer $semlist, string $camp_cod)
 
 Get course core pre-reqs
 

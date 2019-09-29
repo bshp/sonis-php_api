@@ -1,4 +1,4 @@
-prospect
+Jenzabar\Sonis\Api\Prospect
 ===============
 
 Class prospect
@@ -10,35 +10,36 @@ Component: addps.cfc, addps_direct.cfc
 Usage: Add new prospect inquiry, update prospect
 
 
-* Class name: prospect
-* Namespace: 
+* Class name: Prospect
+* Namespace: Jenzabar\Sonis\Api
 
 
 
 
 
+Properties
+----------
+
+
+### $comp
+
+    private string $comp = 'addps'
+
+The Sonis component to call
+
+
+
+* Visibility: **private**
+* This property is **static**.
 
 
 Methods
 -------
 
 
-### get_comp
+### addProspect
 
-    mixed prospect::get_comp()
-
-
-
-
-
-* Visibility: **private**
-
-
-
-
-### addnewps
-
-    array prospect::addnewps(string $last_name, string $first_name, string $mi, string $st_addr, string $add_addr, string $add_add2, string $city, string $state, string $zip, string $country, string $phone, string $cell_phone, string $nickname, string $work_phone, string $e_mail, string $term_int, string $referby, string $enstat_cod, string $prg_cod, string $camp_cod, string $comments, string $snd_app, string $snd_brch, string $snd_cat, string $snd_f4, string $snd_f5, string $snd_f6, string $snd_3PF, string $employer, string $moved_dt, string $move2app, string $contact, string $state_of_licensure, string $level_of_education, string $level_comp, string $hs_prereq, string $prg_intrest, string $cl_prereq, string $prereqenrolled, string $cur_emp, string $cur_emp_inst_cod, string $LPN, string $LPN_years, string $enroll_month, string $enroll_yr, string $ref_other, string $psprereqcrs_cod, string $pref_inst_cod, string $webps_ce1, string $webps_le1, string $webps_ne1, string $webps_de1, string $webps_fe1, string $webps_ce2, string $webps_ce3, string $incomplete, string $birthdate, string $memo1, string $memo2, string $memo3, string $areas_of_interest_rid, string $undergrd_attnd, string $undergrd_maj)
+    array Jenzabar\Sonis\Api\Prospect::addProspect(string $last_name, string $first_name, string $mi, string $st_addr, string $add_addr, string $add_add2, string $city, string $state, string $zip, string $country, string $phone, string $cell_phone, string $nickname, string $work_phone, string $e_mail, string $term_int, string $referby, string $enstat_cod, string $prg_cod, string $camp_cod, string $comments, string $snd_app, string $snd_brch, string $snd_cat, string $snd_f4, string $snd_f5, string $snd_f6, string $snd_3PF, string $employer, string $moved_dt, string $move2app, string $contact, string $state_of_licensure, string $level_of_education, string $level_comp, string $hs_prereq, string $prg_intrest, string $cl_prereq, string $prereqenrolled, string $cur_emp, string $cur_emp_inst_cod, string $LPN, string $LPN_years, string $enroll_month, string $enroll_yr, string $ref_other, string $psprereqcrs_cod, string $pref_inst_cod, string $webps_ce1, string $webps_le1, string $webps_ne1, string $webps_de1, string $webps_fe1, string $webps_ce2, string $webps_ce3, string $incomplete, string $birthdate, string $memo1, string $memo2, string $memo3, string $areas_of_interest_rid, string $undergrd_attnd, string $undergrd_maj)
 
 Inserts a new prospect/inquiry
 
@@ -81,7 +82,7 @@ Inserts a new prospect/inquiry
 * $moved_dt **string** - &lt;p&gt;Date moved&lt;/p&gt;
 * $move2app **string** - &lt;p&gt;Date moved to applicant&lt;/p&gt;
 * $contact **string** - &lt;p&gt;Contact information&lt;/p&gt;
-* $state_of_licensure **string** - &lt;p&gt;The persons state 2 character code such as TX for Texas where the license was granted&lt;/p&gt;
+* $state_of_licensure **string** - &lt;p&gt;The persons state 2 character code for license state&lt;/p&gt;
 * $level_of_education **string** - &lt;p&gt;Persons level of education&lt;/p&gt;
 * $level_comp **string** - &lt;p&gt;highest level completed&lt;/p&gt;
 * $hs_prereq **string** - &lt;p&gt;Highschool pre-req&lt;/p&gt;

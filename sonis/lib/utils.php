@@ -37,13 +37,13 @@ use SoapClient;
  *
  * Various php utilities
  *
- * @file utils.php
+ * @file Utils.php
  * @package Utilities
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class utils
+class Utils
 {
 
     /**
@@ -70,7 +70,7 @@ class utils
      *
      * @return array
      */
-    public function utils_api_cfg()
+    public function apiCfg()
     {
         return [
             'user' => $this->user,
@@ -86,9 +86,9 @@ class utils
      *
      * @return boolean Returns true or false if endpoint is up
      */
-    public function utils_api_up()
+    public function apiUp()
     {
-        $ch = curl_init($this->host . '/cfc/soapapi.cfc?wsdl');
+        $ch = curl_init($this->host . '/cfc/SoapApi.cfc?wsdl');
         curl_setopt($ch, CURLOPT_HEADER, true);
         curl_setopt($ch, CURLOPT_NOBODY, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -115,16 +115,16 @@ class utils
     /**
      * Generates a new Sonis ID
      *
-     * @lastname string the persons last name
+     * @param string $lastname string the persons last name
      * @return string the generated id
      */
-    public function utils_create_id($lastname)
+    public function createID($lastname)
     {
-        $ln = $this->utils_uc(substr($lastname, 0, 2));
+        $ln = $this->uc(substr($lastname, 0, 2));
         do {
             $sonisid = $ln . rand(1000000, 9999000);
             $stmt = "SELECT soc_sec FROM name WHERE soc_sec = '$sonisid'";
-            $matcher = soapsql::run($stmt);
+            $matcher = SoapSql::run($stmt);
         } while ($matcher != 0);
         $result = $sonisid;
         return $result;
@@ -136,12 +136,12 @@ class utils
      * Some tables require a random (*_rid field),
      * this will create a compatible integer for use.
      *
-     * @suffix Either a 0 or 1 suffixed to match Sonis rid's
+     * @param string $suffix Either a 0 or 1 suffixed to match Sonis rid's
      * @example 201909282842393810
      * @author Jason A. Everling
      * @return string the generated number
      */
-    public function utils_create_rid($suffix = '')
+    public function createRID($suffix = '')
     {
         $result = '';
         $now = date("Ymd");
@@ -166,7 +166,7 @@ class utils
      * @param string $case Return as uppercase or lowercase, either of 'lc' or 'uc'
      * @return string $uuid The generated UUID
      */
-    public function utils_create_uuid($format = '', $case = '')
+    public function createUUID($format = '', $case = '')
     {
         if ($format == 'cf') {
             $uuid = sprintf(
@@ -194,9 +194,9 @@ class utils
             );
         }
         if ($case == 'uc') {
-            return $this->utils_uc($uuid);
+            return $this->uc($uuid);
         }
-        return $this->utils_lc($uuid);
+        return $this->lc($uuid);
     }
 
     /**
@@ -205,7 +205,7 @@ class utils
      * @param mixed $call The SOAP call that is executed
      * @return bool|mixed
      */
-    public function utils_debug_soap($call)
+    public function debugSoap($call)
     {
         $message = $call->__getLastRequest();
         if ($this->opts['debug_display']) {
@@ -221,7 +221,7 @@ class utils
      * @return false|string
      * http://docs.php.net/manual/en/function.date.php
      */
-    public function utils_dt($date)
+    public function dt($date)
     {
         return date("Y-m-d", strtotime($date));
     }
@@ -235,7 +235,7 @@ class utils
      * @return mixed
      * @link http://docs.php.net/manual/en/function.trigger-error.php
      */
-    public function utils_event_error($msg, $fail)
+    public function eventError($msg, $fail)
     {
         if (!$fail) {
             return trigger_error($msg);
@@ -252,7 +252,7 @@ class utils
      * @return false|string
      * http://docs.php.net/manual/en/function.strtolower.php
      */
-    public function utils_lc($data)
+    public function lc($data)
     {
         return strtolower($data);
     }
@@ -265,7 +265,7 @@ class utils
      * @return false|string
      * @link http://docs.php.net/manual/en/function.strtoupper.php
      */
-    public function utils_uc($data)
+    public function uc($data)
     {
         return strtoupper($data);
     }
@@ -286,24 +286,24 @@ class utils
      * @link http://docs.php.net/manual/en/function.array-reduce.php
      * @link http://docs.php.net/manual/en/function.array-map.php
      */
-    public function utils_array_process($array)
+    public function arrayProcess($array)
     {
         global $wsdl;
         if (is_object($array)) {
-            $obj = $this->utils_array_trim($this->utils_array_merge($array));
+            $obj = $this->arrayTrim($this->arrayMerge($array));
             if (count($array->columnList) == count($obj)) {
-                $result = $this->utils_array_combine($array->columnList, $obj);
+                $result = $this->arrayCombine($array->columnList, $obj);
             } else {
                 if (count($array->data) > 0) {
-                    foreach ($array->data AS $column => $data) {
-                        $result[] = $this->utils_array_combine($array->columnList, $data);
+                    foreach ($array->data as $column => $data) {
+                        $result[] = $this->arrayCombine($array->columnList, $data);
                     }
                 } else {
                     /**
-                     * Only for soapsql.cfc,
-                     * but soapapi.cfc can have empty results
+                     * Only for SoapSql.cfc,
+                     * but SoapApi.cfc can have empty results
                      */
-                    if (!strpos($wsdl, 'soapsql')) {
+                    if (!strpos($wsdl, 'SoapSql')) {
                         $result = '0';
                     } else {
                         $result = $array;
@@ -322,8 +322,8 @@ class utils
              */
             if (is_string($array)) {
                 if (strpos($array, 'Error')) {
-                    $this->utils_array_exception($array);
-                    $this->utils_event_error(lang::get('array_error'), true);
+                    $this->arrayException($array);
+                    $this->eventError(lang::get('array_error'), true);
                 } else {
                     $result = $array;
                 }
@@ -344,7 +344,7 @@ class utils
      * @link http://docs.php.net/manual/en/function.array-combine.php#118397
      * @author welcome@el-mustafa.com
      */
-    public function utils_array_combine($keys, $values)
+    public function arrayCombine($keys, $values)
     {
         $result = [];
         foreach ($keys as $i => $k) {
@@ -352,8 +352,7 @@ class utils
         }
         array_walk($result, function (&$v) {
             $v = (count($v) == 1) ? array_pop($v) : $v;
-        }
-        );
+        });
         return $result;
     }
 
@@ -364,7 +363,7 @@ class utils
      * @return boolean
      * @link http://docs.php.net/manual/en/function.error-log.php
      */
-    public function utils_array_exception($array)
+    public function arrayException($array)
     {
         return error_log($array);
     }
@@ -382,7 +381,7 @@ class utils
      * @return array
      * @link http://docs.php.net/manual/en/function.is-array.php
      */
-    public function utils_array_create_assoc($array)
+    public function arrayCreateAssoc($array)
     {
         $result = [];
         $convert = ((isset($array['data'])) && (is_array($array['data'])) && ($array['data'] != []));
@@ -411,14 +410,14 @@ class utils
      * @return array|boolean
      * @link http://docs.php.net/manual/en/function.array-change-key-case.php
      */
-    public function utils_array_lc($array)
+    public function arrayLC($array)
     {
         $multi_array = false;
         if (is_array($array) && isset($array[0])) {
             $multi_array = true;
         }
         if ($multi_array) {
-            $result = $this->utils_array_of_arrays_lc($array);
+            $result = $this->arrayOfArraysLC($array);
         } else {
             $result = array_change_key_case($array, CASE_LOWER);
         }
@@ -431,24 +430,24 @@ class utils
      * @param array $array
      * @return array
      */
-    private function utils_array_of_arrays_lc($array)
+    private function arrayOfArraysLC($array)
     {
         return array_map(function ($item) {
             if (is_array($item)) {
-                $item = $this->utils_array_of_arrays_lc($item);
+                $item = $this->arrayOfArraysLC($item);
             }
             return $item;
         }, array_change_key_case($array, CASE_LOWER));
     }
 
     /**
-     * Reduce/Deduplicate an array using array_merge
+     * Reduce/Deduplicate an array using arrayMerge
      *
      * @param array $array
      * @return array|boolean
      * @link http://docs.php.net/manual/en/function.array-reduce.php
      */
-    public function utils_array_merge($array)
+    public function arrayMerge($array)
     {
         $result = array_reduce($array->data, 'array_merge', []);
         return $result;
@@ -461,7 +460,7 @@ class utils
      * @return array|boolean
      * @link http://docs.php.net/manual/en/function.array-map.php
      */
-    public function utils_array_trim($array)
+    public function arrayTrim($array)
     {
         $result = array_map('trim', $array);
         return $result;
@@ -482,7 +481,7 @@ class utils
      * @link http://docs.php.net/manual/en/function.array-keys.php
      * @link http://docs.php.net/manual/en/function.get-object-vars.php
      */
-    public function utils_obj_to_array($obj)
+    public function objToArray($obj)
     {
         $result = [];
         if (!is_array($obj)) {
@@ -496,9 +495,9 @@ class utils
         }
         foreach ($keys as $key) {
             if (!is_array($obj)) {
-                $result[$key] = $this->utils_obj_to_array($obj->$key);
+                $result[$key] = $this->objToArray($obj->$key);
             } else {
-                $result[$key] = $this->utils_obj_to_array($obj[$key]);
+                $result[$key] = $this->objToArray($obj[$key]);
             }
         }
         return $result;
@@ -510,9 +509,11 @@ class utils
      * Configurations can be set within sonis.php
      * $cfg->opts section.
      *
+     * @param string $wsdl the wsdl location
+     * @param array $opts SOAP options
      * @return array|SoapClient
      */
-    public function utils_soap_client($wsdl, $opts)
+    public function soapClient($wsdl, $opts)
     {
         try {
             $result = new SoapClient($wsdl, $opts);
@@ -532,7 +533,7 @@ class utils
      * @param string $start_string The value to search for
      * @return bool True or False if found
      */
-    public function utils_starts_with($string, $start_string)
+    public function startsWith($string, $start_string)
     {
         $len = strlen($start_string);
         return (substr($string, 0, $len) === $start_string);
@@ -541,13 +542,14 @@ class utils
     /**
      * Returns the Sonis PHP API version information
      *
+     * @param string $key The display type to get, major, patch or pretty
      * @return string $result API version for Sonis
      */
-    public function get_version($key)
+    public function getVersion($key)
     {
         $result = '';
-        $maj = $this->utils_api_cfg()['release']['version'];
-        $patch = $this->utils_api_cfg()['release']['patch'];
+        $maj = $this->apiCfg()['release']['version'];
+        $patch = $this->apiCfg()['release']['patch'];
         $full = 'v' . $maj . '.' . $patch;
         if ($key == 'major') {
             $result = $maj;

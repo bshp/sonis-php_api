@@ -34,17 +34,20 @@ namespace Jenzabar\Sonis\Api;
  *
  * Grouped functions related to the object being referenced
  *
- * @file focus.php
+ * @file Focus.php
  * @package Utilities
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class focus
+class Focus
 {
 
     /**
-     * @return bool
+     * A placeholder for future use
+     *
+     * @todo Complete focus class
+     * @return boolean
      */
     public function user()
     {
@@ -52,7 +55,10 @@ class focus
     }
 
     /**
-     * @return bool
+     * A placeholder for future use
+     *
+     * @todo Complete focus class
+     * @return boolean
      */
     public function course()
     {
@@ -60,7 +66,10 @@ class focus
     }
 
     /**
-     * @return bool
+     * A placeholder for future use
+     *
+     * @todo Complete focus class
+     * @return boolean
      */
     public function group()
     {
@@ -68,7 +77,10 @@ class focus
     }
 
     /**
-     * @return bool
+     * A placeholder for future use
+     *
+     * @todo Complete focus class
+     * @return boolean
      */
     public function role()
     {
@@ -76,7 +88,10 @@ class focus
     }
 
     /**
-     * @return bool
+     * A placeholder for future use
+     *
+     * @todo Complete focus class
+     * @return boolean
      */
     public function dept()
     {

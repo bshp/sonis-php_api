@@ -40,13 +40,13 @@ namespace Jenzabar\Sonis\Api;
  *
  * Language strings used in the api
  *
- * @file lang.php
+ * @file Lang.php
  * @package Language
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2019
  * @license https://opensource.org/licenses/MIT
  */
-class lang
+class Lang
 {
 
     /**
@@ -71,5 +71,4 @@ class lang
         }
         return $lang[$key];
     }
-
 }

@@ -34,15 +34,20 @@ namespace Jenzabar\Sonis\Api;
  *
  * Component: crs_sec_list.cfc
  *
- * @file course.php
+ * @file Course.php
  * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class course
+class Course
 {
 
+    /**
+     * The Sonis component to call
+     *
+     * @var string $comp
+     */
     private static $comp = 'crs_sec_list';
 
     /**
@@ -51,7 +56,7 @@ class course
      * @param integer $crs_id The course id
      * @return array
      */
-    public static function getcoreq($crs_id)
+    public static function getCoreReq($crs_id)
     {
         $comp = self::$comp;
         $method = 'getcoreq';
@@ -73,7 +78,7 @@ class course
      * @param integer $crs_id The course id
      * @return array
      */
-    public static function getcreqs($crs_id)
+    public static function getCourseReqs($crs_id)
     {
         $comp = self::$comp;
         $method = 'getcreqs';
@@ -95,7 +100,7 @@ class course
      * @param integer $crs_id The course id
      * @return array
      */
-    public static function getprereq($crs_id)
+    public static function getPreReqs($crs_id)
     {
         $comp = self::$comp;
         $method = 'getprereq';
@@ -119,7 +124,7 @@ class course
      * @param string $camp_cod The campus code
      * @return array
      */
-    public static function getprereqco($schyear, $semlist, $camp_cod = '')
+    public static function getCoursePreReqs($schyear, $semlist, $camp_cod = '')
     {
         $comp = self::$comp;
         $method = 'getprereqco';

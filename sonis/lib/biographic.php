@@ -34,15 +34,20 @@ namespace Jenzabar\Sonis\Api;
  *
  * Component: biograph.cfc, biographic.cfc
  *
- * @file biographic.php
+ * @file Biographic.php
  * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class biographic
+class Biographic
 {
 
+    /**
+     * The Sonis component to call
+     *
+     * @var string $comp
+     */
     private static $comp = 'biographic';
 
     /**
@@ -75,7 +80,7 @@ class biographic
      * @param string $semester the semester, either 1,2,3,4
      * @return array
      */
-    public static function get_enrollstat(
+    public static function getEnrollStat(
         $soc_sec,
         $sch_yr,
         $semester
@@ -102,7 +107,7 @@ class biographic
      * @param string $soc_sec The objects unique identifier
      * @return array
      */
-    public static function namesearch($soc_sec)
+    public static function nameSearch($soc_sec)
     {
         $comp = self::$comp;
         $method = 'namesearch';
@@ -110,8 +115,12 @@ class biographic
         $params = [
             ['soc_sec', $soc_sec]
         ];
-        ////return $params;
-        return ['comp' => $comp, 'returns' => $returns, 'params' => $params, 'method' => $method];
+        return [
+            'comp' => $comp,
+            'returns' => $returns,
+            'params' => $params,
+            'method' => $method
+        ];
     }
 
     /**
@@ -120,7 +129,7 @@ class biographic
      * @param string $soc_sec The objects unique identifier
      * @return array
      */
-    public static function namesearch2($soc_sec)
+    public static function nameSearch2($soc_sec)
     {
         $comp = self::$comp;
         $method = 'namesearch2';
@@ -147,7 +156,7 @@ class biographic
      * @param string $visa_issue_date
      * @return array
      */
-    public static function nmcit(
+    public static function updateCitizenship(
         $soc_sec,
         $birth_contry,
         $citizen_country,
@@ -181,7 +190,7 @@ class biographic
      * @param string $mod_stat The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI
      * @return array
      */
-    public static function nmcitsearch($soc_sec, $mod_stat = '')
+    public static function searchCitizenship($soc_sec, $mod_stat = '')
     {
         $comp = self::$comp;
         $method = 'nmcitsearch';
@@ -249,7 +258,7 @@ class biographic
      * @param string $operator The persons unqiue ID adding or modifying the record. Please change the value
      * @return array
      */
-    public static function save_biographic(
+    public static function saveBiographic(
         $soc_sec,
         $mod_stat,
         $first_name,
@@ -378,7 +387,7 @@ class biographic
      * @param string $memo Primary memo on Bio page
      * @return array
      */
-    public static function update_descriptive(
+    public static function updateDescriptive(
         $soc_sec,
         $photo,
         $ssn,
@@ -428,29 +437,15 @@ class biographic
     /**
      * Creates a new person record
      *
+     * @param string $mod_stat The status of the person to be created
      * @param string $first_name The persons first name
      * @param string $last_name The persons last name
-     * @param string $birthdate The persons birthday like 05/12/2001
-     * @param string $preferred The persons preferred address, yes or no
-     * @param string $st_addr The persons street address
-     * @param string $add_addr The persons street address number, such as APT 101 or #101
-     * @param string $add_add2 Don't think we have ever used this one
-     * @param string $city The persons city
-     * @param string $state The persons state 2 character code such as TX for Texas
-     * @param string $zip The persons zip code
-     * @param string $phone The persons phone number
-     * @param string $cell_phone The persons cell phone number
-     * @param string $fax The objects fax number
-     * @param string $e_mail The primary email address for the record type
-     * @param string $work_phone The persons work phone number
-     * @param string $county_cod The 2 character code for county such as BX for Bexar. It is best to use a dropbox for these
-     * @param string $country The 2 character code for country like US
-     * @param string $mod_stat The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI
-     * @param string $mi The persons middle initial, 1 character
+     * @param string $mi The persons middle initial, 1 characteR
      * @param string $prefix The persons prefix, like Mr or Mrs
      * @param string $suffix The persons suffix, like MSN or Phd
      * @param string $maiden The persons maiden name
      * @param string $nickname The persons preferred name
+     * @param string $birthdate The persons birthday like 05/12/2001
      * @param string $gender The persons gender, M or F
      * @param string $ssn The persons ssn
      * @param string $affiliation_cod The persons affiliation status code
@@ -484,6 +479,20 @@ class biographic
      * @param string $photo The persons photo file name, has to be the file name like name.jpg
      * @param string $iped_stat The persons iped status code
      * @param string $operator The persons unqiue ID adding or modifying the record. Please change the value
+     * @param string $preferred The persons preferred address, yes or no
+     * @param string $st_addr The persons street address
+     * @param string $add_addr The persons street address number, such as APT 101 or #101
+     * @param string $add_add2 Don't think we have ever used this one
+     * @param string $city The persons city
+     * @param string $state The persons state 2 character code such as TX for Texas
+     * @param string $zip The persons zip code
+     * @param string $phone The persons phone number
+     * @param string $cell_phone The persons cell phone number
+     * @param string $fax The objects fax number
+     * @param string $e_mail The primary email address for the record type
+     * @param string $work_phone The persons work phone number
+     * @param string $county_cod The 2 character code for county such as BX for Bexar
+     * @param string $country The 2 character code for country like US
      * @param string $address_ce1 Custom address field
      * @param string $address_ce2 Custom address field
      * @param string $address_ce3 Custom address field
@@ -493,7 +502,7 @@ class biographic
      * @param string $address_fe1 Custom address field
      * @return array
      */
-    public static function create_biographic(
+    public static function createBiographic(
         $mod_stat,
         $first_name,
         $last_name,
@@ -650,7 +659,7 @@ class biographic
      * @param string $acadstat_cod
      * @return array
      */
-    public static function update_name(
+    public static function updateName(
         $soc_sec,
         $mod_stat,
         $first_name,

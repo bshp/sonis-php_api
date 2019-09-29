@@ -1,4 +1,4 @@
-program
+Jenzabar\Sonis\Api\Program
 ===============
 
 Class program
@@ -10,35 +10,36 @@ Component: program.cfc
 Usage: Program related, mainly for applicants
 
 
-* Class name: program
-* Namespace: 
+* Class name: Program
+* Namespace: Jenzabar\Sonis\Api
 
 
 
 
 
+Properties
+----------
+
+
+### $comp
+
+    private string $comp = 'program'
+
+The Sonis component to call
+
+
+
+* Visibility: **private**
+* This property is **static**.
 
 
 Methods
 -------
 
 
-### get_comp
+### appProgramSearch
 
-    mixed program::get_comp()
-
-
-
-
-
-* Visibility: **private**
-
-
-
-
-### approgsearch
-
-    array program::approgsearch(string $soc_sec)
+    array Jenzabar\Sonis\Api\Program::appProgramSearch(string $soc_sec)
 
 Search for a program
 
@@ -53,9 +54,9 @@ Search for a program
 
 
 
-### complete_app
+### appComplete
 
-    array program::complete_app(string $soc_sec)
+    array Jenzabar\Sonis\Api\Program::appComplete(string $soc_sec)
 
 Complete an application
 
@@ -70,9 +71,9 @@ Complete an application
 
 
 
-### delete_approg
+### appProgramDelete
 
-    array program::delete_approg($app_rid)
+    array Jenzabar\Sonis\Api\Program::appProgramDelete($app_rid)
 
 Delete a program record
 
@@ -87,9 +88,9 @@ Delete a program record
 
 
 
-### insert_approg
+### insertAppProgram
 
-    array program::insert_approg(string $soc_sec, string $camp_cod, string $entry_date, string $prg_cod, string $div_cod, string $app_date, string $ack_date, string $trans_date, string $is_applicant, string $preferred, string $incomplete, string $app_rid, string $ref_source, string $fee_rec, string $apfee_dt, string $prior_app, string $app_yr, string $acknowledg, string $sms_trans, string $matric_fee, string $degree_ap, string $degree_ac, string $major_ap, string $major_ac, string $time_maint, string $date_maint, string $trans_done, string $d_soc_sec, string $operator)
+    array Jenzabar\Sonis\Api\Program::insertAppProgram(string $soc_sec, string $camp_cod, string $entry_date, string $prg_cod, string $div_cod, string $app_date, string $ack_date, string $trans_date, string $is_applicant, string $preferred, string $incomplete, string $app_rid, string $ref_source, string $fee_rec, string $apfee_dt, string $prior_app, string $app_yr, string $acknowledg, string $sms_trans, string $matric_fee, string $degree_ap, string $degree_ac, string $major_ap, string $major_ac, string $time_maint, string $date_maint, string $trans_done, string $operator, string $d_soc_sec)
 
 Insert a program record
 
@@ -127,14 +128,14 @@ Insert a program record
 * $time_maint **string**
 * $date_maint **string**
 * $trans_done **string**
-* $d_soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
 * $operator **string** - &lt;p&gt;The persons unqiue ID adding or modifying the record. Please change the value&lt;/p&gt;
+* $d_soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
 
 
 
-### preventrepeats
+### preventRepeats
 
-    array program::preventrepeats(string $soc_sec, string $prg_cod)
+    array Jenzabar\Sonis\Api\Program::preventRepeats(string $soc_sec, string $prg_cod)
 
 Prevent repeats update
 
@@ -152,7 +153,7 @@ Prevent repeats update
 
 ### programSearch
 
-    array program::programSearch(string $soc_sec)
+    array Jenzabar\Sonis\Api\Program::programSearch(string $soc_sec)
 
 Search for a program
 

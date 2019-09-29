@@ -28,21 +28,26 @@
 namespace Jenzabar\Sonis\Api;
 
 /**
- * Class onlineapp
+ * Class OnlineApp
  *
  * Sonis API Framework
  *
  * Component: student_app.cfc, oa_emc.cfc, oa_fields.cfc, oa_licenses.cfc, oa_opt_fields.cfc, oa_questions.cfc
  *
- * @file onlineapp.php
+ * @file OnlineApp.php
  * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class onlineapp
+class OnlineApp
 {
 
+    /**
+     * The Sonis component to call
+     *
+     * @var string $comp
+     */
     private static $comp = 'student_app';
 
     /**
@@ -52,7 +57,7 @@ class onlineapp
      * @param string $pin Encrypted PIN using private key
      * @return array
      */
-    public static function app_login($soc_sec, $pin)
+    public static function appLogin($soc_sec, $pin)
     {
         $comp = 'student_app';
         $method = 'app_login';
@@ -79,13 +84,23 @@ class onlineapp
      * @param string $pin Encrypted PIN using private key
      * @param string $mi The persons middle initial, 1 character
      * @param string $phone The persons phone number
-     * @param integer $citizen
      * @param string $zip The persons zip code
      * @param string $mod_stat The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI
+     * @param integer $citizen
      * @return array
      */
-    public static function create($first_name, $last_name, $birthdate, $e_mail, $pin, $mi, $phone, $citizen = 1, $zip, $mod_stat)
-    {
+    public static function createApp(
+        $first_name,
+        $last_name,
+        $birthdate,
+        $e_mail,
+        $pin,
+        $mi,
+        $phone,
+        $zip,
+        $mod_stat,
+        $citizen = 1
+    ) {
         $comp = 'student_app';
         $method = 'create';
         $returns = 'yes';
@@ -118,7 +133,7 @@ class onlineapp
      * @param string $e_mail The primary email address for the record type
      * @return array
      */
-    public static function search($firstname, $lastname, $birthdate, $e_mail)
+    public static function searchApp($firstname, $lastname, $birthdate, $e_mail)
     {
         $comp = 'student_app';
         $method = 'search';
@@ -144,7 +159,7 @@ class onlineapp
      * @param string $fieldnames
      * @return array
      */
-    public static function insert_oa_questions($soc_sec, $fieldnames)
+    public static function insertOAQuestions($soc_sec, $fieldnames)
     {
         $comp = 'oa_questions';
         $method = 'insert_oa_questions';
@@ -168,7 +183,7 @@ class onlineapp
      * @param string $column
      * @return array
      */
-    public static function oa_questions_search($soc_sec, $column)
+    public static function searchOAQuestions($soc_sec, $column)
     {
         $comp = 'oa_questions';
         $method = 'oa_questions_search';
@@ -194,7 +209,7 @@ class onlineapp
      * @param integer $oa_section_rid
      * @return array
      */
-    public static function oa_questions_search_format($soc_sec, $oa_questions_row, $oa_questions_col, $oa_section_rid = '')
+    public static function searchOAQuestionsFormat($soc_sec, $oa_questions_row, $oa_questions_col, $oa_section_rid = '')
     {
         $comp = 'oa_questions';
         $method = 'oa_questions_search_format';

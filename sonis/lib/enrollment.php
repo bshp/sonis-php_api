@@ -34,23 +34,30 @@ namespace Jenzabar\Sonis\Api;
  *
  * Component: enrollment.cfc
  *
- * @file enrollment.php
+ * @file Enrollment.php
  * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016
  * @license https://opensource.org/licenses/MIT
  */
-class enrollment
+class Enrollment
 {
 
+    /**
+     * The Sonis component to call
+     *
+     * @var string $comp
+     */
     private static $comp = 'enrollment';
 
     /**
+     * A placeholder for future use
+     *
+     * @todo Complete enrollment class
      * @return boolean
      */
     public static function placeholder()
     {
         return true;
     }
-
 }
