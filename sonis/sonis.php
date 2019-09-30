@@ -40,7 +40,7 @@ namespace Jenzabar\Sonis\Api;
 
 use stdClass;
 
-require __DIR__ . '/lib.php';
+require __DIR__ . '/autoload.php';
 
 global $cfg;  // Needed for PHPUnit
 
@@ -107,8 +107,7 @@ $cfg->host = rtrim($cfg->host, '/');
 //===========================
 // ensure api is reachable  #
 //===========================
-$utils = new utils();
-if (!$utils->utils_api_up()) {
-    $utils->utils_event_error(lang::get('api_unavailable'), true);
+$utils = new Utils();
+if (!$utils->apiUp()) {
+    $utils->eventError(lang::get('api_unavailable'), true);
 }
-//closing tag left out on purpose to prevent trailing whitespaces

@@ -3,7 +3,7 @@
  *
  * MIT License
  *
- * Copyright (c) 2016 Jason A. Everling
+ * Copyright (c) 2019 Jason A. Everling
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,52 +23,54 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
+ *
+ *    For Sonis Coldfusion Web Services
+ *
+ *    By: Jason A. Everling
+ *    Email: jeverling@bshp.edu
+ *
  */
 
+namespace Jenzabar\Sonis\Api;
+
 /**
- * Sonis API Framework
+ * Class lang
  *
- * Test file for SoapApi.cfc, the drp_box.cfc component
+ * Language
  *
- * @file api.Dropbox.php
- * @package Test
+ * Language strings used in the api
+ *
+ * @file Lang.php
+ * @package Language
  * @author Jason A. Everling <jason...@gmail.com>
- * @copyright 2016
+ * @copyright 2019
  * @license https://opensource.org/licenses/MIT
  */
+class Lang
+{
 
-use Jenzabar\Sonis\Api\SoapApi;
-use Jenzabar\Sonis\Api\Dropbox;
+    /**
+     * Get a language string for the $key provided
+     *
+     * @param string $key The key identifier for the language string
+     * @return mixed $key The language string for the key defined
+     */
+    public static function get($key)
+    {
 
-define('SONIS_USER', 'username');  // your api user
-define('SONIS_PASSWORD', 'password'); // your api password
-define('SONIS_HOST', 'https://sonis.example.edu'); // your sonis host url, do not append /
+        global $cfg;
+        $i18n = $cfg->locale;
+        $root = $cfg->root;
+        $lang = [];
+        $locale = $root . '/lang/' . $i18n . '.php';
 
-require __DIR__ . '/../sonis.php';
-
-/**
- * All the arguments to send.
- *
- * Required format:
- * $args = class::function(all your variables)
- *
- * @var mixed $args
- */
-$args = Dropbox::program(true, true, false, false, '');
-
-/**
- * Start the API call process.
- * Almost every call will look like this.
- *
- * @var mixed $request
- */
-$request = SoapApi::run($args);
-?>
-<html>
-<body>
-<form>
-    <?php echo $request; ?>
-    <p><?php print_r('Sonis API Framework: ' . $utils->getVersion('pretty')); ?> </p>
-</form>
-</body>
-</html>
+        if ($i18n == '') {
+            /** @noinspection PhpIncludeInspection */
+            include $root . '/lang/en-US.php';
+        } else {
+            /** @noinspection PhpIncludeInspection */
+            include $locale;
+        }
+        return $lang[$key];
+    }
+}

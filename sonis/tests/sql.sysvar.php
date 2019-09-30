@@ -28,7 +28,7 @@
 /**
  * Sonis API Framework
  *
- * Test file for soapsql.cfc
+ * Test file for SoapSql.cfc
  *
  * @file sql.sysvar.php
  * @package Test
@@ -37,7 +37,7 @@
  * @license https://opensource.org/licenses/MIT
  */
 
-use Jenzabar\Sonis\Api\soapsql;
+use Jenzabar\Sonis\Api\SoapSql;
 
 define('SONIS_USER', 'username');  // your api user
 define('SONIS_PASSWORD', 'password'); // your api password
@@ -72,7 +72,7 @@ $stmt = "SELECT TOP 1 * FROM sysvar";
  * @var array $result
  * @example $result['FIRST_NAME'];
  */
-$result = soapsql::run($stmt);
+$result = SoapSql::run($stmt);
 
 print_r($result);
-print_r('Sonis API Framework: ' . $utils->get_version('pretty'));
+print_r('Sonis API Framework: ' . $utils->getVersion('pretty'));
