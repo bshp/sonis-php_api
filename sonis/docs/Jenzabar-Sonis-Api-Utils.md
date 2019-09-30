@@ -15,6 +15,19 @@ Various php utilities
 
 
 
+Properties
+----------
+
+
+### 
+
+    public string 
+
+release the release version
+
+
+
+* Visibility: **public**
 
 
 Methods

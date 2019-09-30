@@ -21,6 +21,7 @@ API Index
             * [OnlineApp](Jenzabar-Sonis-Api-OnlineApp.md)
             * [Enrollment](Jenzabar-Sonis-Api-Enrollment.md)
             * [Course](Jenzabar-Sonis-Api-Course.md)
+            * [Test](Jenzabar-Sonis-Api-Test.md)
             * [SoapApi](Jenzabar-Sonis-Api-SoapApi.md)
             * [Person](Jenzabar-Sonis-Api-Person.md)
             * [Employment](Jenzabar-Sonis-Api-Employment.md)

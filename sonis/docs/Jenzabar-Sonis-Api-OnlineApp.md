@@ -137,7 +137,7 @@ Search for an online app question
 
 ### searchOAQuestionsFormat
 
-    array Jenzabar\Sonis\Api\OnlineApp::searchOAQuestionsFormat(string $soc_sec, string $oa_questions_row, string $oa_questions_col, integer $oa_section_rid)
+    array Jenzabar\Sonis\Api\OnlineApp::searchOAQuestionsFormat(string $soc_sec, string $oa_questions_row, string $oa_questions_col, string $oa_section_rid)
 
 The search format
 
@@ -151,6 +151,6 @@ The search format
 * $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
 * $oa_questions_row **string**
 * $oa_questions_col **string**
-* $oa_section_rid **integer**
+* $oa_section_rid **string**
 
 
