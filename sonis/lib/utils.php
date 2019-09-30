@@ -37,6 +37,18 @@ use SoapClient;
  *
  * Various php utilities
  *
+ * @property string user api username
+ * @property string pass api users password
+ * @property string host api host
+ * @property boolean proxy_net if a proxy is required, true or false
+ * @property boolean proxy_auth if proxy authentication is required, true or false
+ * @property string proxy_host proxy host, example.proxy.com or 1.1.1.1
+ * @property integer proxy_port proxy port to use
+ * @property string proxy_user proxy user
+ * @property string proxy_pass proxy users password
+ * @property array opts additional config options
+ * @property string release the release version
+ *
  * @file Utils.php
  * @package Utilities
  * @author Jason A. Everling <jason...@gmail.com>
@@ -289,6 +301,7 @@ class Utils
     public function arrayProcess($array)
     {
         global $wsdl;
+        $result = '';
         if (is_object($array)) {
             $obj = $this->arrayTrim($this->arrayMerge($array));
             if (count($array->columnList) == count($obj)) {

@@ -206,7 +206,7 @@ class OnlineApp
      * @param string $soc_sec The objects unique identifier
      * @param string $oa_questions_row
      * @param string $oa_questions_col
-     * @param integer $oa_section_rid
+     * @param string $oa_section_rid
      * @return array
      */
     public static function searchOAQuestionsFormat($soc_sec, $oa_questions_row, $oa_questions_col, $oa_section_rid = '')

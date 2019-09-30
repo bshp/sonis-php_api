@@ -61,12 +61,14 @@ class Lang
         global $cfg;
         $i18n = $cfg->locale;
         $root = $cfg->root;
-
+        $lang = [];
         $locale = $root . '/lang/' . $i18n . '.php';
 
         if ($i18n == '') {
+            /** @noinspection PhpIncludeInspection */
             include $root . '/lang/en-US.php';
         } else {
+            /** @noinspection PhpIncludeInspection */
             include $locale;
         }
         return $lang[$key];

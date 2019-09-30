@@ -40,17 +40,15 @@ set_include_path(__DIR__ . '/lib');
  * sonis.php does everything else
  */
 spl_autoload_register(function ($class) {
-
     $ns = 'Jenzabar\Sonis\Api';
     $len = strlen($ns);
-
+    //Check before proceeding
     if (strncmp($ns, $class, $len) !== 0) {
         return;
     }
 
     $lib = explode('\\', $class);
     require end($lib) . '.php';
-
 });
 
 //============================

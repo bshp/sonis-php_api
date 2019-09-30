@@ -61,43 +61,63 @@ class Selectable
         global $utils;
         $stmt = '';
         $result = '';
+        $key = '';
+        $value = '';
         if ($options == 'cell_provider') {
-            $stmt = "SELECT rtrim(c.cell_provider) as cell_provider FROM cell_provider AS c ORDER BY c.cell_provider ASC";
+            $stmt = "SELECT rtrim(c.cell_provider) as cell_provider
+                     FROM cell_provider AS c 
+                     ORDER BY c.cell_provider ASC";
             $key = 'cell_provider';
             $value = 'cell_provider';
         }
         if ($options == 'country') {
-            $stmt = "SELECT rtrim(c.country) as country, rtrim(c.country_txt) as country_txt FROM country AS c ORDER BY c.country_txt ASC";
+            $stmt = "SELECT rtrim(c.country) as country, rtrim(c.country_txt) as country_txt
+                     FROM country AS c
+                     ORDER BY c.country_txt ASC";
             $key = 'country';
             $value = 'country_txt';
         }
         if ($options == 'department') {
-            $stmt = "SELECT RTRIM(dept_cod) AS dept_cod, RTRIM(dept_txt) AS dept_txt FROM dept WHERE disabled = '0' ORDER BY dept_cod ASC";
+            $stmt = "SELECT RTRIM(dept_cod) AS dept_cod, RTRIM(dept_txt) AS dept_txt
+                     FROM dept
+                     WHERE disabled = '0'
+                     ORDER BY dept_cod ASC";
             $key = 'dept_cod';
             $value = 'dept_txt';
         }
         if ($options == 'ethnicity') {
-            $stmt = "SELECT rtrim(e.ethnic_cod) as ethnic_cod, rtrim(e.ethnic_txt) as ethnic_txt FROM ethnic AS e ORDER BY e.ethnic_txt ASC";
+            $stmt = "SELECT rtrim(e.ethnic_cod) as ethnic_cod, rtrim(e.ethnic_txt) as ethnic_txt
+                     FROM ethnic AS e
+                     ORDER BY e.ethnic_txt ASC";
             $key = 'ethnic_cod';
             $value = 'ethnic_txt';
         }
         if ($options == 'gender') {
-            $stmt = "SELECT rtrim(g.gender_cod) as gender_cod, rtrim(g.gender_txt) as gender_txt FROM gender AS g ORDER BY g.gender_txt ASC";
+            $stmt = "SELECT rtrim(g.gender_cod) as gender_cod, rtrim(g.gender_txt) as gender_txt
+                     FROM gender AS g
+                     ORDER BY g.gender_txt ASC";
             $key = 'gender_cod';
             $value = 'gender_txt';
         }
         if ($options == 'institution') {
-            $stmt = "SELECT rtrim(i.inst_txt) as inst_txt, rtrim(i.insttypcod) as insttypcod, rtrim(i.inst_cod) as inst_cod FROM institut AS i ORDER BY i.inst_txt ASC";
+            $stmt = "SELECT rtrim(i.inst_txt) as inst_txt, rtrim(i.insttypcod) as insttypcod,
+                            rtrim(i.inst_cod) as inst_cod
+                     FROM institut AS i
+                     ORDER BY i.inst_txt ASC";
             $key = 'inst_cod';
             $value = 'inst_txt';
         }
         if ($options == 'marital') {
-            $stmt = "SELECT rtrim(m.mar_cod) as mar_cod, rtrim(m.mar_txt) as mar_txt FROM marital AS m ORDER BY m.mar_txt ASC";
+            $stmt = "SELECT rtrim(m.mar_cod) as mar_cod, rtrim(m.mar_txt) as mar_txt
+                     FROM marital AS m
+                     ORDER BY m.mar_txt ASC";
             $key = 'mar_cod';
             $value = 'mar_txt';
         }
         if ($options == 'state') {
-            $stmt = "SELECT rtrim(s.state_name) as state_name, rtrim(s.state_abbr) as state_abbr FROM state AS s ORDER BY s.state_name ASC";
+            $stmt = "SELECT rtrim(s.state_name) as state_name, rtrim(s.state_abbr) as state_abbr
+                     FROM state AS s
+                     ORDER BY s.state_name ASC";
             $key = 'state_abbr';
             $value = 'state_name';
         }
@@ -131,14 +151,16 @@ class Selectable
         global $utils;
         $list = self::optionsList('cell_provider', $allow_blank);
         if ($user != '') {
-            $stmt = "SELECT a.soc_sec, rtrim(c.cell_provider) as cell_provider, rtrim(c.cell_provider_url) as cell_provider_url
+            $stmt = "SELECT a.soc_sec, rtrim(c.cell_provider) as cell_provider,
+                            rtrim(c.cell_provider_url) as cell_provider_url
                      FROM address AS a 
                         INNER JOIN cell_provider AS c ON a.cell_provider = c.cell_provider 
                             AND a.preferred = '1'
                     WHERE a.soc_sec = '$user'
                     ORDER BY c.cell_provider ASC";
             $selected = $utils->arrayLC(SoapSql::run($stmt));
-            return '<option value="' . $selected['cell_provider'] . '" selected>' . $selected['cell_provider'] . '</option>' . $list;
+            return '<option value="' . $selected['cell_provider'] . '" selected>'
+                    . $selected['cell_provider'] . '</option>' . $list;
         }
         return $list;
     }
@@ -162,7 +184,8 @@ class Selectable
                     WHERE a.soc_sec = '$user'
                     ORDER BY c.country_txt ASC";
             $selected = $utils->arrayLC(SoapSql::run($stmt));
-            return '<option value="' . $selected['country'] . '" selected>' . $selected['country_txt'] . '</option>' . $list;
+            return '<option value="' . $selected['country'] . '" selected>'
+                    . $selected['country_txt'] . '</option>' . $list;
         }
         return $list;
     }
@@ -184,7 +207,8 @@ class Selectable
                         INNER JOIN dept d on n.dept_cod = d.dept_cod
                      WHERE n.soc_sec = '$user'";
             $selected = $utils->arrayLC(SoapSql::run($stmt));
-            return '<option value="' . $selected['dept_cod'] . '" selected>' . $selected['dept_txt'] . '</option>' . $list;
+            return '<option value="' . $selected['dept_cod'] . '" selected>'
+                    . $selected['dept_txt'] . '</option>' . $list;
         }
         return $list;
     }
@@ -206,7 +230,8 @@ class Selectable
                         INNER JOIN ethnic AS e ON n.ethnic_cod = e.ethnic_cod 
                     WHERE n.soc_sec = '$user'";
             $selected = $utils->arrayLC(SoapSql::run($stmt));
-            return '<option value="' . $selected['ethnic_cod'] . '" selected>' . $selected['ethnic_txt'] . '</option>' . $list;
+            return '<option value="' . $selected['ethnic_cod'] . '" selected>'
+                    . $selected['ethnic_txt'] . '</option>' . $list;
         }
         return $list;
     }
@@ -229,7 +254,8 @@ class Selectable
                     WHERE n.soc_sec = '$user'
                     ORDER BY g.gender_txt ASC";
             $selected = $utils->arrayLC(SoapSql::run($stmt));
-            return '<option value="' . $selected['gender_cod'] . '" selected>' . $selected['gender_txt'] . '</option>' . $list;
+            return '<option value="' . $selected['gender_cod'] . '" selected>'
+                    . $selected['gender_txt'] . '</option>' . $list;
         }
         return $list;
     }
@@ -246,14 +272,16 @@ class Selectable
         global $utils;
         $list = self::optionsList('institution', $allow_blank);
         if ($user != '') {
-            $stmt = "SELECT n.soc_sec, rtrim(i.inst_txt) as inst_txt, rtrim(i.insttypcod) as insttypcod, rtrim(i.inst_cod) as inst_cod
+            $stmt = "SELECT n.soc_sec, rtrim(i.inst_txt) as inst_txt,
+                            rtrim(i.insttypcod) as insttypcod, rtrim(i.inst_cod) as inst_cod
                      FROM name AS n
                         INNER JOIN nmedu AS e ON n.soc_sec = e.soc_sec
                         INNER JOIN institut AS i ON e.inst_cod = i.inst_cod 
                     WHERE n.soc_sec = '$user'
                     ORDER BY i.inst_txt ASC";
             $selected = $utils->arrayLC(SoapSql::run($stmt));
-            return '<option value="' . $selected['inst_cod'] . '" selected>' . $selected['inst_txt'] . '</option>' . $list;
+            return '<option value="' . $selected['inst_cod'] . '" selected>'
+                    . $selected['inst_txt'] . '</option>' . $list;
         }
         return $list;
     }
@@ -275,7 +303,8 @@ class Selectable
                         INNER JOIN marital AS m ON n.mar_cod = m.mar_cod 
                     WHERE n.soc_sec = '$user'";
             $selected = $utils->arrayLC(SoapSql::run($stmt));
-            return '<option value="' . $selected['mar_cod'] . '" selected>' . $selected['mar_txt'] . '</option>' . $list;
+            return '<option value="' . $selected['mar_cod'] . '" selected>'
+                    . $selected['mar_txt'] . '</option>' . $list;
         }
         return $list;
     }
@@ -298,9 +327,9 @@ class Selectable
                         WHERE a.soc_sec = '$user'
                         ORDER BY s.state_name ASC";
             $selected = $utils->arrayLC(SoapSql::run($stmt));
-            return '<option value="' . $selected['state_abbr'] . '" selected>' . $selected['state_name'] . '</option>' . $list;
+            return '<option value="' . $selected['state_abbr'] . '" selected>'
+                    . $selected['state_name'] . '</option>' . $list;
         }
         return $list;
     }
-
 }
