@@ -301,7 +301,6 @@ class Utils
     public function arrayProcess($array)
     {
         global $wsdl;
-        $result = '';
         if (is_object($array)) {
             $obj = $this->arrayTrim($this->arrayMerge($array));
             if (count($array->columnList) == count($obj)) {
@@ -316,7 +315,7 @@ class Utils
                      * Only for SoapSql.cfc,
                      * but SoapApi.cfc can have empty results
                      */
-                    if (!strpos($wsdl, 'SoapSql')) {
+                    if (!strpos($wsdl, 'soapsql')) {
                         $result = '0';
                     } else {
                         $result = $array;
