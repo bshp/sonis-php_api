@@ -35,8 +35,8 @@ define('SOAP_DEBUG_DISPLAY', false); // Display the debug messages, requires SOA
 ## Usage
 Using this framework inside your package you just need to include the loader, sonis.php. You can check /tests/api.biographic.php as an example
 ````
-use Jenzabar\Sonis\Api\soapapi;
-use Jenzabar\Sonis\Api\biographic;
+use Jenzabar\Sonis\Api\SoapApi;
+use Jenzabar\Sonis\Api\Biographic;
 
 require __DIR__ . '/sonis/sonis.php';
 ````
@@ -45,8 +45,8 @@ Now you can make requests, a simple example to get all the details of a person, 
 
 ````
 $soc_sec = 'the persons id';
-$args = biographic::namesearch($soc_sec);
-$request = soapapi::run($args);
+$args = Biographic::nameSearch($soc_sec);
+$request = SoapApi::run($args);
 ````
 ## Notes 
 
@@ -59,13 +59,18 @@ Many of the methods might require almost every field to be sent even if null, se
 For example, if you want to update the address for a given person you would run,
 
 ````
-address::addressSearch($soc_sec, $preferred);
+Address::addressSearch($soc_sec, $preferred);
 ````
 
-then for each returned value, store them as variables so you can then run,
+then for each returned value, store them as variables, an easy way using php's extract() function, would do exactly that without any additional coding
 
 ````
-address::update_address($soc_sec, $add_add2, $add_addr, $cell_phone, $city, $country, $county_cod, $e_mail, $fax, $phone, $st_addr, $state, $work_phone, $zip, $cell_provider, $text_me);
+extract(SoapApi::run(Address::addressSearch($soc_sec, $preferred)));
+````
+you can then run,
+
+````
+Address::updateAddress($soc_sec, $add_add2, $add_addr, $cell_phone, $city, $country, $county_cod, $e_mail, $fax, $phone, $st_addr, $state, $work_phone, $zip, $cell_provider, $text_me);
 ```` 
 
 with all the values from your search and then you can replace the values that need to be updated.
