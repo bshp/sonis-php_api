@@ -567,7 +567,7 @@ class Biographic
         $address_de1,
         $address_fe1
     ) {
-        $comp = self::$comp;
+        $comp = 'Create_biographic';
         $method = 'insert_name';
         $returns = 'yes';
         $params = [
