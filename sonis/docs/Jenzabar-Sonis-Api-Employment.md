@@ -48,7 +48,7 @@ Deletes an employment record
 
 
 #### Arguments
-* $emp_rid **string** - &lt;p&gt;employer table id&lt;/p&gt;
+* $emp_rid **string** - employer table id
 
 
 
@@ -65,27 +65,27 @@ Inserts a new employment record
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $emp_emply **string** - &lt;p&gt;Employer&lt;/p&gt;
-* $emp_super **string** - &lt;p&gt;Employer manager&lt;/p&gt;
-* $emp_add1 **string** - &lt;p&gt;Employer address line 1&lt;/p&gt;
-* $emp_add2 **string** - &lt;p&gt;Employer address line 2&lt;/p&gt;
-* $emp_add3 **string** - &lt;p&gt;Employer address line 3&lt;/p&gt;
-* $emp_city **string** - &lt;p&gt;Employer city&lt;/p&gt;
-* $emp_state **string** - &lt;p&gt;Employer state&lt;/p&gt;
-* $emp_county **string** - &lt;p&gt;Employer county&lt;/p&gt;
-* $emp_zip **string** - &lt;p&gt;Employer zipcode&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $emp_emply **string** - Employer
+* $emp_super **string** - Employer manager
+* $emp_add1 **string** - Employer address line 1
+* $emp_add2 **string** - Employer address line 2
+* $emp_add3 **string** - Employer address line 3
+* $emp_city **string** - Employer city
+* $emp_state **string** - Employer state
+* $emp_county **string** - Employer county
+* $emp_zip **string** - Employer zipcode
 * $employ_type_rid **string**
-* $emp_pos **string** - &lt;p&gt;Employee position&lt;/p&gt;
-* $hrs_week **string** - &lt;p&gt;Hours a week&lt;/p&gt;
-* $start_dt **string** - &lt;p&gt;Start date mm/dd/yyyy&lt;/p&gt;
-* $stop_dt **string** - &lt;p&gt;Stop date mm/dd/yyyy&lt;/p&gt;
-* $emp_mem **string** - &lt;p&gt;Employer memo&lt;/p&gt;
-* $emp_rid **string** - &lt;p&gt;Employer table id&lt;/p&gt;
-* $empcountry **string** - &lt;p&gt;Employer country&lt;/p&gt;
-* $when_code **string** - &lt;p&gt;Employer when started mm/dd/yyyy&lt;/p&gt;
-* $emp_phone **string** - &lt;p&gt;Employer phone number&lt;/p&gt;
-* $homeinst **string** - &lt;p&gt;Home institution&lt;/p&gt;
+* $emp_pos **string** - Employee position
+* $hrs_week **string** - Hours a week
+* $start_dt **string** - Start date mm/dd/yyyy
+* $stop_dt **string** - Stop date mm/dd/yyyy
+* $emp_mem **string** - Employer memo
+* $emp_rid **string** - Employer table id
+* $empcountry **string** - Employer country
+* $when_code **string** - Employer when started mm/dd/yyyy
+* $emp_phone **string** - Employer phone number
+* $homeinst **string** - Home institution
 
 
 
@@ -102,8 +102,8 @@ Searches for an employment record
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $emp_rid **string** - &lt;p&gt;employer table id&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $emp_rid **string** - employer table id
 
 
 
@@ -120,30 +120,30 @@ Updates the employment record
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $emp_emply **string** - &lt;p&gt;Employer&lt;/p&gt;
-* $emp_super **string** - &lt;p&gt;Employer manager&lt;/p&gt;
-* $emp_add1 **string** - &lt;p&gt;Employer address line 1&lt;/p&gt;
-* $emp_add2 **string** - &lt;p&gt;Employer address line 2&lt;/p&gt;
-* $emp_add3 **string** - &lt;p&gt;Employer address line 3&lt;/p&gt;
-* $emp_city **string** - &lt;p&gt;Employer city&lt;/p&gt;
-* $emp_state **string** - &lt;p&gt;Employer state&lt;/p&gt;
-* $emp_county **string** - &lt;p&gt;Employer county&lt;/p&gt;
-* $emp_zip **string** - &lt;p&gt;Employer zipcode&lt;/p&gt;
-* $employ_type_rid **string** - &lt;p&gt;Employee type table id&lt;/p&gt;
-* $emp_status **string** - &lt;p&gt;Employee status&lt;/p&gt;
-* $passed **string** - &lt;p&gt;Passed (used differently for various schools)&lt;/p&gt;
-* $emp_email **string** - &lt;p&gt;Employee email address&lt;/p&gt;
-* $number **string** - &lt;p&gt;Employee number&lt;/p&gt;
-* $emp_pos **string** - &lt;p&gt;Employee position&lt;/p&gt;
-* $hrs_week **string** - &lt;p&gt;Hours a week&lt;/p&gt;
-* $start_dt **string** - &lt;p&gt;Start date mm/dd/yyyy&lt;/p&gt;
-* $stop_dt **string** - &lt;p&gt;Stop date mm/dd/yyyy&lt;/p&gt;
-* $emp_mem **string** - &lt;p&gt;Employer memo&lt;/p&gt;
-* $emp_rid **string** - &lt;p&gt;employer table id&lt;/p&gt;
-* $empcountry **string** - &lt;p&gt;Employer country&lt;/p&gt;
-* $when_code **string** - &lt;p&gt;Employer when started mm/dd/yyyy&lt;/p&gt;
-* $emp_phone **string** - &lt;p&gt;Employer phone number&lt;/p&gt;
-* $homeinst **string** - &lt;p&gt;Home institution&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $emp_emply **string** - Employer
+* $emp_super **string** - Employer manager
+* $emp_add1 **string** - Employer address line 1
+* $emp_add2 **string** - Employer address line 2
+* $emp_add3 **string** - Employer address line 3
+* $emp_city **string** - Employer city
+* $emp_state **string** - Employer state
+* $emp_county **string** - Employer county
+* $emp_zip **string** - Employer zipcode
+* $employ_type_rid **string** - Employee type table id
+* $emp_status **string** - Employee status
+* $passed **string** - Passed (used differently for various schools)
+* $emp_email **string** - Employee email address
+* $number **string** - Employee number
+* $emp_pos **string** - Employee position
+* $hrs_week **string** - Hours a week
+* $start_dt **string** - Start date mm/dd/yyyy
+* $stop_dt **string** - Stop date mm/dd/yyyy
+* $emp_mem **string** - Employer memo
+* $emp_rid **string** - employer table id
+* $empcountry **string** - Employer country
+* $when_code **string** - Employer when started mm/dd/yyyy
+* $emp_phone **string** - Employer phone number
+* $homeinst **string** - Home institution
 
 

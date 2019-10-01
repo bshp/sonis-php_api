@@ -50,68 +50,68 @@ Inserts a new prospect/inquiry
 
 
 #### Arguments
-* $last_name **string** - &lt;p&gt;The persons last name&lt;/p&gt;
-* $first_name **string** - &lt;p&gt;The persons first name&lt;/p&gt;
-* $mi **string** - &lt;p&gt;The persons middle initial, 1 character&lt;/p&gt;
-* $st_addr **string** - &lt;p&gt;The persons street address&lt;/p&gt;
-* $add_addr **string** - &lt;p&gt;The persons street address number, such as APT 101 or #101&lt;/p&gt;
-* $add_add2 **string** - &lt;p&gt;Don&#039;t think we have ever used this one&lt;/p&gt;
-* $city **string** - &lt;p&gt;The persons city&lt;/p&gt;
-* $state **string** - &lt;p&gt;The persons state 2 character code such as TX for Texas&lt;/p&gt;
-* $zip **string** - &lt;p&gt;The persons zip code&lt;/p&gt;
-* $country **string** - &lt;p&gt;The 2 character code for country like US&lt;/p&gt;
-* $phone **string** - &lt;p&gt;The persons phone number&lt;/p&gt;
-* $cell_phone **string** - &lt;p&gt;The persons cell phone number&lt;/p&gt;
-* $nickname **string** - &lt;p&gt;The persons preferred name&lt;/p&gt;
-* $work_phone **string** - &lt;p&gt;The persons work phone number&lt;/p&gt;
-* $e_mail **string** - &lt;p&gt;The primary email address for the record type&lt;/p&gt;
-* $term_int **string** - &lt;p&gt;Applicant term interested in&lt;/p&gt;
-* $referby **string** - &lt;p&gt;Referred by&lt;/p&gt;
-* $enstat_cod **string** - &lt;p&gt;Enrollment status code&lt;/p&gt;
-* $prg_cod **string** - &lt;p&gt;Program code&lt;/p&gt;
-* $camp_cod **string** - &lt;p&gt;The person&#039;s campus, in the form of the code&lt;/p&gt;
-* $comments **string** - &lt;p&gt;Comments&lt;/p&gt;
-* $snd_app **string** - &lt;p&gt;Workflow send application&lt;/p&gt;
-* $snd_brch **string** - &lt;p&gt;Workflow send brochure&lt;/p&gt;
-* $snd_cat **string** - &lt;p&gt;Workflow send catalog&lt;/p&gt;
-* $snd_f4 **string** - &lt;p&gt;Wokrflow custom&lt;/p&gt;
-* $snd_f5 **string** - &lt;p&gt;Wokrflow custom&lt;/p&gt;
-* $snd_f6 **string** - &lt;p&gt;Wokrflow custom&lt;/p&gt;
+* $last_name **string** - The persons last name
+* $first_name **string** - The persons first name
+* $mi **string** - The persons middle initial, 1 character
+* $st_addr **string** - The persons street address
+* $add_addr **string** - The persons street address number, such as APT 101 or #101
+* $add_add2 **string** - Don&#039;t think we have ever used this one
+* $city **string** - The persons city
+* $state **string** - The persons state 2 character code such as TX for Texas
+* $zip **string** - The persons zip code
+* $country **string** - The 2 character code for country like US
+* $phone **string** - The persons phone number
+* $cell_phone **string** - The persons cell phone number
+* $nickname **string** - The persons preferred name
+* $work_phone **string** - The persons work phone number
+* $e_mail **string** - The primary email address for the record type
+* $term_int **string** - Applicant term interested in
+* $referby **string** - Referred by
+* $enstat_cod **string** - Enrollment status code
+* $prg_cod **string** - Program code
+* $camp_cod **string** - The person&#039;s campus, in the form of the code
+* $comments **string** - Comments
+* $snd_app **string** - Workflow send application
+* $snd_brch **string** - Workflow send brochure
+* $snd_cat **string** - Workflow send catalog
+* $snd_f4 **string** - Wokrflow custom
+* $snd_f5 **string** - Wokrflow custom
+* $snd_f6 **string** - Wokrflow custom
 * $snd_3PF **string**
-* $employer **string** - &lt;p&gt;Employer&lt;/p&gt;
-* $moved_dt **string** - &lt;p&gt;Date moved&lt;/p&gt;
-* $move2app **string** - &lt;p&gt;Date moved to applicant&lt;/p&gt;
-* $contact **string** - &lt;p&gt;Contact information&lt;/p&gt;
-* $state_of_licensure **string** - &lt;p&gt;The persons state 2 character code for license state&lt;/p&gt;
-* $level_of_education **string** - &lt;p&gt;Persons level of education&lt;/p&gt;
-* $level_comp **string** - &lt;p&gt;highest level completed&lt;/p&gt;
-* $hs_prereq **string** - &lt;p&gt;Highschool pre-req&lt;/p&gt;
-* $prg_intrest **string** - &lt;p&gt;Program interested in&lt;/p&gt;
-* $cl_prereq **string** - &lt;p&gt;Class pre-req&lt;/p&gt;
-* $prereqenrolled **string** - &lt;p&gt;Pre-req enrolled?&lt;/p&gt;
-* $cur_emp **string** - &lt;p&gt;Current employer&lt;/p&gt;
-* $cur_emp_inst_cod **string** - &lt;p&gt;Current employer institution code&lt;/p&gt;
-* $LPN **string** - &lt;p&gt;Has LPN&lt;/p&gt;
-* $LPN_years **string** - &lt;p&gt;For how long&lt;/p&gt;
-* $enroll_month **string** - &lt;p&gt;Enrollment month&lt;/p&gt;
-* $enroll_yr **string** - &lt;p&gt;Enrollment year&lt;/p&gt;
-* $ref_other **string** - &lt;p&gt;Referred by &#039;other&#039; box&lt;/p&gt;
-* $psprereqcrs_cod **string** - &lt;p&gt;Pre-req course code&lt;/p&gt;
-* $pref_inst_cod **string** - &lt;p&gt;Preferred institutional code&lt;/p&gt;
-* $webps_ce1 **string** - &lt;p&gt;Custom Field&lt;/p&gt;
-* $webps_le1 **string** - &lt;p&gt;Custom Field&lt;/p&gt;
-* $webps_ne1 **string** - &lt;p&gt;Custom Field&lt;/p&gt;
-* $webps_de1 **string** - &lt;p&gt;Custom Field&lt;/p&gt;
-* $webps_fe1 **string** - &lt;p&gt;Custom Field&lt;/p&gt;
-* $webps_ce2 **string** - &lt;p&gt;Custom Field&lt;/p&gt;
-* $webps_ce3 **string** - &lt;p&gt;Custom Field&lt;/p&gt;
-* $incomplete **string** - &lt;p&gt;App incomplete&lt;/p&gt;
-* $birthdate **string** - &lt;p&gt;The persons birthday, such as 05/12/2001&lt;/p&gt;
-* $memo1 **string** - &lt;p&gt;Memo 1&lt;/p&gt;
-* $memo2 **string** - &lt;p&gt;Memo 2&lt;/p&gt;
-* $memo3 **string** - &lt;p&gt;Memo 3&lt;/p&gt;
-* $areas_of_interest_rid **string** - &lt;p&gt;Areas of interest table id&lt;/p&gt;
-* $undergrd_attnd **string** - &lt;p&gt;Undergraduate?&lt;/p&gt;
-* $undergrd_maj **string** - &lt;p&gt;Undergraduate major&lt;/p&gt;
+* $employer **string** - Employer
+* $moved_dt **string** - Date moved
+* $move2app **string** - Date moved to applicant
+* $contact **string** - Contact information
+* $state_of_licensure **string** - The persons state 2 character code for license state
+* $level_of_education **string** - Persons level of education
+* $level_comp **string** - highest level completed
+* $hs_prereq **string** - Highschool pre-req
+* $prg_intrest **string** - Program interested in
+* $cl_prereq **string** - Class pre-req
+* $prereqenrolled **string** - Pre-req enrolled?
+* $cur_emp **string** - Current employer
+* $cur_emp_inst_cod **string** - Current employer institution code
+* $LPN **string** - Has LPN
+* $LPN_years **string** - For how long
+* $enroll_month **string** - Enrollment month
+* $enroll_yr **string** - Enrollment year
+* $ref_other **string** - Referred by &#039;other&#039; box
+* $psprereqcrs_cod **string** - Pre-req course code
+* $pref_inst_cod **string** - Preferred institutional code
+* $webps_ce1 **string** - Custom Field
+* $webps_le1 **string** - Custom Field
+* $webps_ne1 **string** - Custom Field
+* $webps_de1 **string** - Custom Field
+* $webps_fe1 **string** - Custom Field
+* $webps_ce2 **string** - Custom Field
+* $webps_ce3 **string** - Custom Field
+* $incomplete **string** - App incomplete
+* $birthdate **string** - The persons birthday, such as 05/12/2001
+* $memo1 **string** - Memo 1
+* $memo2 **string** - Memo 2
+* $memo3 **string** - Memo 3
+* $areas_of_interest_rid **string** - Areas of interest table id
+* $undergrd_attnd **string** - Undergraduate?
+* $undergrd_maj **string** - Undergraduate major
 
 

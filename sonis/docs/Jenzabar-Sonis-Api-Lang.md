@@ -34,6 +34,6 @@ Get a language string for the $key provided
 
 
 #### Arguments
-* $key **string** - &lt;p&gt;The key identifier for the language string&lt;/p&gt;
+* $key **string** - The key identifier for the language string
 
 

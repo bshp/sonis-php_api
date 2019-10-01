@@ -48,8 +48,8 @@ Logon function for the online app
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $pin **string** - &lt;p&gt;Encrypted PIN using private key&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $pin **string** - Encrypted PIN using private key
 
 
 
@@ -66,15 +66,15 @@ Creates a new online app and person if new into the nmoa table
 
 
 #### Arguments
-* $first_name **string** - &lt;p&gt;The persons first name&lt;/p&gt;
-* $last_name **string** - &lt;p&gt;The persons last name&lt;/p&gt;
-* $birthdate **string** - &lt;p&gt;The persons birthday, such as 05/12/2001&lt;/p&gt;
-* $e_mail **string** - &lt;p&gt;The primary email address for the record type&lt;/p&gt;
-* $pin **string** - &lt;p&gt;Encrypted PIN using private key&lt;/p&gt;
-* $mi **string** - &lt;p&gt;The persons middle initial, 1 character&lt;/p&gt;
-* $phone **string** - &lt;p&gt;The persons phone number&lt;/p&gt;
-* $zip **string** - &lt;p&gt;The persons zip code&lt;/p&gt;
-* $mod_stat **string** - &lt;p&gt;The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI&lt;/p&gt;
+* $first_name **string** - The persons first name
+* $last_name **string** - The persons last name
+* $birthdate **string** - The persons birthday, such as 05/12/2001
+* $e_mail **string** - The primary email address for the record type
+* $pin **string** - Encrypted PIN using private key
+* $mi **string** - The persons middle initial, 1 character
+* $phone **string** - The persons phone number
+* $zip **string** - The persons zip code
+* $mod_stat **string** - The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI
 * $citizen **integer**
 
 
@@ -92,10 +92,10 @@ Search for a given online applicant
 
 
 #### Arguments
-* $firstname **string** - &lt;p&gt;The persons firstname&lt;/p&gt;
-* $lastname **string** - &lt;p&gt;The persons lastname&lt;/p&gt;
-* $birthdate **string** - &lt;p&gt;The persons birthday, such as 05/12/2001&lt;/p&gt;
-* $e_mail **string** - &lt;p&gt;The primary email address for the record type&lt;/p&gt;
+* $firstname **string** - The persons firstname
+* $lastname **string** - The persons lastname
+* $birthdate **string** - The persons birthday, such as 05/12/2001
+* $e_mail **string** - The primary email address for the record type
 
 
 
@@ -112,7 +112,7 @@ Insert a new online app question
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
 * $fieldnames **string**
 
 
@@ -130,7 +130,7 @@ Search for an online app question
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
 * $column **string**
 
 
@@ -148,7 +148,7 @@ The search format
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
 * $oa_questions_row **string**
 * $oa_questions_col **string**
 * $oa_section_rid **string**

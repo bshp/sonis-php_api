@@ -48,8 +48,8 @@ Deletes a persons license
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $lic_rid **string** - &lt;p&gt;The Sonis license RID&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $lic_rid **string** - The Sonis license RID
 
 
 
@@ -66,13 +66,13 @@ Inserts a persons license
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $license **string** - &lt;p&gt;The persons license (not dirvers license)&lt;/p&gt;
-* $lic_no **string** - &lt;p&gt;The persons license number (not dirvers license)&lt;/p&gt;
-* $date_rec **string** - &lt;p&gt;The persons license date received (mm/dd/yyyy)&lt;/p&gt;
-* $date_exp **string** - &lt;p&gt;The persons license date expires (mm/dd/yyyy)&lt;/p&gt;
-* $lic_mem **string** - &lt;p&gt;The persons license memo&lt;/p&gt;
-* $d_soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $license **string** - The persons license (not dirvers license)
+* $lic_no **string** - The persons license number (not dirvers license)
+* $date_rec **string** - The persons license date received (mm/dd/yyyy)
+* $date_exp **string** - The persons license date expires (mm/dd/yyyy)
+* $lic_mem **string** - The persons license memo
+* $d_soc_sec **string** - The objects unique identifier
 
 
 
@@ -89,8 +89,8 @@ Search for a persons license
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $lic_rid **string** - &lt;p&gt;The Sonis license RID&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $lic_rid **string** - The Sonis license RID
 
 
 
@@ -107,13 +107,13 @@ Update a persons given license
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $license **string** - &lt;p&gt;The persons license&lt;/p&gt;
-* $lic_no **string** - &lt;p&gt;The persons license number (not dirvers license)&lt;/p&gt;
-* $date_rec **string** - &lt;p&gt;The persons license date received (mm/dd/yyyy)&lt;/p&gt;
-* $date_exp **string** - &lt;p&gt;The persons license date expires (mm/dd/yyyy)&lt;/p&gt;
-* $lic_mem **string** - &lt;p&gt;The persons license memo&lt;/p&gt;
-* $lic_rid **string** - &lt;p&gt;The random id of the object&lt;/p&gt;
-* $d_soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $license **string** - The persons license
+* $lic_no **string** - The persons license number (not dirvers license)
+* $date_rec **string** - The persons license date received (mm/dd/yyyy)
+* $date_exp **string** - The persons license date expires (mm/dd/yyyy)
+* $lic_mem **string** - The persons license memo
+* $lic_rid **string** - The random id of the object
+* $d_soc_sec **string** - The objects unique identifier
 
 

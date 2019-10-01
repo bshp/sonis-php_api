@@ -85,7 +85,7 @@ Generates a new Sonis ID
 
 
 #### Arguments
-* $lastname **string** - &lt;p&gt;string the persons last name&lt;/p&gt;
+* $lastname **string** - string the persons last name
 
 
 
@@ -102,7 +102,7 @@ this will create a compatible integer for use.
 
 
 #### Arguments
-* $suffix **string** - &lt;p&gt;Either a 0 or 1 suffixed to match Sonis rid&#039;s&lt;/p&gt;
+* $suffix **string** - Either a 0 or 1 suffixed to match Sonis rid&#039;s
 
 
 
@@ -118,8 +118,8 @@ Generate a UUID, either in coldfusion (cf) format or standard
 
 
 #### Arguments
-* $format **string** - &lt;p&gt;Either &#039;cf&#039; or &#039;rfc&#039;&lt;/p&gt;
-* $case **string** - &lt;p&gt;Return as uppercase or lowercase, either of &#039;lc&#039; or &#039;uc&#039;&lt;/p&gt;
+* $format **string** - Either &#039;cf&#039; or &#039;rfc&#039;
+* $case **string** - Return as uppercase or lowercase, either of &#039;lc&#039; or &#039;uc&#039;
 
 
 
@@ -135,7 +135,7 @@ Debugging a SOAP call, handle routing
 
 
 #### Arguments
-* $call **mixed** - &lt;p&gt;The SOAP call that is executed&lt;/p&gt;
+* $call **mixed** - The SOAP call that is executed
 
 
 
@@ -169,7 +169,7 @@ trigger_error and/or can fail.
 
 #### Arguments
 * $msg **string**
-* $fail **boolean** - &lt;p&gt;Is it fatal?&lt;/p&gt;
+* $fail **boolean** - Is it fatal?
 
 
 
@@ -362,7 +362,7 @@ just return the given object($obj).
 
 
 #### Arguments
-* $obj **object** - &lt;p&gt;The object to create an array from&lt;/p&gt;
+* $obj **object** - The object to create an array from
 
 
 
@@ -379,8 +379,8 @@ $cfg->opts section.
 
 
 #### Arguments
-* $wsdl **string** - &lt;p&gt;the wsdl location&lt;/p&gt;
-* $opts **array** - &lt;p&gt;SOAP options&lt;/p&gt;
+* $wsdl **string** - the wsdl location
+* $opts **array** - SOAP options
 
 
 
@@ -397,8 +397,8 @@ found in the given $string
 
 
 #### Arguments
-* $string **string** - &lt;p&gt;The string to search in&lt;/p&gt;
-* $start_string **string** - &lt;p&gt;The value to search for&lt;/p&gt;
+* $string **string** - The string to search in
+* $start_string **string** - The value to search for
 
 
 
@@ -414,6 +414,6 @@ Returns the Sonis PHP API version information
 
 
 #### Arguments
-* $key **string** - &lt;p&gt;The display type to get, major, patch or pretty&lt;/p&gt;
+* $key **string** - The display type to get, major, patch or pretty
 
 

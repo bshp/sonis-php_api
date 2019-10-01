@@ -38,6 +38,6 @@ the results to the output controller
 
 
 #### Arguments
-* $args **mixed** - &lt;p&gt;contains component::method($args)&lt;/p&gt;
+* $args **mixed** - contains component::method($args)
 
 

@@ -48,20 +48,20 @@ Add to an existing user record
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $preferred **string** - &lt;p&gt;The persons preferred address, yes or no&lt;/p&gt;
-* $st_addr **string** - &lt;p&gt;The persons street address&lt;/p&gt;
-* $add_addr **string** - &lt;p&gt;The persons street address number, such as APT 101 or #101&lt;/p&gt;
-* $add_add2 **string** - &lt;p&gt;Don&#039;t think we have ever used this one&lt;/p&gt;
-* $city **string** - &lt;p&gt;The persons city&lt;/p&gt;
-* $state **string** - &lt;p&gt;The persons state 2 character code such as TX for Texas&lt;/p&gt;
-* $zip **string** - &lt;p&gt;The persons zip code&lt;/p&gt;
-* $phone **string** - &lt;p&gt;The persons phone number&lt;/p&gt;
-* $cell_phone **string** - &lt;p&gt;The persons cell phone number&lt;/p&gt;
-* $work_phone **string** - &lt;p&gt;The persons work phone number&lt;/p&gt;
-* $county_cod **string** - &lt;p&gt;The 2 character code for county such as BX for Bexar&lt;/p&gt;
-* $country **string** - &lt;p&gt;The 2 character code for country like US&lt;/p&gt;
-* $e_mail **string** - &lt;p&gt;The primary email address for the record type&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $preferred **string** - The persons preferred address, yes or no
+* $st_addr **string** - The persons street address
+* $add_addr **string** - The persons street address number, such as APT 101 or #101
+* $add_add2 **string** - Don&#039;t think we have ever used this one
+* $city **string** - The persons city
+* $state **string** - The persons state 2 character code such as TX for Texas
+* $zip **string** - The persons zip code
+* $phone **string** - The persons phone number
+* $cell_phone **string** - The persons cell phone number
+* $work_phone **string** - The persons work phone number
+* $county_cod **string** - The 2 character code for county such as BX for Bexar
+* $country **string** - The 2 character code for country like US
+* $e_mail **string** - The primary email address for the record type
 
 
 
@@ -78,8 +78,8 @@ Search for an address
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $preferred **string** - &lt;p&gt;The persons preferred address, yes or no&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $preferred **string** - The persons preferred address, yes or no
 
 
 
@@ -96,22 +96,22 @@ Insert a new address record
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $preferred **string** - &lt;p&gt;The persons preferred address, yes or no&lt;/p&gt;
-* $st_addr **string** - &lt;p&gt;The persons street address&lt;/p&gt;
-* $add_addr **string** - &lt;p&gt;The persons street address number, such as APT 101 or #101&lt;/p&gt;
-* $add_add2 **string** - &lt;p&gt;Don&#039;t think we have ever used this one&lt;/p&gt;
-* $city **string** - &lt;p&gt;The persons city&lt;/p&gt;
-* $state **string** - &lt;p&gt;The persons state 2 character code such as TX for Texas&lt;/p&gt;
-* $zip **string** - &lt;p&gt;The persons zip code&lt;/p&gt;
-* $phone **string** - &lt;p&gt;The persons phone number&lt;/p&gt;
-* $cell_phone **string** - &lt;p&gt;The persons cell phone number&lt;/p&gt;
-* $fax **string** - &lt;p&gt;The objects fax number&lt;/p&gt;
-* $e_mail **string** - &lt;p&gt;The primary email address for the record type&lt;/p&gt;
-* $work_phone **string** - &lt;p&gt;The persons work phone number&lt;/p&gt;
-* $county_cod **string** - &lt;p&gt;The 2 character code for county such as BX for Bexar&lt;/p&gt;
-* $country **string** - &lt;p&gt;The 2 character code for country like US&lt;/p&gt;
-* $operator **string** - &lt;p&gt;The persons unqiue ID adding or modifying the record. Please change the value&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $preferred **string** - The persons preferred address, yes or no
+* $st_addr **string** - The persons street address
+* $add_addr **string** - The persons street address number, such as APT 101 or #101
+* $add_add2 **string** - Don&#039;t think we have ever used this one
+* $city **string** - The persons city
+* $state **string** - The persons state 2 character code such as TX for Texas
+* $zip **string** - The persons zip code
+* $phone **string** - The persons phone number
+* $cell_phone **string** - The persons cell phone number
+* $fax **string** - The objects fax number
+* $e_mail **string** - The primary email address for the record type
+* $work_phone **string** - The persons work phone number
+* $county_cod **string** - The 2 character code for county such as BX for Bexar
+* $country **string** - The 2 character code for country like US
+* $operator **string** - The persons unqiue ID adding or modifying the record. Please change the value
 
 
 
@@ -128,20 +128,20 @@ Update an existing address record
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $add_add2 **string** - &lt;p&gt;Don&#039;t think we have ever used this one&lt;/p&gt;
-* $add_addr **string** - &lt;p&gt;The persons street address number, such as APT 101 or #101&lt;/p&gt;
-* $cell_phone **string** - &lt;p&gt;The persons cell phone number&lt;/p&gt;
-* $city **string** - &lt;p&gt;The persons city&lt;/p&gt;
-* $country **string** - &lt;p&gt;The 2 character code for country like US&lt;/p&gt;
-* $county_cod **string** - &lt;p&gt;The 2 character code for county such as BX for Bexar&lt;/p&gt;
-* $e_mail **string** - &lt;p&gt;The primary email address for the record type&lt;/p&gt;
-* $fax **string** - &lt;p&gt;The objects fax number&lt;/p&gt;
-* $phone **string** - &lt;p&gt;The persons phone number&lt;/p&gt;
-* $st_addr **string** - &lt;p&gt;The persons street address&lt;/p&gt;
-* $state **string** - &lt;p&gt;The persons state 2 character code such as TX for Texas&lt;/p&gt;
-* $work_phone **string** - &lt;p&gt;The persons work phone number&lt;/p&gt;
-* $zip **string** - &lt;p&gt;The persons zip code&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $add_add2 **string** - Don&#039;t think we have ever used this one
+* $add_addr **string** - The persons street address number, such as APT 101 or #101
+* $cell_phone **string** - The persons cell phone number
+* $city **string** - The persons city
+* $country **string** - The 2 character code for country like US
+* $county_cod **string** - The 2 character code for county such as BX for Bexar
+* $e_mail **string** - The primary email address for the record type
+* $fax **string** - The objects fax number
+* $phone **string** - The persons phone number
+* $st_addr **string** - The persons street address
+* $state **string** - The persons state 2 character code such as TX for Texas
+* $work_phone **string** - The persons work phone number
+* $zip **string** - The persons zip code
 * $cell_provider **string**
 * $text_me **string**
 

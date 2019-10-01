@@ -48,7 +48,7 @@ Get First and Lastname
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
 
 
 
@@ -65,9 +65,9 @@ Get enrollment status
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $sch_yr **string** - &lt;p&gt;the school year code, like 201617&lt;/p&gt;
-* $semester **string** - &lt;p&gt;the semester, either 1,2,3,4&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $sch_yr **string** - the school year code, like 201617
+* $semester **string** - the semester, either 1,2,3,4
 
 
 
@@ -84,7 +84,7 @@ Returns data in name table
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
 
 
 
@@ -101,7 +101,7 @@ Return name and email record
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
 
 
 
@@ -118,9 +118,9 @@ Inserts citizenship status
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
 * $birth_contry **string**
-* $citizen_country **string** - &lt;p&gt;The country code where citizenship resides&lt;/p&gt;
+* $citizen_country **string** - The country code where citizenship resides
 * $iseas_no **string**
 * $visa_cod **string**
 * $visa_issue_date **string**
@@ -140,8 +140,8 @@ Search for citizenship status
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $mod_stat **string** - &lt;p&gt;The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $mod_stat **string** - The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI
 
 
 
@@ -158,52 +158,52 @@ Saves biographic information, almost like an update/insert
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $mod_stat **string** - &lt;p&gt;The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI&lt;/p&gt;
-* $first_name **string** - &lt;p&gt;The persons first name&lt;/p&gt;
-* $last_name **string** - &lt;p&gt;The persons last name&lt;/p&gt;
-* $mi **string** - &lt;p&gt;The persons middle initial, 1 character&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $mod_stat **string** - The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI
+* $first_name **string** - The persons first name
+* $last_name **string** - The persons last name
+* $mi **string** - The persons middle initial, 1 character
 * $acadstat_cod **string**
-* $prefix **string** - &lt;p&gt;The persons prefix, like Mr or Mrs&lt;/p&gt;
-* $suffix **string** - &lt;p&gt;The persons suffix, like MSN or Phd&lt;/p&gt;
-* $maiden **string** - &lt;p&gt;The persons maiden name&lt;/p&gt;
-* $nickname **string** - &lt;p&gt;The persons preferred name&lt;/p&gt;
-* $birthdate **string** - &lt;p&gt;The persons birthday, such as 05/12/2001&lt;/p&gt;
-* $gender **string** - &lt;p&gt;The persons gender, M or F&lt;/p&gt;
-* $ssn **string** - &lt;p&gt;The persons ssn&lt;/p&gt;
-* $old_ssn **string** - &lt;p&gt;The persons previously recorded ssn&lt;/p&gt;
-* $affiliation_cod **string** - &lt;p&gt;The persons affiliation status code&lt;/p&gt;
-* $citizen **string** - &lt;p&gt;If the person is a citizen, true or false&lt;/p&gt;
-* $ethnic_cod **string** - &lt;p&gt;If the persons ethnicity code&lt;/p&gt;
-* $mar_cod **string** - &lt;p&gt;If the persons marrital code&lt;/p&gt;
-* $transmem **string** - &lt;p&gt;If the persons transfer memo&lt;/p&gt;
-* $veteran **string** - &lt;p&gt;true or false if a veteran&lt;/p&gt;
-* $releas_inf **string** - &lt;p&gt;true or false if information release allowed&lt;/p&gt;
-* $releas_dt **string** - &lt;p&gt;the date information release allowed&lt;/p&gt;
-* $div_cod **string** - &lt;p&gt;The person&#039;s division, in the form of the code&lt;/p&gt;
-* $dept_cod **string** - &lt;p&gt;The person&#039;s department, in the form of the code&lt;/p&gt;
-* $camp_cod **string** - &lt;p&gt;The person&#039;s campus, in the form of the code&lt;/p&gt;
-* $level_ **string** - &lt;p&gt;The person&#039;s level, in the form of the code (A-Z, 0-9)&lt;/p&gt;
-* $tuit_stat **string** - &lt;p&gt;The persons tuition status&lt;/p&gt;
-* $name_mem **string** - &lt;p&gt;Memo on bio page&lt;/p&gt;
-* $pin **string** - &lt;p&gt;Encrypted PIN using private key&lt;/p&gt;
-* $newpin **string** - &lt;p&gt;Temp newpin placeholder&lt;/p&gt;
-* $deceased **string** - &lt;p&gt;true or false if deceased&lt;/p&gt;
-* $dec_date **string** - &lt;p&gt;The persons deceased date&lt;/p&gt;
-* $exam_id **string** - &lt;p&gt;The persons unique exam id&lt;/p&gt;
-* $online_hld **string** - &lt;p&gt;true or false if has a hold&lt;/p&gt;
-* $notpubname **string** - &lt;p&gt;true or false to publish name in directory&lt;/p&gt;
-* $show_email **string** - &lt;p&gt;true or false to publish email in directory&lt;/p&gt;
-* $show_phone **string** - &lt;p&gt;true or false to publish phone in directory&lt;/p&gt;
-* $show_addr **string** - &lt;p&gt;true or false to publish address in directory&lt;/p&gt;
-* $show_wkphn **string** - &lt;p&gt;true or false to publish work phone in directory&lt;/p&gt;
-* $excl_billing **string** - &lt;p&gt;true or false to exclude from billing&lt;/p&gt;
-* $excl_mailing **string** - &lt;p&gt;true or false to exclude from all mailing&lt;/p&gt;
-* $other_name **string** - &lt;p&gt;Persons other name, AKA sort of&lt;/p&gt;
-* $fund_stat **string** - &lt;p&gt;The persons funding status&lt;/p&gt;
-* $photo **string** - &lt;p&gt;The persons photo file name, has to be the file name like name.jpg&lt;/p&gt;
-* $iped_stat **string** - &lt;p&gt;The persons iped status code&lt;/p&gt;
-* $operator **string** - &lt;p&gt;The persons unqiue ID adding or modifying the record. Please change the value&lt;/p&gt;
+* $prefix **string** - The persons prefix, like Mr or Mrs
+* $suffix **string** - The persons suffix, like MSN or Phd
+* $maiden **string** - The persons maiden name
+* $nickname **string** - The persons preferred name
+* $birthdate **string** - The persons birthday, such as 05/12/2001
+* $gender **string** - The persons gender, M or F
+* $ssn **string** - The persons ssn
+* $old_ssn **string** - The persons previously recorded ssn
+* $affiliation_cod **string** - The persons affiliation status code
+* $citizen **string** - If the person is a citizen, true or false
+* $ethnic_cod **string** - If the persons ethnicity code
+* $mar_cod **string** - If the persons marrital code
+* $transmem **string** - If the persons transfer memo
+* $veteran **string** - true or false if a veteran
+* $releas_inf **string** - true or false if information release allowed
+* $releas_dt **string** - the date information release allowed
+* $div_cod **string** - The person&#039;s division, in the form of the code
+* $dept_cod **string** - The person&#039;s department, in the form of the code
+* $camp_cod **string** - The person&#039;s campus, in the form of the code
+* $level_ **string** - The person&#039;s level, in the form of the code (A-Z, 0-9)
+* $tuit_stat **string** - The persons tuition status
+* $name_mem **string** - Memo on bio page
+* $pin **string** - Encrypted PIN using private key
+* $newpin **string** - Temp newpin placeholder
+* $deceased **string** - true or false if deceased
+* $dec_date **string** - The persons deceased date
+* $exam_id **string** - The persons unique exam id
+* $online_hld **string** - true or false if has a hold
+* $notpubname **string** - true or false to publish name in directory
+* $show_email **string** - true or false to publish email in directory
+* $show_phone **string** - true or false to publish phone in directory
+* $show_addr **string** - true or false to publish address in directory
+* $show_wkphn **string** - true or false to publish work phone in directory
+* $excl_billing **string** - true or false to exclude from billing
+* $excl_mailing **string** - true or false to exclude from all mailing
+* $other_name **string** - Persons other name, AKA sort of
+* $fund_stat **string** - The persons funding status
+* $photo **string** - The persons photo file name, has to be the file name like name.jpg
+* $iped_stat **string** - The persons iped status code
+* $operator **string** - The persons unqiue ID adding or modifying the record. Please change the value
 
 
 
@@ -220,22 +220,22 @@ Updates a name record
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $photo **string** - &lt;p&gt;The persons photo file name, has to be the file name like name.jpg&lt;/p&gt;
-* $ssn **string** - &lt;p&gt;The persons ssn&lt;/p&gt;
-* $gender **string** - &lt;p&gt;The persons gender, M or F&lt;/p&gt;
-* $ethnic_cod **string** - &lt;p&gt;If the persons ethnicity code&lt;/p&gt;
-* $birthdate **string** - &lt;p&gt;The persons birthday, such as 05/12/2001&lt;/p&gt;
-* $mod_stat **string** - &lt;p&gt;The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $photo **string** - The persons photo file name, has to be the file name like name.jpg
+* $ssn **string** - The persons ssn
+* $gender **string** - The persons gender, M or F
+* $ethnic_cod **string** - If the persons ethnicity code
+* $birthdate **string** - The persons birthday, such as 05/12/2001
+* $mod_stat **string** - The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI
 * $acadstat_cod **string**
-* $affiliation_cod **string** - &lt;p&gt;The persons affiliation status code&lt;/p&gt;
-* $citizen **string** - &lt;p&gt;If the person is a citizen, true or false&lt;/p&gt;
-* $mar_cod **string** - &lt;p&gt;If the persons marrital code&lt;/p&gt;
-* $veteran **string** - &lt;p&gt;true or false if a veteran&lt;/p&gt;
-* $deceased **string** - &lt;p&gt;true or false if deceased&lt;/p&gt;
-* $dec_date **string** - &lt;p&gt;The persons deceased date&lt;/p&gt;
-* $dl_state **string** - &lt;p&gt;The persons drivers license state code&lt;/p&gt;
-* $memo **string** - &lt;p&gt;Primary memo on Bio page&lt;/p&gt;
+* $affiliation_cod **string** - The persons affiliation status code
+* $citizen **string** - If the person is a citizen, true or false
+* $mar_cod **string** - If the persons marrital code
+* $veteran **string** - true or false if a veteran
+* $deceased **string** - true or false if deceased
+* $dec_date **string** - The persons deceased date
+* $dl_state **string** - The persons drivers license state code
+* $memo **string** - Primary memo on Bio page
 
 
 
@@ -252,69 +252,69 @@ Creates a new person record
 
 
 #### Arguments
-* $mod_stat **string** - &lt;p&gt;The status of the person to be created&lt;/p&gt;
-* $first_name **string** - &lt;p&gt;The persons first name&lt;/p&gt;
-* $last_name **string** - &lt;p&gt;The persons last name&lt;/p&gt;
-* $mi **string** - &lt;p&gt;The persons middle initial, 1 characteR&lt;/p&gt;
-* $prefix **string** - &lt;p&gt;The persons prefix, like Mr or Mrs&lt;/p&gt;
-* $suffix **string** - &lt;p&gt;The persons suffix, like MSN or Phd&lt;/p&gt;
-* $maiden **string** - &lt;p&gt;The persons maiden name&lt;/p&gt;
-* $nickname **string** - &lt;p&gt;The persons preferred name&lt;/p&gt;
-* $birthdate **string** - &lt;p&gt;The persons birthday like 05/12/2001&lt;/p&gt;
-* $gender **string** - &lt;p&gt;The persons gender, M or F&lt;/p&gt;
-* $ssn **string** - &lt;p&gt;The persons ssn&lt;/p&gt;
-* $affiliation_cod **string** - &lt;p&gt;The persons affiliation status code&lt;/p&gt;
-* $citizen **string** - &lt;p&gt;If the person is a citizen, true or false&lt;/p&gt;
-* $ethnic_cod **string** - &lt;p&gt;If the persons ethnicity code&lt;/p&gt;
-* $mar_cod **string** - &lt;p&gt;If the persons marrital code&lt;/p&gt;
-* $transmem **string** - &lt;p&gt;If the persons transfer memo&lt;/p&gt;
-* $veteran **string** - &lt;p&gt;true or false if a veteran&lt;/p&gt;
-* $releas_inf **string** - &lt;p&gt;true or false if information release allowed&lt;/p&gt;
-* $releas_dt **string** - &lt;p&gt;the date information release allowed&lt;/p&gt;
-* $div_cod **string** - &lt;p&gt;The person&#039;s division, in the form of the code&lt;/p&gt;
-* $dept_cod **string** - &lt;p&gt;The person&#039;s department, in the form of the code&lt;/p&gt;
-* $camp_cod **string** - &lt;p&gt;The person&#039;s campus, in the form of the code&lt;/p&gt;
-* $level_ **string** - &lt;p&gt;The person&#039;s level, in the form of the code (A-Z, 0-9)&lt;/p&gt;
-* $tuit_stat **string** - &lt;p&gt;The persons tuition status&lt;/p&gt;
-* $name_mem **string** - &lt;p&gt;Memo on bio page&lt;/p&gt;
-* $pin **string** - &lt;p&gt;Encrypted PIN using private key&lt;/p&gt;
-* $newpin **string** - &lt;p&gt;Temp newpin placeholder&lt;/p&gt;
-* $deceased **string** - &lt;p&gt;true or false if deceased&lt;/p&gt;
-* $dec_date **string** - &lt;p&gt;The persons deceased date&lt;/p&gt;
-* $exam_id **string** - &lt;p&gt;The persons unique exam id&lt;/p&gt;
-* $online_hld **string** - &lt;p&gt;true or false if has a hold&lt;/p&gt;
-* $notpubname **string** - &lt;p&gt;true or false to publish name in directory&lt;/p&gt;
-* $show_email **string** - &lt;p&gt;true or false to publich email in directory&lt;/p&gt;
-* $show_phone **string** - &lt;p&gt;true or false to publich email in directory&lt;/p&gt;
-* $show_addr **string** - &lt;p&gt;true or false to publish phone in directory&lt;/p&gt;
-* $show_wkphn **string** - &lt;p&gt;true or false to publish work phone in directory&lt;/p&gt;
-* $excl_billing **string** - &lt;p&gt;true or false to exclude from billing&lt;/p&gt;
-* $excl_mailing **string** - &lt;p&gt;true or false to exclude from all mailing&lt;/p&gt;
-* $fund_stat **string** - &lt;p&gt;The persons funding status&lt;/p&gt;
-* $photo **string** - &lt;p&gt;The persons photo file name, has to be the file name like name.jpg&lt;/p&gt;
-* $iped_stat **string** - &lt;p&gt;The persons iped status code&lt;/p&gt;
-* $operator **string** - &lt;p&gt;The persons unqiue ID adding or modifying the record. Please change the value&lt;/p&gt;
-* $preferred **string** - &lt;p&gt;The persons preferred address, yes or no&lt;/p&gt;
-* $st_addr **string** - &lt;p&gt;The persons street address&lt;/p&gt;
-* $add_addr **string** - &lt;p&gt;The persons street address number, such as APT 101 or #101&lt;/p&gt;
-* $add_add2 **string** - &lt;p&gt;Don&#039;t think we have ever used this one&lt;/p&gt;
-* $city **string** - &lt;p&gt;The persons city&lt;/p&gt;
-* $state **string** - &lt;p&gt;The persons state 2 character code such as TX for Texas&lt;/p&gt;
-* $zip **string** - &lt;p&gt;The persons zip code&lt;/p&gt;
-* $phone **string** - &lt;p&gt;The persons phone number&lt;/p&gt;
-* $cell_phone **string** - &lt;p&gt;The persons cell phone number&lt;/p&gt;
-* $fax **string** - &lt;p&gt;The objects fax number&lt;/p&gt;
-* $e_mail **string** - &lt;p&gt;The primary email address for the record type&lt;/p&gt;
-* $work_phone **string** - &lt;p&gt;The persons work phone number&lt;/p&gt;
-* $county_cod **string** - &lt;p&gt;The 2 character code for county such as BX for Bexar&lt;/p&gt;
-* $country **string** - &lt;p&gt;The 2 character code for country like US&lt;/p&gt;
-* $address_ce1 **string** - &lt;p&gt;Custom address field&lt;/p&gt;
-* $address_ce2 **string** - &lt;p&gt;Custom address field&lt;/p&gt;
-* $address_ce3 **string** - &lt;p&gt;Custom address field&lt;/p&gt;
-* $address_le1 **string** - &lt;p&gt;Custom address field&lt;/p&gt;
-* $address_ne1 **string** - &lt;p&gt;Custom address field&lt;/p&gt;
-* $address_de1 **string** - &lt;p&gt;Custom address field&lt;/p&gt;
-* $address_fe1 **string** - &lt;p&gt;Custom address field&lt;/p&gt;
+* $mod_stat **string** - The status of the person to be created
+* $first_name **string** - The persons first name
+* $last_name **string** - The persons last name
+* $mi **string** - The persons middle initial, 1 characteR
+* $prefix **string** - The persons prefix, like Mr or Mrs
+* $suffix **string** - The persons suffix, like MSN or Phd
+* $maiden **string** - The persons maiden name
+* $nickname **string** - The persons preferred name
+* $birthdate **string** - The persons birthday like 05/12/2001
+* $gender **string** - The persons gender, M or F
+* $ssn **string** - The persons ssn
+* $affiliation_cod **string** - The persons affiliation status code
+* $citizen **string** - If the person is a citizen, true or false
+* $ethnic_cod **string** - If the persons ethnicity code
+* $mar_cod **string** - If the persons marrital code
+* $transmem **string** - If the persons transfer memo
+* $veteran **string** - true or false if a veteran
+* $releas_inf **string** - true or false if information release allowed
+* $releas_dt **string** - the date information release allowed
+* $div_cod **string** - The person&#039;s division, in the form of the code
+* $dept_cod **string** - The person&#039;s department, in the form of the code
+* $camp_cod **string** - The person&#039;s campus, in the form of the code
+* $level_ **string** - The person&#039;s level, in the form of the code (A-Z, 0-9)
+* $tuit_stat **string** - The persons tuition status
+* $name_mem **string** - Memo on bio page
+* $pin **string** - Encrypted PIN using private key
+* $newpin **string** - Temp newpin placeholder
+* $deceased **string** - true or false if deceased
+* $dec_date **string** - The persons deceased date
+* $exam_id **string** - The persons unique exam id
+* $online_hld **string** - true or false if has a hold
+* $notpubname **string** - true or false to publish name in directory
+* $show_email **string** - true or false to publich email in directory
+* $show_phone **string** - true or false to publich email in directory
+* $show_addr **string** - true or false to publish phone in directory
+* $show_wkphn **string** - true or false to publish work phone in directory
+* $excl_billing **string** - true or false to exclude from billing
+* $excl_mailing **string** - true or false to exclude from all mailing
+* $fund_stat **string** - The persons funding status
+* $photo **string** - The persons photo file name, has to be the file name like name.jpg
+* $iped_stat **string** - The persons iped status code
+* $operator **string** - The persons unqiue ID adding or modifying the record. Please change the value
+* $preferred **string** - The persons preferred address, yes or no
+* $st_addr **string** - The persons street address
+* $add_addr **string** - The persons street address number, such as APT 101 or #101
+* $add_add2 **string** - Don&#039;t think we have ever used this one
+* $city **string** - The persons city
+* $state **string** - The persons state 2 character code such as TX for Texas
+* $zip **string** - The persons zip code
+* $phone **string** - The persons phone number
+* $cell_phone **string** - The persons cell phone number
+* $fax **string** - The objects fax number
+* $e_mail **string** - The primary email address for the record type
+* $work_phone **string** - The persons work phone number
+* $county_cod **string** - The 2 character code for county such as BX for Bexar
+* $country **string** - The 2 character code for country like US
+* $address_ce1 **string** - Custom address field
+* $address_ce2 **string** - Custom address field
+* $address_ce3 **string** - Custom address field
+* $address_le1 **string** - Custom address field
+* $address_ne1 **string** - Custom address field
+* $address_de1 **string** - Custom address field
+* $address_fe1 **string** - Custom address field
 
 
 
@@ -331,16 +331,16 @@ Updates a name record
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $mod_stat **string** - &lt;p&gt;The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI&lt;/p&gt;
-* $first_name **string** - &lt;p&gt;The persons first name&lt;/p&gt;
-* $last_name **string** - &lt;p&gt;The persons last name&lt;/p&gt;
-* $mi **string** - &lt;p&gt;The persons middle initial, 1 character&lt;/p&gt;
-* $prefix **string** - &lt;p&gt;The persons prefix, like Mr or Mrs&lt;/p&gt;
-* $suffix **string** - &lt;p&gt;The persons suffix, like MSN or Phd&lt;/p&gt;
-* $maiden **string** - &lt;p&gt;The persons maiden name&lt;/p&gt;
-* $nickname **string** - &lt;p&gt;The persons preferred name&lt;/p&gt;
-* $other_name **string** - &lt;p&gt;Persons other name, AKA sort of&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $mod_stat **string** - The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI
+* $first_name **string** - The persons first name
+* $last_name **string** - The persons last name
+* $mi **string** - The persons middle initial, 1 character
+* $prefix **string** - The persons prefix, like Mr or Mrs
+* $suffix **string** - The persons suffix, like MSN or Phd
+* $maiden **string** - The persons maiden name
+* $nickname **string** - The persons preferred name
+* $other_name **string** - Persons other name, AKA sort of
 * $acadstat_cod **string**
 
 

@@ -34,8 +34,8 @@ Get the users selected option and/or return the select list
 
 
 #### Arguments
-* $options **string** - &lt;p&gt;The dropdown to be returned&lt;/p&gt;
-* $allow_blank **boolean|string** - &lt;p&gt;add a blank &lt;option&gt; value to the select list, true or false&lt;/p&gt;
+* $options **string** - The dropdown to be returned
+* $allow_blank **boolean|string** - add a blank &lt;option&gt; value to the select list, true or false
 
 
 
@@ -52,8 +52,8 @@ Returns a dropbox for cell providers, either with the 'selected' value or not if
 
 
 #### Arguments
-* $user **string** - &lt;p&gt;The user id to get the selected value for&lt;/p&gt;
-* $allow_blank **boolean|string** - &lt;p&gt;add a blank &lt;option&gt; value to the select list, true or false&lt;/p&gt;
+* $user **string** - The user id to get the selected value for
+* $allow_blank **boolean|string** - add a blank &lt;option&gt; value to the select list, true or false
 
 
 
@@ -70,8 +70,8 @@ Returns a dropbox for countries, either with the 'selected' value or not if $use
 
 
 #### Arguments
-* $user **string** - &lt;p&gt;The user id to get the selected value for&lt;/p&gt;
-* $allow_blank **boolean|string** - &lt;p&gt;add a blank &lt;option&gt; value to the select list, true or false&lt;/p&gt;
+* $user **string** - The user id to get the selected value for
+* $allow_blank **boolean|string** - add a blank &lt;option&gt; value to the select list, true or false
 
 
 
@@ -88,8 +88,8 @@ Returns a dropbox for departments, either with the 'selected' value or not if $u
 
 
 #### Arguments
-* $user **string** - &lt;p&gt;The user id to get the selected value for&lt;/p&gt;
-* $allow_blank **boolean|string** - &lt;p&gt;add a blank &lt;option&gt; value to the select list, true or false&lt;/p&gt;
+* $user **string** - The user id to get the selected value for
+* $allow_blank **boolean|string** - add a blank &lt;option&gt; value to the select list, true or false
 
 
 
@@ -106,8 +106,8 @@ Returns a dropbox for ethnicity, either with the 'selected' value or not if $use
 
 
 #### Arguments
-* $user **string** - &lt;p&gt;The user id to get the selected value for&lt;/p&gt;
-* $allow_blank **boolean|string** - &lt;p&gt;add a blank &lt;option&gt; value to the select list, true or false&lt;/p&gt;
+* $user **string** - The user id to get the selected value for
+* $allow_blank **boolean|string** - add a blank &lt;option&gt; value to the select list, true or false
 
 
 
@@ -124,8 +124,8 @@ Returns a dropbox for gender's, either with the 'selected' value or not if $user
 
 
 #### Arguments
-* $user **string** - &lt;p&gt;The user id to get the selected value for&lt;/p&gt;
-* $allow_blank **boolean|string** - &lt;p&gt;add a blank &lt;option&gt; value to the select list, true or false&lt;/p&gt;
+* $user **string** - The user id to get the selected value for
+* $allow_blank **boolean|string** - add a blank &lt;option&gt; value to the select list, true or false
 
 
 
@@ -142,8 +142,8 @@ Returns a dropbox for institutions, either with the 'selected' value or not if $
 
 
 #### Arguments
-* $user **string** - &lt;p&gt;The user id to get the selected value for&lt;/p&gt;
-* $allow_blank **boolean|string** - &lt;p&gt;add a blank &lt;option&gt; value to the select list, true or false&lt;/p&gt;
+* $user **string** - The user id to get the selected value for
+* $allow_blank **boolean|string** - add a blank &lt;option&gt; value to the select list, true or false
 
 
 
@@ -160,8 +160,8 @@ Returns a dropbox for marital status, either with the 'selected' value or not if
 
 
 #### Arguments
-* $user **string** - &lt;p&gt;The user id to get the selected value for&lt;/p&gt;
-* $allow_blank **boolean|string** - &lt;p&gt;add a blank &lt;option&gt; value to the select list, true or false&lt;/p&gt;
+* $user **string** - The user id to get the selected value for
+* $allow_blank **boolean|string** - add a blank &lt;option&gt; value to the select list, true or false
 
 
 
@@ -178,7 +178,7 @@ Returns a dropbox for states, either with the 'selected' value or not if $user i
 
 
 #### Arguments
-* $user **string** - &lt;p&gt;The user id to get the selected value for&lt;/p&gt;
-* $allow_blank **boolean|string** - &lt;p&gt;add a blank &lt;option&gt; value to the select list, true or false&lt;/p&gt;
+* $user **string** - The user id to get the selected value for
+* $allow_blank **boolean|string** - add a blank &lt;option&gt; value to the select list, true or false
 
 

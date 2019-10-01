@@ -48,8 +48,8 @@ Deletes an education record
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $edu_rid **string** - &lt;p&gt;Edu record id&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $edu_rid **string** - Edu record id
 
 
 
@@ -66,8 +66,8 @@ Search for an education record
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $edu_rid **string** - &lt;p&gt;Edu record id&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $edu_rid **string** - Edu record id
 
 
 
@@ -84,8 +84,8 @@ Inserts a new edu record and sets as default
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $cohort_cod **string** - &lt;p&gt;Cohort code&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $cohort_cod **string** - Cohort code
 
 
 
@@ -102,16 +102,16 @@ Inserts a new edu record
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $educmem **string** - &lt;p&gt;Educational record memo&lt;/p&gt;
-* $inst_cod **string** - &lt;p&gt;Institutional code&lt;/p&gt;
-* $mod_stat **string** - &lt;p&gt;The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI&lt;/p&gt;
-* $degree **string** - &lt;p&gt;Degree for the given educational record&lt;/p&gt;
-* $enter_date **string** - &lt;p&gt;Educational record entry date&lt;/p&gt;
-* $leav_date **string** - &lt;p&gt;Educational record leaving date&lt;/p&gt;
-* $grad_mo **string** - &lt;p&gt;Educational record gradfuation month&lt;/p&gt;
-* $grad_year **string** - &lt;p&gt;Educational record gradfuation year&lt;/p&gt;
-* $graduated **string** - &lt;p&gt;Educational record graduated, true or false&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $educmem **string** - Educational record memo
+* $inst_cod **string** - Institutional code
+* $mod_stat **string** - The 2 character code for module status, such as ST, WD, AL, PS, FA, SF, and HI
+* $degree **string** - Degree for the given educational record
+* $enter_date **string** - Educational record entry date
+* $leav_date **string** - Educational record leaving date
+* $grad_mo **string** - Educational record gradfuation month
+* $grad_year **string** - Educational record gradfuation year
+* $graduated **string** - Educational record graduated, true or false
 
 
 
@@ -128,9 +128,9 @@ Inserts a new institution
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $inst_mem **string** - &lt;p&gt;Institutional memo&lt;/p&gt;
-* $edu_rid **string** - &lt;p&gt;Edu record id&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $inst_mem **string** - Institutional memo
+* $edu_rid **string** - Edu record id
 
 
 
@@ -147,11 +147,11 @@ Search for institution
 
 
 #### Arguments
-* $inst_state **string** - &lt;p&gt;Institutional state&lt;/p&gt;
-* $inst_city **string** - &lt;p&gt;Institutional city&lt;/p&gt;
-* $inst_txt **string** - &lt;p&gt;Institutional description&lt;/p&gt;
-* $insttypcod **string** - &lt;p&gt;Institutional type code&lt;/p&gt;
-* $inst_cntry **string** - &lt;p&gt;Institutional country&lt;/p&gt;
+* $inst_state **string** - Institutional state
+* $inst_city **string** - Institutional city
+* $inst_txt **string** - Institutional description
+* $insttypcod **string** - Institutional type code
+* $inst_cntry **string** - Institutional country
 
 
 
@@ -168,49 +168,49 @@ Update a given education record
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $edu_rid **string** - &lt;p&gt;Edu record id&lt;/p&gt;
-* $eduinsttyp **string** - &lt;p&gt;Institutional type&lt;/p&gt;
-* $degree **string** - &lt;p&gt;Degree for the given educational record&lt;/p&gt;
-* $credits **string** - &lt;p&gt;Credits&lt;/p&gt;
-* $qlty_pnts **string** - &lt;p&gt;Quality point&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $edu_rid **string** - Edu record id
+* $eduinsttyp **string** - Institutional type
+* $degree **string** - Degree for the given educational record
+* $credits **string** - Credits
+* $qlty_pnts **string** - Quality point
 * $cqpa **string**
-* $rankstud **string** - &lt;p&gt;Student rank&lt;/p&gt;
-* $rankclass **string** - &lt;p&gt;Class rank&lt;/p&gt;
-* $grad_date **string** - &lt;p&gt;Graduation date&lt;/p&gt;
-* $enter_date **string** - &lt;p&gt;Educational record entry date&lt;/p&gt;
-* $leav_date **string** - &lt;p&gt;Educational record leaving date&lt;/p&gt;
-* $date_rec **string** - &lt;p&gt;Date received&lt;/p&gt;
-* $matric_dt **string** - &lt;p&gt;Matriculation date&lt;/p&gt;
-* $trans_rec **string** - &lt;p&gt;Transcripts received&lt;/p&gt;
-* $prog_desc **string** - &lt;p&gt;Program description&lt;/p&gt;
-* $educmem **string** - &lt;p&gt;Educational record memo&lt;/p&gt;
-* $enr_age **string** - &lt;p&gt;Enrollment age&lt;/p&gt;
-* $orig_grad **string** - &lt;p&gt;Original graduation date&lt;/p&gt;
-* $grad_mo **string** - &lt;p&gt;Educational record gradfuation month&lt;/p&gt;
-* $grad_year **string** - &lt;p&gt;Educational record gradfuation year&lt;/p&gt;
-* $graduated **string** - &lt;p&gt;Educational record graduated, true or false&lt;/p&gt;
-* $grad_honors **string** - &lt;p&gt;Graduated with honors&lt;/p&gt;
-* $nmedu_ce1 **string** - &lt;p&gt;Custom Field 1&lt;/p&gt;
-* $nmedu_le1 **string** - &lt;p&gt;Custom Field 2&lt;/p&gt;
-* $nmedu_ne1 **string** - &lt;p&gt;Custom Field 3&lt;/p&gt;
-* $inst_txt **string** - &lt;p&gt;Institutional description&lt;/p&gt;
-* $cohort_cod **string** - &lt;p&gt;Cohort code&lt;/p&gt;
-* $degree_sought **string** - &lt;p&gt;Degree sought&lt;/p&gt;
-* $prg_sought **string** - &lt;p&gt;Program sought&lt;/p&gt;
-* $ant_grad_date **string** - &lt;p&gt;Anticipated graduation date&lt;/p&gt;
-* $gpa_creds **string** - &lt;p&gt;GPA Credits&lt;/p&gt;
-* $transfered **string** - &lt;p&gt;Transfered&lt;/p&gt;
+* $rankstud **string** - Student rank
+* $rankclass **string** - Class rank
+* $grad_date **string** - Graduation date
+* $enter_date **string** - Educational record entry date
+* $leav_date **string** - Educational record leaving date
+* $date_rec **string** - Date received
+* $matric_dt **string** - Matriculation date
+* $trans_rec **string** - Transcripts received
+* $prog_desc **string** - Program description
+* $educmem **string** - Educational record memo
+* $enr_age **string** - Enrollment age
+* $orig_grad **string** - Original graduation date
+* $grad_mo **string** - Educational record gradfuation month
+* $grad_year **string** - Educational record gradfuation year
+* $graduated **string** - Educational record graduated, true or false
+* $grad_honors **string** - Graduated with honors
+* $nmedu_ce1 **string** - Custom Field 1
+* $nmedu_le1 **string** - Custom Field 2
+* $nmedu_ne1 **string** - Custom Field 3
+* $inst_txt **string** - Institutional description
+* $cohort_cod **string** - Cohort code
+* $degree_sought **string** - Degree sought
+* $prg_sought **string** - Program sought
+* $ant_grad_date **string** - Anticipated graduation date
+* $gpa_creds **string** - GPA Credits
+* $transfered **string** - Transfered
 * $grad_stud **string**
-* $OA_inprocess **string** - &lt;p&gt;Online application in progress&lt;/p&gt;
-* $diploma **string** - &lt;p&gt;Diploma&lt;/p&gt;
-* $employ_waiver_type **string** - &lt;p&gt;Employer waiver type&lt;/p&gt;
+* $OA_inprocess **string** - Online application in progress
+* $diploma **string** - Diploma
+* $employ_waiver_type **string** - Employer waiver type
 * $cur_cod **string**
-* $prev_instname **string** - &lt;p&gt;Previous instituion name&lt;/p&gt;
-* $grad_age **string** - &lt;p&gt;Graduating age&lt;/p&gt;
-* $degreeclass_cod **string** - &lt;p&gt;Degree class code&lt;/p&gt;
-* $nmedu_transmem **string** - &lt;p&gt;Transfer memo&lt;/p&gt;
-* $employ_waiver **string** - &lt;p&gt;Employer waiver&lt;/p&gt;
-* $override **string** - &lt;p&gt;Override flag&lt;/p&gt;
+* $prev_instname **string** - Previous instituion name
+* $grad_age **string** - Graduating age
+* $degreeclass_cod **string** - Degree class code
+* $nmedu_transmem **string** - Transfer memo
+* $employ_waiver **string** - Employer waiver
+* $override **string** - Override flag
 
 

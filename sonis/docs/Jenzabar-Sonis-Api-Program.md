@@ -50,7 +50,7 @@ Search for a program
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
 
 
 
@@ -67,7 +67,7 @@ Complete an application
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
 
 
 
@@ -101,16 +101,16 @@ Insert a program record
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $camp_cod **string** - &lt;p&gt;The person&#039;s campus, in the form of the code&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $camp_cod **string** - The person&#039;s campus, in the form of the code
 * $entry_date **string**
-* $prg_cod **string** - &lt;p&gt;Program code&lt;/p&gt;
-* $div_cod **string** - &lt;p&gt;The person&#039;s division, in the form of the code&lt;/p&gt;
+* $prg_cod **string** - Program code
+* $div_cod **string** - The person&#039;s division, in the form of the code
 * $app_date **string**
 * $ack_date **string**
 * $trans_date **string**
 * $is_applicant **string**
-* $preferred **string** - &lt;p&gt;The persons preferred address, yes or no&lt;/p&gt;
+* $preferred **string** - The persons preferred address, yes or no
 * $incomplete **string**
 * $app_rid **string**
 * $ref_source **string**
@@ -121,15 +121,15 @@ Insert a program record
 * $acknowledg **string**
 * $sms_trans **string**
 * $matric_fee **string**
-* $degree_ap **string** - &lt;p&gt;Degree applied&lt;/p&gt;
-* $degree_ac **string** - &lt;p&gt;Degree accepted&lt;/p&gt;
+* $degree_ap **string** - Degree applied
+* $degree_ac **string** - Degree accepted
 * $major_ap **string**
 * $major_ac **string**
 * $time_maint **string**
 * $date_maint **string**
 * $trans_done **string**
-* $operator **string** - &lt;p&gt;The persons unqiue ID adding or modifying the record. Please change the value&lt;/p&gt;
-* $d_soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
+* $operator **string** - The persons unqiue ID adding or modifying the record. Please change the value
+* $d_soc_sec **string** - The objects unique identifier
 
 
 
@@ -146,8 +146,8 @@ Prevent repeats update
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
-* $prg_cod **string** - &lt;p&gt;Program code&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
+* $prg_cod **string** - Program code
 
 
 
@@ -164,6 +164,6 @@ Search for a program
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;The objects unique identifier&lt;/p&gt;
+* $soc_sec **string** - The objects unique identifier
 
 

@@ -49,7 +49,7 @@ Deletes a contact record
 
 
 #### Arguments
-* $nmemc_rid **string** - &lt;p&gt;the record id to be deleted&lt;/p&gt;
+* $nmemc_rid **string** - the record id to be deleted
 
 
 
@@ -66,20 +66,20 @@ Creates a new emergency contact record
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;the persons id&lt;/p&gt;
-* $nmemc_name **string** - &lt;p&gt;contact name&lt;/p&gt;
-* $nmemc_phone1 **string** - &lt;p&gt;contact phone&lt;/p&gt;
-* $nmemc_phone2 **string** - &lt;p&gt;contact phone 2&lt;/p&gt;
-* $nmemc_relation **string** - &lt;p&gt;relationship&lt;/p&gt;
-* $st_addr2 **string** - &lt;p&gt;street address&lt;/p&gt;
-* $add_addrs1 **string** - &lt;p&gt;bldg, ste, or apt#&lt;/p&gt;
-* $add_addrs2 **string** - &lt;p&gt;additional if needed&lt;/p&gt;
-* $city2 **string** - &lt;p&gt;city&lt;/p&gt;
-* $state2 **string** - &lt;p&gt;state&lt;/p&gt;
-* $zip2 **string** - &lt;p&gt;zip code&lt;/p&gt;
-* $e_mail3 **string** - &lt;p&gt;email address&lt;/p&gt;
-* $memo **string** - &lt;p&gt;contact memo field&lt;/p&gt;
-* $d_soc_sec **string** - &lt;p&gt;not needed&lt;/p&gt;
+* $soc_sec **string** - the persons id
+* $nmemc_name **string** - contact name
+* $nmemc_phone1 **string** - contact phone
+* $nmemc_phone2 **string** - contact phone 2
+* $nmemc_relation **string** - relationship
+* $st_addr2 **string** - street address
+* $add_addrs1 **string** - bldg, ste, or apt#
+* $add_addrs2 **string** - additional if needed
+* $city2 **string** - city
+* $state2 **string** - state
+* $zip2 **string** - zip code
+* $e_mail3 **string** - email address
+* $memo **string** - contact memo field
+* $d_soc_sec **string** - not needed
 
 
 
@@ -96,8 +96,8 @@ Searches for a contact record
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;the persons id&lt;/p&gt;
-* $nmemc_rid **string** - &lt;p&gt;the contact record id if known&lt;/p&gt;
+* $soc_sec **string** - the persons id
+* $nmemc_rid **string** - the contact record id if known
 
 
 
@@ -114,20 +114,20 @@ Update an emergency contact record
 
 
 #### Arguments
-* $soc_sec **string** - &lt;p&gt;the persons id&lt;/p&gt;
-* $nmemc_name **string** - &lt;p&gt;contact name&lt;/p&gt;
-* $nmemc_phone1 **string** - &lt;p&gt;contact phone&lt;/p&gt;
-* $nmemc_phone2 **string** - &lt;p&gt;contact phone 2&lt;/p&gt;
-* $nmemc_relation **string** - &lt;p&gt;relationship&lt;/p&gt;
-* $st_addr2 **string** - &lt;p&gt;street address&lt;/p&gt;
-* $add_addrs1 **string** - &lt;p&gt;bldg, ste, or apt#&lt;/p&gt;
-* $add_addrs2 **string** - &lt;p&gt;additional if needed&lt;/p&gt;
-* $city2 **string** - &lt;p&gt;city&lt;/p&gt;
-* $state2 **string** - &lt;p&gt;state&lt;/p&gt;
-* $zip2 **string** - &lt;p&gt;zip code&lt;/p&gt;
-* $e_mail3 **string** - &lt;p&gt;email address&lt;/p&gt;
-* $memo **string** - &lt;p&gt;contact memo field&lt;/p&gt;
-* $nmemc_rid **string** - &lt;p&gt;the contact record id if known&lt;/p&gt;
-* $d_soc_sec **string** - &lt;p&gt;not needed&lt;/p&gt;
+* $soc_sec **string** - the persons id
+* $nmemc_name **string** - contact name
+* $nmemc_phone1 **string** - contact phone
+* $nmemc_phone2 **string** - contact phone 2
+* $nmemc_relation **string** - relationship
+* $st_addr2 **string** - street address
+* $add_addrs1 **string** - bldg, ste, or apt#
+* $add_addrs2 **string** - additional if needed
+* $city2 **string** - city
+* $state2 **string** - state
+* $zip2 **string** - zip code
+* $e_mail3 **string** - email address
+* $memo **string** - contact memo field
+* $nmemc_rid **string** - the contact record id if known
+* $d_soc_sec **string** - not needed
 
 

@@ -50,7 +50,7 @@ Inserts or updates a note
 
 
 #### Arguments
-* $pagenote_cod **string** - &lt;p&gt;Get a specific page note&lt;/p&gt;
+* $pagenote_cod **string** - Get a specific page note
 
 
 
@@ -67,6 +67,6 @@ The bottom page note
 
 
 #### Arguments
-* $pagenote_cod **string** - &lt;p&gt;Get a specific page note&lt;/p&gt;
+* $pagenote_cod **string** - Get a specific page note
 
 

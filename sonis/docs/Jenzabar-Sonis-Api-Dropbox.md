@@ -48,8 +48,8 @@ Creates an html list for yes/no options with values 0 and 1
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $Additional_Properties **string** - Add additional html properties for &lt;select&gt;
 
 
 
@@ -66,11 +66,11 @@ Provides an html list of application terms
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
-* $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $Additional_Properties **string** - Add additional html properties for &lt;select&gt;
+* $value **string** - the default value to be used, selected automatically, defaults to blank
 
 
 
@@ -87,12 +87,12 @@ Provides an html list of campus'
 
 
 #### Arguments
-* $hide_excludes **boolean** - &lt;p&gt;Hide excluded values as set in Sonis, true or false&lt;/p&gt;
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
-* $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
+* $hide_excludes **boolean** - Hide excluded values as set in Sonis, true or false
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $Additional_Properties **string** - Add additional html properties for &lt;select&gt;
+* $value **string** - the default value to be used, selected automatically, defaults to blank
 
 
 
@@ -109,10 +109,10 @@ Provides an html list of countries
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $Additional_Properties **string** - Add additional html properties for &lt;select&gt;
 
 
 
@@ -129,12 +129,12 @@ Provides an html list of counties
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
-* $disp_only **boolean** - &lt;p&gt;True or false if editable&lt;/p&gt;
-* $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $Additional_Properties **string** - Add additional html properties for &lt;select&gt;
+* $disp_only **boolean** - True or false if editable
+* $value **string** - the default value to be used, selected automatically, defaults to blank
 
 
 
@@ -151,10 +151,10 @@ Provides an html list of degrees
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $Additional_Properties **string** - Add additional html properties for &lt;select&gt;
 
 
 
@@ -171,11 +171,11 @@ Provides an html list of degrees
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
-* $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $Additional_Properties **string** - Add additional html properties for &lt;select&gt;
+* $value **string** - the default value to be used, selected automatically, defaults to blank
 
 
 
@@ -192,13 +192,13 @@ Provides an html list of departments
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $desc_only **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $cod_desc **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
-* $size **integer** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $desc_only **boolean** - Unsure really, testing shows no change
+* $cod_desc **boolean** - Unsure really, testing shows no change
+* $value **string** - the default value to be used, selected automatically, defaults to blank
+* $size **integer** - Unsure really, testing shows no change
 
 
 
@@ -215,13 +215,13 @@ Provides an html list of ethnicity's
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $desc_only **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $cod_desc **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
-* $size **integer** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $desc_only **boolean** - Unsure really, testing shows no change
+* $cod_desc **boolean** - Unsure really, testing shows no change
+* $value **string** - the default value to be used, selected automatically, defaults to blank
+* $size **integer** - Unsure really, testing shows no change
 
 
 
@@ -238,13 +238,13 @@ Provides an html list of genders
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $desc_only **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $cod_desc **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
-* $size **integer** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $desc_only **boolean** - Unsure really, testing shows no change
+* $cod_desc **boolean** - Unsure really, testing shows no change
+* $value **string** - the default value to be used, selected automatically, defaults to blank
+* $size **integer** - Unsure really, testing shows no change
 
 
 
@@ -261,10 +261,10 @@ Provides an html list of interest's
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $Additional_Properties **string** - Add additional html properties for &lt;select&gt;
 
 
 
@@ -281,10 +281,10 @@ Provides an html list of levels of education
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $Additional_Properties **string** - Add additional html properties for &lt;select&gt;
 
 
 
@@ -301,13 +301,13 @@ Provides an html list of licenses
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $desc_only **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $cod_desc **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
-* $size **integer** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $desc_only **boolean** - Unsure really, testing shows no change
+* $cod_desc **boolean** - Unsure really, testing shows no change
+* $value **string** - the default value to be used, selected automatically, defaults to blank
+* $size **integer** - Unsure really, testing shows no change
 
 
 
@@ -324,13 +324,13 @@ Provides an html list of martial status'
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $desc_only **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $cod_desc **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
-* $size **integer** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $desc_only **boolean** - Unsure really, testing shows no change
+* $cod_desc **boolean** - Unsure really, testing shows no change
+* $value **string** - the default value to be used, selected automatically, defaults to blank
+* $size **integer** - Unsure really, testing shows no change
 
 
 
@@ -347,14 +347,14 @@ Provides an html list of programs
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $desc_only **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $cod_desc **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $excl_prg **boolean** - &lt;p&gt;Exclude hidden programs in Sonis&lt;/p&gt;
-* $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
-* $size **integer** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $desc_only **boolean** - Unsure really, testing shows no change
+* $cod_desc **boolean** - Unsure really, testing shows no change
+* $excl_prg **boolean** - Exclude hidden programs in Sonis
+* $value **string** - the default value to be used, selected automatically, defaults to blank
+* $size **integer** - Unsure really, testing shows no change
 
 
 
@@ -371,11 +371,11 @@ Provides an html list of programs
 
 
 #### Arguments
-* $hide_excludes **boolean** - &lt;p&gt;Hide excluded values as set in Sonis, true or false&lt;/p&gt;
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
+* $hide_excludes **boolean** - Hide excluded values as set in Sonis, true or false
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $Additional_Properties **string** - Add additional html properties for &lt;select&gt;
 
 
 
@@ -392,10 +392,10 @@ Provides an html list of state's
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $Additional_Properties **string** - Add additional html properties for &lt;select&gt;
 
 
 
@@ -412,10 +412,10 @@ Provides an html list of states of licensure
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $Additional_Properties **string** - Add additional html properties for &lt;select&gt;
 
 
 
@@ -432,12 +432,12 @@ Provides an html list of school years
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $use_cur_sem **boolean** - &lt;p&gt;true or false to use current semester as default&lt;/p&gt;
-* $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
-* $size **integer** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $use_cur_sem **boolean** - true or false to use current semester as default
+* $value **string** - the default value to be used, selected automatically, defaults to blank
+* $size **integer** - Unsure really, testing shows no change
 
 
 
@@ -454,14 +454,14 @@ Provides an html list of semesters
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $desc_only **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $cod_desc **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $use_cur_sem **boolean** - &lt;p&gt;true or false to use current semester as default&lt;/p&gt;
-* $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
-* $size **integer** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $desc_only **boolean** - Unsure really, testing shows no change
+* $cod_desc **boolean** - Unsure really, testing shows no change
+* $use_cur_sem **boolean** - true or false to use current semester as default
+* $value **string** - the default value to be used, selected automatically, defaults to blank
+* $size **integer** - Unsure really, testing shows no change
 
 
 
@@ -478,10 +478,10 @@ Provides an html list of terms/semester interested in
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $Additional_Properties **string** - &lt;p&gt;Add additional html properties for &lt;select&gt;&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $Additional_Properties **string** - Add additional html properties for &lt;select&gt;
 
 
 
@@ -498,13 +498,13 @@ Provides an html list of tuition status'
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $desc_only **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $cod_desc **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
-* $size **integer** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $desc_only **boolean** - Unsure really, testing shows no change
+* $cod_desc **boolean** - Unsure really, testing shows no change
+* $value **string** - the default value to be used, selected automatically, defaults to blank
+* $size **integer** - Unsure really, testing shows no change
 
 
 
@@ -521,13 +521,13 @@ Provides an html list of visas'
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $desc_only **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $cod_desc **boolean** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
-* $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
-* $size **integer** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $desc_only **boolean** - Unsure really, testing shows no change
+* $cod_desc **boolean** - Unsure really, testing shows no change
+* $value **string** - the default value to be used, selected automatically, defaults to blank
+* $size **integer** - Unsure really, testing shows no change
 
 
 
@@ -544,10 +544,10 @@ Provides an html list of zones, i.e dbo.zone
 
 
 #### Arguments
-* $allow_blank **boolean** - &lt;p&gt;Allow blank values, true or false, this must be true if $value is not set&lt;/p&gt;
-* $multi_select **boolean** - &lt;p&gt;Create mutli-select html box, true or false&lt;/p&gt;
-* $hide **boolean** - &lt;p&gt;Hide this dropdown by default, true or false&lt;/p&gt;
-* $value **string** - &lt;p&gt;the default value to be used, selected automatically, defaults to blank&lt;/p&gt;
-* $size **integer** - &lt;p&gt;Unsure really, testing shows no change&lt;/p&gt;
+* $allow_blank **boolean** - Allow blank values, true or false, this must be true if $value is not set
+* $multi_select **boolean** - Create mutli-select html box, true or false
+* $hide **boolean** - Hide this dropdown by default, true or false
+* $value **string** - the default value to be used, selected automatically, defaults to blank
+* $size **integer** - Unsure really, testing shows no change
 
 

@@ -48,7 +48,7 @@ Get course core requisites
 
 
 #### Arguments
-* $crs_id **integer** - &lt;p&gt;The course id&lt;/p&gt;
+* $crs_id **integer** - The course id
 
 
 
@@ -65,7 +65,7 @@ Get course requisites
 
 
 #### Arguments
-* $crs_id **integer** - &lt;p&gt;The course id&lt;/p&gt;
+* $crs_id **integer** - The course id
 
 
 
@@ -82,7 +82,7 @@ Get course pre-reqs
 
 
 #### Arguments
-* $crs_id **integer** - &lt;p&gt;The course id&lt;/p&gt;
+* $crs_id **integer** - The course id
 
 
 
@@ -99,8 +99,8 @@ Get course core pre-reqs
 
 
 #### Arguments
-* $schyear **integer** - &lt;p&gt;The school year in yyyyyy format, 201718&lt;/p&gt;
-* $semlist **integer** - &lt;p&gt;The semester, i.e 1,2,3,4..&lt;/p&gt;
-* $camp_cod **string** - &lt;p&gt;The campus code&lt;/p&gt;
+* $schyear **integer** - The school year in yyyyyy format, 201718
+* $semlist **integer** - The semester, i.e 1,2,3,4..
+* $camp_cod **string** - The campus code
 
 
