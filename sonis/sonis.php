@@ -2,7 +2,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2016 Jason A. Everling
+ * Copyright (c) 2016-2019 Jason A. Everling
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -32,7 +32,7 @@
  * @file sonis.php
  * @package Core
  * @author Jason A. Everling <jason...@gmail.com>
- * @copyright 2016
+ * @copyright 2016-2019
  * @license https://opensource.org/licenses/MIT
  */
 

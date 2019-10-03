@@ -3,7 +3,7 @@
  *
  * MIT License
  *
- * Copyright (c) 2016 Jason A. Everling
+ * Copyright (c) 2016-2019 Jason A. Everling
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -37,7 +37,7 @@ namespace Jenzabar\Sonis\Api;
  * @file Biographic.php
  * @package Sonis API
  * @author Jason A. Everling <jason...@gmail.com>
- * @copyright 2016
+ * @copyright 2016-2019
  * @license https://opensource.org/licenses/MIT
  */
 class Biographic
@@ -76,7 +76,7 @@ class Biographic
      * Get enrollment status
      *
      * @param string $soc_sec The objects unique identifier
-     * @param string $sch_yr the school year code, like 201617
+     * @param string $sch_yr the school year code, like 2016-201917
      * @param string $semester the semester, either 1,2,3,4
      * @return array
      */
