@@ -422,14 +422,14 @@ class Utils
      * @return array|boolean
      * @link http://docs.php.net/manual/en/function.array-change-key-case.php
      */
-    public function arrayLC($array)
+    public function arrayLower($array)
     {
         $multi_array = false;
         if (is_array($array) && isset($array[0])) {
             $multi_array = true;
         }
         if ($multi_array) {
-            $result = $this->arrayOfArraysLC($array);
+            $result = $this->arrayOfArraysLower($array);
         } else {
             $result = array_change_key_case($array, CASE_LOWER);
         }
@@ -442,11 +442,11 @@ class Utils
      * @param array $array
      * @return array
      */
-    private function arrayOfArraysLC($array)
+    private function arrayOfArraysLower($array)
     {
         return array_map(function ($item) {
             if (is_array($item)) {
-                $item = $this->arrayOfArraysLC($item);
+                $item = $this->arrayOfArraysLower($item);
             }
             return $item;
         }, array_change_key_case($array, CASE_LOWER));

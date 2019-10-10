@@ -124,7 +124,7 @@ class Selectable
         if ($stmt == '') {
             return false;
         }
-        $items = $utils->arrayLC(SoapSql::run($stmt));
+        $items = $utils->arrayLower(SoapSql::run($stmt));
 
         if ($allow_blank) {
             foreach ($items as $item) {
@@ -158,7 +158,7 @@ class Selectable
                             AND a.preferred = '1'
                     WHERE a.soc_sec = '$user'
                     ORDER BY c.cell_provider ASC";
-            $selected = $utils->arrayLC(SoapSql::run($stmt));
+            $selected = $utils->arrayLower(SoapSql::run($stmt));
             return '<option value="' . $selected['cell_provider'] . '" selected>'
                     . $selected['cell_provider'] . '</option>' . $list;
         }
@@ -183,7 +183,7 @@ class Selectable
                             AND a.preferred = '1' 
                     WHERE a.soc_sec = '$user'
                     ORDER BY c.country_txt ASC";
-            $selected = $utils->arrayLC(SoapSql::run($stmt));
+            $selected = $utils->arrayLower(SoapSql::run($stmt));
             return '<option value="' . $selected['country'] . '" selected>'
                     . $selected['country_txt'] . '</option>' . $list;
         }
@@ -206,7 +206,7 @@ class Selectable
                      FROM name n
                         INNER JOIN dept d on n.dept_cod = d.dept_cod
                      WHERE n.soc_sec = '$user'";
-            $selected = $utils->arrayLC(SoapSql::run($stmt));
+            $selected = $utils->arrayLower(SoapSql::run($stmt));
             return '<option value="' . $selected['dept_cod'] . '" selected>'
                     . $selected['dept_txt'] . '</option>' . $list;
         }
@@ -229,7 +229,7 @@ class Selectable
                      FROM name AS n
                         INNER JOIN ethnic AS e ON n.ethnic_cod = e.ethnic_cod 
                     WHERE n.soc_sec = '$user'";
-            $selected = $utils->arrayLC(SoapSql::run($stmt));
+            $selected = $utils->arrayLower(SoapSql::run($stmt));
             return '<option value="' . $selected['ethnic_cod'] . '" selected>'
                     . $selected['ethnic_txt'] . '</option>' . $list;
         }
@@ -253,7 +253,7 @@ class Selectable
                         INNER JOIN gender AS g ON n.gender = g.gender_cod
                     WHERE n.soc_sec = '$user'
                     ORDER BY g.gender_txt ASC";
-            $selected = $utils->arrayLC(SoapSql::run($stmt));
+            $selected = $utils->arrayLower(SoapSql::run($stmt));
             return '<option value="' . $selected['gender_cod'] . '" selected>'
                     . $selected['gender_txt'] . '</option>' . $list;
         }
@@ -279,7 +279,7 @@ class Selectable
                         INNER JOIN institut AS i ON e.inst_cod = i.inst_cod 
                     WHERE n.soc_sec = '$user'
                     ORDER BY i.inst_txt ASC";
-            $selected = $utils->arrayLC(SoapSql::run($stmt));
+            $selected = $utils->arrayLower(SoapSql::run($stmt));
             return '<option value="' . $selected['inst_cod'] . '" selected>'
                     . $selected['inst_txt'] . '</option>' . $list;
         }
@@ -302,7 +302,7 @@ class Selectable
                      FROM name AS n
                         INNER JOIN marital AS m ON n.mar_cod = m.mar_cod 
                     WHERE n.soc_sec = '$user'";
-            $selected = $utils->arrayLC(SoapSql::run($stmt));
+            $selected = $utils->arrayLower(SoapSql::run($stmt));
             return '<option value="' . $selected['mar_cod'] . '" selected>'
                     . $selected['mar_txt'] . '</option>' . $list;
         }
@@ -326,7 +326,7 @@ class Selectable
                         INNER JOIN state AS s ON a.state = s.state_abbr AND a.preferred = '1' 
                         WHERE a.soc_sec = '$user'
                         ORDER BY s.state_name ASC";
-            $selected = $utils->arrayLC(SoapSql::run($stmt));
+            $selected = $utils->arrayLower(SoapSql::run($stmt));
             return '<option value="' . $selected['state_abbr'] . '" selected>'
                     . $selected['state_name'] . '</option>' . $list;
         }
