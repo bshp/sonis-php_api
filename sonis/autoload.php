@@ -33,8 +33,6 @@
 
 namespace Jenzabar\Sonis\Api;
 
-set_include_path(__DIR__ . '/lib');
-
 /**
  * The autoloader,
  * sonis.php does everything else
@@ -42,13 +40,15 @@ set_include_path(__DIR__ . '/lib');
 spl_autoload_register(function ($class) {
     $ns = 'Jenzabar\Sonis\Api';
     $len = strlen($ns);
-    //Check before proceeding
+
+    //Check if we are using the Sonis namespace before proceeding
     if (strncmp($ns, $class, $len) !== 0) {
         return;
     }
 
     $lib = explode('\\', $class);
-    require end($lib) . '.php';
+    require(__DIR__ . '/lib/' . $lib[3] . '.php');
+    
 });
 
 //============================
