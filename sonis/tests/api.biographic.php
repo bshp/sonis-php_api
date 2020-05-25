@@ -3,7 +3,7 @@
  *
  * MIT License
  *
- * Copyright (c) 2016 Jason A. Everling
+ * Copyright (c) 2016-2019 Jason A. Everling
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,16 +28,16 @@
 /**
  * Sonis API Framework
  *
- * Test file for soapapi.cfc, the biographic.cfc component
+ * Test file for SoapApi.cfc, the biographic.cfc component
  *
- * @file api.biographic.php
+ * @file api.Biographic.php
  * @package Test
  * @author Jason A. Everling <jason...@gmail.com>
- * @copyright 2016
+ * @copyright 2016-2019
  * @license https://opensource.org/licenses/MIT
  */
 
-use Jenzabar\Sonis\Api\soapapi;
+use Jenzabar\Sonis\Api\SoapApi;
 use Jenzabar\Sonis\Api\biographic;
 
 define('SONIS_USER', 'username');  // your api user
@@ -61,7 +61,7 @@ $soc_sec = '000000000';
  *
  * @var mixed $args
  */
-$args = biographic::namesearch($soc_sec);
+$args = biographic::nameSearch($soc_sec);
 
 /**
  * Start the API call process.
@@ -69,7 +69,8 @@ $args = biographic::namesearch($soc_sec);
  *
  * @var mixed $request
  */
-$request = soapapi::run($args);
+$request = SoapApi::run($args);
 
 print_r($request);
-print_r('Sonis API Framework: ' . $utils->get_version('pretty'));
+print_r("\n\n" . 'Sonis API Framework: ' . $utils->getVersion('pretty'));
+print_r("\n\n" . $cfg->root);

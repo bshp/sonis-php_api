@@ -2,7 +2,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2016 Jason A. Everling
+ * Copyright (c) 2016-2019 Jason A. Everling
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -32,7 +32,7 @@
  * @file sonis.php
  * @package Core
  * @author Jason A. Everling <jason...@gmail.com>
- * @copyright 2016
+ * @copyright 2016-2019
  * @license https://opensource.org/licenses/MIT
  */
 
@@ -40,7 +40,7 @@ namespace Jenzabar\Sonis\Api;
 
 use stdClass;
 
-require __DIR__ . '/lib.php';
+require __DIR__ . '/autoload.php';
 
 global $cfg;  // Needed for PHPUnit
 
@@ -78,7 +78,7 @@ $cfg->opts = [
 //=======================================
 $cfg->release = [
     'branch' => 'master', // do not change
-    'version' => 2.3, // do not change
+    'version' => 3.0, // do not change
     'patch' => 0, // do not change
 ];
 //
@@ -107,8 +107,7 @@ $cfg->host = rtrim($cfg->host, '/');
 //===========================
 // ensure api is reachable  #
 //===========================
-$utils = new utils();
-if (!$utils->utils_api_up()) {
-    $utils->utils_event_error(lang::get('api_unavailable'), true);
+$utils = new Utils();
+if (!$utils->apiUp()) {
+    $utils->eventError(lang::get('api_unavailable'), true);
 }
-//closing tag left out on purpose to prevent trailing whitespaces
