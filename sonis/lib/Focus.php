@@ -25,62 +25,76 @@
  *
  */
 
+namespace Jenzabar\Sonis\Api;
+
 /**
- * Sonis API Framework
+ * Class focus
  *
- * Test file for SoapApi.cfc, the address.cfc component
+ * Utilities
  *
- * @file api.Address.php
- * @package Test
+ * Grouped functions related to the object being referenced
+ *
+ * @file Focus.php
+ * @package Utilities
  * @author Jason A. Everling <jason...@gmail.com>
  * @copyright 2016-2019
  * @license https://opensource.org/licenses/MIT
  */
+class Focus
+{
 
-use Jenzabar\Sonis\Api\SoapApi;
-use Jenzabar\Sonis\Api\Address;
+    /**
+     * A placeholder for future use
+     *
+     * @todo Complete focus class
+     * @return boolean
+     */
+    public function user()
+    {
+        return true;
+    }
 
-define('SONIS_USER', 'username');  // your api user
-define('SONIS_PASSWORD', 'password'); // your api password
-define('SONIS_HOST', 'https://sonis.example.edu'); // your sonis host url, do not append /
+    /**
+     * A placeholder for future use
+     *
+     * @todo Complete focus class
+     * @return boolean
+     */
+    public function course()
+    {
+        return true;
+    }
 
-require __DIR__ . '/../sonis.php';
+    /**
+     * A placeholder for future use
+     *
+     * @todo Complete focus class
+     * @return boolean
+     */
+    public function group()
+    {
+        return true;
+    }
 
-/**
- * Required for an address record,
- * if set to 'no' then multiple arrays
- * will be returned
- *
- * @var string $preferred The persons preferred address, yes or no
- */
-$preferred = 'yes';
+    /**
+     * A placeholder for future use
+     *
+     * @todo Complete focus class
+     * @return boolean
+     */
+    public function role()
+    {
+        return true;
+    }
 
-/**
- * The persons Sonis ID (soc_sec)
- *
- * Most, if not all, will require a soc_sec
- *
- * @var string $soc_sec
- */
-$soc_sec = '000000000';
-
-/**
- * All the arguments to send.
- *
- * Required format:
- * $args = class::function(all your variables)
- *
- * @var mixed $args
- */
-$args = Address::addressSearch($soc_sec, $preferred);
-
-/**
- * Start the API call process.
- * Almost every call will look like this.
- *
- * @var mixed $request
- */
-$request = SoapApi::run($args);
-
-print_r($request);
-print_r('Sonis API Framework: ' . $utils->getVersion('pretty'));
+    /**
+     * A placeholder for future use
+     *
+     * @todo Complete focus class
+     * @return boolean
+     */
+    public function dept()
+    {
+        return true;
+    }
+}

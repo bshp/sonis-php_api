@@ -23,52 +23,58 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
+ *
+ *    For Sonis Coldfusion Web Services
+ *
+ *    By: Jason A. Everling
+ *    Email: jeverling@bshp.edu
+ *
  */
+
+namespace Jenzabar\Sonis\Api;
 
 /**
- * Sonis API Framework
- *
- * Test file for SoapApi.cfc, the drp_box.cfc component
- *
- * @file api.Dropbox.php
- * @package Test
- * @author Jason A. Everling <jason...@gmail.com>
- * @copyright 2016-2019
- * @license https://opensource.org/licenses/MIT
+ * The autoloader,
+ * sonis.php does everything else
  */
+spl_autoload_register(function ($class) {
+    $ns = 'Jenzabar\Sonis\Api';
+    $len = strlen($ns);
 
-use Jenzabar\Sonis\Api\SoapApi;
-use Jenzabar\Sonis\Api\Dropbox;
+    //Check if we are using the Sonis namespace before proceeding
+    if (strncmp($ns, $class, $len) !== 0) {
+        return;
+    }
 
-define('SONIS_USER', 'username');  // your api user
-define('SONIS_PASSWORD', 'password'); // your api password
-define('SONIS_HOST', 'https://sonis.example.edu'); // your sonis host url, do not append /
+    $lib = explode('\\', $class);
+    require(__DIR__ . '/lib/' . $lib[3] . '.php');
+    
+});
 
-require __DIR__ . '/../sonis.php';
-
-/**
- * All the arguments to send.
- *
- * Required format:
- * $args = class::function(all your variables)
- *
- * @var mixed $args
- */
-$args = Dropbox::program(true, true, false, false, '');
-
-/**
- * Start the API call process.
- * Almost every call will look like this.
- *
- * @var mixed $request
- */
-$request = SoapApi::run($args);
-?>
-<html>
-<body>
-<form>
-    <?php echo $request; ?>
-    <p><?php print_r('Sonis API Framework: ' . $utils->getVersion('pretty')); ?> </p>
-</form>
-</body>
-</html>
+//============================
+// Set defaults if undefined #
+//============================
+if (!defined('PROXY_NET')) {
+    define('PROXY_NET', false);
+}
+if (!defined('PROXY_AUTH')) {
+    define('PROXY_AUTH', false);
+}
+if (!defined('PROXY_HOST')) {
+    define('PROXY_HOST', '');
+}
+if (!defined('PROXY_PORT')) {
+    define('PROXY_PORT', '');
+}
+if (!defined('PROXY_USER')) {
+    define('PROXY_USER', '');
+}
+if (!defined('PROXY_PASS')) {
+    define('PROXY_PASS', '');
+}
+if (!defined('SOAP_DEBUG')) {
+    define('SOAP_DEBUG', false);
+}
+if (!defined('SOAP_DEBUG_DISPLAY')) {
+    define('SOAP_DEBUG_DISPLAY', false);
+}

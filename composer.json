@@ -3,6 +3,7 @@
   "description": "Sonis API Framework for PHP",
   "type": "library",
   "keywords": ["sonis", "jenzabar"],
+  "homepage": "https://github.com/bshp/sonis-php_api",
   "license": "MIT",
   "authors": [
     {
@@ -21,6 +22,7 @@
     "ext-soap": "*",
     "ext-curl": "*",
     "ext-intl": "*",
+    "ext-json": "*",
     "jms/serializer": "1.7.*",
     "phpdocumentor/phpdocumentor" : "2.*",
     "evert/phpdoc-md" : "~0.2.0",
@@ -29,6 +31,13 @@
     "friendsofphp/php-cs-fixer": "*"
   },
   "autoload": {
-    "psr-4": {"Jenzabar\\Sonis\\API\\": "sonis/"}
+    "psr-4": {
+      "Jenzabar\\Sonis\\Api\\": "sonis/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4" : {
+      "Jenzabar\\Sonis\\Api\\Tests\\": "sonis/tests/"
+    }
   }
 }

@@ -3,7 +3,7 @@
  *
  * MIT License
  *
- * Copyright (c) 2016 Jason A. Everling
+ * Copyright (c) 2016-2019 Jason A. Everling
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,16 +28,16 @@
 /**
  * Sonis API Framework
  *
- * Test file for soapsql.cfc
+ * Test file for SoapSql.cfc
  *
  * @file sql.sysvar.php
  * @package Test
  * @author Jason A. Everling <jason...@gmail.com>
- * @copyright 2016
+ * @copyright 2016-2019
  * @license https://opensource.org/licenses/MIT
  */
 
-use Jenzabar\Sonis\Api\soapsql;
+use Jenzabar\Sonis\Api\SoapSql;
 
 define('SONIS_USER', 'username');  // your api user
 define('SONIS_PASSWORD', 'password'); // your api password
@@ -72,7 +72,7 @@ $stmt = "SELECT TOP 1 * FROM sysvar";
  * @var array $result
  * @example $result['FIRST_NAME'];
  */
-$result = soapsql::run($stmt);
+$result = SoapSql::run($stmt);
 
 print_r($result);
-print_r('Sonis API Framework: ' . $utils->get_version('pretty'));
+print_r('Sonis API Framework: ' . $utils->getVersion('pretty'));
