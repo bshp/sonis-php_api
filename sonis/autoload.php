@@ -39,21 +39,23 @@ namespace Jenzabar\Sonis\Api;
  */
 spl_autoload_register(function ($class) {
 
-    $ns = 'Jenzabar\Sonis\Api';
+    $ns = 'Jenzabar\\Sonis\\Api';
+    $len = strlen($ns);
+    $lib_dir = __DIR__ . '/lib/';
 
-    //Check if we are using the Sonis namespace before proceeding
-    if (strncmp($ns, $class, strlen($ns)) !== 0) {
+    // Move to the next Namespace if not Sonis
+    if (strncmp($ns, $class, $len) !== 0) {
         return;
     }
 
-    $lib = __DIR__ . '/lib/';
-    $classes = scandir($lib);
-    foreach ($classes as $class) {
-        if (is_file($lib . $class) && (substr($class, -4) === '.php')) {
-            require($lib . $class);
-        }
+    // Get relative name
+    $rel_class = substr($class, $len);
+    $file = $lib_dir . str_replace('\\', '/', $rel_class) . '.php';
+
+    // If file exists, load it
+    if (file_exists($file)) {
+        require $file;
     }
-    
 });
 
 
