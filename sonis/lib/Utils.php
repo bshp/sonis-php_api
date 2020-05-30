@@ -125,6 +125,30 @@ class Utils
     }
 
     /**
+     * Removes the binary column for the given value returned by Soap API
+     *
+     * @param array $array The array to remove binary data from
+     * @return array The modified array
+     * @todo This is a workaround, create another way, before even processing the array itself
+     */
+    private function cleanBinaryData($array)
+    {
+        if (isset($array['PIN'][1])) {
+            $array['PIN'] = $array['PIN'][0];
+        }
+        if (isset($array['SOC_SEC'][1])) {
+            $array['SOC_SEC'] = $array['SOC_SEC'][0];
+        }
+        if (isset($array['SSN'][1])) {
+            $array['SSN'] = $array['SSN'][0];
+        }
+        if (isset($array['TIMESTAMP_COLUMN'])) {
+            unset($array['TIMESTAMP_COLUMN']);
+        }
+        return $array;
+    }
+
+    /**
      * Generates a new Sonis ID
      *
      * @param string $lastname string the persons last name
@@ -343,7 +367,7 @@ class Utils
                 $result = $array;
             }
         }
-        return $result;
+        return $this->cleanBinaryData($result);
     }
 
     /**
