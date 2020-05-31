@@ -322,7 +322,7 @@ class Utils
      * @link http://docs.php.net/manual/en/function.array-reduce.php
      * @link http://docs.php.net/manual/en/function.array-map.php
      */
-    public function arrayProcess($array)
+    public function arrayProcess($array, $hasBinary = false)
     {
         global $wsdl;
         if (is_object($array)) {
@@ -367,7 +367,10 @@ class Utils
                 $result = $array;
             }
         }
-        return $this->cleanBinaryData($result);
+        if ($hasBinary) {
+            return $this->cleanBinaryData($result);
+        }
+        return $result;
     }
 
     /**
