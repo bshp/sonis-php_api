@@ -55,7 +55,7 @@ class Contacts
      *
      * @var string $comp
      */
-    private static $comp = 'oa_emc';
+    public static $comp = 'oa_emc';
 
     /**
      * Deletes a contact record

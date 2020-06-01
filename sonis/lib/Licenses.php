@@ -48,7 +48,7 @@ class Licenses
      *
      * @var string $comp
      */
-    private static $comp = 'oa_licenses';
+    public static $comp = 'oa_licenses';
 
     /**
      * Deletes a persons license

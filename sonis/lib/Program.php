@@ -50,7 +50,7 @@ class Program
      *
      * @var string $comp
      */
-    private static $comp = 'program';
+    public static $comp = 'program';
 
     /**
      * Search for a program

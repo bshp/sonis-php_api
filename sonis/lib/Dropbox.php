@@ -48,7 +48,7 @@ class Dropbox
      *
      * @var string $comp
      */
-    private static $comp = 'drp_box';
+    public static $comp = 'drp_box';
 
     /**
      * Creates an html list for yes/no options with values 0 and 1

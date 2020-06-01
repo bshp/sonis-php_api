@@ -48,7 +48,7 @@ class Enrollment
      *
      * @var string $comp
      */
-    private static $comp = 'enrollment';
+    public static $comp = 'enrollment';
 
     /**
      * A placeholder for future use
