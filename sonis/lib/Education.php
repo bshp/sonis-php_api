@@ -66,7 +66,6 @@ class Education
             ['soc_sec', $soc_sec],
             ['edu_rid', $edu_rid]
         ];
-        //return $params;
         return [
             'comp' => $comp,
             'returns' => $returns,

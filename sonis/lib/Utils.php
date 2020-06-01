@@ -389,9 +389,12 @@ class Utils
         foreach ($keys as $i => $k) {
             $result[$k][] = $values[$i];
         }
-        array_walk($result, function (&$v) {
-            $v = (count($v) == 1) ? array_pop($v) : $v;
-        });
+        array_walk(
+            $result,
+            function (&$v) {
+                $v = (count($v) == 1) ? array_pop($v) : $v;
+            }
+        );
         return $result;
     }
 
@@ -471,12 +474,18 @@ class Utils
      */
     private function arrayOfArraysLower($array)
     {
-        return array_map(function ($item) {
-            if (is_array($item)) {
-                $item = $this->arrayOfArraysLower($item);
-            }
-            return $item;
-        }, array_change_key_case($array, CASE_LOWER));
+        return array_map(
+            function ($item) {
+                if (is_array($item)) {
+                    $item = $this->arrayOfArraysLower($item);
+                }
+                return $item;
+            },
+            array_change_key_case(
+                $array,
+                CASE_LOWER
+            )
+        );
     }
 
     /**
