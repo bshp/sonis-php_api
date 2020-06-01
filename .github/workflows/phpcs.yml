@@ -1,4 +1,4 @@
-name: phpcs
+name: Coding Style
 on:
   push:
     branches: [ master ]
