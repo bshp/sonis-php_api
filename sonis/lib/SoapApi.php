@@ -72,12 +72,12 @@ class SoapApi
         $result = $call->__soapCall(
             'doAPISomething',
             [
-            'user' => $utils->apiCfg()['user'],
-            'pass' => $utils->apiCfg()['pass'],
-            'comp' => 'CFC.' . $comp,
-            'meth' => $method,
-            'hasReturnVariable' => $returns,
-            'argumentdata' => $params,
+                'user' => $utils->apiCfg()['user'],
+                'pass' => $utils->apiCfg()['pass'],
+                'comp' => 'CFC.' . $comp,
+                'meth' => $method,
+                'hasReturnVariable' => $returns,
+                'argumentdata' => $params,
             ]
         );
         if ($utils->apiCfg()['opts']['debug']) {
