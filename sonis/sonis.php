@@ -40,7 +40,8 @@ namespace Jenzabar\Sonis\Api;
 
 use stdClass;
 
-require __DIR__ . '/autoload.php';
+require(__DIR__ . '/autoload.php');
+require(__DIR__ . '/constants.php');
 
 global $cfg;  // Needed for PHPUnit
 
