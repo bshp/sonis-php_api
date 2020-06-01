@@ -49,15 +49,15 @@ $cfg = new stdClass();
 //========================================
 // 1. Configure Sonis API Details        #
 //========================================
-$cfg->user          =  SONIS_USER;
-$cfg->pass          =  SONIS_PASSWORD;
-$cfg->host          =  SONIS_HOST;
-$cfg->proxy_net     =  PROXY_NET;
-$cfg->proxy_auth    =  PROXY_AUTH;
-$cfg->proxy_host    =  PROXY_HOST;
-$cfg->proxy_port    =  PROXY_PORT;
-$cfg->proxy_user    =  PROXY_USER;
-$cfg->proxy_pass    =  PROXY_PASS;
+$cfg->user          = SONIS_USER;
+$cfg->pass          = SONIS_PASSWORD;
+$cfg->host          = SONIS_HOST;
+$cfg->proxy_net     = PROXY_NET;
+$cfg->proxy_auth    = PROXY_AUTH;
+$cfg->proxy_host    = PROXY_HOST;
+$cfg->proxy_port    = PROXY_PORT;
+$cfg->proxy_user    = PROXY_USER;
+$cfg->proxy_pass    = PROXY_PASS;
 $cfg->locale        = 'en-US';
 $cfg->root          = __DIR__;
 //========================================
