@@ -48,7 +48,7 @@ class Address
      *
      * @var string $comp
      */
-    private static $comp = 'address';
+    public static $comp = 'address';
 
     /**
      * Add to an existing user record

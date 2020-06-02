@@ -3,7 +3,7 @@
  *
  * MIT License
  *
- * Copyright (c) 2016-2019 Jason A. Everling
+ * Copyright (c) 2020 Jason A. Everling
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,41 +23,36 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
+ *
+ *    For Sonis Coldfusion Web Services
+ *
+ *    By: Jason A. Everling
+ *    Email: jeverling@bshp.edu
+ *
  */
 
-namespace Jenzabar\Sonis\Api;
-
-/**
- * Class enrollment
- *
- * Sonis API Framework
- *
- * Component: enrollment.cfc
- *
- * @file Enrollment.php
- * @package Sonis API
- * @author Jason A. Everling <jason...@gmail.com>
- * @copyright 2016-2019
- * @license https://opensource.org/licenses/MIT
- */
-class Enrollment
-{
-
-    /**
-     * The Sonis component to call
-     *
-     * @var string $comp
-     */
-    public static $comp = 'enrollment';
-
-    /**
-     * A placeholder for future use
-     *
-     * @todo Complete enrollment class
-     * @return boolean
-     */
-    public static function placeholder()
-    {
-        return true;
-    }
+/* Set defaults if undefined */
+if (!defined('PROXY_NET')) {
+    define('PROXY_NET', false);
+}
+if (!defined('PROXY_AUTH')) {
+    define('PROXY_AUTH', false);
+}
+if (!defined('PROXY_HOST')) {
+    define('PROXY_HOST', '');
+}
+if (!defined('PROXY_PORT')) {
+    define('PROXY_PORT', '');
+}
+if (!defined('PROXY_USER')) {
+    define('PROXY_USER', '');
+}
+if (!defined('PROXY_PASS')) {
+    define('PROXY_PASS', '');
+}
+if (!defined('SOAP_DEBUG')) {
+    define('SOAP_DEBUG', false);
+}
+if (!defined('SOAP_DEBUG_DISPLAY')) {
+    define('SOAP_DEBUG_DISPLAY', false);
 }

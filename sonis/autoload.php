@@ -37,52 +37,25 @@ namespace Jenzabar\Sonis\Api;
  * The autoloader,
  * sonis.php does everything else
  */
-spl_autoload_register(function ($class) {
+spl_autoload_register(
+    function ($class) {
 
-    $ns = 'Jenzabar\\Sonis\\Api';
-    $len = strlen($ns);
-    $lib_dir = __DIR__ . '/lib/';
+        $ns = 'Jenzabar\\Sonis\\Api';
+        $len = strlen($ns);
+        $libDir = __DIR__ . '/lib/';
 
-    // Move to the next Namespace if not Sonis
-    if (strncmp($ns, $class, $len) !== 0) {
-        return;
+        // Move to the next Namespace if not Sonis
+        if (strncmp($ns, $class, $len) !== 0) {
+            return;
+        }
+
+        // Get relative name
+        $relClass = substr($class, $len);
+        $file = $libDir . str_replace('\\', '/', $relClass) . '.php';
+
+        // If file exists, load it
+        if (file_exists($file)) {
+            require $file;
+        }
     }
-
-    // Get relative name
-    $rel_class = substr($class, $len);
-    $file = $lib_dir . str_replace('\\', '/', $rel_class) . '.php';
-
-    // If file exists, load it
-    if (file_exists($file)) {
-        require $file;
-    }
-});
-
-
-//============================
-// Set defaults if undefined #
-//============================
-if (!defined('PROXY_NET')) {
-    define('PROXY_NET', false);
-}
-if (!defined('PROXY_AUTH')) {
-    define('PROXY_AUTH', false);
-}
-if (!defined('PROXY_HOST')) {
-    define('PROXY_HOST', '');
-}
-if (!defined('PROXY_PORT')) {
-    define('PROXY_PORT', '');
-}
-if (!defined('PROXY_USER')) {
-    define('PROXY_USER', '');
-}
-if (!defined('PROXY_PASS')) {
-    define('PROXY_PASS', '');
-}
-if (!defined('SOAP_DEBUG')) {
-    define('SOAP_DEBUG', false);
-}
-if (!defined('SOAP_DEBUG_DISPLAY')) {
-    define('SOAP_DEBUG_DISPLAY', false);
-}
+);

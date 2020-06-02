@@ -322,7 +322,7 @@ class Utils
      * @link http://docs.php.net/manual/en/function.array-reduce.php
      * @link http://docs.php.net/manual/en/function.array-map.php
      */
-    public function arrayProcess($array)
+    public function arrayProcess($array, $hasBinary = false)
     {
         global $wsdl;
         if (is_object($array)) {
@@ -367,7 +367,10 @@ class Utils
                 $result = $array;
             }
         }
-        return $this->cleanBinaryData($result);
+        if ($hasBinary) {
+            return $this->cleanBinaryData($result);
+        }
+        return $result;
     }
 
     /**
@@ -386,9 +389,12 @@ class Utils
         foreach ($keys as $i => $k) {
             $result[$k][] = $values[$i];
         }
-        array_walk($result, function (&$v) {
-            $v = (count($v) == 1) ? array_pop($v) : $v;
-        });
+        array_walk(
+            $result,
+            function (&$v) {
+                $v = (count($v) == 1) ? array_pop($v) : $v;
+            }
+        );
         return $result;
     }
 
@@ -468,12 +474,18 @@ class Utils
      */
     private function arrayOfArraysLower($array)
     {
-        return array_map(function ($item) {
-            if (is_array($item)) {
-                $item = $this->arrayOfArraysLower($item);
-            }
-            return $item;
-        }, array_change_key_case($array, CASE_LOWER));
+        return array_map(
+            function ($item) {
+                if (is_array($item)) {
+                    $item = $this->arrayOfArraysLower($item);
+                }
+                return $item;
+            },
+            array_change_key_case(
+                $array,
+                CASE_LOWER
+            )
+        );
     }
 
     /**

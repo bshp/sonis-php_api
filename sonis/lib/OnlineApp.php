@@ -48,7 +48,7 @@ class OnlineApp
      *
      * @var string $comp
      */
-    private static $comp = 'student_app';
+    public static $comp = 'student_app';
 
     /**
      * Logon function for the online app

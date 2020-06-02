@@ -63,6 +63,8 @@ class SoapApi
         $method = $args['method'];
         $params = $args['params'];
         $returns = $args['returns'];
+        $hasBinary = false;
+        $isBinary = ['biographic'];
         $call = $utils->soapClient(
             $utils->apiCfg()['host'] . '/cfc/SoapApi.cfc?wsdl',
             $utils->apiCfg()['opts']['soap']
@@ -70,17 +72,20 @@ class SoapApi
         $result = $call->__soapCall(
             'doAPISomething',
             [
-            'user' => $utils->apiCfg()['user'],
-            'pass' => $utils->apiCfg()['pass'],
-            'comp' => 'CFC.' . $comp,
-            'meth' => $method,
-            'hasReturnVariable' => $returns,
-            'argumentdata' => $params,
+                'user' => $utils->apiCfg()['user'],
+                'pass' => $utils->apiCfg()['pass'],
+                'comp' => 'CFC.' . $comp,
+                'meth' => $method,
+                'hasReturnVariable' => $returns,
+                'argumentdata' => $params,
             ]
         );
         if ($utils->apiCfg()['opts']['debug']) {
             $utils->debugSoap($call);
         }
-        return $utils->arrayProcess($result);
+        if (in_array($comp, $isBinary)) {
+            $hasBinary = true;
+        }
+        return $utils->arrayProcess($result, $hasBinary);
     }
 }

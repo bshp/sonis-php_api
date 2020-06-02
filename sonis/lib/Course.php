@@ -48,7 +48,7 @@ class Course
      *
      * @var string $comp
      */
-    private static $comp = 'crs_sec_list';
+    public static $comp = 'crs_sec_list';
 
     /**
      * Get course core requisites

@@ -48,7 +48,7 @@ class Education
      *
      * @var string $comp
      */
-    private static $comp = 'education';
+    public static $comp = 'education';
 
     /**
      * Deletes an education record
@@ -66,7 +66,6 @@ class Education
             ['soc_sec', $soc_sec],
             ['edu_rid', $edu_rid]
         ];
-        //return $params;
         return [
             'comp' => $comp,
             'returns' => $returns,
