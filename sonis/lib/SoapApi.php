@@ -64,7 +64,7 @@ class SoapApi
         $params = $args['params'];
         $returns = $args['returns'];
         $hasBinary = false;
-        $isBinary = ['address', 'biographic'];
+        $isBinary = ['biographic'];
         $call = $utils->soapClient(
             $utils->apiCfg()['host'] . '/cfc/SoapApi.cfc?wsdl',
             $utils->apiCfg()['opts']['soap']
