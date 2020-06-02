@@ -48,7 +48,7 @@ class Employment
      *
      * @var string $comp
      */
-    private static $comp = 'employment';
+    public static $comp = 'employment';
 
     /**
      * Deletes an employment record

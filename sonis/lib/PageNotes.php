@@ -50,7 +50,7 @@ class PageNotes
      *
      * @var string $comp
      */
-    private static $comp = 'pagenote';
+    public static $comp = 'pagenote';
 
     /**
      * Inserts or updates a note

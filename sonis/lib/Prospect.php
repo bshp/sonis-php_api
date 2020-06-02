@@ -50,7 +50,7 @@ class Prospect
      *
      * @var string $comp
      */
-    private static $comp = 'addps';
+    public static $comp = 'addps';
 
     /**
      * Inserts a new prospect/inquiry

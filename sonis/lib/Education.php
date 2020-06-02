@@ -48,7 +48,7 @@ class Education
      *
      * @var string $comp
      */
-    private static $comp = 'education';
+    public static $comp = 'education';
 
     /**
      * Deletes an education record

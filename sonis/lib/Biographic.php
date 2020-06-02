@@ -48,7 +48,7 @@ class Biographic
      *
      * @var string $comp
      */
-    private static $comp = 'biographic';
+    public static $comp = 'biographic';
 
     /**
      * Get First and Lastname
