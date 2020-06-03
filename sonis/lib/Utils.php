@@ -317,8 +317,9 @@ class Utils
      * called ensure a result is returned. If data is
      * not an array, send to error log.
      *
-     * @param $array
-     * @return array|string
+     * @param array $array the array to be processed
+     * @param boolean $hasBinary if data contains binary fields
+     * @return array|string the processed array
      * @link http://docs.php.net/manual/en/function.array-reduce.php
      * @link http://docs.php.net/manual/en/function.array-map.php
      */
