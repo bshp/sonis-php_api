@@ -113,7 +113,7 @@ class Utils
         if ($this->proxy_auth) {
             curl_setopt($ch, CURLOPT_USERPWD, "$this->proxy_user:$this->proxy_pass");
         }
-        $output = curl_exec($ch);
+        curl_exec($ch);
         $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
         //don't really need detailed error codes
@@ -358,11 +358,12 @@ class Utils
              * @todo Figure out a way to handle these errors better
              */
             if (is_string($array)) {
-                if (strpos($array, 'Error')) {
+                $cferror = preg_replace('/\r|\n/', ' ', $array);
+                if (strpos($cferror, 'Error')) {
                     $this->arrayException($array);
                     $this->eventError(lang::get('array_error'), true);
                 } else {
-                    $result = $array;
+                    $result = $cferror;
                 }
             } else {
                 $result = $array;
