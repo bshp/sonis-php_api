@@ -93,6 +93,6 @@ class SoapSql
             $call->__soapCall("doSQLSomething", $params);
             return 'OK: 200';
         }
-        return $utils->arrayProcess($result);
+        return $utils->arrayProcess($result, true);
     }
 }
