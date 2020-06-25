@@ -133,17 +133,34 @@ class Utils
      */
     private function cleanBinaryData($array)
     {
-        if (isset($array['PIN'][1])) {
-            $array['PIN'] = $array['PIN'][0];
-        }
-        if (isset($array['SOC_SEC'][1])) {
-            $array['SOC_SEC'] = $array['SOC_SEC'][0];
-        }
-        if (isset($array['SSN'][1])) {
-            $array['SSN'] = $array['SSN'][0];
-        }
-        if (isset($array['TIMESTAMP_COLUMN'])) {
-            unset($array['TIMESTAMP_COLUMN']);
+        if (isset($array[0]) && is_array($array[0])) {
+            foreach ($array as $k => $v) {
+                if (isset($array[$k]['PIN'][1])) {
+                    $array[$k]['PIN'] = $array[$k]['PIN'][0];
+                }
+                if (isset($array[$k]['SOC_SEC'][1])) {
+                    $array[$k]['SOC_SEC'] = $array[$k]['SOC_SEC'][0];
+                }
+                if (isset($array[$k]['SSN'][1])) {
+                    $array[$k]['SSN'] = $array[$k]['SSN'][0];
+                }
+                if (isset($array[$k]['TIMESTAMP_COLUMN'])) {
+                    unset($array[$k]['TIMESTAMP_COLUMN']);
+                }
+            }
+        } else {
+            if (isset($array['PIN'][1])) {
+                $array['PIN'] = $array['PIN'][0];
+            }
+            if (isset($array['SOC_SEC'][1])) {
+                $array['SOC_SEC'] = $array['SOC_SEC'][0];
+            }
+            if (isset($array['SSN'][1])) {
+                $array['SSN'] = $array['SSN'][0];
+            }
+            if (isset($array['TIMESTAMP_COLUMN'])) {
+                unset($array['TIMESTAMP_COLUMN']);
+            }
         }
         return $array;
     }
