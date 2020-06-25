@@ -65,8 +65,9 @@ class SoapSql
     {
         global $utils;
         $returns = true;
+        $valid = false;
         $sql = preg_replace("/[;]/", '', $sql);
-        $sqlcmds = ['DELETE', 'INSERT', 'UPDATE',];
+        $sqlcmds = ['DELETE', 'INSERT', 'UPDATE'];
         $params = [
             'user' => $utils->apiCfg()['user'],
             'pass' => $utils->apiCfg()['pass'],
@@ -83,16 +84,35 @@ class SoapSql
         if ($utils->apiCfg()['opts']['debug']) {
             $utils->debugSoap($call);
         }
+
         /** Iterate through sql statement, dont send specific types through the processor */
         foreach ($sqlcmds as $sqlcmd) {
             if ($utils->startsWith($sql, $sqlcmd)) {
                 $returns = false;
             }
+            /** Check if updating an encrypted value */
+            if (strpos($utils->uc($sql), 'ENCRYPTBYKEY')) {
+                $returns = false;
+            }
+        }
+
+        /** Only allow statements with a valid sql operation */
+        array_push($sqlcmds, 'OPEN', 'SELECT');
+        foreach ($sqlcmds as $sqlcmd) {
+            if ($utils->startsWith($sql, $sqlcmd)) {
+                $valid = true;
+            }
+        }
+        if (!$valid) {
+            return $utils->eventError(
+                'Invalid SQL Statement detected, only single statements allowed using one of "DELETE", "INSERT", "SELECT", "UPDATE"',
+                true
+            );
         }
         if (!$returns) {
             $call->__soapCall("doSQLSomething", $params);
             return 'OK: 200';
         }
-        return $utils->arrayProcess($result, true);
+        return $utils->arrayProcess($result, false);
     }
 }
