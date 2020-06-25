@@ -38,7 +38,7 @@
  */
 
 use Jenzabar\Sonis\Api\SoapApi;
-use Jenzabar\Sonis\Api\biographic;
+use Jenzabar\Sonis\Api\Biographic;
 
 define('SONIS_USER', 'username');  // your api user
 define('SONIS_PASSWORD', 'password'); // your api password

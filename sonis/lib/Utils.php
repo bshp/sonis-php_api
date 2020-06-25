@@ -113,7 +113,7 @@ class Utils
         if ($this->proxy_auth) {
             curl_setopt($ch, CURLOPT_USERPWD, "$this->proxy_user:$this->proxy_pass");
         }
-        $output = curl_exec($ch);
+        curl_exec($ch);
         $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
         //don't really need detailed error codes
@@ -133,17 +133,34 @@ class Utils
      */
     private function cleanBinaryData($array)
     {
-        if (isset($array['PIN'][1])) {
-            $array['PIN'] = $array['PIN'][0];
-        }
-        if (isset($array['SOC_SEC'][1])) {
-            $array['SOC_SEC'] = $array['SOC_SEC'][0];
-        }
-        if (isset($array['SSN'][1])) {
-            $array['SSN'] = $array['SSN'][0];
-        }
-        if (isset($array['TIMESTAMP_COLUMN'])) {
-            unset($array['TIMESTAMP_COLUMN']);
+        if (isset($array[0]) && is_array($array[0])) {
+            foreach ($array as $k => $v) {
+                if (isset($array[$k]['PIN'][1])) {
+                    $array[$k]['PIN'] = $array[$k]['PIN'][0];
+                }
+                if (isset($array[$k]['SOC_SEC'][1])) {
+                    $array[$k]['SOC_SEC'] = $array[$k]['SOC_SEC'][0];
+                }
+                if (isset($array[$k]['SSN'][1])) {
+                    $array[$k]['SSN'] = $array[$k]['SSN'][0];
+                }
+                if (isset($array[$k]['TIMESTAMP_COLUMN'])) {
+                    unset($array[$k]['TIMESTAMP_COLUMN']);
+                }
+            }
+        } else {
+            if (isset($array['PIN'][1])) {
+                $array['PIN'] = $array['PIN'][0];
+            }
+            if (isset($array['SOC_SEC'][1])) {
+                $array['SOC_SEC'] = $array['SOC_SEC'][0];
+            }
+            if (isset($array['SSN'][1])) {
+                $array['SSN'] = $array['SSN'][0];
+            }
+            if (isset($array['TIMESTAMP_COLUMN'])) {
+                unset($array['TIMESTAMP_COLUMN']);
+            }
         }
         return $array;
     }
@@ -277,7 +294,7 @@ class Utils
             return trigger_error($msg);
         }
         trigger_error($msg);
-        die();
+        exit(1);
     }
 
     /**
@@ -317,8 +334,9 @@ class Utils
      * called ensure a result is returned. If data is
      * not an array, send to error log.
      *
-     * @param $array
-     * @return array|string
+     * @param array $array the array to be processed
+     * @param boolean $hasBinary if data contains binary fields
+     * @return array|string the processed array
      * @link http://docs.php.net/manual/en/function.array-reduce.php
      * @link http://docs.php.net/manual/en/function.array-map.php
      */
@@ -357,11 +375,12 @@ class Utils
              * @todo Figure out a way to handle these errors better
              */
             if (is_string($array)) {
-                if (strpos($array, 'Error')) {
+                $cferror = preg_replace('/\r|\n/', ' ', $array);
+                if (strpos($cferror, 'Error')) {
                     $this->arrayException($array);
                     $this->eventError(lang::get('array_error'), true);
                 } else {
-                    $result = $array;
+                    $result = $cferror;
                 }
             } else {
                 $result = $array;
@@ -584,7 +603,7 @@ class Utils
     public function startsWith($string, $start_string)
     {
         $len = strlen($start_string);
-        return (substr($string, 0, $len) === $start_string);
+        return (substr($this->uc($string), 0, $len) === $this->uc($start_string));
     }
 
     /**
