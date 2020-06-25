@@ -603,7 +603,7 @@ class Utils
     public function startsWith($string, $start_string)
     {
         $len = strlen($start_string);
-        return (substr($string, 0, $len) === $start_string);
+        return (substr($this->uc($string), 0, $len) === $this->uc($start_string));
     }
 
     /**
