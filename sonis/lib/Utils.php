@@ -294,7 +294,7 @@ class Utils
             return trigger_error($msg);
         }
         trigger_error($msg);
-        die();
+        exit(1);
     }
 
     /**
